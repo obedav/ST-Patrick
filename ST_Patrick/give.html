@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Giving - St. Patrick's Catholic Church</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <meta name="description" content="Support St. Patrick's Catholic Church through secure online giving. Make one-time or recurring donations to support our ministries and mission.">
+</head>
+<body>
+    <!-- Skip to content for accessibility -->
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="/api/placeholder/60/60" alt="St. Patrick's Logo">
+                <div class="logo-text">St. Patrick's Catholic Church</div>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Toggle mobile menu">☰</button>
+            <nav role="navigation">
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="about_us.html">About</a></li>
+                    <li><a href="mass_times.html">Mass Times</a></li>
+                    <li><a href="ministries.html">Ministries</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="give.html" class="active">Give</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Online Giving</h1>
+            <p>Support our mission and ministries through secure online donations</p>
+        </div>
+    </section>
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb">
+        <div class="container">
+            <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+                <a href="index.html">Home</a>
+                <span>›</span>
+                <span>Online Giving</span>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main id="main-content" class="content-section">
+        <div class="container">
+            <!-- Introduction -->
+            <div style="text-align: center; max-width: 800px; margin: 0 auto 4rem;">
+                <h2 style="color: var(--primary-color); margin-bottom: 1rem;">Your Generosity Makes a Difference</h2>
+                <p style="font-size: 1.2rem; line-height: 1.7; color: var(--text-dark);">
+                    Thank you for considering a gift to St. Patrick's Catholic Church. Your generous donations help us maintain our beautiful worship space, 
+                    support our many ministries, and serve those in need in our community. Every gift, no matter the size, makes a meaningful impact.
+                </p>
+            </div>
+
+            <div class="content-grid">
+                <article class="main-content">
+                    <!-- Online Giving Form -->
+                    <section>
+                        <div class="form-container" style="max-width: none;">
+                            <h2 style="color: var(--primary-color); text-align: center; margin-bottom: 2rem;">Make a Donation</h2>
+                            
+                            <form id="donation-form">
+                                <!-- Donation Type -->
+                                <div class="form-group">
+                                    <label>Donation Type *</label>
+                                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 0.5rem;">
+                                        <div>
+                                            <input type="radio" id="one-time" name="donation-type" value="one-time" checked>
+                                            <label for="one-time" style="margin-left: 0.5rem; font-weight: normal;">One-Time Gift</label>
+                                        </div>
+                                        <div>
+                                            <input type="radio" id="recurring" name="donation-type" value="recurring">
+                                            <label for="recurring" style="margin-left: 0.5rem; font-weight: normal;">Recurring Gift</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Frequency (for recurring donations) -->
+                                <div class="form-group" id="frequency-group" style="display: none;">
+                                    <label for="frequency">Frequency</label>
+                                    <select id="frequency" name="frequency">
+                                        <option value="weekly">Weekly</option>
+                                        <option value="monthly" selected>Monthly</option>
+                                        <option value="quarterly">Quarterly</option>
+                                        <option value="annually">Annually</option>
+                                    </select>
+                                </div>
+
+                                <!-- Donation Categories -->
+                                <div class="form-group">
+                                    <label for="category">Donation Category *</label>
+                                    <select id="category" name="category" required>
+                                        <option value="">Select a category</option>
+                                        <option value="general-fund">General Fund</option>
+                                        <option value="building-maintenance">Building & Maintenance</option>
+                                        <option value="religious-education">Religious Education</option>
+                                        <option value="youth-ministry">Youth Ministry</option>
+                                        <option value="music-ministry">Music Ministry</option>
+                                        <option value="outreach">Community Outreach</option>
+                                        <option value="st-vincent-de-paul">St. Vincent de Paul Society</option>
+                                        <option value="special-collections">Special Collections</option>
+                                        <option value="memorial">Memorial Fund</option>
+                                        <option value="other">Other (specify in comments)</option>
+                                    </select>
+                                </div>
+
+                                <!-- Amount Selection -->
+                                <div class="form-group">
+                                    <label>Donation Amount *</label>
+                                    <div class="donation-amounts">
+                                        <button type="button" class="amount-btn" data-amount="1000">₦1,000</button>
+                                        <button type="button" class="amount-btn" data-amount="2500">₦2,500</button>
+                                        <button type="button" class="amount-btn" data-amount="5000">₦5,000</button>
+                                        <button type="button" class="amount-btn" data-amount="10000">₦10,000</button>
+                                        <button type="button" class="amount-btn" data-amount="25000">₦25,000</button>
+                                        <button type="button" class="amount-btn" data-amount="other">Other</button>
+                                    </div>
+                                    <div style="margin-top: 1rem;">
+                                        <input type="number" id="custom-amount" name="amount" placeholder="Enter custom amount (₦)" min="1" step="1" style="width: 100%;">
+                                    </div>
+                                </div>
+
+                                <!-- Donor Information -->
+                                <h3 style="color: var(--primary-color); margin: 2rem 0 1rem;">Donor Information</h3>
+                                
+                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                                    <div class="form-group">
+                                        <label for="first-name">First Name *</label>
+                                        <input type="text" id="first-name" name="first-name" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="last-name">Last Name *</label>
+                                        <input type="text" id="last-name" name="last-name" required>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="email">Email Address *</label>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="phone">Phone Number</label>
+                                    <input type="tel" id="phone" name="phone">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="address">Address</label>
+                                    <input type="text" id="address" name="address" placeholder="Street Address">
+                                </div>
+                                
+                                <div style="display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 1rem;">
+                                    <div class="form-group">
+                                        <label for="city">City</label>
+                                        <input type="text" id="city" name="city">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="state">State</label>
+                                        <input type="text" id="state" name="state">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="zip">ZIP Code</label>
+                                        <input type="text" id="zip" name="zip">
+                                    </div>
+                                </div>
+
+                                <!-- Comments -->
+                                <div class="form-group">
+                                    <label for="comments">Comments or Special Instructions</label>
+                                    <textarea id="comments" name="comments" placeholder="Any special instructions or dedications for this gift..."></textarea>
+                                </div>
+
+                                <!-- Anonymous Donation Option -->
+                                <div class="form-group">
+                                    <div class="checkbox-group">
+                                        <input type="checkbox" id="anonymous" name="anonymous">
+                                        <label for="anonymous">Make this an anonymous donation</label>
+                                    </div>
+                                </div>
+
+                                <!-- Receipt Option -->
+                                <div class="form-group">
+                                    <div class="checkbox-group">
+                                        <input type="checkbox" id="receipt" name="receipt" checked>
+                                        <label for="receipt">Send me a tax-deductible receipt</label>
+                                    </div>
+                                </div>
+
+                                <!-- Payment Processing Note -->
+                                <div style="background: var(--light-gray); padding: 1.5rem; border-radius: 5px; margin: 2rem 0;">
+                                    <h4 style="color: var(--primary-color); margin-bottom: 1rem;">🔒 Secure Payment Processing</h4>
+                                    <p style="margin-bottom: 1rem;">Your donation will be processed securely through our payment partner. You'll be redirected to complete your payment after submitting this form.</p>
+                                    <p style="font-size: 0.9rem; color: var(--text-light);">
+                                        St. Patrick's Catholic Church is a 501(c)(3) organization. Your donation may be tax-deductible to the extent allowed by law. 
+                                        Please consult your tax advisor for specific guidance.
+                                    </p>
+                                </div>
+
+                                <button type="submit" class="btn" style="background: var(--primary-color); color: var(--white); width: 100%; padding: 1rem; font-size: 1.2rem;">
+                                    Proceed to Secure Payment
+                                </button>
+                            </form>
+                        </div>
+                    </section>
+                </article>
+
+                <!-- Sidebar -->
+                <aside class="sidebar">
+                    <!-- Why Give -->
+                    <div class="sidebar-widget">
+                        <h3>Why Your Gift Matters</h3>
+                        <p>Your generous donations help support:</p>
+                        <ul>
+                            <li>Worship and liturgical celebrations</li>
+                            <li>Religious education programs</li>
+                            <li>Youth and family ministries</li>
+                            <li>Community outreach and service</li>
+                            <li>Building maintenance and improvements</li>
+                            <li>Pastoral care and spiritual guidance</li>
+                        </ul>
+                    </div>
+
+                    <!-- Giving Options -->
+                    <div class="sidebar-widget">
+                        <h3>Other Ways to Give</h3>
+                        <ul>
+                            <li><strong>During Mass:</strong> Place your gift in the collection basket</li>
+                            <li><strong>Mail:</strong> Send checks to the parish office</li>
+                            <li><strong>Planned Giving:</strong> Include the parish in your will</li>
+                            <li><strong>Stock Donations:</strong> Contact the office for details</li>
+                            <li><strong>Memorial Gifts:</strong> Honor loved ones with a donation</li>
+                        </ul>
+                    </div>
+
+                    <!-- Special Funds -->
+                    <div class="sidebar-widget">
+                        <h3>Special Fund Needs</h3>
+                        <div style="background: var(--primary-color); color: var(--white); padding: 1rem; border-radius: 5px; margin-bottom: 1rem;">
+                            <h4 style="margin-bottom: 0.5rem;">Church Roof Repair</h4>
+                            <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">Goal: ₦2,000,000</p>
+                            <p style="font-size: 0.9rem;">Raised: ₦1,280,000 (64%)</p>
+                        </div>
+                        <p style="font-size: 0.9rem;">Help us complete essential roof repairs to protect our beautiful worship space for future generations.</p>
+                    </div>
+
+                    <!-- Contact -->
+                    <div class="sidebar-widget">
+                        <h3>Questions About Giving?</h3>
+                        <p>Contact our parish office for assistance with donations, planned giving, or memorial gifts.</p>
+                        <p><strong>Phone:</strong> (123) 456-7890<br>
+                        <strong>Email:</strong> giving@stpatricks.com</p>
+                    </div>
+
+                    <!-- Recognition -->
+                    <div class="sidebar-widget">
+                        <h3>Donor Recognition</h3>
+                        <p>We gratefully acknowledge our generous donors in our annual report. Donors may choose to remain anonymous if preferred.</p>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <!-- Ways to Give Section -->
+    <section class="content-section" style="background: var(--light-gray);">
+        <div class="container">
+            <h2 style="color: var(--primary-color); text-align: center; margin-bottom: 3rem; font-size: 2.5rem;">Ways to Support St. Patrick's</h2>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                <!-- Regular Giving -->
+                <div style="background: var(--white); padding: 2rem; border-radius: 10px; box-shadow: var(--shadow); text-align: center;">
+                    <div style="background: var(--primary-color); color: var(--white); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 2rem;">💝</div>
+                    <h3 style="color: var(--primary-color); margin-bottom: 1rem;">Regular Giving</h3>
+                    <p>Set up recurring donations to provide steady support for our ministries and operations. Monthly giving is especially helpful for budget planning.</p>
+                </div>
+
+                <!-- Memorial Gifts -->
+                <div style="background: var(--white); padding: 2rem; border-radius: 10px; box-shadow: var(--shadow); text-align: center;">
+                    <div style="background: var(--primary-color); color: var(--white); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 2rem;">🕊️</div>
+                    <h3 style="color: var(--primary-color); margin-bottom: 1rem;">Memorial Gifts</h3>
+                    <p>Honor the memory of loved ones with a donation in their name. Memorial gifts can support specific ministries or the general fund.</p>
+                </div>
+
+                <!-- Special Collections -->
+                <div style="background: var(--white); padding: 2rem; border-radius: 10px; box-shadow: var(--shadow); text-align: center;">
+                    <div style="background: var(--primary-color); color: var(--white); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 2rem;">🌍</div>
+                    <h3 style="color: var(--primary-color); margin-bottom: 1rem;">Special Collections</h3>
+                    <p>Support diocesan and worldwide Catholic missions through special collections taken throughout the liturgical year.</p>
+                </div>
+
+                <!-- Planned Giving -->
+                <div style="background: var(--white); padding: 2rem; border-radius: 10px; box-shadow: var(--shadow); text-align: center;">
+                    <div style="background: var(--primary-color); color: var(--white); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 2rem;">📋</div>
+                    <h3 style="color: var(--primary-color); margin-bottom: 1rem;">Planned Giving</h3>
+                    <p>Leave a lasting legacy by including St. Patrick's in your will, trust, or retirement plan. Contact us to learn about planned giving options.</p>
+                </div>
+
+                <!-- Volunteer Time -->
+                <div style="background: var(--white); padding: 2rem; border-radius: 10px; box-shadow: var(--shadow); text-align: center;">
+                    <div style="background: var(--primary-color); color: var(--white); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 2rem;">🤝</div>
+                    <h3 style="color: var(--primary-color); margin-bottom: 1rem;">Volunteer Time</h3>
+                    <p>Give the gift of your time and talents through our many ministry opportunities. Visit our ministries page to find your calling.</p>
+                </div>
+
+                <!-- Stock & Asset Gifts -->
+                <div style="background: var(--white); padding: 2rem; border-radius: 10px; box-shadow: var(--shadow); text-align: center;">
+                    <div style="background: var(--primary-color); color: var(--white); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 2rem;">📈</div>
+                    <h3 style="color: var(--primary-color); margin-bottom: 1rem;">Stock & Asset Gifts</h3>
+                    <p>Donate appreciated stocks, bonds, or other assets for potential tax advantages. Contact our office for assistance with asset transfers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Transparency Section -->
+    <section class="content-section">
+        <div class="container">
+            <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+                <h2 style="color: var(--primary-color); margin-bottom: 2rem;">Financial Transparency</h2>
+                <p style="font-size: 1.1rem; margin-bottom: 2rem; line-height: 1.7;">
+                    We believe in being good stewards of your generous gifts. Our parish finances are regularly reviewed by our Finance Council 
+                    and audited annually. We publish an annual financial report that shows how your donations are used to support our mission and ministries.
+                </p>
+                <div class="hero-btns">
+                    <a href="#" class="btn btn-primary">View Annual Report</a>
+                    <a href="#" class="btn btn-secondary">Financial Policies</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <p>St. Patrick's Catholic Church<br>
+                    123 Main Street<br>
+                    City, State 12345<br>
+                    Phone: (123) 456-7890<br>
+                    Email: info@stpatricks.com</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="mass-times.html">Mass Times</a></li>
+                        <li><a href="confession.html">Confession Schedule</a></li>
+                        <li><a href="calendar.html">Parish Calendar</a></li>
+                        <li><a href="bulletins.html">Bulletins</a></li>
+                        <li><a href="staff.html">Staff Directory</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="sermons.html">Sermon Archive</a></li>
+                        <li><a href="prayer-requests.html">Prayer Requests</a></li>
+                        <li><a href="formation.html">Faith Formation</a></li>
+                        <li><a href="ministries.html">Ministry Directory</a></li>
+                        <li><a href="giving.html">Online Giving</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Connect With Us</h3>
+                    <p>Follow us on social media for daily inspiration and updates.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-icon" aria-label="Facebook">F</a>
+                        <a href="#" class="social-icon" aria-label="Twitter">T</a>
+                        <a href="#" class="social-icon" aria-label="Instagram">I</a>
+                        <a href="#" class="social-icon" aria-label="YouTube">Y</a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2025 St. Patrick's Catholic Church. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            const nav = document.querySelector('nav ul');
+            nav.classList.toggle('active');
+            
+            const isExpanded = nav.classList.contains('active');
+            this.setAttribute('aria-expanded', isExpanded);
+        });
+
+        // Donation form functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const donationType = document.querySelectorAll('input[name="donation-type"]');
+            const frequencyGroup = document.getElementById('frequency-group');
+            const amountButtons = document.querySelectorAll('.amount-btn');
+            const customAmountInput = document.getElementById('custom-amount');
+            const donationForm = document.getElementById('donation-form');
+
+            // Show/hide frequency selection based on donation type
+            donationType.forEach(radio => {
+                radio.addEventListener('change', function() {
+                    if (this.value === 'recurring') {
+                        frequencyGroup.style.display = 'block';
+                    } else {
+                        frequencyGroup.style.display = 'none';
+                    }
+                });
+            });
+
+            // Amount button selection
+            amountButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Remove active class from all buttons
+                    amountButtons.forEach(btn => btn.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    // Set the amount in the input field
+                    const amount = this.dataset.amount;
+                    if (amount === 'other') {
+                        customAmountInput.value = '';
+                        customAmountInput.focus();
+                    } else {
+                        customAmountInput.value = amount;
+                    }
+                });
+            });
+
+            // Custom amount input handling
+            customAmountInput.addEventListener('input', function() {
+                // Remove active class from all preset buttons when typing custom amount
+                amountButtons.forEach(btn => btn.classList.remove('active'));
+            });
+
+            // Form submission (placeholder for actual payment processing)
+            donationForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const formData = new FormData(this);
+                const amount = formData.get('amount');
+                const category = formData.get('category');
+                const donationType = formData.get('donation-type');
+                
+                if (!amount || amount <= 0) {
+                    alert('Please enter a valid donation amount.');
+                    return;
+                }
+                
+                if (!category) {
+                    alert('Please select a donation category.');
+                    return;
+                }
+                
+                // In WordPress, this would integrate with GiveWP or similar plugin
+                alert(`Thank you! You would now be redirected to securely donate $${amount} to ${category} as a ${donationType} gift.`);
+                
+                console.log('Donation data:', Object.fromEntries(formData));
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - St. Patrick's Catholic Church</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <meta name="description" content="Contact St. Patrick's Catholic Church. Find our address, phone number, office hours, and directions. Get in touch with our pastoral team.">
+</head>
+<body>
+    <!-- Skip to content for accessibility -->
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="/api/placeholder/60/60" alt="St. Patrick's Logo">
+                <div class="logo-text">St. Patrick's Catholic Church</div>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Toggle mobile menu">☰</button>
+            <nav role="navigation">
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="about_us.html">About</a></li>
+                    <li><a href="mass_times.html">Mass Times</a></li>
+                    <li><a href="ministries.html">Ministries</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="give.html">Give</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Contact Us</h1>
+            <p>We're here to serve you and answer your questions</p>
+        </div>
+    </section>
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb">
+        <div class="container">
+            <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+                <a href="index.html">Home</a>
+                <span>›</span>
+                <span>Contact</span>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main id="main-content" class="content-section">
+        <div class="container">
+            <div class="content-grid">
+                <article class="main-content">
+                    <!-- Contact Form -->
+                    <section>
+                        <h2 style="color: var(--primary-color); margin-bottom: 2rem;">Get in Touch</h2>
+                        
+                        <div class="form-container" style="max-width: none;">
+                            <form id="contact-form">
+                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                                    <div class="form-group">
+                                        <label for="first-name">First Name *</label>
+                                        <input type="text" id="first-name" name="first-name" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="last-name">Last Name *</label>
+                                        <input type="text" id="last-name" name="last-name" required>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="email">Email Address *</label>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="phone">Phone Number</label>
+                                    <input type="tel" id="phone" name="phone">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="subject">Subject *</label>
+                                    <select id="subject" name="subject" required>
+                                        <option value="">Select a subject</option>
+                                        <option value="general-inquiry">General Inquiry</option>
+                                        <option value="mass-intentions">Mass Intentions</option>
+                                        <option value="baptism">Baptism Information</option>
+                                        <option value="wedding">Wedding Planning</option>
+                                        <option value="funeral">Funeral Arrangements</option>
+                                        <option value="confession">Confession Appointment</option>
+                                        <option value="religious-education">Religious Education</option>
+                                        <option value="ministries">Ministry Information</option>
+                                        <option value="pastoral-care">Pastoral Care</option>
+                                        <option value="facility-rental">Facility Rental</option>
+                                        <option value="volunteer">Volunteer Opportunities</option>
+                                        <option value="technical-support">Website/Technical Issue</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="message">Message *</label>
+                                    <textarea id="message" name="message" required placeholder="Please provide details about your inquiry..."></textarea>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="preferred-contact">Preferred Contact Method</label>
+                                    <select id="preferred-contact" name="preferred-contact">
+                                        <option value="email">Email</option>
+                                        <option value="phone">Phone</option>
+                                        <option value="either">Either</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <div class="checkbox-group">
+                                        <input type="checkbox" id="newsletter" name="newsletter">
+                                        <label for="newsletter">Subscribe to our parish newsletter</label>
+                                    </div>
+                                </div>
+                                
+                                <button type="submit" class="btn" style="background: var(--primary-color); color: var(--white); width: 100%; padding: 1rem; font-size: 1.1rem;">
+                                    Send Message
+                                </button>
+                            </form>
+                        </div>
+                    </section>
+
+                    <!-- Office Hours & Staff Directory -->
+                    <section style="margin-top: 4rem;">
+                        <h2 style="color: var(--primary-color); margin-bottom: 2rem;">Office Hours & Staff</h2>
+                        
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 3rem;">
+                            <div style="background: var(--light-gray); padding: 2rem; border-radius: 10px;">
+                                <h3 style="color: var(--primary-color); margin-bottom: 1rem;">Parish Office Hours</h3>
+                                <ul style="list-style: none; padding: 0;">
+                                    <li style="margin-bottom: 0.5rem;"><strong>Monday - Thursday:</strong> 9:00 AM - 4:00 PM</li>
+                                    <li style="margin-bottom: 0.5rem;"><strong>Friday:</strong> 9:00 AM - 12:00 PM</li>
+                                    <li style="margin-bottom: 0.5rem;"><strong>Saturday:</strong> 9:00 AM - 12:00 PM</li>
+                                    <li style="margin-bottom: 0.5rem;"><strong>Sunday:</strong> Closed</li>
+                                </ul>
+                                <p style="margin-top: 1rem; font-style: italic; color: var(--text-light);">
+                                    Closed on holidays. Emergency pastoral care available 24/7.
+                                </p>
+                            </div>
+                            
+                            <div style="background: var(--light-gray); padding: 2rem; border-radius: 10px;">
+                                <h3 style="color: var(--primary-color); margin-bottom: 1rem;">Staff Directory</h3>
+                                <ul style="list-style: none; padding: 0;">
+                                    <li style="margin-bottom: 1rem;">
+                                        <strong>Father Michael O'Brien</strong><br>
+                                        Pastor<br>
+                                        <a href="mailto:pastor@stpatricks.com">pastor@stpatricks.com</a>
+                                    </li>
+                                    <li style="margin-bottom: 1rem;">
+                                        <strong>Father James Rodriguez</strong><br>
+                                        Associate Pastor<br>
+                                        <a href="mailto:associate@stpatricks.com">associate@stpatricks.com</a>
+                                    </li>
+                                    <li style="margin-bottom: 1rem;">
+                                        <strong>Mary Catherine Davis</strong><br>
+                                        Parish Manager<br>
+                                        <a href="mailto:manager@stpatricks.com">manager@stpatricks.com</a>
+                                    </li>
+                                    <li>
+                                        <strong>Patricia Johnson</strong><br>
+                                        Director of Religious Education<br>
+                                        <a href="mailto:dre@stpatricks.com">dre@stpatricks.com</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                </article>
+
+                <!-- Sidebar -->
+                <aside class="sidebar">
+                    <!-- Contact Cards -->
+                    <div class="sidebar-widget">
+                        <h3>Contact Information</h3>
+                        
+                        <div style="background: var(--white); border-radius: 10px; overflow: hidden; box-shadow: var(--shadow); margin-bottom: 2rem;">
+                            <div style="background: var(--primary-color); color: var(--white); padding: 1rem; text-align: center;">
+                                <h4>Parish Office</h4>
+                            </div>
+                            <div style="padding: 1.5rem;">
+                                <p><strong>📍 Address:</strong><br>
+                                123 Catholic Street<br>
+                                Lagos, Nigeria</p>
+                                
+                                <p><strong>📞 Phone:</strong><br>
+                                <a href="tel:+2348034567890">+234 803 456 7890</a></p>
+                                
+                                <p><strong>📧 Email:</strong><br>
+                                <a href="mailto:info@stpatricks.com.ng">info@stpatricks.com.ng</a></p>
+                                
+                                <p><strong>📠 Fax:</strong><br>
+                                +234 803 456 7891</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Emergency Contact -->
+                    <div class="sidebar-widget">
+                        <h3>Emergency Pastoral Care</h3>
+                        <div style="background: var(--accent-color); color: var(--text-dark); padding: 1.5rem; border-radius: 10px; text-align: center;">
+                            <h4 style="margin-bottom: 1rem;">24/7 Emergency Line</h4>
+                            <p style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.5rem;">
+                                <a href="tel:+2348034567892" style="color: var(--text-dark);">+234 803 456 7892</a>
+                            </p>
+                            <p style="font-size: 0.9rem;">For urgent pastoral care, last rites, or emergency situations</p>
+                        </div>
+                    </div>
+
+                    <!-- Quick Requests -->
+                    <div class="sidebar-widget">
+                        <h3>Quick Requests</h3>
+                        <ul>
+                            <li><a href="prayer-requests.html">Submit Prayer Request</a></li>
+                            <li><a href="mass-intentions.html">Request Mass Intention</a></li>
+                            <li><a href="bulletins.html">Parish Bulletin</a></li>
+                            <li><a href="calendar.html">Parish Calendar</a></li>
+                            <li><a href="directions.html">Driving Directions</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Social Media -->
+                    <div class="sidebar-widget">
+                        <h3>Follow Us</h3>
+                        <p>Stay connected with daily inspiration and parish updates:</p>
+                        <div class="social-links" style="justify-content: flex-start;">
+                            <a href="#" class="social-icon" aria-label="Facebook">F</a>
+                            <a href="#" class="social-icon" aria-label="Twitter">T</a>
+                            <a href="#" class="social-icon" aria-label="Instagram">I</a>
+                            <a href="#" class="social-icon" aria-label="YouTube">Y</a>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <!-- Contact Info Cards Section -->
+    <section class="content-section" style="background: var(--light-gray);">
+        <div class="container">
+            <h2 style="color: var(--primary-color); text-align: center; margin-bottom: 3rem; font-size: 2.5rem;">Visit Us</h2>
+            
+            <div class="contact-info">
+                <div class="contact-card">
+                    <div class="contact-icon">📍</div>
+                    <h3>Our Location</h3>
+                    <p>123 Catholic Street<br>
+                    Lagos, Nigeria<br>
+                    <a href="#" style="color: var(--primary-color);">Get Directions</a></p>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">🕐</div>
+                    <h3>Office Hours</h3>
+                    <p>Mon-Thu: 9:00 AM - 4:00 PM<br>
+                    Fri: 9:00 AM - 12:00 PM<br>
+                    Sat: 9:00 AM - 12:00 PM<br>
+                    Sun: Closed</p>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">📞</div>
+                    <h3>Phone & Email</h3>
+                    <p>Office: <a href="tel:+2348034567890">+234 803 456 7890</a><br>
+                    Emergency: <a href="tel:+2348034567892">+234 803 456 7892</a><br>
+                    Email: <a href="mailto:info@stpatricks.com.ng">info@stpatricks.com.ng</a></p>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">⛪</div>
+                    <h3>Mass Times</h3>
+                    <p>Sat: 5:00 PM<br>
+                    Sun: 8:00 AM, 10:00 AM, 12:00 PM<br>
+                    Weekdays: 8:30 AM<br>
+                    <a href="mass-times.html" style="color: var(--primary-color);">View Full Schedule</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="content-section">
+        <div class="container">
+            <h2 style="color: var(--primary-color); text-align: center; margin-bottom: 2rem;">Find Us</h2>
+            
+            <div class="map-container">
+                <div class="map-placeholder">
+                    <p>📍 Interactive Map Will Be Embedded Here<br>
+                    (Google Maps or similar mapping service)</p>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 2rem;">
+                <div class="hero-btns">
+                    <a href="#" class="btn btn-primary">Get Directions</a>
+                    <a href="#" class="btn btn-secondary">View in Google Maps</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <p>St. Patrick's Catholic Church<br>
+                    123 Main Street<br>
+                    City, State 12345<br>
+                    Phone: (123) 456-7890<br>
+                    Email: info@stpatricks.com</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="mass-times.html">Mass Times</a></li>
+                        <li><a href="confession.html">Confession Schedule</a></li>
+                        <li><a href="calendar.html">Parish Calendar</a></li>
+                        <li><a href="bulletins.html">Bulletins</a></li>
+                        <li><a href="staff.html">Staff Directory</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="sermons.html">Sermon Archive</a></li>
+                        <li><a href="prayer-requests.html">Prayer Requests</a></li>
+                        <li><a href="formation.html">Faith Formation</a></li>
+                        <li><a href="ministries.html">Ministry Directory</a></li>
+                        <li><a href="giving.html">Online Giving</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Connect With Us</h3>
+                    <p>Follow us on social media for daily inspiration and updates.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-icon" aria-label="Facebook">F</a>
+                        <a href="#" class="social-icon" aria-label="Twitter">T</a>
+                        <a href="#" class="social-icon" aria-label="Instagram">I</a>
+                        <a href="#" class="social-icon" aria-label="YouTube">Y</a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2025 St. Patrick's Catholic Church. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            const nav = document.querySelector('nav ul');
+            nav.classList.toggle('active');
+            
+            const isExpanded = nav.classList.contains('active');
+            this.setAttribute('aria-expanded', isExpanded);
+        });
+
+        // Contact Form Handler (placeholder for WordPress integration)
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const name = formData.get('first-name') + ' ' + formData.get('last-name');
+            const email = formData.get('email');
+            const subject = formData.get('subject');
+            
+            // Placeholder success message
+            alert(`Thank you ${name}! We've received your message about "${subject}" and will respond to ${email} within 24 hours.`);
+            
+            // In WordPress, this would submit via WPForms or Contact Form 7
+            console.log('Contact form data:', Object.fromEntries(formData));
+            
+            // Reset form
+            this.reset();
+        });
+    </script>
+</body>
+</html>

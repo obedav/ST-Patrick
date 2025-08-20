@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources - St. Patrick's Catholic Church</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <meta name="description" content="Access spiritual resources, sermon archives, prayer requests, faith formation materials, and worship aids at St. Patrick's Catholic Church.">
+</head>
+<body>
+    <!-- Skip to content for accessibility -->
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="/api/placeholder/60/60" alt="St. Patrick's Logo">
+                <div class="logo-text">St. Patrick's Catholic Church</div>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Toggle mobile menu">☰</button>
+            <nav role="navigation">
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="about_us.html">About</a></li>
+                    <li><a href="mass_times.html">Mass Times</a></li>
+                    <li><a href="ministries.html">Ministries</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="resources.html" class="active">Resources</a></li>
+                    <li><a href="give.html">Give</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Spiritual Resources</h1>
+            <p>Tools and materials to deepen your faith journey</p>
+        </div>
+    </section>
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb">
+        <div class="container">
+            <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+                <a href="index.html">Home</a>
+                <span>›</span>
+                <span>Resources</span>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main id="main-content" class="content-section">
+        <div class="container">
+            <!-- Resource Categories -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 4rem;">
+                <!-- Sermons & Homilies -->
+                <div style="background: var(--white); border-radius: 15px; box-shadow: var(--shadow); overflow: hidden; transition: var(--transition);" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                    <div style="background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); color: var(--white); padding: 2rem; text-align: center;">
+                        <div style="font-size: 3rem; margin-bottom: 1rem;">🎤</div>
+                        <h3 style="font-size: 1.5rem;">Sermon Archive</h3>
+                    </div>
+                    <div style="padding: 2rem;">
+                        <p style="margin-bottom: 1.5rem; color: var(--text-light);">
+                            Listen to past homilies and sermons from our pastoral team. Search by date, topic, or scripture passage.
+                        </p>
+                        <div style="background: var(--light-gray); padding: 1rem; border-radius: 5px; margin-bottom: 1.5rem; font-size: 0.9rem;">
+                            <strong>WordPress Integration:</strong> Will use "Sermon Manager" plugin for audio/video management and search functionality.
+                        </div>
+                        <a href="#" class="btn" style="background: var(--primary-color); color: var(--white); width: 100%; text-align: center;">Browse Sermons</a>
+                    </div>
+                </div>
+
+                <!-- Prayer Requests -->
+                <div style="background: var(--white); border-radius: 15px; box-shadow: var(--shadow); overflow: hidden; transition: var(--transition);" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                    <div style="background: linear-gradient(135deg, var(--accent-color), #e6c547); color: var(--text-dark); padding: 2rem; text-align: center;">
+                        <div style="font-size: 3rem; margin-bottom: 1rem;">🙏</div>
+                        <h3 style="font-size: 1.5rem;">Prayer Requests</h3>
+                    </div>
+                    <div style="padding: 2rem;">
+                        <p style="margin-bottom: 1.5rem; color: var(--text-light);">
+                            Submit your prayer intentions to be included in our masses and prayer gatherings. Our community will lift you up in prayer.
+                        </p>
+                        <div style="background: var(--light-gray); padding: 1rem; border-radius: 5px; margin-bottom: 1.5rem; font-size: 0.9rem;">
+                            <strong>WordPress Integration:</strong> Will use "WPForms" for secure submission and pastoral team notifications.
+                        </div>
+                        <a href="#prayer-form" class="btn" style="background: var(--accent-color); color: var(--text-dark); width: 100%; text-align: center;">Submit Prayer Request</a>
+                    </div>
+                </div>
+
+                <!-- Faith Formation -->
+                <div style="background: var(--white); border-radius: 15px; box-shadow: var(--shadow); overflow: hidden; transition: var(--transition);" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                    <div style="background: linear-gradient(135deg, #8B4513, #A0522D); color: var(--white); padding: 2rem; text-align: center;">
+                        <div style="font-size: 3rem; margin-bottom: 1rem;">📚</div>
+                        <h3 style="font-size: 1.5rem;">Faith Formation</h3>
+                    </div>
+                    <div style="padding: 2rem;">
+                        <p style="margin-bottom: 1.5rem; color: var(--text-light);">
+                            Access study guides, faith formation materials, and educational resources for all ages and stages of faith development.
+                        </p>
+                        <ul style="margin-bottom: 1.5rem; color: var(--text-light);">
+                            <li>Bible study guides</li>
+                            <li>RCIA materials</li>
+                            <li>Children's resources</li>
+                            <li>Adult education</li>
+                        </ul>
+                        <a href="#" class="btn" style="background: #8B4513; color: var(--white); width: 100%; text-align: center;">Explore Materials</a>
+                    </div>
+                </div>
+
+                <!-- Parish Bulletins -->
+                <div style="background: var(--white); border-radius: 15px; box-shadow: var(--shadow); overflow: hidden; transition: var(--transition);" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                    <div style="background: linear-gradient(135deg, #4ECDC4, #5FD4CD); color: var(--white); padding: 2rem; text-align: center;">
+                        <div style="font-size: 3rem; margin-bottom: 1rem;">📰</div>
+                        <h3 style="font-size: 1.5rem;">Parish Bulletins</h3>
+                    </div>
+                    <div style="padding: 2rem;">
+                        <p style="margin-bottom: 1.5rem; color: var(--text-light);">
+                            Read current and past parish bulletins with announcements, schedules, and parish news.
+                        </p>
+                        <div style="margin-bottom: 1.5rem;">
+                            <div style="background: var(--light-gray); padding: 1rem; border-radius: 5px; margin-bottom: 1rem;">
+                                <strong>This Week:</strong> March 16, 2025<br>
+                                <span style="font-size: 0.9rem; color: var(--text-light);">4 pages • Special St. Patrick's Day edition</span>
+                            </div>
+                        </div>
+                        <a href="#" class="btn" style="background: #4ECDC4; color: var(--white); width: 100%; text-align: center;">View Bulletins</a>
+                    </div>
+                </div>
+
+                <!-- Daily Readings -->
+                <div style="background: var(--white); border-radius: 15px; box-shadow: var(--shadow); overflow: hidden; transition: var(--transition);" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                    <div style="background: linear-gradient(135deg, #9B59B6, #AF7AC5); color: var(--white); padding: 2rem; text-align: center;">
+                        <div style="font-size: 3rem; margin-bottom: 1rem;">📖</div>
+                        <h3 style="font-size: 1.5rem;">Daily Readings</h3>
+                    </div>
+                    <div style="padding: 2rem;">
+                        <p style="margin-bottom: 1.5rem; color: var(--text-light);">
+                            Follow along with daily Mass readings, psalms, and gospel passages according to the liturgical calendar.
+                        </p>
+                        <div style="background: var(--light-gray); padding: 1rem; border-radius: 5px; margin-bottom: 1.5rem;">
+                            <strong>Today's Reading:</strong><br>
+                            <span style="font-size: 0.9rem;">Jeremiah 1:11-19 • Psalm 1 • Matthew 13:31-35</span>
+                        </div>
+                        <a href="#" class="btn" style="background: #9B59B6; color: var(--white); width: 100%; text-align: center;">Today's Readings</a>
+                    </div>
+                </div>
+
+                <!-- Worship Aids -->
+                <div style="background: var(--white); border-radius: 15px; box-shadow: var(--shadow); overflow: hidden; transition: var(--transition);" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                    <div style="background: linear-gradient(135deg, #E74C3C, #F1948A); color: var(--white); padding: 2rem; text-align: center;">
+                        <div style="font-size: 3rem; margin-bottom: 1rem;">🎵</div>
+                        <h3 style="font-size: 1.5rem;">Worship Aids</h3>
+                    </div>
+                    <div style="padding: 2rem;">
+                        <p style="margin-bottom: 1.5rem; color: var(--text-light);">
+                            Download worship aids, hymn sheets, and liturgical guides to enhance your participation in Mass.
+                        </p>
+                        <ul style="margin-bottom: 1.5rem; color: var(--text-light);">
+                            <li>Sunday worship aids</li>
+                            <li>Seasonal hymns</li>
+                            <li>Prayer cards</li>
+                            <li>Liturgical calendars</li>
+                        </ul>
+                        <a href="#" class="btn" style="background: #E74C3C; color: var(--white); width: 100%; text-align: center;">Download Aids</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Featured Content Sections -->
+            <div class="content-grid">
+                <article class="main-content">
+                    <!-- Sermon Archive Section -->
+                    <section style="margin-bottom: 4rem;">
+                        <h2 style="color: var(--primary-color); margin-bottom: 2rem;">Recent Sermons</h2>
+                        
+                        <div style="background: var(--light-gray); padding: 2rem; border-radius: 10px; margin-bottom: 2rem;">
+                            <p style="text-align: center; color: var(--text-light); margin-bottom: 1rem;">
+                                <strong>🔧 WordPress Integration Notice</strong>
+                            </p>
+                            <p style="text-align: center; color: var(--text-light);">
+                                This section will be powered by the "Sermon Manager" plugin, providing audio/video streaming, downloads, and search functionality.
+                            </p>
+                        </div>
+
+                        <!-- Sample Sermon Entries -->
+                        <div style="space-y: 2rem;">
+                            <!-- Sermon 1 -->
+                            <div style="background: var(--white); border-radius: 10px; box-shadow: var(--shadow); overflow: hidden; margin-bottom: 2rem;">
+                                <div style="display: grid; grid-template-columns: 150px 1fr auto; min-height: 120px;">
+                                    <div style="background: var(--primary-color); color: var(--white); padding: 1.5rem; display: flex; flex-direction: column; justify-content: center; text-align: center;">
+                                        <div style="font-size: 1.2rem; font-weight: bold;">MAR</div>
+                                        <div style="font-size: 1.8rem; font-weight: bold;">10</div>
+                                        <div style="font-size: 0.9rem;">2025</div>
+                                    </div>
+                                    <div style="padding: 1.5rem;">
+                                        <h3 style="color: var(--primary-color); margin-bottom: 0.5rem;">Living Out Our Faith in Daily Life</h3>
+                                        <p style="color: var(--text-light); margin-bottom: 0.5rem; font-size: 0.9rem;">
+                                            <strong>Father Michael O'Brien</strong> • Matthew 5:13-16 • 18 minutes
+                                        </p>
+                                        <p style="color: var(--text-light); font-size: 0.9rem;">
+                                            Exploring how we can be salt and light in our everyday interactions and decisions...
+                                        </p>
+                                    </div>
+                                    <div style="padding: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                                        <a href="#" class="btn" style="background: var(--primary-color); color: var(--white); padding: 0.5rem 1rem; font-size: 0.9rem;">🎧 Listen</a>
+                                        <a href="#" class="btn" style="background: var(--light-gray); color: var(--text-dark); padding: 0.5rem 1rem; font-size: 0.9rem;">📄 Notes</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Sermon 2 -->
+                            <div style="background: var(--white); border-radius: 10px; box-shadow: var(--shadow); overflow: hidden; margin-bottom: 2rem;">
+                                <div style="display: grid; grid-template-columns: 150px 1fr auto; min-height: 120px;">
+                                    <div style="background: var(--secondary-color); color: var(--white); padding: 1.5rem; display: flex; flex-direction: column; justify-content: center; text-align: center;">
+                                        <div style="font-size: 1.2rem; font-weight: bold;">MAR</div>
+                                        <div style="font-size: 1.8rem; font-weight: bold;">03</div>
+                                        <div style="font-size: 0.9rem;">2025</div>
+                                    </div>
+                                    <div style="padding: 1.5rem;">
+                                        <h3 style="color: var(--primary-color); margin-bottom: 0.5rem;">The Call to Discipleship</h3>
+                                        <p style="color: var(--text-light); margin-bottom: 0.5rem; font-size: 0.9rem;">
+                                            <strong>Father James Rodriguez</strong> • Luke 9:23-26 • 15 minutes
+                                        </p>
+                                        <p style="color: var(--text-light); font-size: 0.9rem;">
+                                            Understanding what it means to take up our cross and follow Jesus in modern times...
+                                        </p>
+                                    </div>
+                                    <div style="padding: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                                        <a href="#" class="btn" style="background: var(--primary-color); color: var(--white); padding: 0.5rem 1rem; font-size: 0.9rem;">🎧 Listen</a>
+                                        <a href="#" class="btn" style="background: var(--light-gray); color: var(--text-dark); padding: 0.5rem 1rem; font-size: 0.9rem;">📄 Notes</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Sermon 3 -->
+                            <div style="background: var(--white); border-radius: 10px; box-shadow: var(--shadow); overflow: hidden; margin-bottom: 2rem;">
+                                <div style="display: grid; grid-template-columns: 150px 1fr auto; min-height: 120px;">
+                                    <div style="background: var(--accent-color); color: var(--text-dark); padding: 1.5rem; display: flex; flex-direction: column; justify-content: center; text-align: center;">
+                                        <div style="font-size: 1.2rem; font-weight: bold;">FEB</div>
+                                        <div style="font-size: 1.8rem; font-weight: bold;">24</div>
+                                        <div style="font-size: 0.9rem;">2025</div>
+                                    </div>
+                                    <div style="padding: 1.5rem;">
+                                        <h3 style="color: var(--primary-color); margin-bottom: 0.5rem;">Love Your Enemies</h3>
+                                        <p style="color: var(--text-light); margin-bottom: 0.5rem; font-size: 0.9rem;">
+                                            <strong>Father Michael O'Brien</strong> • Matthew 5:38-48 • 20 minutes
+                                        </p>
+                                        <p style="color: var(--text-light); font-size: 0.9rem;">
+                                            Jesus' radical teaching on forgiveness and love challenges us to transform our hearts...
+                                        </p>
+                                    </div>
+                                    <div style="padding: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                                        <a href="#" class="btn" style="background: var(--primary-color); color: var(--white); padding: 0.5rem 1rem; font-size: 0.9rem;">🎧 Listen</a>
+                                        <a href="#" class="btn" style="background: var(--light-gray); color: var(--text-dark); padding: 0.5rem 1rem; font-size: 0.9rem;">📄 Notes</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="text-align: center; margin-top: 2rem;">
+                            <a href="#" class="btn" style="background: var(--primary-color); color: var(--white); padding: 1rem 2rem;">View All Sermons</a>
+                        </div>
+                    </section>
+
+                    <!-- Prayer Request Form -->
+                    <section id="prayer-form" style="margin-bottom: 4rem;">
+                        <h2 style="color: var(--primary-color); margin-bottom: 2rem;">Submit a Prayer Request</h2>
+                        
+                        <div class="form-container">
+                            <div style="background: var(--light-gray); padding: 1.5rem; border-radius: 10px; margin-bottom: 2rem;">
+                                <h4 style="color: var(--primary-color); margin-bottom: 1rem;">🙏 Our Prayer Promise</h4>
+                                <p>Your prayer intentions will be included in our daily prayers and weekly Mass intentions. All requests are kept confidential unless you choose to share them publicly.</p>
+                            </div>
+
+                            <form id="prayer-request-form">
+                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                                    <div class="form-group">
+                                        <label for="first-name">First Name</label>
+                                        <input type="text" id="first-name" name="first-name">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="last-name">Last Name</label>
+                                        <input type="text" id="last-name" name="last-name">
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="email">Email Address (optional)</label>
+                                    <input type="email" id="email" name="email">
+                                    <small style="color: var(--text-light);">We'll only use this to follow up if you request it</small>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="prayer-type">Type of Prayer Request</label>
+                                    <select id="prayer-type" name="prayer-type">
+                                        <option value="">Select a category</option>
+                                        <option value="healing">Healing & Health</option>
+                                        <option value="family">Family & Relationships</option>
+                                        <option value="guidance">Guidance & Wisdom</option>
+                                        <option value="thanksgiving">Thanksgiving & Gratitude</option>
+                                        <option value="grief">Grief & Loss</option>
+                                        <option value="employment">Employment & Financial</option>
+                                        <option value="spiritual">Spiritual Growth</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="prayer-request">Prayer Request *</label>
+                                    <textarea id="prayer-request" name="prayer-request" required placeholder="Please share your prayer intention..."></textarea>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <div class="checkbox-group">
+                                        <input type="checkbox" id="anonymous" name="anonymous" checked>
+                                        <label for="anonymous">Keep this request anonymous</label>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <div class="checkbox-group">
+                                        <input type="checkbox" id="share-with-prayer-group" name="share-with-prayer-group">
+                                        <label for="share-with-prayer-group">Share with our prayer ministry group</label>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <div class="checkbox-group">
+                                        <input type="checkbox" id="follow-up" name="follow-up">
+                                        <label for="follow-up">I would like someone to follow up with me</label>
+                                    </div>
+                                </div>
+                                
+                                <button type="submit" class="btn" style="background: var(--primary-color); color: var(--white); width: 100%; padding: 1rem; font-size: 1.1rem;">
+                                    Submit Prayer Request
+                                </button>
+                            </form>
+                        </div>
+                    </section>
+
+                    <!-- Faith Formation Resources -->
+                    <section>
+                        <h2 style="color: var(--primary-color); margin-bottom: 2rem;">Faith Formation Resources</h2>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+                            <!-- Bible Study -->
+                            <div style="background: var(--white); padding: 1.5rem; border-radius: 10px; box-shadow: var(--shadow);">
+                                <h4 style="color: var(--primary-color); margin-bottom: 1rem;">📖 Bible Study Guides</h4>
+                                <ul style="margin-bottom: 1.5rem;">
+                                    <li><a href="#">Gospel of John Study</a></li>
+                                    <li><a href="#">Psalms Reflection Guide</a></li>
+                                    <li><a href="#">Acts of the Apostles</a></li>
+                                    <li><a href="#">Catholic Social Teaching</a></li>
+                                </ul>
+                                <a href="#" class="btn" style="width: 100%; text-align: center;">View All Guides</a>
+                            </div>
+
+                            <!-- RCIA Materials -->
+                            <div style="background: var(--white); padding: 1.5rem; border-radius: 10px; box-shadow: var(--shadow);">
+                                <h4 style="color: var(--primary-color); margin-bottom: 1rem;">⛪ RCIA Resources</h4>
+                                <ul style="margin-bottom: 1.5rem;">
+                                    <li><a href="#">What is RCIA?</a></li>
+                                    <li><a href="#">Catholic Beliefs Overview</a></li>
+                                    <li><a href="#">Sacraments Explained</a></li>
+                                    <li><a href="#">RCIA Registration</a></li>
+                                </ul>
+                                <a href="#" class="btn" style="width: 100%; text-align: center;">Learn More</a>
+                            </div>
+
+                            <!-- Children's Resources -->
+                            <div style="background: var(--white); padding: 1.5rem; border-radius: 10px; box-shadow: var(--shadow);">
+                                <h4 style="color: var(--primary-color); margin-bottom: 1rem;">👶 Children's Faith</h4>
+                                <ul style="margin-bottom: 1.5rem;">
+                                    <li><a href="#">Children's Prayer Cards</a></li>
+                                    <li><a href="#">Saints Coloring Pages</a></li>
+                                    <li><a href="#">Family Prayer Ideas</a></li>
+                                    <li><a href="#">Religious Ed Materials</a></li>
+                                </ul>
+                                <a href="#" class="btn" style="width: 100%; text-align: center;">Download Resources</a>
+                            </div>
+
+                            <!-- Adult Education -->
+                            <div style="background: var(--white); padding: 1.5rem; border-radius: 10px; box-shadow: var(--shadow);">
+                                <h4 style="color: var(--primary-color); margin-bottom: 1rem;">🎓 Adult Education</h4>
+                                <ul style="margin-bottom: 1.5rem;">
+                                    <li><a href="#">Theology on Tap</a></li>
+                                    <li><a href="#">Marriage Enrichment</a></li>
+                                    <li><a href="#">Spiritual Direction</a></li>
+                                    <li><a href="#">Book Club Selections</a></li>
+                                </ul>
+                                <a href="#" class="btn" style="width: 100%; text-align: center;">Explore Programs</a>
+                            </div>
+                        </div>
+                    </section>
+                </article>
+
+                <!-- Sidebar -->
+                <aside class="sidebar">
+                    <!-- Quick Access -->
+                    <div class="sidebar-widget">
+                        <h3>Quick Access</h3>
+                        <ul>
+                            <li><a href="#">📰 This Week's Bulletin</a></li>
+                            <li><a href="#">📖 Today's Readings</a></li>
+                            <li><a href="#">🎵 Sunday's Hymns</a></li>
+                            <li><a href="#">📅 Liturgical Calendar</a></li>
+                            <li><a href="#">🕐 Mass Times</a></li>
+                            <li><a href="#">💒 Confession Schedule</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Featured Resource -->
+                    <div class="sidebar-widget">
+                        <h3>Featured Resource</h3>
+                        <div style="background: var(--primary-color); color: var(--white); padding: 1.5rem; border-radius: 10px; text-align: center;">
+                            <h4 style="margin-bottom: 1rem;">Lenten Prayer Guide</h4>
+                            <p style="margin-bottom: 1rem; font-size: 0.9rem;">
+                                A 40-day journey of prayer, fasting, and almsgiving to prepare for Easter.
+                            </p>
+                            <a href="#" class="btn" style="background: var(--white); color: var(--primary-color);">Download Now</a>
+                        </div>
+                    </div>
+
+                    <!-- Contact -->
+                    <div class="sidebar-widget">
+                        <h3>Need Help?</h3>
+                        <p>Can't find what you're looking for? Contact our office and we'll be happy to help.</p>
+                        <p><strong>Phone:</strong> (123) 456-7890<br>
+                        <strong>Email:</strong> resources@stpatricks.com</p>
+                    </div>
+
+                    <!-- Newsletter -->
+                    <div class="sidebar-widget">
+                        <h3>Weekly Resources</h3>
+                        <p>Get spiritual resources, prayer intentions, and faith formation materials delivered weekly.</p>
+                        <form class="newsletter-form">
+                            <input type="email" placeholder="Your email" required>
+                            <button type="submit" class="btn">Subscribe</button>
+                        </form>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <p>St. Patrick's Catholic Church<br>
+                    123 Main Street<br>
+                    City, State 12345<br>
+                    Phone: (123) 456-7890<br>
+                    Email: info@stpatricks.com</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="mass-times.html">Mass Times</a></li>
+                        <li><a href="confession.html">Confession Schedule</a></li>
+                        <li><a href="calendar.html">Parish Calendar</a></li>
+                        <li><a href="bulletins.html">Bulletins</a></li>
+                        <li><a href="staff.html">Staff Directory</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="sermons.html">Sermon Archive</a></li>
+                        <li><a href="prayer-requests.html">Prayer Requests</a></li>
+                        <li><a href="formation.html">Faith Formation</a></li>
+                        <li><a href="ministries.html">Ministry Directory</a></li>
+                        <li><a href="giving.html">Online Giving</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Connect With Us</h3>
+                    <p>Follow us on social media for daily inspiration and updates.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-icon" aria-label="Facebook">F</a>
+                        <a href="#" class="social-icon" aria-label="Twitter">T</a>
+                        <a href="#" class="social-icon" aria-label="Instagram">I</a>
+                        <a href="#" class="social-icon" aria-label="YouTube">Y</a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2025 St. Patrick's Catholic Church. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            const nav = document.querySelector('nav ul');
+            nav.classList.toggle('active');
+            
+            const isExpanded = nav.classList.contains('active');
+            this.setAttribute('aria-expanded', isExpanded);
+        });
+
+        // Prayer Request Form Handler
+        document.getElementById('prayer-request-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const prayerType = formData.get('prayer-type') || 'General';
+            const isAnonymous = formData.get('anonymous') ? 'anonymous' : 'named';
+            
+            alert(`Thank you for your prayer request. Your ${isAnonymous} ${prayerType.toLowerCase()} prayer intention has been received and will be included in our daily prayers.`);
+            
+            // In WordPress, this would submit via WPForms and notify pastoral team
+            console.log('Prayer request data:', Object.fromEntries(formData));
+            
+            // Reset form
+            this.reset();
+        });
+
+        // Newsletter form handler
+        document.querySelector('.newsletter-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for subscribing! This will be connected to our newsletter system in WordPress.');
+        });
+
+        // Smooth scrolling for prayer form link
+        document.querySelectorAll('a[href="#prayer-form"]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.getElementById('prayer-form').scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
