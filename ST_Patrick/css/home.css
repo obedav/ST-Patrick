@@ -105,7 +105,7 @@ body.home-page nav a.active {
     background: rgba(255, 215, 0, 0.2);
     border-color: var(--accent-color);
     color: var(--accent-color);
-}
+}    
 
 /* Fixed Hero Background - HOME PAGE ONLY */
 body.home-page .fixed-hero-background {
