@@ -1,0 +1,529 @@
+/* about.css - About Page Specific Styles */
+/* This file contains styles specific to the about page */
+
+/* Page Header */
+.page-header {
+    background: linear-gradient(rgba(26, 35, 126, 0.9), rgba(46, 125, 50, 0.8)), 
+                url('/api/placeholder/1200/400') center/cover;
+    color: var(--white);
+    padding: 4rem 0 2rem;
+    text-align: center;
+}
+
+.page-header h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.page-header p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.scripture-reference {
+    font-size: 1rem;
+    color: var(--accent-color);
+    margin-top: 1rem;
+    font-weight: bold;
+}
+
+/* Parish Anthem Section */
+.parish-anthem {
+    padding: 4rem 0;
+    background: var(--light-gray);
+}
+
+.anthem-container {
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    gap: 4rem;
+    align-items: center;
+}
+
+.anthem-text {
+    background: var(--white);
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    border-left: 5px solid var(--primary-color);
+}
+
+.anthem-verse {
+    font-size: 1.3rem;
+    line-height: 1.8;
+    color: var(--text-dark);
+    font-style: italic;
+    text-align: center;
+}
+
+.anthem-verse strong {
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.anthem-image img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+}
+
+/* Content Section */
+.content-section {
+    padding: 4rem 0;
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+}
+
+.main-content h2 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+.main-content h3 {
+    color: var(--primary-color);
+    margin: 2rem 0 1rem;
+    font-size: 1.5rem;
+}
+
+.main-content p {
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+    color: var(--text-dark);
+}
+
+.main-content ul {
+    margin-bottom: 1.5rem;
+    padding-left: 2rem;
+}
+
+.main-content li {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+}
+
+/* History Section */
+.history-section {
+    margin-bottom: 4rem;
+}
+
+.history-content {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+}
+
+.timeline-highlight {
+    background: var(--warm-beige);
+    padding: 2rem;
+    border-radius: 15px;
+    margin-top: 2rem;
+    border-left: 4px solid var(--accent-color);
+}
+
+.timeline-highlight h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.timeline-highlight ul {
+    list-style: none;
+    padding: 0;
+}
+
+.timeline-highlight li {
+    padding: 0.8rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.timeline-highlight li:last-child {
+    border-bottom: none;
+}
+
+/* Mission & Vision Section */
+.mission-section {
+    margin-bottom: 4rem;
+}
+
+.mission-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.mission-card,
+.vision-card {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+}
+
+.mission-card {
+    border-top: 4px solid var(--primary-color);
+}
+
+.vision-card {
+    border-top: 4px solid var(--secondary-color);
+}
+
+/* Parish Structure */
+.parish-structure {
+    margin-bottom: 4rem;
+}
+
+.structure-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.structure-item {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    text-align: center;
+    transition: var(--transition);
+}
+
+.structure-item:hover {
+    transform: translateY(-5px);
+}
+
+.structure-icon {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.structure-item h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+/* Registration Call */
+.registration-call {
+    background: var(--warm-beige);
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    border-top: 4px solid var(--accent-color);
+}
+
+.registration-content h3 {
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.registration-questions {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 15px;
+    margin: 2rem 0;
+    box-shadow: var(--shadow);
+}
+
+.registration-questions ul {
+    list-style: none;
+    padding: 0;
+}
+
+.registration-questions li {
+    padding: 0.8rem 0;
+    border-bottom: 1px solid var(--border-color);
+    font-weight: 500;
+    color: var(--primary-color);
+}
+
+.registration-questions li:before {
+    content: "❓ ";
+    margin-right: 0.5rem;
+}
+
+.registration-cta {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.registration-cta .btn {
+    margin: 0 0.5rem;
+}
+
+/* Pastoral Team Section */
+.pastoral-team-section {
+    padding: 4rem 0;
+    background: var(--light-gray);
+}
+
+.staff-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.staff-card {
+    background: var(--white);
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.staff-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.staff-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: 0 auto 1rem;
+    overflow: hidden;
+}
+
+.staff-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.staff-name {
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.staff-role {
+    color: var(--accent-color);
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.staff-bio {
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+.staff-contact {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+/* Call to Service */
+.call-to-service {
+    padding: 4rem 0;
+    background: var(--primary-color);
+    color: var(--white);
+    text-align: center;
+}
+
+.service-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.service-quote blockquote {
+    font-size: 1.3rem;
+    font-style: italic;
+    margin: 2rem 0;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    border-left: 4px solid var(--accent-color);
+}
+
+.service-quote cite {
+    color: var(--accent-color);
+    font-weight: bold;
+}
+
+.service-questions ul {
+    list-style: none;
+    text-align: left;
+    max-width: 600px;
+    margin: 2rem auto;
+}
+
+.service-questions li {
+    padding: 0.8rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 1.1rem;
+}
+
+.service-questions li:before {
+    content: "▶ ";
+    color: var(--accent-color);
+    margin-right: 0.5rem;
+}
+
+.service-cta {
+    margin-top: 3rem;
+}
+
+.service-cta .btn {
+    margin: 0 1rem;
+}
+
+/* Sidebar */
+.sidebar {
+    background: var(--warm-beige);
+    padding: 2rem;
+    border-radius: 15px;
+    height: fit-content;
+    border: 1px solid var(--border-color);
+}
+
+.sidebar-widget {
+    margin-bottom: 2rem;
+}
+
+.sidebar-widget:last-child {
+    margin-bottom: 0;
+}
+
+.sidebar-widget h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 0.5rem;
+}
+
+.sidebar-widget ul {
+    list-style: none;
+}
+
+.sidebar-widget ul li {
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.sidebar-widget ul li:last-child {
+    border-bottom: none;
+}
+
+/* Quick Info Widget */
+.quick-info-list {
+    background: var(--white);
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+}
+
+.info-item {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.info-item:last-child {
+    border-bottom: none;
+}
+
+.stats-list {
+    background: var(--white);
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+}
+
+.stat-item {
+    text-align: center;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.stat-item:last-child {
+    border-bottom: none;
+}
+
+.stat-item .stat-number {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    display: block;
+}
+
+.stat-item .stat-label {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-top: 0.2rem;
+}
+
+.contact-details {
+    background: var(--white);
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+}
+
+.contact-item {
+    padding: 0.8rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.contact-item:last-child {
+    border-bottom: none;
+}
+
+/* Responsive Design for About Page */
+@media (max-width: 768px) {
+    .anthem-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+    }
+
+    .mission-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .structure-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .content-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .page-header h1 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .parish-anthem h2 {
+        font-size: 2rem;
+    }
+    
+    .anthem-verse {
+        font-size: 1.1rem;
+        padding: 1.5rem;
+    }
+
+    .page-header h1 {
+        font-size: 2rem;
+    }
+
+    .registration-cta .btn {
+        display: block;
+        margin: 0.5rem auto;
+        max-width: 250px;
+    }
+}

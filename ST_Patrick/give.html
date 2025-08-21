@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Online Giving - St. Patrick's Catholic Church</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <meta name="description" content="Support St. Patrick's Catholic Church through secure online giving. Make one-time or recurring donations to support our ministries and mission.">
+    <title>Online Giving - St. Patrick's Catholic Church, Lagos</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/header-footer.css">
+    <link rel="stylesheet" href="css/give.css">
+    <meta name="description" content="Support St. Patrick's Catholic Church Lagos through secure online giving. Tithes, offerings, special collections, and ministry support available.">
 </head>
 <body>
     <!-- Skip to content for accessibility -->
@@ -16,7 +18,10 @@
         <div class="container header-container">
             <div class="logo">
                 <img src="/api/placeholder/60/60" alt="St. Patrick's Logo">
-                <div class="logo-text">St. Patrick's Catholic Church</div>
+                <div class="logo-text-container">
+                    <div class="logo-text">St. Patrick's Catholic Church</div>
+                    <div class="logo-subtitle">Lagos, Nigeria</div>
+                </div>
             </div>
             <button class="mobile-menu-btn" aria-label="Toggle mobile menu">☰</button>
             <nav role="navigation">
@@ -35,442 +40,492 @@
     </header>
 
     <!-- Page Header -->
-    <section class="page-header">
+    <section class="page-header giving-header">
         <div class="container">
-            <h1>Online Giving</h1>
-            <p>Support our mission and ministries through secure online donations</p>
-        </div>
-    </section>
-
-    <!-- Breadcrumb -->
-    <section class="breadcrumb">
-        <div class="container">
-            <nav class="breadcrumb-nav" aria-label="Breadcrumb">
-                <a href="index.html">Home</a>
-                <span>›</span>
-                <span>Online Giving</span>
-            </nav>
+            <h1>Your Donations Keep the Candles Lit</h1>
+            <p>The Parish appreciates our donors for your many support in cash or kind. With these contributions, we keep the activities of the parish going.</p>
+            <div class="blessing-text">
+                <em>"May the Lord bless your silent contributions, answer your private intentions, and meet you at every point of your need. Amen!"</em>
+            </div>
         </div>
     </section>
 
     <!-- Main Content -->
-    <main id="main-content" class="content-section">
-        <div class="container">
-            <!-- Introduction -->
-            <div style="text-align: center; max-width: 800px; margin: 0 auto 4rem;">
-                <h2 style="color: var(--primary-color); margin-bottom: 1rem;">Your Generosity Makes a Difference</h2>
-                <p style="font-size: 1.2rem; line-height: 1.7; color: var(--text-dark);">
-                    Thank you for considering a gift to St. Patrick's Catholic Church. Your generous donations help us maintain our beautiful worship space, 
-                    support our many ministries, and serve those in need in our community. Every gift, no matter the size, makes a meaningful impact.
-                </p>
-            </div>
-
-            <div class="content-grid">
-                <article class="main-content">
-                    <!-- Online Giving Form -->
-                    <section>
-                        <div class="form-container" style="max-width: none;">
-                            <h2 style="color: var(--primary-color); text-align: center; margin-bottom: 2rem;">Make a Donation</h2>
+    <main id="main-content">
+        <!-- Giving Options Section -->
+        <section class="giving-options">
+            <div class="container">
+                <h2>Ways to Support Our Parish</h2>
+                
+                <div class="giving-methods-grid">
+                    <!-- Tithes & Regular Donations -->
+                    <div class="giving-method-card primary-giving">
+                        <div class="giving-icon">
+                            <img src="/api/placeholder/300/200" alt="Tithes and Donations" />
+                        </div>
+                        <div class="giving-content">
+                            <h3>Tithes & Regular Donations</h3>
+                            <p>Support the regular operations of our parish including maintenance, utilities, staff salaries, and pastoral programs.</p>
                             
-                            <form id="donation-form">
-                                <!-- Donation Type -->
-                                <div class="form-group">
-                                    <label>Donation Type *</label>
-                                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 0.5rem;">
-                                        <div>
-                                            <input type="radio" id="one-time" name="donation-type" value="one-time" checked>
-                                            <label for="one-time" style="margin-left: 0.5rem; font-weight: normal;">One-Time Gift</label>
-                                        </div>
-                                        <div>
-                                            <input type="radio" id="recurring" name="donation-type" value="recurring">
-                                            <label for="recurring" style="margin-left: 0.5rem; font-weight: normal;">Recurring Gift</label>
-                                        </div>
-                                    </div>
+                            <div class="account-details">
+                                <h4>Bank Account Details</h4>
+                                <div class="bank-info">
+                                    <strong>Account Name:</strong> St. Patrick's Catholic Church Lagos<br>
+                                    <strong>Bank:</strong> First Bank of Nigeria<br>
+                                    <strong>Account Number:</strong> 2012345678<br>
+                                    <strong>Sort Code:</strong> 011156845
                                 </div>
-
-                                <!-- Frequency (for recurring donations) -->
-                                <div class="form-group" id="frequency-group" style="display: none;">
-                                    <label for="frequency">Frequency</label>
-                                    <select id="frequency" name="frequency">
-                                        <option value="weekly">Weekly</option>
-                                        <option value="monthly" selected>Monthly</option>
-                                        <option value="quarterly">Quarterly</option>
-                                        <option value="annually">Annually</option>
-                                    </select>
-                                </div>
-
-                                <!-- Donation Categories -->
-                                <div class="form-group">
-                                    <label for="category">Donation Category *</label>
-                                    <select id="category" name="category" required>
-                                        <option value="">Select a category</option>
-                                        <option value="general-fund">General Fund</option>
-                                        <option value="building-maintenance">Building & Maintenance</option>
-                                        <option value="religious-education">Religious Education</option>
-                                        <option value="youth-ministry">Youth Ministry</option>
-                                        <option value="music-ministry">Music Ministry</option>
-                                        <option value="outreach">Community Outreach</option>
-                                        <option value="st-vincent-de-paul">St. Vincent de Paul Society</option>
-                                        <option value="special-collections">Special Collections</option>
-                                        <option value="memorial">Memorial Fund</option>
-                                        <option value="other">Other (specify in comments)</option>
-                                    </select>
-                                </div>
-
-                                <!-- Amount Selection -->
-                                <div class="form-group">
-                                    <label>Donation Amount *</label>
-                                    <div class="donation-amounts">
-                                        <button type="button" class="amount-btn" data-amount="1000">₦1,000</button>
-                                        <button type="button" class="amount-btn" data-amount="2500">₦2,500</button>
-                                        <button type="button" class="amount-btn" data-amount="5000">₦5,000</button>
-                                        <button type="button" class="amount-btn" data-amount="10000">₦10,000</button>
-                                        <button type="button" class="amount-btn" data-amount="25000">₦25,000</button>
-                                        <button type="button" class="amount-btn" data-amount="other">Other</button>
-                                    </div>
-                                    <div style="margin-top: 1rem;">
-                                        <input type="number" id="custom-amount" name="amount" placeholder="Enter custom amount (₦)" min="1" step="1" style="width: 100%;">
-                                    </div>
-                                </div>
-
-                                <!-- Donor Information -->
-                                <h3 style="color: var(--primary-color); margin: 2rem 0 1rem;">Donor Information</h3>
-                                
-                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
-                                    <div class="form-group">
-                                        <label for="first-name">First Name *</label>
-                                        <input type="text" id="first-name" name="first-name" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="last-name">Last Name *</label>
-                                        <input type="text" id="last-name" name="last-name" required>
-                                    </div>
+                            </div>
+                            
+                            <div class="online-giving-section">
+                                <h4>Give Online (Secure)</h4>
+                                <div class="donation-amounts">
+                                    <button class="amount-btn" data-amount="1000">₦1,000</button>
+                                    <button class="amount-btn" data-amount="2500">₦2,500</button>
+                                    <button class="amount-btn" data-amount="5000">₦5,000</button>
+                                    <button class="amount-btn" data-amount="10000">₦10,000</button>
+                                    <button class="amount-btn" data-amount="custom">Custom</button>
                                 </div>
                                 
-                                <div class="form-group">
-                                    <label for="email">Email Address *</label>
-                                    <input type="email" id="email" name="email" required>
-                                </div>
-                                
-                                <div class="form-group">
-                                    <label for="phone">Phone Number</label>
-                                    <input type="tel" id="phone" name="phone">
-                                </div>
-                                
-                                <div class="form-group">
-                                    <label for="address">Address</label>
-                                    <input type="text" id="address" name="address" placeholder="Street Address">
-                                </div>
-                                
-                                <div style="display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 1rem;">
-                                    <div class="form-group">
-                                        <label for="city">City</label>
-                                        <input type="text" id="city" name="city">
+                                <div class="payment-methods">
+                                    <div class="payment-option">
+                                        <button class="btn btn-primary">
+                                            💳 Pay with Paystack
+                                        </button>
+                                        <small>Secure payment via debit card, bank transfer, or USSD</small>
                                     </div>
-                                    <div class="form-group">
-                                        <label for="state">State</label>
-                                        <input type="text" id="state" name="state">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="zip">ZIP Code</label>
-                                        <input type="text" id="zip" name="zip">
+                                    <div class="payment-option">
+                                        <button class="btn btn-secondary">
+                                            🏦 Bank Transfer
+                                        </button>
+                                        <small>Direct transfer to parish account</small>
                                     </div>
                                 </div>
-
-                                <!-- Comments -->
-                                <div class="form-group">
-                                    <label for="comments">Comments or Special Instructions</label>
-                                    <textarea id="comments" name="comments" placeholder="Any special instructions or dedications for this gift..."></textarea>
-                                </div>
-
-                                <!-- Anonymous Donation Option -->
-                                <div class="form-group">
-                                    <div class="checkbox-group">
-                                        <input type="checkbox" id="anonymous" name="anonymous">
-                                        <label for="anonymous">Make this an anonymous donation</label>
-                                    </div>
-                                </div>
-
-                                <!-- Receipt Option -->
-                                <div class="form-group">
-                                    <div class="checkbox-group">
-                                        <input type="checkbox" id="receipt" name="receipt" checked>
-                                        <label for="receipt">Send me a tax-deductible receipt</label>
-                                    </div>
-                                </div>
-
-                                <!-- Payment Processing Note -->
-                                <div style="background: var(--light-gray); padding: 1.5rem; border-radius: 5px; margin: 2rem 0;">
-                                    <h4 style="color: var(--primary-color); margin-bottom: 1rem;">🔒 Secure Payment Processing</h4>
-                                    <p style="margin-bottom: 1rem;">Your donation will be processed securely through our payment partner. You'll be redirected to complete your payment after submitting this form.</p>
-                                    <p style="font-size: 0.9rem; color: var(--text-light);">
-                                        St. Patrick's Catholic Church is a 501(c)(3) organization. Your donation may be tax-deductible to the extent allowed by law. 
-                                        Please consult your tax advisor for specific guidance.
-                                    </p>
-                                </div>
-
-                                <button type="submit" class="btn" style="background: var(--primary-color); color: var(--white); width: 100%; padding: 1rem; font-size: 1.2rem;">
-                                    Proceed to Secure Payment
-                                </button>
-                            </form>
+                            </div>
                         </div>
-                    </section>
-                </article>
-
-                <!-- Sidebar -->
-                <aside class="sidebar">
-                    <!-- Why Give -->
-                    <div class="sidebar-widget">
-                        <h3>Why Your Gift Matters</h3>
-                        <p>Your generous donations help support:</p>
-                        <ul>
-                            <li>Worship and liturgical celebrations</li>
-                            <li>Religious education programs</li>
-                            <li>Youth and family ministries</li>
-                            <li>Community outreach and service</li>
-                            <li>Building maintenance and improvements</li>
-                            <li>Pastoral care and spiritual guidance</li>
-                        </ul>
                     </div>
 
-                    <!-- Giving Options -->
-                    <div class="sidebar-widget">
-                        <h3>Other Ways to Give</h3>
-                        <ul>
-                            <li><strong>During Mass:</strong> Place your gift in the collection basket</li>
-                            <li><strong>Mail:</strong> Send checks to the parish office</li>
-                            <li><strong>Planned Giving:</strong> Include the parish in your will</li>
-                            <li><strong>Stock Donations:</strong> Contact the office for details</li>
-                            <li><strong>Memorial Gifts:</strong> Honor loved ones with a donation</li>
-                        </ul>
-                    </div>
-
-                    <!-- Special Funds -->
-                    <div class="sidebar-widget">
-                        <h3>Special Fund Needs</h3>
-                        <div style="background: var(--primary-color); color: var(--white); padding: 1rem; border-radius: 5px; margin-bottom: 1rem;">
-                            <h4 style="margin-bottom: 0.5rem;">Church Roof Repair</h4>
-                            <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">Goal: ₦2,000,000</p>
-                            <p style="font-size: 0.9rem;">Raised: ₦1,280,000 (64%)</p>
+                    <!-- Harvest Thanksgiving -->
+                    <div class="giving-method-card special-giving">
+                        <div class="giving-icon">
+                            <img src="/api/placeholder/300/200" alt="Harvest Thanksgiving" />
                         </div>
-                        <p style="font-size: 0.9rem;">Help us complete essential roof repairs to protect our beautiful worship space for future generations.</p>
+                        <div class="giving-content">
+                            <h3>Harvest Thanksgiving</h3>
+                            <p>Annual harvest celebration where we give thanks to God for His bountiful provisions throughout the year.</p>
+                            
+                            <div class="account-details">
+                                <h4>Harvest Account Details</h4>
+                                <div class="bank-info">
+                                    <strong>Account Name:</strong> St. Patrick's Catholic Church Lagos<br>
+                                    <strong>Bank:</strong> Zenith Bank<br>
+                                    <strong>Account Number:</strong> 1023456789<br>
+                                    <strong>Sort Code:</strong> 057150013
+                                </div>
+                            </div>
+                            
+                            <div class="harvest-info">
+                                <h4>Harvest Schedule</h4>
+                                <p><strong>Next Harvest:</strong> November 15, 2025</p>
+                                <p><strong>Thanksgiving Mass:</strong> 10:00 AM</p>
+                                <p><strong>Harvest Feast:</strong> 1:00 PM</p>
+                            </div>
+                            
+                            <button class="btn btn-primary">Contribute to Harvest</button>
+                        </div>
                     </div>
+                </div>
+            </div>
+        </section>
 
-                    <!-- Contact -->
-                    <div class="sidebar-widget">
+        <!-- Special Collections -->
+        <section class="special-collections">
+            <div class="container">
+                <h2>Special Collections & Ministry Support</h2>
+                
+                <div class="collections-grid">
+                    <div class="collection-card">
+                        <h3>Building Fund</h3>
+                        <p>Support ongoing church maintenance, renovations, and facility improvements.</p>
+                        <div class="progress-info">
+                            <div class="goal">Goal: ₦5,000,000</div>
+                            <div class="raised">Raised: ₦3,200,000</div>
+                        </div>
+                        <button class="btn btn-primary">Contribute</button>
+                    </div>
+                    
+                    <div class="collection-card">
+                        <h3>Poor Box / Charity</h3>
+                        <p>Help us support the less privileged in our community with food, clothing, and basic needs.</p>
+                        <div class="charity-info">
+                            <small>Monthly distribution to 50+ families</small>
+                        </div>
+                        <button class="btn btn-primary">Donate</button>
+                    </div>
+                    
+                    <div class="collection-card">
+                        <h3>Seminary Support</h3>
+                        <p>Support seminarians and religious vocations from our parish.</p>
+                        <div class="vocation-info">
+                            <small>Currently supporting 8 seminarians</small>
+                        </div>
+                        <button class="btn btn-primary">Support Vocations</button>
+                    </div>
+                    
+                    <div class="collection-card">
+                        <h3>Youth Ministry</h3>
+                        <p>Fund youth programs, retreats, camps, and educational activities for our young people.</p>
+                        <div class="youth-info">
+                            <small>Serving 150+ young Catholics</small>
+                        </div>
+                        <button class="btn btn-primary">Support Youth</button>
+                    </div>
+                    
+                    <div class="collection-card">
+                        <h3>Church Music & Choir</h3>
+                        <p>Support our liturgical music ministry with instruments, music sheets, and choir activities.</p>
+                        <div class="music-info">
+                            <small>3 active choirs serving our community</small>
+                        </div>
+                        <button class="btn btn-primary">Support Music</button>
+                    </div>
+                    
+                    <div class="collection-card">
+                        <h3>Mission Support</h3>
+                        <p>Support missionary activities and evangelization efforts in Lagos and beyond.</p>
+                        <div class="mission-info">
+                            <small>Reaching out to 5 mission stations</small>
+                        </div>
+                        <button class="btn btn-primary">Support Missions</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mass Intentions & Memorial Gifts -->
+        <section class="mass-intentions">
+            <div class="container">
+                <h2>Mass Intentions & Memorial Gifts</h2>
+                
+                <div class="intentions-grid">
+                    <div class="intention-card">
+                        <h3>Mass Intentions</h3>
+                        <p>Request a Mass to be offered for your special intentions, deceased loved ones, or thanksgiving.</p>
+                        <div class="intention-details">
+                            <div class="offering-amount">
+                                <strong>Suggested Offering: ₦1,000</strong>
+                            </div>
+                            <div class="booking-info">
+                                <p>Masses can be scheduled for:</p>
+                                <ul>
+                                    <li>Weekday Masses (Monday-Friday)</li>
+                                    <li>Weekend Masses (Saturday-Sunday)</li>
+                                    <li>Special feast days</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary">Request Mass Intention</button>
+                    </div>
+                    
+                    <div class="intention-card">
+                        <h3>Memorial Gifts</h3>
+                        <p>Honor the memory of a loved one with a lasting gift to the parish.</p>
+                        <div class="memorial-options">
+                            <ul>
+                                <li><strong>Memorial Flowers:</strong> ₦5,000 - ₦15,000</li>
+                                <li><strong>Sanctuary Lamp:</strong> ₦2,000 (one week)</li>
+                                <li><strong>Memorial Plaque:</strong> ₦25,000+</li>
+                                <li><strong>Memorial Garden:</strong> ₦50,000+</li>
+                            </ul>
+                        </div>
+                        <button class="btn btn-primary">Create Memorial</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recurring Giving -->
+        <section class="recurring-giving">
+            <div class="container">
+                <h2>Set Up Recurring Giving</h2>
+                
+                <div class="recurring-content">
+                    <div class="recurring-info">
+                        <h3>Give Regularly, Impact Consistently</h3>
+                        <p>Set up automatic recurring donations to support our parish ministries on a regular basis. This helps us plan better and ensures consistent funding for our programs.</p>
+                        
+                        <div class="recurring-benefits">
+                            <h4>Benefits of Recurring Giving:</h4>
+                            <ul>
+                                <li>Convenient automatic transfers</li>
+                                <li>Helps parish budget planning</li>
+                                <li>Consistent support for ministries</li>
+                                <li>Can be modified or cancelled anytime</li>
+                                <li>Annual tax receipts provided</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="recurring-form">
+                        <h4>Choose Your Recurring Gift</h4>
+                        <form class="giving-form">
+                            <div class="form-group">
+                                <label>Giving Frequency</label>
+                                <select required>
+                                    <option value="">Select frequency</option>
+                                    <option value="weekly">Weekly</option>
+                                    <option value="biweekly">Bi-weekly</option>
+                                    <option value="monthly">Monthly</option>
+                                    <option value="quarterly">Quarterly</option>
+                                    <option value="annually">Annually</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Amount (₦)</label>
+                                <input type="number" placeholder="Enter amount" min="500" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Designation</label>
+                                <select required>
+                                    <option value="">Where should this go?</option>
+                                    <option value="general">General Fund</option>
+                                    <option value="building">Building Fund</option>
+                                    <option value="charity">Poor Box/Charity</option>
+                                    <option value="youth">Youth Ministry</option>
+                                    <option value="music">Music Ministry</option>
+                                    <option value="missions">Mission Support</option>
+                                </select>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-donate">Set Up Recurring Gift</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Alternative Giving Methods -->
+        <section class="alternative-giving">
+            <div class="container">
+                <h2>Other Ways to Give</h2>
+                
+                <div class="alternative-methods">
+                    <div class="method-item">
+                        <div class="method-icon">📱</div>
+                        <h3>Mobile Money</h3>
+                        <p>Send donations via mobile money transfer services.</p>
+                        <div class="mobile-options">
+                            <p><strong>MTN:</strong> *123# → Send Money → 08034567890</p>
+                            <p><strong>Airtel:</strong> *432# → Send Money → 08034567890</p>
+                            <p><strong>Glo:</strong> *805# → Send Money → 08034567890</p>
+                        </div>
+                    </div>
+                    
+                    <div class="method-item">
+                        <div class="method-icon">💰</div>
+                        <h3>Collection Basket</h3>
+                        <p>Traditional giving during Mass collections.</p>
+                        <div class="collection-times">
+                            <p><strong>First Collection:</strong> Parish support</p>
+                            <p><strong>Second Collection:</strong> Special projects</p>
+                            <p><strong>Special Collections:</strong> As announced</p>
+                        </div>
+                    </div>
+                    
+                    <div class="method-item">
+                        <div class="method-icon">🎁</div>
+                        <h3>In-Kind Donations</h3>
+                        <p>Donate goods, services, or volunteer time.</p>
+                        <div class="inkind-examples">
+                            <p><strong>Needed Items:</strong></p>
+                            <ul>
+                                <li>Liturgical vestments</li>
+                                <li>Sound equipment</li>
+                                <li>Office supplies</li>
+                                <li>Cleaning materials</li>
+                                <li>Food for charity</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Financial Transparency -->
+        <section class="financial-transparency">
+            <div class="container">
+                <h2>Financial Transparency</h2>
+                
+                <div class="transparency-content">
+                    <div class="transparency-intro">
+                        <p>We believe in being good stewards of your generous donations. Here's how your contributions are making a difference in our parish and community.</p>
+                    </div>
+                    
+                    <div class="transparency-grid">
+                        <div class="transparency-card">
+                            <h3>How Your Donations Are Used</h3>
+                            <div class="expense-breakdown">
+                                <div class="expense-item">
+                                    <span class="expense-category">Pastoral Ministry</span>
+                                    <span class="expense-percentage">35%</span>
+                                </div>
+                                <div class="expense-item">
+                                    <span class="expense-category">Building & Maintenance</span>
+                                    <span class="expense-percentage">25%</span>
+                                </div>
+                                <div class="expense-item">
+                                    <span class="expense-category">Community Outreach</span>
+                                    <span class="expense-percentage">20%</span>
+                                </div>
+                                <div class="expense-item">
+                                    <span class="expense-category">Administrative Costs</span>
+                                    <span class="expense-percentage">15%</span>
+                                </div>
+                                <div class="expense-item">
+                                    <span class="expense-category">Diocesan Assessment</span>
+                                    <span class="expense-percentage">5%</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="transparency-card">
+                            <h3>Recent Accomplishments</h3>
+                            <div class="accomplishments-list">
+                                <ul>
+                                    <li>✓ New parish hall completed (₦8M)</li>
+                                    <li>✓ 200 families supported monthly</li>
+                                    <li>✓ Youth center renovated (₦3M)</li>
+                                    <li>✓ 8 seminarians sponsored</li>
+                                    <li>✓ New sound system installed (₦1.5M)</li>
+                                    <li>✓ Parish school scholarship fund (₦2M)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="financial-reports">
+                        <h3>Financial Reports</h3>
+                        <p>Our annual financial reports are available to all parishioners. Contact the parish office to request a copy.</p>
+                        <div class="report-links">
+                            <a href="#" class="btn btn-secondary">2024 Annual Report</a>
+                            <a href="#" class="btn btn-secondary">Quarterly Reports</a>
+                            <a href="contact.html" class="btn btn-tertiary">Request Report</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Thank You Section -->
+        <section class="thank-you-section">
+            <div class="container">
+                <div class="thank-you-content">
+                    <h2>Thank You for Your Generosity</h2>
+                    <div class="gratitude-message">
+                        <blockquote>
+                            "Each of you should give what you have decided in your heart to give, not reluctantly or under compulsion, for God loves a cheerful giver."
+                        </blockquote>
+                        <cite>2 Corinthians 9:7</cite>
+                    </div>
+                    
+                    <p>Your faithful giving enables St. Patrick's to continue its mission of worship, fellowship, education, and service. Every gift, regardless of size, makes a meaningful difference in the lives of our parishioners and the broader Lagos community.</p>
+                    
+                    <div class="contact-stewardship">
                         <h3>Questions About Giving?</h3>
-                        <p>Contact our parish office for assistance with donations, planned giving, or memorial gifts.</p>
-                        <p><strong>Phone:</strong> (123) 456-7890<br>
-                        <strong>Email:</strong> giving@stpatricks.com</p>
+                        <p>Contact our Parish Office for assistance with donations, tax receipts, or stewardship questions.</p>
+                        <div class="stewardship-contact">
+                            <p><strong>Phone:</strong> +234 803 456 7890</p>
+                            <p><strong>Email:</strong> giving@stpatricks.com.ng</p>
+                            <p><strong>Office Hours:</strong> Monday-Friday, 9:00 AM - 4:00 PM</p>
+                        </div>
                     </div>
-
-                    <!-- Recognition -->
-                    <div class="sidebar-widget">
-                        <h3>Donor Recognition</h3>
-                        <p>We gratefully acknowledge our generous donors in our annual report. Donors may choose to remain anonymous if preferred.</p>
-                    </div>
-                </aside>
+                </div>
             </div>
-        </div>
+        </section>
     </main>
-
-    <!-- Ways to Give Section -->
-    <section class="content-section" style="background: var(--light-gray);">
-        <div class="container">
-            <h2 style="color: var(--primary-color); text-align: center; margin-bottom: 3rem; font-size: 2.5rem;">Ways to Support St. Patrick's</h2>
-            
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-                <!-- Regular Giving -->
-                <div style="background: var(--white); padding: 2rem; border-radius: 10px; box-shadow: var(--shadow); text-align: center;">
-                    <div style="background: var(--primary-color); color: var(--white); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 2rem;">💝</div>
-                    <h3 style="color: var(--primary-color); margin-bottom: 1rem;">Regular Giving</h3>
-                    <p>Set up recurring donations to provide steady support for our ministries and operations. Monthly giving is especially helpful for budget planning.</p>
-                </div>
-
-                <!-- Memorial Gifts -->
-                <div style="background: var(--white); padding: 2rem; border-radius: 10px; box-shadow: var(--shadow); text-align: center;">
-                    <div style="background: var(--primary-color); color: var(--white); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 2rem;">🕊️</div>
-                    <h3 style="color: var(--primary-color); margin-bottom: 1rem;">Memorial Gifts</h3>
-                    <p>Honor the memory of loved ones with a donation in their name. Memorial gifts can support specific ministries or the general fund.</p>
-                </div>
-
-                <!-- Special Collections -->
-                <div style="background: var(--white); padding: 2rem; border-radius: 10px; box-shadow: var(--shadow); text-align: center;">
-                    <div style="background: var(--primary-color); color: var(--white); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 2rem;">🌍</div>
-                    <h3 style="color: var(--primary-color); margin-bottom: 1rem;">Special Collections</h3>
-                    <p>Support diocesan and worldwide Catholic missions through special collections taken throughout the liturgical year.</p>
-                </div>
-
-                <!-- Planned Giving -->
-                <div style="background: var(--white); padding: 2rem; border-radius: 10px; box-shadow: var(--shadow); text-align: center;">
-                    <div style="background: var(--primary-color); color: var(--white); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 2rem;">📋</div>
-                    <h3 style="color: var(--primary-color); margin-bottom: 1rem;">Planned Giving</h3>
-                    <p>Leave a lasting legacy by including St. Patrick's in your will, trust, or retirement plan. Contact us to learn about planned giving options.</p>
-                </div>
-
-                <!-- Volunteer Time -->
-                <div style="background: var(--white); padding: 2rem; border-radius: 10px; box-shadow: var(--shadow); text-align: center;">
-                    <div style="background: var(--primary-color); color: var(--white); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 2rem;">🤝</div>
-                    <h3 style="color: var(--primary-color); margin-bottom: 1rem;">Volunteer Time</h3>
-                    <p>Give the gift of your time and talents through our many ministry opportunities. Visit our ministries page to find your calling.</p>
-                </div>
-
-                <!-- Stock & Asset Gifts -->
-                <div style="background: var(--white); padding: 2rem; border-radius: 10px; box-shadow: var(--shadow); text-align: center;">
-                    <div style="background: var(--primary-color); color: var(--white); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 2rem;">📈</div>
-                    <h3 style="color: var(--primary-color); margin-bottom: 1rem;">Stock & Asset Gifts</h3>
-                    <p>Donate appreciated stocks, bonds, or other assets for potential tax advantages. Contact our office for assistance with asset transfers.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Transparency Section -->
-    <section class="content-section">
-        <div class="container">
-            <div style="text-align: center; max-width: 800px; margin: 0 auto;">
-                <h2 style="color: var(--primary-color); margin-bottom: 2rem;">Financial Transparency</h2>
-                <p style="font-size: 1.1rem; margin-bottom: 2rem; line-height: 1.7;">
-                    We believe in being good stewards of your generous gifts. Our parish finances are regularly reviewed by our Finance Council 
-                    and audited annually. We publish an annual financial report that shows how your donations are used to support our mission and ministries.
-                </p>
-                <div class="hero-btns">
-                    <a href="#" class="btn btn-primary">View Annual Report</a>
-                    <a href="#" class="btn btn-secondary">Financial Policies</a>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-container">
                 <div class="footer-column">
-                    <h3>Contact Us</h3>
-                    <p>St. Patrick's Catholic Church<br>
-                    123 Main Street<br>
-                    City, State 12345<br>
-                    Phone: (123) 456-7890<br>
-                    Email: info@stpatricks.com</p>
+                    <h3>Contact Information</h3>
+                    <p><strong>St. Patrick's Catholic Church</strong><br>
+                    123 Catholic Street<br>
+                    Victoria Island, Lagos<br>
+                    Nigeria<br>
+                    <br>
+                    <strong>Phone:</strong> +234 803 456 7890<br>
+                    <strong>Emergency:</strong> +234 803 456 7892<br>
+                    <strong>Email:</strong> info@stpatricks.com.ng</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Mass Times</h3>
+                    <p><strong>Weekend Masses:</strong><br>
+                    Saturday: 5:00 PM<br>
+                    Sunday: 8:00 AM, 10:00 AM, 12:00 PM<br>
+                    <br>
+                    <strong>Weekday Mass:</strong><br>
+                    Monday - Friday: 8:30 AM</p>
+                    <a href="mass-times.html">Full Schedule →</a>
                 </div>
                 <div class="footer-column">
                     <h3>Quick Links</h3>
                     <ul>
-                        <li><a href="mass-times.html">Mass Times</a></li>
-                        <li><a href="confession.html">Confession Schedule</a></li>
-                        <li><a href="calendar.html">Parish Calendar</a></li>
-                        <li><a href="bulletins.html">Bulletins</a></li>
-                        <li><a href="staff.html">Staff Directory</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Resources</h3>
-                    <ul>
-                        <li><a href="sermons.html">Sermon Archive</a></li>
-                        <li><a href="prayer-requests.html">Prayer Requests</a></li>
-                        <li><a href="formation.html">Faith Formation</a></li>
-                        <li><a href="ministries.html">Ministry Directory</a></li>
+                        <li><a href="about.html">About Our Parish</a></li>
+                        <li><a href="ministries.html">Join a Ministry</a></li>
                         <li><a href="giving.html">Online Giving</a></li>
+                        <li><a href="resources.html">Prayer Requests</a></li>
+                        <li><a href="events.html">Parish Calendar</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h3>Connect With Us</h3>
-                    <p>Follow us on social media for daily inspiration and updates.</p>
-                    <div class="social-links">
-                        <a href="#" class="social-icon" aria-label="Facebook">F</a>
-                        <a href="#" class="social-icon" aria-label="Twitter">T</a>
-                        <a href="#" class="social-icon" aria-label="Instagram">I</a>
-                        <a href="#" class="social-icon" aria-label="YouTube">Y</a>
+                    <h3>Secure Giving</h3>
+                    <p>All online donations are processed securely through encrypted connections.</p>
+                    <div class="security-badges">
+                        <p>✓ SSL Encrypted<br>
+                        ✓ PCI Compliant<br>
+                        ✓ Bank-Level Security</p>
                     </div>
+                    <p style="margin-top: 1rem; font-size: 0.9rem;">
+                        <strong>Tax Receipts:</strong><br>
+                        Available upon request for all donations
+                    </p>
                 </div>
             </div>
             <div class="copyright">
-                &copy; 2025 St. Patrick's Catholic Church. All Rights Reserved.
+                <p>&copy; 2025 St. Patrick's Catholic Church, Lagos, Nigeria. All Rights Reserved.</p>
+                <p style="font-style: italic; margin-top: 0.5rem;">
+                    "Give, and it will be given to you. A good measure, pressed down, shaken together and running over." - Luke 6:38
+                </p>
             </div>
         </div>
     </footer>
 
+    <script src="../js/main.js"></script>
     <script>
-        // Mobile Menu Toggle
-        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
-            const nav = document.querySelector('nav ul');
-            nav.classList.toggle('active');
-            
-            const isExpanded = nav.classList.contains('active');
-            this.setAttribute('aria-expanded', isExpanded);
-        });
-
-        // Donation form functionality
+        // Simple amount selection functionality
         document.addEventListener('DOMContentLoaded', function() {
-            const donationType = document.querySelectorAll('input[name="donation-type"]');
-            const frequencyGroup = document.getElementById('frequency-group');
             const amountButtons = document.querySelectorAll('.amount-btn');
-            const customAmountInput = document.getElementById('custom-amount');
-            const donationForm = document.getElementById('donation-form');
-
-            // Show/hide frequency selection based on donation type
-            donationType.forEach(radio => {
-                radio.addEventListener('change', function() {
-                    if (this.value === 'recurring') {
-                        frequencyGroup.style.display = 'block';
-                    } else {
-                        frequencyGroup.style.display = 'none';
-                    }
-                });
-            });
-
-            // Amount button selection
+            
             amountButtons.forEach(button => {
-                button.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    
+                button.addEventListener('click', function() {
                     // Remove active class from all buttons
                     amountButtons.forEach(btn => btn.classList.remove('active'));
-                    
                     // Add active class to clicked button
                     this.classList.add('active');
                     
-                    // Set the amount in the input field
-                    const amount = this.dataset.amount;
-                    if (amount === 'other') {
-                        customAmountInput.value = '';
-                        customAmountInput.focus();
-                    } else {
-                        customAmountInput.value = amount;
+                    // Handle custom amount
+                    if (this.dataset.amount === 'custom') {
+                        const customAmount = prompt('Enter your donation amount (₦):');
+                        if (customAmount) {
+                            this.textContent = `₦${customAmount}`;
+                        }
                     }
                 });
-            });
-
-            // Custom amount input handling
-            customAmountInput.addEventListener('input', function() {
-                // Remove active class from all preset buttons when typing custom amount
-                amountButtons.forEach(btn => btn.classList.remove('active'));
-            });
-
-            // Form submission (placeholder for actual payment processing)
-            donationForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                const formData = new FormData(this);
-                const amount = formData.get('amount');
-                const category = formData.get('category');
-                const donationType = formData.get('donation-type');
-                
-                if (!amount || amount <= 0) {
-                    alert('Please enter a valid donation amount.');
-                    return;
-                }
-                
-                if (!category) {
-                    alert('Please select a donation category.');
-                    return;
-                }
-                
-                // In WordPress, this would integrate with GiveWP or similar plugin
-                alert(`Thank you! You would now be redirected to securely donate $${amount} to ${category} as a ${donationType} gift.`);
-                
-                console.log('Donation data:', Object.fromEntries(formData));
             });
         });
     </script>

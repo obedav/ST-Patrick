@@ -1,0 +1,530 @@
+/* ministries.css - Ministries Page Specific Styles */
+/* This file contains styles specific to the ministries page */
+
+/* Ministries Page Header */
+.ministries-header {
+    background: linear-gradient(rgba(74, 20, 140, 0.9), rgba(46, 125, 50, 0.8)), 
+                url('/api/placeholder/1200/400') center/cover;
+    color: var(--white);
+    padding: 4rem 0 2rem;
+    text-align: center;
+}
+
+.ministries-header h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.ministries-header p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.scripture-reference {
+    font-size: 1rem;
+    color: var(--accent-color);
+    margin-top: 1rem;
+    font-weight: bold;
+}
+
+/* Ministry Introduction */
+.ministry-introduction {
+    padding: 4rem 0;
+    background: var(--warm-beige);
+}
+
+.ministry-introduction .container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.intro-content h2 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-size: 2.5rem;
+}
+
+.intro-quote blockquote {
+    font-size: 1.2rem;
+    font-style: italic;
+    color: var(--primary-color);
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: var(--white);
+    border-left: 4px solid var(--accent-color);
+    border-radius: 0 10px 10px 0;
+}
+
+.call-to-action-questions ul {
+    list-style: none;
+    padding: 0;
+}
+
+.call-to-action-questions li {
+    padding: 0.8rem 0;
+    border-bottom: 1px solid var(--border-color);
+    font-weight: 500;
+    color: var(--primary-color);
+}
+
+.call-to-action-questions li:before {
+    content: "▶ ";
+    color: var(--accent-color);
+    font-weight: bold;
+}
+
+.intro-image img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+}
+
+/* Parish Leadership Structure */
+.parish-leadership {
+    padding: 4rem 0;
+    background: var(--white);
+}
+
+.leadership-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.leadership-card {
+    background: var(--white);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    border-top: 4px solid var(--primary-color);
+}
+
+.leadership-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+
+.leadership-image {
+    height: 200px;
+    overflow: hidden;
+}
+
+.leadership-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.leadership-card:hover .leadership-image img {
+    transform: scale(1.05);
+}
+
+.leadership-content {
+    padding: 1.5rem;
+}
+
+.leadership-content h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.leadership-content ul {
+    list-style: none;
+    margin-top: 1rem;
+}
+
+.leadership-content li {
+    padding: 0.3rem 0;
+    border-bottom: 1px solid var(--light-gray);
+    font-size: 0.9rem;
+}
+
+/* Ministry Categories */
+.ministry-categories {
+    padding: 4rem 0;
+    background: var(--light-gray);
+}
+
+.category-section {
+    margin-bottom: 4rem;
+}
+
+.category-section h3 {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    border-bottom: 3px solid var(--accent-color);
+    padding-bottom: 0.5rem;
+}
+
+.ministries-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+.ministry-card {
+    background: var(--white);
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    border-left: 4px solid var(--primary-color);
+}
+
+.ministry-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.ministry-card.featured {
+    border-left: 4px solid var(--accent-color);
+    background: linear-gradient(135deg, var(--white) 0%, #fffef8 100%);
+}
+
+.ministry-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+.ministry-header h4 {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    margin: 0;
+    flex: 1;
+}
+
+.ministry-badge {
+    background: var(--accent-color);
+    color: var(--text-dark);
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.ministry-content p {
+    color: var(--text-light);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.ministry-details {
+    background: var(--warm-beige);
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+}
+
+.detail-item {
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.detail-item:last-child {
+    margin-bottom: 0;
+}
+
+.detail-item strong {
+    color: var(--primary-color);
+}
+
+/* Registration Steps */
+.registration-section {
+    padding: 4rem 0;
+    background: var(--warm-beige);
+}
+
+.registration-content h2 {
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+}
+
+.registration-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.step-item {
+    text-align: center;
+    padding: 2rem;
+    background: var(--white);
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.step-item:hover {
+    transform: translateY(-5px);
+}
+
+.step-number {
+    width: 60px;
+    height: 60px;
+    background: var(--primary-color);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0 auto 1rem;
+}
+
+.step-item h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.step-item p {
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+/* Ministry Interest Form */
+.ministry-form-section {
+    background: var(--white);
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    margin-top: 3rem;
+}
+
+.ministry-form-section h3 {
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+}
+
+.ministry-interest-form {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: var(--transition);
+    background: var(--white);
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(26, 35, 126, 0.1);
+}
+
+.form-group textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+.checkbox-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.checkbox-group label {
+    display: flex;
+    align-items: center;
+    font-weight: normal;
+    margin-bottom: 0;
+    cursor: pointer;
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: auto;
+    margin-right: 0.5rem;
+}
+
+/* Parish Registration Reminder */
+.parish-registration-reminder {
+    padding: 4rem 0;
+    background: linear-gradient(135deg, var(--accent-color), #F4C430);
+    color: var(--text-dark);
+    text-align: center;
+}
+
+.reminder-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+.reminder-content h3 {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    color: var(--primary-color);
+}
+
+.registration-questions {
+    background: rgba(255,255,255,0.3);
+    padding: 2rem;
+    border-radius: 15px;
+    margin: 2rem 0;
+    backdrop-filter: blur(10px);
+}
+
+.registration-questions ul {
+    list-style: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.registration-questions li {
+    padding: 0.5rem 0;
+    margin-bottom: 0.5rem;
+}
+
+.registration-questions li:before {
+    content: "❓ ";
+    margin-right: 0.5rem;
+}
+
+.reminder-benefits {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 15px;
+    margin: 2rem 0;
+    color: var(--text-dark);
+    text-align: left;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.reminder-benefits h4 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.reminder-benefits ul {
+    list-style: none;
+}
+
+.reminder-benefits li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--light-gray);
+}
+
+.reminder-benefits li:before {
+    content: "✓ ";
+    color: var(--secondary-color);
+    font-weight: bold;
+    margin-right: 0.5rem;
+}
+
+.registration-cta {
+    margin-top: 3rem;
+}
+
+.registration-cta .btn {
+    margin: 0 1rem;
+}
+
+/* Responsive Design for Ministries Page */
+@media (max-width: 768px) {
+    .ministry-introduction .container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .leadership-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .ministries-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .registration-steps {
+        grid-template-columns: 1fr;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .ministries-header h1 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .ministry-form-section {
+        padding: 2rem 1rem;
+    }
+    
+    .reminder-content h2 {
+        font-size: 2rem;
+    }
+    
+    .reminder-content h3 {
+        font-size: 1.5rem;
+    }
+
+    .checkbox-group {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .registration-cta .btn {
+        display: block;
+        margin: 0.5rem auto;
+        max-width: 250px;
+    }
+
+    .ministries-header h1 {
+        font-size: 2rem;
+    }
+}

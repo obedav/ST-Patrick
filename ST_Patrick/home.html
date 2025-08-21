@@ -1,13 +1,22 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>St. Patrick's Catholic Church</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <title>St. Patrick's Catholic Church - Lagos, Nigeria</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/header-footer.css">
+    <link rel="stylesheet" href="css/home.css">
+    <meta name="description" content="Welcome to St. Patrick's Catholic Church, Lagos, Nigeria. Join our faith community for Mass, ministries, and spiritual growth. Serving God's people since 1965.">
+    <meta name="keywords" content="Catholic Church Lagos, St Patrick Church, Nigerian Catholic Church, Mass times Lagos, Catholic community">
 </head>
-<body>
+<body class="home-page">
+    <!-- Skip to content for accessibility -->
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+
+    <!-- Fixed Hero Background -->
+    <div class="fixed-hero-background"></div>
+
     <!-- Header -->
     <header>
         <div class="container header-container">
@@ -15,10 +24,10 @@
                 <img src="/api/placeholder/60/60" alt="St. Patrick's Logo">
                 <div class="logo-text">St. Patrick's Catholic Church</div>
             </div>
-            <button class="mobile-menu-btn">☰</button>
-            <nav>
+            <button class="mobile-menu-btn" aria-label="Toggle mobile menu">☰</button>
+            <nav role="navigation">
                 <ul>
-                    <li><a href="#" class="active">Home</a></li>
+                    <li><a href="home.html" class="active">Home</a></li>
                     <li><a href="about_us.html">About</a></li>
                     <li><a href="mass_times.html">Mass Times</a></li>
                     <li><a href="ministries.html">Ministries</a></li>
@@ -31,193 +40,338 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Welcome to St. Patrick's Catholic Church</h1>
-                <p>Serving our community in faith and love since 1965</p>
-                <div class="hero-btns">
-                    <a href="#" class="btn btn-primary">Mass Times</a>
-                    <a href="#" class="btn btn-secondary">Prayer Requests</a>
-                    <a href="#" class="btn btn-tertiary">Online Giving</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Quick Links Section -->
-    <section class="quick-links">
-        <div class="container">
-            <div class="quick-links-container">
-                <div class="quick-link-card mass-times">
-                    <h3>Mass Times</h3>
-                    <p>Weekend Masses: Sat 5PM, Sun 8AM, 10AM, 12PM<br>Weekday Masses: Mon-Fri 8:30AM</p>
-                    <a href="#" class="btn">View Schedule</a>
-                </div>
-                <div class="quick-link-card prayer-requests">
-                    <h3>Prayer Requests</h3>
-                    <p>Submit your prayer intentions to be included in our masses and prayer gatherings.</p>
-                    <a href="#" class="btn">Submit Request</a>
-                </div>
-                <div class="quick-link-card online-giving">
-                    <h3>Online Giving</h3>
-                    <p>Support our parish ministries and operations through secure online donations.</p>
-                    <a href="#" class="btn">Donate Now</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Two Column Section (Events and Announcements) -->
-    <section class="two-column-section">
-        <div class="container">
-            <div class="two-column-container">
-                <div class="column">
-                    <div class="column-header">
-                        <h2>Upcoming Events</h2>
-                    </div>
-                    <div class="column-content">
-                        <div class="event-item">
-                            <div class="event-date">March 17, 2025</div>
-                            <div class="event-title">Feast of St. Patrick Celebration</div>
-                            <div class="event-description">Join us for special mass and parish celebration honoring our patron saint.</div>
+    <!-- Scrollable Content Container -->
+    <div class="scrollable-content" id="main-content">
+        <div class="content-wrapper">
+            
+            <!-- Scripture Hero Section (Now Scrollable) -->
+            <section class="scripture-hero-scrollable">
+                <div class="container">
+                    <div class="scripture-content">
+                        <div class="scripture-text">
+                            "I am the way and the truth and the life. No one comes to the Father except through me."
                         </div>
-                        <div class="event-item">
-                            <div class="event-date">March 19, 2025</div>
-                            <div class="event-title">Parish Council Meeting</div>
-                            <div class="event-description">Monthly meeting of the parish council at 7:00 PM in the parish hall.</div>
+                        <div class="scripture-reference">John 14:6</div>
+                        <div class="church-welcome">
+                            <h1>Welcome to St. Patrick's Catholic Church</h1>
+                            <p>A place where faith, community, and love unite in the heart of Lagos</p>
                         </div>
-                        <div class="event-item">
-                            <div class="event-date">March 21, 2025</div>
-                            <div class="event-title">Stations of the Cross</div>
-                            <div class="event-description">Join us every Friday during Lent at 6:00 PM for Stations of the Cross.</div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Parish Priest Message Section -->
+            <section class="parish-priest-message content-section">
+                <div class="container">
+                    <div class="priest-message-container">
+                        <div class="priest-photo">
+                            <img src="/api/placeholder/200/250" alt="Father Michael O'Brien">
                         </div>
-                        <a href="#" class="view-all">View All Events</a>
-                    </div>
-                </div>
-                <div class="column">
-                    <div class="column-header">
-                        <h2>Latest Announcements</h2>
-                    </div>
-                    <div class="column-content">
-                        <div class="announcement-item">
-                            <div class="announcement-title">Holy Week Schedule Now Available</div>
-                            <div class="announcement-description">The complete schedule for Holy Week services is now available. Please see the bulletin or website for details.</div>
+                        <div class="priest-message-content">
+                            <h2>Message from Our Parish Priest</h2>
+                            <h3>Very Rev. Fr. Michael O'Brien</h3>
+                            <blockquote>
+                                "Dear brothers and sisters in Christ, welcome to our parish family! At St. Patrick's, we strive to be a beacon of hope and love in our community. Whether you are a longtime parishioner or visiting for the first time, know that you are cherished and welcomed here. Together, let us grow in faith, serve one another, and spread the Gospel message throughout Lagos and beyond."
+                            </blockquote>
+                            <div class="priest-office-hours">
+                                <h4>Parish Office Hours</h4>
+                                <p><strong>General Office:</strong> Monday - Friday (9:00 AM - 4:00 PM)</p>
+                                <p><strong>Fr. Michael:</strong> Tuesday & Thursday (10:00 AM - 2:00 PM)</p>
+                                <p><strong>Fr. James:</strong> Monday & Wednesday (10:00 AM - 2:00 PM)</p>
+                                <p style="font-style: italic; color: var(--text-light);">Office closed on Saturdays</p>
+                            </div>
                         </div>
-                        <div class="announcement-item">
-                            <div class="announcement-title">New Bible Study Starting</div>
-                            <div class="announcement-description">A new Bible study on the Gospel of John will begin next month. Sign up in the parish office or online.</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Access Links -->
+            <section class="quick-access content-section">
+                <div class="container">
+                    <h2 style="text-align: center; color: var(--primary-color); margin-bottom: 3rem;">Quick Access</h2>
+                    <div class="quick-access-grid">
+                        <div class="quick-access-card mass-card">
+                            <div class="card-icon">⛪</div>
+                            <h3>Mass Times</h3>
+                            <div class="mass-schedule">
+                                <p><strong>Weekend:</strong></p>
+                                <p>Saturday: 5:00 PM</p>
+                                <p>Sunday: 8:00 AM, 10:00 AM, 12:00 PM</p>
+                                <p><strong>Weekdays:</strong> 8:30 AM</p>
+                            </div>
+                            <a href="pages/mass-times.html" class="btn btn-primary">Full Schedule</a>
                         </div>
-                        <div class="announcement-item">
-                            <div class="announcement-title">Food Drive This Weekend</div>
-                            <div class="announcement-description">The St. Vincent de Paul Society is conducting a food drive this weekend. Please bring non-perishable items to the church.</div>
+
+                        <div class="quick-access-card giving-card">
+                            <div class="card-icon">💝</div>
+                            <h3>Online Giving</h3>
+                            <p>Support our parish ministries and community outreach through secure online donations.</p>
+                            <div class="giving-amounts-preview">
+                                <span>₦1,000</span> <span>₦2,500</span> <span>₦5,000</span> <span>Custom</span>
+                            </div>
+                            <a href="pages/giving.html" class="btn btn-donate">Give Now</a>
                         </div>
-                        <a href="#" class="view-all">View All Announcements</a>
+
+                        <div class="quick-access-card prayer-card">
+                            <div class="card-icon">🙏</div>
+                            <h3>Prayer Requests</h3>
+                            <p>Submit your prayer intentions to be included in our daily prayers and Mass intentions.</p>
+                            <div style="margin: 1rem 0; font-style: italic; color: var(--text-light);">
+                                "The prayer of a righteous person is powerful and effective." - James 5:16
+                            </div>
+                            <a href="pages/resources.html#prayer-form" class="btn btn-pray">Submit Request</a>
+                        </div>
+
+                        <div class="quick-access-card ministry-card">
+                            <div class="card-icon">🤝</div>
+                            <h3>Join a Ministry</h3>
+                            <p>Discover your calling and serve Christ through our various parish ministries and organizations.</p>
+                            <div class="ministry-preview">
+                                <small>CMO • CWO • CYON • Youth • Music • Outreach</small>
+                            </div>
+                            <a href="pages/ministries.html" class="btn btn-secondary">Explore Ministries</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
+            </section>
 
-    <!-- Featured Sermon -->
-    <section class="featured-sermon">
-        <div class="container">
-            <div class="sermon-header">
-                <h2>Sunday Sermon</h2>
-            </div>
-            <div class="sermon-container">
-                <div class="sermon-content">
-                    <div class="sermon-image">
-                        <img src="/api/placeholder/400/300" alt="Father Michael giving sermon">
+            <!-- Current Announcements -->
+            <section class="current-announcements content-section">
+                <div class="container">
+                    <h2 style="text-align: center; color: var(--primary-color); margin-bottom: 3rem;">Latest Parish News</h2>
+                    <div class="announcements-grid">
+                        <div class="announcement-card featured">
+                            <div class="announcement-date">January 15, 2025</div>
+                            <h3>2025: Jubilee Year of Hope</h3>
+                            <p>Join us as we celebrate this special Jubilee Year declared by Pope Francis. Special events, pilgrimages, and spiritual opportunities throughout the year.</p>
+                            <a href="#" class="btn">Read More</a>
+                        </div>
+
+                        <div class="announcement-card">
+                            <div class="announcement-date">January 12, 2025</div>
+                            <h3>New Bible Study Series</h3>
+                            <p>Starting this February: "Walking with Jesus" - an 8-week journey through the Gospels. All are welcome to join us every Wednesday at 7:00 PM.</p>
+                            <a href="#" class="btn">Learn More</a>
+                        </div>
+
+                        <div class="announcement-card">
+                            <div class="announcement-date">January 10, 2025</div>
+                            <h3>Parish Registration Drive</h3>
+                            <p>New parishioners and visitors are invited to register as members of our parish family. Registration forms available after all Masses this month.</p>
+                            <a href="#" class="btn">Register Now</a>
+                        </div>
+
+                        <div class="announcement-card">
+                            <div class="announcement-date">January 8, 2025</div>
+                            <h3>Youth Ministry Retreat</h3>
+                            <p>Our Catholic Youth Organization (CYON) invites all young adults (18-35) to our quarterly retreat on January 25-26. Theme: "Faith in Action"</p>
+                            <a href="#" class="btn">Join CYON</a>
+                        </div>
                     </div>
-                    <div class="sermon-details">
-                        <h3 class="sermon-title">"Living Out Our Faith in Daily Life"</h3>
-                        <div class="sermon-meta">By Father Michael | March 3, 2025</div>
-                        <p class="sermon-description">In this week's sermon, Father Michael discusses how we can incorporate our faith into our everyday actions and decisions. He reminds us that our faith should guide not only our Sunday mornings but every moment of our lives.</p>
-                        <a href="#" class="btn">Listen to Sermon</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Scripture Quote -->
-    <section class="scripture-quote">
-        <div class="container">
-            <div class="quote">"For where two or three gather in my name, there am I with them."</div>
-            <div class="quote-reference">Matthew 18:20</div>
-        </div>
-    </section>
-
-    <!-- Newsletter Signup -->
-    <section class="newsletter">
-        <div class="container">
-            <div class="newsletter-container">
-                <h2>Stay Connected</h2>
-                <p>Sign up for our parish newsletter to receive updates, announcements, and spiritual resources.</p>
-                <form class="newsletter-form">
-                    <input type="email" placeholder="Your Email Address" required>
-                    <button type="submit">Subscribe</button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-container">
-                <div class="footer-column">
-                    <h3>Contact Us</h3>
-                    <p>St. Patrick's Catholic Church<br>
-                    123 Main Street<br>
-                    City, State 12345<br>
-                    Phone: (123) 456-7890<br>
-                    Email: info@stpatricks.com</p>
-                </div>
-                <div class="footer-column">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="#">Mass Times</a></li>
-                        <li><a href="#">Confession Schedule</a></li>
-                        <li><a href="#">Parish Calendar</a></li>
-                        <li><a href="#">Bulletins</a></li>
-                        <li><a href="#">Staff Directory</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Resources</h3>
-                    <ul>
-                        <li><a href="#">Sermon Archive</a></li>
-                        <li><a href="#">Prayer Requests</a></li>
-                        <li><a href="#">Faith Formation</a></li>
-                        <li><a href="#">Ministry Directory</a></li>
-                        <li><a href="#">Online Giving</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Connect With Us</h3>
-                    <p>Follow us on social media for daily inspiration and updates.</p>
-                    <div class="social-links">
-                        <a href="#" class="social-icon" aria-label="Facebook">F</a>
-                        <a href="#" class="social-icon" aria-label="Twitter">T</a>
-                        <a href="#" class="social-icon" aria-label="Instagram">I</a>
-                        <a href="#" class="social-icon" aria-label="YouTube">Y</a>
+                    <div style="text-align: center; margin-top: 2rem;">
+                        <a href="pages/events.html" class="btn btn-primary">View All Announcements</a>
                     </div>
                 </div>
-            </div>
-            <div class="copyright">
-                &copy; 2025 St. Patrick's Catholic Church. All Rights Reserved.
-            </div>
-        </div>
-    </footer>
+            </section>
 
-    <script>
-        // Mobile Menu Toggle
-        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
-            document.querySelector('nav ul').classList.toggle('active');
-        });
-    </script>
+            <!-- Upcoming Events Highlight -->
+            <section class="upcoming-events-highlight content-section">
+                <div class="container">
+                    <div class="events-highlight-container">
+                        <div class="events-content">
+                            <h2>This Week at St. Patrick's</h2>
+                            <div class="weekly-events">
+                                <div class="daily-event">
+                                    <div class="event-day">MON</div>
+                                    <div class="event-details">
+                                        <div class="event-time">8:30 AM</div>
+                                        <div class="event-name">Weekday Mass</div>
+                                    </div>
+                                </div>
+                                <div class="daily-event">
+                                    <div class="event-day">WED</div>
+                                    <div class="event-details">
+                                        <div class="event-time">7:00 PM</div>
+                                        <div class="event-name">Bible Study</div>
+                                    </div>
+                                </div>
+                                <div class="daily-event">
+                                    <div class="event-day">FRI</div>
+                                    <div class="event-details">
+                                        <div class="event-time">6:00 PM</div>
+                                        <div class="event-name">Adoration Hour</div>
+                                    </div>
+                                </div>
+                                <div class="daily-event">
+                                    <div class="event-day">SAT</div>
+                                    <div class="event-details">
+                                        <div class="event-time">5:00 PM</div>
+                                        <div class="event-name">Vigil Mass</div>
+                                    </div>
+                                </div>
+                                <div class="daily-event featured-event">
+                                    <div class="event-day">SUN</div>
+                                    <div class="event-details">
+                                        <div class="event-time">Multiple</div>
+                                        <div class="event-name">Sunday Masses</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="pages/events.html" class="btn btn-primary">Full Calendar</a>
+                        </div>
+                        <div class="events-image">
+                            <img src="/api/placeholder/400/300" alt="Parish community gathering">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Parish Activities Call-to-Action -->
+            <section class="parish-activities-cta content-section">
+                <div class="container">
+                    <div class="cta-content">
+                        <h2>Grow Your Faith!</h2>
+                        <p>Get actively involved in parish liturgical, spiritual, and social activities for your spiritual growth and development.</p>
+                        <div class="cta-stats">
+                            <div class="stat">
+                                <div class="stat-number">25+</div>
+                                <div class="stat-label">Active Ministries</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-number">800+</div>
+                                <div class="stat-label">Parish Families</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-number">60</div>
+                                <div class="stat-label">Years Serving</div>
+                            </div>
+                        </div>
+                        <div class="cta-buttons">
+                            <a href="pages/ministries.html" class="btn btn-primary">Join a Ministry</a>
+                            <a href="pages/about.html" class="btn btn-secondary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sacraments Information -->
+            <section class="sacraments-info content-section">
+                <div class="container">
+                    <h2 style="text-align: center; color: var(--primary-color); margin-bottom: 3rem;">Sacraments & Services</h2>
+                    <div class="sacraments-grid">
+                        <div class="sacrament-item">
+                            <div class="sacrament-icon">✝️</div>
+                            <h3>Baptism</h3>
+                            <p>Second & Fourth Sunday at 1:30 PM</p>
+                            <p><small>Preparation class required</small></p>
+                        </div>
+                        <div class="sacrament-item">
+                            <div class="sacrament-icon">💒</div>
+                            <h3>Marriage</h3>
+                            <p>Saturday ceremonies available</p>
+                            <p><small>6-month preparation required</small></p>
+                        </div>
+                        <div class="sacrament-item">
+                            <div class="sacrament-icon">🕊️</div>
+                            <h3>Confirmation</h3>
+                            <p>Annual preparation program</p>
+                            <p><small>Contact Religious Education</small></p>
+                        </div>
+                        <div class="sacrament-item">
+                            <div class="sacrament-icon">🤲</div>
+                            <h3>Confession</h3>
+                            <p>Saturday: 4:00-4:45 PM</p>
+                            <p><small>Or by appointment</small></p>
+                        </div>
+                    </div>
+                    <div style="text-align: center; margin-top: 2rem;">
+                        <p style="font-style: italic; color: var(--text-light);">
+                            "Have your children/wards received their sacraments? Enroll them in catechism class today!"
+                        </p>
+                        <a href="pages/contact.html" class="btn btn-primary">Contact Us</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Newsletter Signup -->
+            <section class="newsletter content-section">
+                <div class="container">
+                    <div class="newsletter-container">
+                        <h2>Stay Connected with Our Parish Family</h2>
+                        <p>Get up-to-date information, parish news, and latest announcements delivered to your inbox.</p>
+                        <form class="newsletter-form">
+                            <input type="email" placeholder="Your Email Address" required>
+                            <button type="submit">Subscribe</button>
+                        </form>
+                        <p style="font-size: 0.9rem; margin-top: 1rem; color: var(--text-light);">
+                            Join over 500 parishioners who receive our weekly updates
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer>
+                <div class="container">
+                    <div class="footer-container">
+                        <div class="footer-column">
+                            <h3>Contact Information</h3>
+                            <p><strong>St. Patrick's Catholic Church</strong><br>
+                            123 Catholic Street<br>
+                            Lagos, Nigeria<br>
+                            <br>
+                            <strong>Phone:</strong> +234 803 456 7890<br>
+                            <strong>Emergency:</strong> +234 803 456 7892<br>
+                            <strong>Email:</strong> info@stpatricks.com.ng</p>
+                        </div>
+                        <div class="footer-column">
+                            <h3>Mass Times</h3>
+                            <p><strong>Weekend Masses:</strong><br>
+                            Saturday: 5:00 PM<br>
+                            Sunday: 8:00 AM, 10:00 AM, 12:00 PM<br>
+                            <br>
+                            <strong>Weekday Mass:</strong><br>
+                            Monday - Friday: 8:30 AM</p>
+                            <a href="pages/mass-times.html">Full Schedule →</a>
+                        </div>
+                        <div class="footer-column">
+                            <h3>Quick Links</h3>
+                            <ul>
+                                <li><a href="pages/about.html">About Our Parish</a></li>
+                                <li><a href="pages/ministries.html">Join a Ministry</a></li>
+                                <li><a href="pages/giving.html">Online Giving</a></li>
+                                <li><a href="pages/resources.html">Prayer Requests</a></li>
+                                <li><a href="pages/events.html">Parish Calendar</a></li>
+                                <li><a href="pages/contact.html">Contact Us</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-column">
+                            <h3>Follow Us</h3>
+                            <p>Stay connected with our parish community on social media for daily inspiration and updates.</p>
+                            <div class="social-links">
+                                <a href="#" class="social-icon" aria-label="Facebook">F</a>
+                                <a href="#" class="social-icon" aria-label="Twitter">T</a>
+                                <a href="#" class="social-icon" aria-label="Instagram">I</a>
+                                <a href="#" class="social-icon" aria-label="YouTube">Y</a>
+                            </div>
+                            <p style="margin-top: 1rem; font-size: 0.9rem;">
+                                <strong>Parish Registration:</strong><br>
+                                <a href="pages/contact.html" style="color: var(--accent-color);">Become a registered parishioner →</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="copyright">
+                        <p>&copy; 2025 St. Patrick's Catholic Church, Lagos, Nigeria. All Rights Reserved.</p>
+                        <p style="font-style: italic; margin-top: 0.5rem;">
+                            "For where two or three gather in my name, there am I with them." - Matthew 18:20
+                        </p>
+                    </div>
+                </div>
+            </footer>
+
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
 </body>
 </html>
