@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weekly Bulletin - St. Patrick's Catholic Church</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/modern-variables.css">
+    <link rel="stylesheet" href="css/modern-components.css">
+    <style>
+        body { padding-top: 80px; }
+        .bulletin-hero { background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-green) 50%, var(--liturgical-purple) 100%); color: white; padding: var(--space-24) 0 var(--space-16); text-align: center; position: relative; overflow: hidden; }
+        .bulletin-section { background: white; border-radius: var(--radius-2xl); padding: var(--space-8); box-shadow: var(--shadow-lg); margin-bottom: var(--space-6); border-top: 4px solid var(--primary-blue); }
+        .bulletin-section h2 { color: var(--primary-blue); margin-bottom: var(--space-4); font-size: var(--text-2xl); }
+        .reading-box { background: var(--background-alt); padding: var(--space-6); border-radius: var(--radius-lg); margin-bottom: var(--space-4); border-left: 4px solid var(--liturgical-purple); }
+        @media (max-width: 768px) { .bulletin-hero { padding: var(--space-16) 0 var(--space-12); } }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-container">
+            <div class="logo"><div class="logo-icon">✝</div><span>St. Patrick's Igbogila</span></div>
+            <button class="mobile-menu-btn" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+            <nav class="nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="school.html" class="nav-link">School</a>
+                <div class="nav-dropdown">
+                    <button class="nav-link dropdown-toggle">Programmes<svg class="dropdown-icon" width="12" height="12" viewBox="0 0 12 12" fill="currentColor"><path d="M6 9L1 4h10L6 9z"/></svg></button>
+                    <div class="dropdown-menu">
+                        <a href="ministries.html" class="dropdown-item">Ministries</a>
+                        <a href="mass-times.html" class="dropdown-item">Mass Times</a>
+                        <a href="liturgical-programs.html" class="dropdown-item">Liturgical Programs</a>
+                        <a href="societal-activities.html" class="dropdown-item">Societal Activities</a>
+                    </div>
+                </div>
+                <div class="nav-dropdown">
+                    <button class="nav-link dropdown-toggle active">Parish News<svg class="dropdown-icon" width="12" height="12" viewBox="0 0 12 12" fill="currentColor"><path d="M6 9L1 4h10L6 9z"/></svg></button>
+                    <div class="dropdown-menu">
+                        <a href="harvest-news.html" class="dropdown-item">Harvest News</a>
+                        <a href="upcoming-events.html" class="dropdown-item">Upcoming Events</a>
+                        <a href="weekly-bulletin.html" class="dropdown-item active">Weekly Bulletin</a>
+                        <a href="mass-booking.html" class="dropdown-item">Mass Booking</a>
+                    </div>
+                </div>
+                <div class="nav-dropdown">
+                    <button class="nav-link dropdown-toggle">Media & Resources<svg class="dropdown-icon" width="12" height="12" viewBox="0 0 12 12" fill="currentColor"><path d="M6 9L1 4h10L6 9z"/></svg></button>
+                    <div class="dropdown-menu">
+                        <a href="parish-register.html" class="dropdown-item">Parish Register</a>
+                        <a href="photo-gallery.html" class="dropdown-item">Photo Gallery</a>
+                        <a href="podcast.html" class="dropdown-item">Podcast</a>
+                    </div>
+                </div>
+                <div class="nav-dropdown">
+                    <button class="nav-link dropdown-toggle">Facilities<svg class="dropdown-icon" width="12" height="12" viewBox="0 0 12 12" fill="currentColor"><path d="M6 9L1 4h10L6 9z"/></svg></button>
+                    <div class="dropdown-menu">
+                        <a href="parish-clinic.html" class="dropdown-item">Parish Clinic</a>
+                        <a href="parish-project.html" class="dropdown-item">Parish Project</a>
+                    </div>
+                </div>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="donate.html" class="nav-link">Donate</a>
+            </nav>
+        </div>
+    </header>
+    <section class="bulletin-hero">
+        <div class="container"><div style="position: relative; z-index: 1;">
+            <h1 style="font-size: var(--text-6xl); margin-bottom: var(--space-4);">📰 Weekly Bulletin</h1>
+            <p style="font-size: var(--text-2xl); opacity: 0.95;">Parish announcements, readings, and weekly updates</p>
+        </div></div>
+    </section>
+    <section class="section"><div class="container">
+        <div style="background: var(--background-alt); padding: var(--space-6); border-radius: var(--radius-lg); margin-bottom: var(--space-8); text-align: center;">
+            <h3 style="color: var(--primary-blue); margin-bottom: var(--space-3); font-size: var(--text-2xl);">📝 Bulletin Updates</h3>
+            <p style="color: var(--text-secondary); font-size: var(--text-lg);">Weekly bulletins will be posted here every Sunday. Check back regularly for the latest parish news and announcements.</p>
+        </div>
+        <div class="bulletin-section">
+            <h2>📅 This Week's Bulletin - [Date TBD]</h2>
+            <p style="color: var(--text-secondary); margin-bottom: var(--space-6);">Current week's bulletin content will appear here</p>
+        </div>
+        <div class="bulletin-section">
+            <h2>📖 Sunday Readings</h2>
+            <div class="reading-box"><h4 style="color: var(--liturgical-purple); margin-bottom: var(--space-2);">First Reading</h4><p style="color: var(--text-secondary);">Reading details will be added</p></div>
+            <div class="reading-box"><h4 style="color: var(--liturgical-purple); margin-bottom: var(--space-2);">Responsorial Psalm</h4><p style="color: var(--text-secondary);">Psalm details will be added</p></div>
+            <div class="reading-box"><h4 style="color: var(--liturgical-purple); margin-bottom: var(--space-2);">Second Reading</h4><p style="color: var(--text-secondary);">Reading details will be added</p></div>
+            <div class="reading-box"><h4 style="color: var(--liturgical-purple); margin-bottom: var(--space-2);">Gospel</h4><p style="color: var(--text-secondary);">Gospel details will be added</p></div>
+        </div>
+        <div class="bulletin-section">
+            <h2>📢 Parish Announcements</h2>
+            <ul style="line-height: 2; color: var(--text-secondary);"><li>Announcements will be posted weekly</li><li>Check for ministry updates</li><li>Important dates and events</li></ul>
+        </div>
+        <div class="bulletin-section">
+            <h2>🙏 Prayer Intentions</h2>
+            <p style="color: var(--text-secondary);">Prayer intentions and special intercessions will be listed here.</p>
+        </div>
+    </div></section>
+    <footer style="background: var(--neutral-900); color: white; padding: var(--space-16) 0 var(--space-6);"><div class="container">
+        <div class="footer-grid">
+            <div class="footer-column"><h3 style="color: var(--accent-gold); margin-bottom: var(--space-4);">St. Patrick's Igbogila</h3><p>📍 Igbogila, Ipaja, Lagos<br>📞 +234 802 344 4069<br>✉️ Info@stpatrickigbogilaipaja.com</p></div>
+            <div class="footer-column"><h3 style="color: var(--accent-gold); margin-bottom: var(--space-4);">Quick Links</h3><a href="index.html" class="footer-link">Home</a><a href="about.html" class="footer-link">About</a><a href="contact.html" class="footer-link">Contact</a></div>
+            <div class="footer-column"><h3 style="color: var(--accent-gold); margin-bottom: var(--space-4);">Parish News</h3><a href="harvest-news.html" class="footer-link">Harvest News</a><a href="upcoming-events.html" class="footer-link">Upcoming Events</a><a href="weekly-bulletin.html" class="footer-link">Weekly Bulletin</a><a href="mass-booking.html" class="footer-link">Mass Booking</a></div>
+        </div>
+        <div class="footer-bottom"><p>&copy; 2025 St. Patrick's Catholic Church, Igbogila. All rights reserved.</p></div>
+    </div></footer>
+    <script src="js/main.js"></script>
+</body>
+</html>

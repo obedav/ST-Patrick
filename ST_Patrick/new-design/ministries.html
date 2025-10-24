@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ministries & Societies - St. Patrick's Catholic Church</title>
+    <meta name="description" content="Join one of our vibrant parish ministries and societies at St. Patrick's Catholic Church, Igbogila, Ipaja">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/modern-variables.css">
+    <link rel="stylesheet" href="css/modern-components.css">
+
+    <style>
+        body {
+            padding-top: 80px;
+        }
+
+        .ministries-hero {
+            background: linear-gradient(135deg, var(--liturgical-purple) 0%, var(--primary-blue) 50%, var(--secondary-green) 100%);
+            color: white;
+            padding: var(--space-24) 0 var(--space-16);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ministries-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        /* Ministry Cards */
+        .ministry-card {
+            background: white;
+            border-radius: var(--radius-2xl);
+            padding: var(--space-8);
+            box-shadow: var(--shadow-lg);
+            transition: all var(--transition-base);
+            border-left: 5px solid var(--primary-blue);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .ministry-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-2xl);
+            border-left-color: var(--accent-gold);
+        }
+
+        .ministry-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary-light), var(--primary-blue));
+            border-radius: var(--radius-xl);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: var(--text-3xl);
+            margin-bottom: var(--space-4);
+        }
+
+        .ministry-name {
+            font-size: var(--text-xl);
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-bottom: var(--space-3);
+            line-height: 1.3;
+        }
+
+        .ministry-acronym {
+            color: var(--accent-gold);
+            font-weight: 600;
+            font-size: var(--text-sm);
+            margin-bottom: var(--space-4);
+        }
+
+        .meeting-info {
+            background: var(--background-alt);
+            padding: var(--space-4);
+            border-radius: var(--radius-lg);
+            margin-top: auto;
+        }
+
+        .meeting-day {
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: var(--space-2);
+            display: flex;
+            align-items: center;
+            gap: var(--space-2);
+        }
+
+        .meeting-time {
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: var(--space-2);
+        }
+
+        /* Category Sections */
+        .category-section {
+            margin-bottom: var(--space-20);
+        }
+
+        .category-header {
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-light));
+            color: white;
+            padding: var(--space-6) var(--space-8);
+            border-radius: var(--radius-xl);
+            margin-bottom: var(--space-8);
+            box-shadow: var(--shadow-md);
+        }
+
+        .category-title {
+            font-size: var(--text-3xl);
+            font-weight: 800;
+            margin-bottom: var(--space-2);
+        }
+
+        .category-subtitle {
+            opacity: 0.95;
+            font-size: var(--text-lg);
+        }
+
+        /* Grid Layouts */
+        .ministries-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: var(--space-8);
+        }
+
+        /* Special Ministry Highlights */
+        .daily-ministry {
+            border-left-color: var(--crimson-red);
+        }
+
+        .weekly-ministry {
+            border-left-color: var(--secondary-green);
+        }
+
+        .monthly-ministry {
+            border-left-color: var(--primary-blue);
+        }
+
+        /* Call to Action */
+        .join-cta {
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-green));
+            color: white;
+            padding: var(--space-12);
+            border-radius: var(--radius-2xl);
+            text-align: center;
+            margin: var(--space-16) 0;
+        }
+
+        @media (max-width: 768px) {
+            .ministries-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .ministries-hero {
+                padding: var(--space-16) 0 var(--space-12);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header/Navigation -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <div class="logo-icon">✝</div>
+                <span>St. Patrick's Igbogila</span>
+            </div>
+
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="school.html" class="nav-link">School</a>
+
+                <!-- Programmes Dropdown -->
+                <div class="nav-dropdown">
+                    <button class="nav-link dropdown-toggle active">
+                        Programmes
+                        <svg class="dropdown-icon" width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
+                            <path d="M6 9L1 4h10L6 9z"/>
+                        </svg>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="ministries.html" class="dropdown-item active">Ministries</a>
+                        <a href="mass-times.html" class="dropdown-item">Mass Times</a>
+                        <a href="liturgical-programs.html" class="dropdown-item">Liturgical Programs</a>
+                        <a href="societal-activities.html" class="dropdown-item">Societal Activities</a>
+                    </div>
+                </div>
+
+                <!-- Parish News Dropdown -->
+                <div class="nav-dropdown">
+                    <button class="nav-link dropdown-toggle">
+                        Parish News
+                        <svg class="dropdown-icon" width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
+                            <path d="M6 9L1 4h10L6 9z"/>
+                        </svg>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="harvest-news.html" class="dropdown-item">Harvest News</a>
+                        <a href="upcoming-events.html" class="dropdown-item">Upcoming Events</a>
+                        <a href="weekly-bulletin.html" class="dropdown-item">Weekly Bulletin</a>
+                        <a href="mass-booking.html" class="dropdown-item">Mass Booking</a>
+                    </div>
+                </div>
+
+                <!-- Media & Resources Dropdown -->
+                <div class="nav-dropdown">
+                    <button class="nav-link dropdown-toggle">
+                        Media & Resources
+                        <svg class="dropdown-icon" width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
+                            <path d="M6 9L1 4h10L6 9z"/>
+                        </svg>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="parish-register.html" class="dropdown-item">Parish Register</a>
+                        <a href="photo-gallery.html" class="dropdown-item">Photo Gallery</a>
+                        <a href="podcast.html" class="dropdown-item">Podcast</a>
+                    </div>
+                </div>
+
+                <!-- Facilities Dropdown -->
+                <div class="nav-dropdown">
+                    <button class="nav-link dropdown-toggle">
+                        Facilities
+                        <svg class="dropdown-icon" width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
+                            <path d="M6 9L1 4h10L6 9z"/>
+                        </svg>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="parish-clinic.html" class="dropdown-item">Parish Clinic</a>
+                        <a href="parish-project.html" class="dropdown-item">Parish Project</a>
+                    </div>
+                </div>
+
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="donate.html" class="nav-link">Donate</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="ministries-hero">
+        <div class="container">
+            <div style="position: relative; z-index: 1;">
+                <div style="display: flex; gap: var(--space-2); justify-content: center; margin-bottom: var(--space-4); font-size: var(--text-sm); opacity: 0.9;">
+                    <a href="index.html" style="color: white;">Home</a>
+                    <span>/</span>
+                    <span>Ministries & Societies</span>
+                </div>
+                <h1 style="font-size: var(--text-6xl); margin-bottom: var(--space-4);">Join A Ministry</h1>
+                <p style="font-size: var(--text-2xl); opacity: 0.95; max-width: 800px; margin: 0 auto;">
+                    Discover your calling and serve Christ through our vibrant parish organizations
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="section" style="margin-top: -60px; position: relative; z-index: 10;">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <div class="stat-number">17</div>
+                    <div class="stat-label">Active Ministries</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">100+</div>
+                    <div class="stat-label">Active Members</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">7</div>
+                    <div class="stat-label">Meeting Days</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">365</div>
+                    <div class="stat-label">Days of Service</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Introduction -->
+    <section class="section">
+        <div class="container">
+            <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+                <h2 style="color: var(--primary-blue); margin-bottom: var(--space-6); font-size: var(--text-4xl);">Find Your Place in God's Work</h2>
+                <p style="font-size: var(--text-lg); line-height: 1.8; color: var(--text-secondary);">
+                    At St. Patrick's, we believe every parishioner has unique gifts to share. Whether you're called to prayer, service, evangelization, or fellowship, there's a ministry waiting for you. Join us in building God's kingdom here in Igbogila, Ipaja.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Daily Ministries -->
+    <section class="section" style="background: var(--background-alt);">
+        <div class="container">
+            <div class="category-section">
+                <div class="category-header" style="background: linear-gradient(135deg, var(--crimson-red), #d32f2f);">
+                    <h2 class="category-title">🙏 Daily Devotions</h2>
+                    <p class="category-subtitle">Continuous prayer and spiritual life</p>
+                </div>
+
+                <div class="ministries-grid">
+                    <div class="ministry-card daily-ministry">
+                        <div class="ministry-icon">❤️</div>
+                        <h3 class="ministry-name">Divine Mercy Devotee</h3>
+                        <p style="color: var(--text-secondary); margin-bottom: var(--space-4); line-height: 1.7;">
+                            Daily prayers at the hour of Divine Mercy, interceding for God's mercy upon the world and souls.
+                        </p>
+                        <div class="meeting-info">
+                            <div class="meeting-day">
+                                <span>📅</span>
+                                <span>Every Day</span>
+                            </div>
+                            <div class="meeting-time">
+                                <span>🕒</span>
+                                <span>3:00 PM</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Weekly Ministries -->
+    <section class="section">
+        <div class="container">
+            <div class="category-section">
+                <div class="category-header" style="background: linear-gradient(135deg, var(--secondary-green), #2e7d32);">
+                    <h2 class="category-title">📅 Weekly Ministries</h2>
+                    <p class="category-subtitle">Meeting every Sunday and Monday</p>
+                </div>
+
+                <div class="ministries-grid">
+                    <!-- Our Lady of Perpetual Help -->
+                    <div class="ministry-card weekly-ministry">
+                        <div class="ministry-icon">🌹</div>
+                        <h3 class="ministry-name">Our Lady of Perpetual Help</h3>
+                        <p style="color: var(--text-secondary); margin-bottom: var(--space-4); line-height: 1.7;">
+                            Devotion to the Blessed Virgin Mary under her title of Perpetual Help. Prayers, rosary, and Marian consecration.
+                        </p>
+                        <div class="meeting-info">
+                            <div class="meeting-day">
+                                <span>📅</span>
+                                <span>Every Sunday</span>
+                            </div>
+                            <div class="meeting-time">
+                                <span>🕒</span>
+                                <span>After 6:30 AM Mass</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- St. Vincent de Paul -->
+                    <div class="ministry-card weekly-ministry">
+                        <div class="ministry-icon">🤲</div>
+                        <h3 class="ministry-name">St. Vincent de Paul Society</h3>
+                        <p style="color: var(--text-secondary); margin-bottom: var(--space-4); line-height: 1.7;">
+                            Serving the poor and needy in our community through charitable works and spiritual support.
+                        </p>
+                        <div class="meeting-info">
+                            <div class="meeting-day">
+                                <span>📅</span>
+                                <span>Every Sunday</span>
+                            </div>
+                            <div class="meeting-time">
+                                <span>🕒</span>
+                                <span>After 6:30 AM Mass</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Legion of Mary -->
+                    <div class="ministry-card weekly-ministry">
+                        <div class="ministry-icon">👑</div>
+                        <h3 class="ministry-name">Legion of Mary</h3>
+                        <p style="color: var(--text-secondary); margin-bottom: var(--space-4); line-height: 1.7;">
+                            An association of Catholics who serve the Church through prayer and active cooperation in Mary's work.
+                        </p>
+                        <div class="meeting-info">
+                            <div class="meeting-day">
+                                <span>📅</span>
+                                <span>Every Sunday</span>
+                            </div>
+                            <div class="meeting-time">
+                                <span>🕒</span>
+                                <span>After 6:30 AM Mass</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Catholic Charismatic Renewal -->
+                    <div class="ministry-card weekly-ministry">
+                        <div class="ministry-icon">🔥</div>
+                        <h3 class="ministry-name">Catholic Charismatic Renewal</h3>
+                        <p class="ministry-acronym">Ipaja Ayobo - New Life Prayer Group</p>
+                        <p style="color: var(--text-secondary); margin-bottom: var(--space-4); line-height: 1.7;">
+                            Charismatic prayer, worship, healing, and renewal in the Holy Spirit. Vibrant praise and worship sessions.
+                        </p>
+                        <div class="meeting-info">
+                            <div class="meeting-day">
+                                <span>📅</span>
+                                <span>Every Monday</span>
+                            </div>
+                            <div class="meeting-time">
+                                <span>🕒</span>
+                                <span>6:30 PM - 8:30 PM</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 1st Sunday Ministries -->
+    <section class="section" style="background: var(--background-alt);">
+        <div class="container">
+            <div class="category-section">
+                <div class="category-header">
+                    <h2 class="category-title">🗓️ First Sunday Organizations</h2>
+                    <p class="category-subtitle">Meeting on the 1st Sunday of each month</p>
+                </div>
+
+                <div class="ministries-grid">
+                    <!-- CCM -->
+                    <div class="ministry-card monthly-ministry">
+                        <div class="ministry-icon">👩‍👧‍👦</div>
+                        <h3 class="ministry-name">Confraternity of Christian Mothers</h3>
+                        <p class="ministry-acronym">CCM</p>
+                        <p style="color: var(--text-secondary); margin-bottom: var(--space-4); line-height: 1.7;">
+                            Association of Catholic mothers dedicated to prayer, family values, and supporting the spiritual life of the parish.
+                        </p>
+                        <div class="meeting-info">
+                            <div class="meeting-day">
+                                <span>📅</span>
+                                <span>Every 1st Sunday</span>
+                            </div>
+                            <div class="meeting-time">
+                                <span>🕒</span>
+                                <span>After 6:30 AM Mass</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2nd Sunday Ministries -->
+    <section class="section">
+        <div class="container">
+            <div class="category-section">
+                <div class="category-header">
+                    <h2 class="category-title">🗓️ Second Sunday Organizations</h2>
+                    <p class="category-subtitle">Meeting on the 2nd Sunday of each month</p>
+                </div>
+
+                <div class="ministries-grid">
+                    <!-- CWO -->
+                    <div class="ministry-card monthly-ministry">
+                        <div class="ministry-icon">👩</div>
+                        <h3 class="ministry-name">Catholic Women Organisation</h3>
+                        <p class="ministry-acronym">CWO</p>
+                        <p style="color: var(--text-secondary); margin-bottom: var(--space-4); line-height: 1.7;">
+                            Empowering Catholic women to serve the Church and community through faith, fellowship, and charitable works.
+                        </p>
+                        <div class="meeting-info">
+                            <div class="meeting-day">
+                                <span>📅</span>
+                                <span>Every 2nd Sunday</span>
+                            </div>
+                            <div class="meeting-time">
+                                <span>🕒</span>
+                                <span>After 6:30 AM Mass</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CMO -->
+                    <div class="ministry-card monthly-ministry">
+                        <div class="ministry-icon">👨</div>
+                        <h3 class="ministry-name">Catholic Men Organisation</h3>
+                        <p class="ministry-acronym">CMO</p>
+                        <p style="color: var(--text-secondary); margin-bottom: var(--space-4); line-height: 1.7;">
+                            Catholic men united in faith, promoting spiritual growth, and providing leadership in the parish community.
+                        </p>
+                        <div class="meeting-info">
+                            <div class="meeting-day">
+                                <span>📅</span>
+                                <span>Every 2nd Sunday</span>
+                            </div>
+                            <div class="meeting-time">
+                                <span>🕒</span>
+                                <span>After 6:30 AM Mass</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CYON -->
+                    <div class="ministry-card monthly-ministry">
+                        <div class="ministry-icon">🎓</div>
+                        <h3 class="ministry-name">Catholic Youth Organisation</h3>
+                        <p class="ministry-acronym">CYON</p>
+                        <p style="color: var(--text-secondary); margin-bottom: var(--space-4); line-height: 1.7;">
+                            Young Catholics growing in faith together through fellowship, service, and spiritual formation.
+                        </p>
+                        <div class="meeting-info">
+                            <div class="meeting-day">
+                                <span>📅</span>
+                                <span>Every 2nd Sunday</span>
+                            </div>
+                            <div class="meeting-time">
+                                <span>🕒</span>
+                                <span>After 6:30 AM Mass</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- MCA -->
+                    <div class="ministry-card monthly-ministry">
+                        <div class="ministry-icon">👶</div>
+                        <h3 class="ministry-name">Missionary Childhood Association</h3>
+                        <p class="ministry-acronym">MCA</p>
+                        <p style="color: var(--text-secondary); margin-bottom: var(--space-4); line-height: 1.7;">
+                            Forming young hearts for mission work and helping children understand their role in spreading the Gospel.
+                        </p>
+                        <div class="meeting-info">
+                            <div class="meeting-day">
+                                <span>📅</span>
+                                <span>Every 2nd Sunday</span>
+                            </div>
+                            <div class="meeting-time">
+                                <span>🕒</span>
+                                <span>After 6:30 AM Mass</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- YCW -->
+                    <div class="ministry-card monthly-ministry">
+                        <div class="ministry-icon">💼</div>
+                        <h3 class="ministry-name">Young Catholic Workers Association</h3>
+                        <p class="ministry-acronym">YCW</p>
+                        <p style="color: var(--text-secondary); margin-bottom: var(--space-4); line-height: 1.7;">
+                            Young working Catholics bringing faith into the workplace and supporting each other's spiritual and professional growth.
+                        </p>
+                        <div class="meeting-info">
+                            <div class="meeting-day">
+                                <span>📅</span>
+                                <span>Every 2nd Sunday</span>
+                            </div>
+                            <div class="meeting-time">
+                                <span>🕒</span>
+                                <span>After 10:00 AM Mass</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3rd Sunday Ministries -->
+    <section class="section" style="background: var(--background-alt);">
+        <div class="container">
+            <div class="category-section">
+                <div class="category-header">
+                    <h2 class="category-title">🗓️ Third Sunday Societies</h2>
+                    <p class="category-subtitle">Meeting on the 3rd Sunday of each month</p>
+                </div>
+
+                <div class="ministries-grid">
+                    <!-- St. John Society -->
+                    <div class="ministry-card monthly-ministry">
+                        <div class="ministry-icon">📖</div>
+                        <h3 class="ministry-name">St. John Society</h3>
+                        <p style="color: var(--text-secondary); margin-bottom: var(--space-4); line-height: 1.7;">
+                            Devotion to St. John the Evangelist, promoting love, truth, and contemplation in the Christian life.
+                        </p>
+                        <div class="meeting-info">
+                            <div class="meeting-day">
+                                <span>📅</span>
+                                <span>Every 3rd Sunday</span>
+                            </div>
+                            <div class="meeting-time">
+                                <span>🕒</span>
+                                <span>After 6:30 AM Mass</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Holy Family Society -->
+                    <div class="ministry-card monthly-ministry">
+                        <div class="ministry-icon">👨‍👩‍👧‍👦</div>
+                        <h3 class="ministry-name">Holy Family Society</h3>
+                        <p style="color: var(--text-secondary); margin-bottom: var(--space-4); line-height: 1.7;">
+                            Strengthening family bonds through prayer and devotion to the Holy Family of Jesus, Mary, and Joseph.
+                        </p>
+                        <div class="meeting-info">
+                            <div class="meeting-day">
+                                <span>📅</span>
+                                <span>Every 3rd Sunday</span>
+                            </div>
+                            <div class="meeting-time">
+                                <span>🕒</span>
+                                <span>After 6:30 AM Mass</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- St. Patrick Society -->
+                    <div class="ministry-card monthly-ministry">
+                        <div class="ministry-icon">☘️</div>
+                        <h3 class="ministry-name">St. Patrick Society</h3>
+                        <p style="color: var(--text-secondary); margin-bottom: var(--space-4); line-height: 1.7;">
+                            Honoring our parish patron through prayer, service, and upholding the faith St. Patrick brought to Ireland.
+                        </p>
+                        <div class="meeting-info">
+                            <div class="meeting-day">
+                                <span>📅</span>
+                                <span>Every 3rd Sunday</span>
+                            </div>
+                            <div class="meeting-time">
+                                <span>🕒</span>
+                                <span>After 6:30 AM Mass</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- All Saints Society -->
+                    <div class="ministry-card monthly-ministry">
+                        <div class="ministry-icon">🌟</div>
+                        <h3 class="ministry-name">All Saints Society</h3>
+                        <p style="color: var(--text-secondary); margin-bottom: var(--space-4); line-height: 1.7;">
+                            Celebrating the communion of saints and striving for holiness through their intercession and example.
+                        </p>
+                        <div class="meeting-info">
+                            <div class="meeting-day">
+                                <span>📅</span>
+                                <span>Every 3rd Sunday</span>
+                            </div>
+                            <div class="meeting-time">
+                                <span>🕒</span>
+                                <span>After 6:30 AM Mass</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 1st Saturday Ministries -->
+    <section class="section">
+        <div class="container">
+            <div class="category-section">
+                <div class="category-header" style="background: linear-gradient(135deg, var(--accent-gold), #f59e0b);">
+                    <h2 class="category-title">🗓️ First Saturday Devotions</h2>
+                    <p class="category-subtitle">Special devotions on the 1st Saturday</p>
+                </div>
+
+                <div class="ministries-grid">
+                    <!-- Church Warden -->
+                    <div class="ministry-card monthly-ministry" style="border-left-color: var(--accent-gold);">
+                        <div class="ministry-icon" style="background: linear-gradient(135deg, var(--accent-gold), #f59e0b);">⛪</div>
+                        <h3 class="ministry-name">Church Warden</h3>
+                        <p style="color: var(--text-secondary); margin-bottom: var(--space-4); line-height: 1.7;">
+                            Responsible for the care and maintenance of the church building, ensuring a sacred and welcoming worship space.
+                        </p>
+                        <div class="meeting-info">
+                            <div class="meeting-day">
+                                <span>📅</span>
+                                <span>Every 1st Saturday</span>
+                            </div>
+                            <div class="meeting-time">
+                                <span>🕒</span>
+                                <span>After 7:00 AM Mass</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sacred Heart & Immaculate Heart -->
+                    <div class="ministry-card monthly-ministry" style="border-left-color: var(--accent-gold);">
+                        <div class="ministry-icon" style="background: linear-gradient(135deg, var(--crimson-red), #d32f2f);">❤️‍🔥</div>
+                        <h3 class="ministry-name">Sacred Heart of Jesus & Immaculate Heart of Mary</h3>
+                        <p style="color: var(--text-secondary); margin-bottom: var(--space-4); line-height: 1.7;">
+                            Devotion to the Sacred Hearts of Jesus and Mary, reparation, and consecration to the Two Hearts.
+                        </p>
+                        <div class="meeting-info">
+                            <div class="meeting-day">
+                                <span>📅</span>
+                                <span>Every 1st Saturday</span>
+                            </div>
+                            <div class="meeting-time">
+                                <span>🕒</span>
+                                <span>After 6:30 AM Mass</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ministry Gallery -->
+    <section class="section" style="background: var(--background-alt);">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Ministry Life</h2>
+                <p class="section-subtitle">See our ministries in action</p>
+            </div>
+
+            <div class="gallery-grid">
+                <div class="img-placeholder img-placeholder-medium" style="border-radius: var(--radius-xl);">
+                    📸 CWO Meeting
+                </div>
+                <div class="img-placeholder img-placeholder-medium" style="border-radius: var(--radius-xl);">
+                    📸 CMO Service
+                </div>
+                <div class="img-placeholder img-placeholder-medium" style="border-radius: var(--radius-xl);">
+                    📸 CYON Youth Event
+                </div>
+                <div class="img-placeholder img-placeholder-medium" style="border-radius: var(--radius-xl);">
+                    📸 Charismatic Renewal
+                </div>
+                <div class="img-placeholder img-placeholder-medium" style="border-radius: var(--radius-xl);">
+                    📸 Legion of Mary
+                </div>
+                <div class="img-placeholder img-placeholder-medium" style="border-radius: var(--radius-xl);">
+                    📸 St. Vincent de Paul Outreach
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="section">
+        <div class="container">
+            <div class="join-cta">
+                <h2 style="font-size: var(--text-5xl); margin-bottom: var(--space-4);">Find Your Calling</h2>
+                <p style="font-size: var(--text-xl); opacity: 0.95; margin-bottom: var(--space-8); max-width: 700px; margin-left: auto; margin-right: auto;">
+                    "There are different kinds of gifts, but the same Spirit distributes them." - 1 Corinthians 12:4
+                </p>
+                <p style="font-size: var(--text-lg); opacity: 0.9; margin-bottom: var(--space-10); max-width: 600px; margin-left: auto; margin-right: auto;">
+                    Every ministry welcomes new members. Come to any meeting and discover how you can serve God and His people.
+                </p>
+                <div style="display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap;">
+                    <a href="contact.html" class="btn btn-large" style="background: white; color: var(--primary-blue);">Contact Parish Office</a>
+                    <a href="index.html" class="btn btn-large btn-secondary">Back to Home</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background: var(--neutral-900); color: white; padding: var(--space-16) 0 var(--space-6);">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3 style="color: var(--accent-gold); margin-bottom: var(--space-4);">St. Patrick's Catholic Church</h3>
+                    <p style="color: var(--neutral-300); line-height: 1.7;">
+                        Igbogila, Ipaja, Lagos, Nigeria<br>
+                        Serving God's people since 1932
+                    </p>
+                </div>
+            </div>
+
+            <div style="border-top: 1px solid var(--neutral-800); padding-top: var(--space-6); text-align: center; color: var(--neutral-400); margin-top: var(--space-12);">
+                <p>&copy; 2025 St. Patrick's Catholic Church, Igbogila, Ipaja. All rights reserved.</p>
+                <p style="margin-top: var(--space-2); font-style: italic;">"Each of you should use whatever gift you have received to serve others." - 1 Peter 4:10</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

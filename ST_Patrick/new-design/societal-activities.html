@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Societal Activities - St. Patrick's Catholic Church</title>
+    <meta name="description" content="Join our community activities and social programs at St. Patrick's Catholic Church, Igbogila, Ipaja">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/modern-variables.css">
+    <link rel="stylesheet" href="css/modern-components.css">
+
+    <style>
+        body {
+            padding-top: 80px;
+        }
+
+        .societal-hero {
+            background: linear-gradient(135deg, var(--secondary-green) 0%, var(--primary-blue) 50%, var(--accent-gold) 100%);
+            color: white;
+            padding: var(--space-24) 0 var(--space-16);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .societal-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .activity-card {
+            background: white;
+            border-radius: var(--radius-2xl);
+            padding: var(--space-8);
+            box-shadow: var(--shadow-lg);
+            transition: all var(--transition-base);
+            border-top: 5px solid var(--secondary-green);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .activity-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-2xl);
+            border-top-color: var(--accent-gold);
+        }
+
+        .activity-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--secondary-green), var(--primary-blue));
+            border-radius: var(--radius-xl);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: var(--text-3xl);
+            margin-bottom: var(--space-4);
+        }
+
+        .activity-name {
+            font-size: var(--text-2xl);
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-bottom: var(--space-3);
+        }
+
+        .activity-description {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: var(--space-4);
+            flex-grow: 1;
+        }
+
+        .activity-details {
+            background: var(--background-alt);
+            padding: var(--space-4);
+            border-radius: var(--radius-lg);
+            margin-top: auto;
+        }
+
+        .detail-item {
+            margin-bottom: var(--space-2);
+            display: flex;
+            align-items: center;
+            gap: var(--space-2);
+        }
+
+        .detail-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .activities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: var(--space-8);
+        }
+
+        .category-section {
+            margin-bottom: var(--space-16);
+        }
+
+        .category-header {
+            background: linear-gradient(135deg, var(--secondary-green), var(--primary-blue));
+            color: white;
+            padding: var(--space-6) var(--space-8);
+            border-radius: var(--radius-xl);
+            margin-bottom: var(--space-8);
+        }
+
+        .category-title {
+            font-size: var(--text-3xl);
+            font-weight: 800;
+            margin-bottom: var(--space-2);
+        }
+
+        .category-subtitle {
+            opacity: 0.95;
+            font-size: var(--text-lg);
+        }
+
+        .impact-stats {
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-green));
+            color: white;
+            padding: var(--space-12);
+            border-radius: var(--radius-2xl);
+            text-align: center;
+            margin: var(--space-16) 0;
+        }
+
+        @media (max-width: 768px) {
+            .activities-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .societal-hero {
+                padding: var(--space-16) 0 var(--space-12);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header/Navigation -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <div class="logo-icon">✝</div>
+                <span>St. Patrick's Igbogila</span>
+            </div>
+
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="school.html" class="nav-link">School</a>
+
+                <!-- Programmes Dropdown -->
+                <div class="nav-dropdown">
+                    <button class="nav-link dropdown-toggle active">
+                        Programmes
+                        <svg class="dropdown-icon" width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
+                            <path d="M6 9L1 4h10L6 9z"/>
+                        </svg>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="ministries.html" class="dropdown-item">Ministries</a>
+                        <a href="mass-times.html" class="dropdown-item">Mass Times</a>
+                        <a href="liturgical-programs.html" class="dropdown-item">Liturgical Programs</a>
+                        <a href="societal-activities.html" class="dropdown-item active">Societal Activities</a>
+                    </div>
+                </div>
+
+                <!-- Parish News Dropdown -->
+                <div class="nav-dropdown">
+                    <button class="nav-link dropdown-toggle">
+                        Parish News
+                        <svg class="dropdown-icon" width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
+                            <path d="M6 9L1 4h10L6 9z"/>
+                        </svg>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="harvest-news.html" class="dropdown-item">Harvest News</a>
+                        <a href="upcoming-events.html" class="dropdown-item">Upcoming Events</a>
+                        <a href="weekly-bulletin.html" class="dropdown-item">Weekly Bulletin</a>
+                        <a href="mass-booking.html" class="dropdown-item">Mass Booking</a>
+                    </div>
+                </div>
+
+                <!-- Media & Resources Dropdown -->
+                <div class="nav-dropdown">
+                    <button class="nav-link dropdown-toggle">
+                        Media & Resources
+                        <svg class="dropdown-icon" width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
+                            <path d="M6 9L1 4h10L6 9z"/>
+                        </svg>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="parish-register.html" class="dropdown-item">Parish Register</a>
+                        <a href="photo-gallery.html" class="dropdown-item">Photo Gallery</a>
+                        <a href="podcast.html" class="dropdown-item">Podcast</a>
+                    </div>
+                </div>
+
+                <!-- Facilities Dropdown -->
+                <div class="nav-dropdown">
+                    <button class="nav-link dropdown-toggle">
+                        Facilities
+                        <svg class="dropdown-icon" width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
+                            <path d="M6 9L1 4h10L6 9z"/>
+                        </svg>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="parish-clinic.html" class="dropdown-item">Parish Clinic</a>
+                        <a href="parish-project.html" class="dropdown-item">Parish Project</a>
+                    </div>
+                </div>
+
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="donate.html" class="nav-link">Donate</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="societal-hero">
+        <div class="container">
+            <div style="position: relative; z-index: 1;">
+                <div style="display: flex; gap: var(--space-2); justify-content: center; margin-bottom: var(--space-4); font-size: var(--text-sm); opacity: 0.9;">
+                    <a href="index.html" style="color: white;">Home</a>
+                    <span>/</span>
+                    <a href="#" style="color: white;">Programmes</a>
+                    <span>/</span>
+                    <span>Societal Activities</span>
+                </div>
+                <h1 style="font-size: var(--text-6xl); margin-bottom: var(--space-4);">Societal Activities</h1>
+                <p style="font-size: var(--text-2xl); opacity: 0.95; max-width: 800px; margin: 0 auto;">
+                    Building community, serving others, and growing together in faith
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="section" style="margin-top: -60px; position: relative; z-index: 10;">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <div class="stat-number">15+</div>
+                    <div class="stat-label">Community Programs</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">500+</div>
+                    <div class="stat-label">Lives Impacted</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">12</div>
+                    <div class="stat-label">Annual Events</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="section">
+        <div class="container">
+            <!-- Community Outreach -->
+            <div class="category-section">
+                <div class="category-header">
+                    <h2 class="category-title">Community Outreach</h2>
+                    <p class="category-subtitle">Serving our neighbors and making a difference</p>
+                </div>
+
+                <div class="activities-grid">
+                    <div class="activity-card">
+                        <div class="activity-icon">🤝</div>
+                        <h3 class="activity-name">Charity & Welfare</h3>
+                        <p class="activity-description">
+                            Supporting the less privileged in our community through food distribution, clothing drives, and financial assistance to families in need.
+                        </p>
+                        <div class="activity-details">
+                            <div class="detail-item">📅 Monthly distributions</div>
+                            <div class="detail-item">👥 Coordinated by CMO & CWO</div>
+                            <div class="detail-item">📞 Contact: Parish Office</div>
+                        </div>
+                    </div>
+
+                    <div class="activity-card">
+                        <div class="activity-icon">🏥</div>
+                        <h3 class="activity-name">Medical Outreach</h3>
+                        <p class="activity-description">
+                            Free medical checkups, health screenings, and wellness programs for parishioners and community members.
+                        </p>
+                        <div class="activity-details">
+                            <div class="detail-item">📅 Quarterly events</div>
+                            <div class="detail-item">🩺 Free health screenings</div>
+                            <div class="detail-item">💊 Medication support available</div>
+                        </div>
+                    </div>
+
+                    <div class="activity-card">
+                        <div class="activity-icon">📚</div>
+                        <h3 class="activity-name">Educational Support</h3>
+                        <p class="activity-description">
+                            Scholarships, school supplies, and tutoring programs for students from underprivileged backgrounds in our parish.
+                        </p>
+                        <div class="activity-details">
+                            <div class="detail-item">📅 Annual scholarship awards</div>
+                            <div class="detail-item">📖 Free tutorial classes</div>
+                            <div class="detail-item">🎒 Back-to-school programs</div>
+                        </div>
+                    </div>
+
+                    <div class="activity-card">
+                        <div class="activity-icon">👵</div>
+                        <h3 class="activity-name">Elderly Care Program</h3>
+                        <p class="activity-description">
+                            Visitation, companionship, and support services for elderly parishioners and community members.
+                        </p>
+                        <div class="activity-details">
+                            <div class="detail-item">📅 Weekly home visits</div>
+                            <div class="detail-item">🎂 Birthday celebrations</div>
+                            <div class="detail-item">🏥 Medical assistance coordination</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Social & Fellowship Activities -->
+            <div class="category-section">
+                <div class="category-header">
+                    <h2 class="category-title">Social & Fellowship</h2>
+                    <p class="category-subtitle">Building bonds and strengthening community</p>
+                </div>
+
+                <div class="activities-grid">
+                    <div class="activity-card">
+                        <div class="activity-icon">🎉</div>
+                        <h3 class="activity-name">Parish Festival</h3>
+                        <p class="activity-description">
+                            Annual celebration of our patron saint with Mass, cultural displays, food, music, and family activities.
+                        </p>
+                        <div class="activity-details">
+                            <div class="detail-item">📅 March 17 (St. Patrick's Day)</div>
+                            <div class="detail-item">🎊 All-day celebration</div>
+                            <div class="detail-item">🍴 Food & cultural events</div>
+                        </div>
+                    </div>
+
+                    <div class="activity-card">
+                        <div class="activity-icon">🎄</div>
+                        <h3 class="activity-name">Christmas & Easter Programs</h3>
+                        <p class="activity-description">
+                            Special celebrations, carol services, drama presentations, and community gatherings during major liturgical seasons.
+                        </p>
+                        <div class="activity-details">
+                            <div class="detail-item">🎭 Drama performances</div>
+                            <div class="detail-item">🎵 Carol services</div>
+                            <div class="detail-item">🎁 Gift distributions</div>
+                        </div>
+                    </div>
+
+                    <div class="activity-card">
+                        <div class="activity-icon">👨‍👩‍👧‍👦</div>
+                        <h3 class="activity-name">Family Day</h3>
+                        <p class="activity-description">
+                            Quarterly family gatherings with games, competitions, picnics, and activities for all ages.
+                        </p>
+                        <div class="activity-details">
+                            <div class="detail-item">📅 Quarterly events</div>
+                            <div class="detail-item">🎮 Games & competitions</div>
+                            <div class="detail-item">🍔 Family picnic</div>
+                        </div>
+                    </div>
+
+                    <div class="activity-card">
+                        <div class="activity-icon">⚽</div>
+                        <h3 class="activity-name">Sports & Recreation</h3>
+                        <p class="activity-description">
+                            Football tournaments, table tennis competitions, and other sporting activities fostering unity and healthy living.
+                        </p>
+                        <div class="activity-details">
+                            <div class="detail-item">⚽ Inter-ministry tournaments</div>
+                            <div class="detail-item">🏓 Monthly sports days</div>
+                            <div class="detail-item">🏆 Annual championships</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Special Programs -->
+            <div class="category-section">
+                <div class="category-header">
+                    <h2 class="category-title">Special Programs</h2>
+                    <p class="category-subtitle">Unique initiatives serving specific needs</p>
+                </div>
+
+                <div class="activities-grid">
+                    <div class="activity-card">
+                        <div class="activity-icon">💍</div>
+                        <h3 class="activity-name">Marriage Enrichment</h3>
+                        <p class="activity-description">
+                            Workshops, retreats, and counseling sessions for married couples to strengthen their marriages.
+                        </p>
+                        <div class="activity-details">
+                            <div class="detail-item">📅 Quarterly workshops</div>
+                            <div class="detail-item">💑 Couples retreats</div>
+                            <div class="detail-item">👨‍⚖️ Marriage counseling</div>
+                        </div>
+                    </div>
+
+                    <div class="activity-card">
+                        <div class="activity-icon">👶</div>
+                        <h3 class="activity-name">Youth & Children Programs</h3>
+                        <p class="activity-description">
+                            Summer camps, vacation Bible school, talent shows, and youth conferences for spiritual and personal development.
+                        </p>
+                        <div class="activity-details">
+                            <div class="detail-item">☀️ Summer vacation programs</div>
+                            <div class="detail-item">🎤 Talent development</div>
+                            <div class="detail-item">📖 Bible school</div>
+                        </div>
+                    </div>
+
+                    <div class="activity-card">
+                        <div class="activity-icon">💼</div>
+                        <h3 class="activity-name">Skills Acquisition</h3>
+                        <p class="activity-description">
+                            Training programs in vocational skills, entrepreneurship, and capacity building for economic empowerment.
+                        </p>
+                        <div class="activity-details">
+                            <div class="detail-item">🛠️ Vocational training</div>
+                            <div class="detail-item">💻 Digital skills classes</div>
+                            <div class="detail-item">💰 Business mentorship</div>
+                        </div>
+                    </div>
+
+                    <div class="activity-card">
+                        <div class="activity-icon">🌍</div>
+                        <h3 class="activity-name">Environmental Programs</h3>
+                        <p class="activity-description">
+                            Community clean-up exercises, tree planting, and environmental awareness campaigns.
+                        </p>
+                        <div class="activity-details">
+                            <div class="detail-item">🧹 Monthly clean-up</div>
+                            <div class="detail-item">🌳 Tree planting drives</div>
+                            <div class="detail-item">♻️ Recycling initiatives</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Impact Statement -->
+            <div class="impact-stats">
+                <h2 style="font-size: var(--text-4xl); font-weight: 800; margin-bottom: var(--space-4);">
+                    Making a Difference Together
+                </h2>
+                <p style="font-size: var(--text-xl); margin-bottom: var(--space-8); opacity: 0.95;">
+                    "For I was hungry and you gave me something to eat, I was thirsty and you gave me something to drink, I was a stranger and you invited me in" - Matthew 25:35
+                </p>
+                <div class="grid grid-3" style="margin-bottom: var(--space-8);">
+                    <div>
+                        <div style="font-size: var(--text-5xl); font-weight: 800; margin-bottom: var(--space-2);">1000+</div>
+                        <div style="font-size: var(--text-lg);">Families Supported Annually</div>
+                    </div>
+                    <div>
+                        <div style="font-size: var(--text-5xl); font-weight: 800; margin-bottom: var(--space-2);">50+</div>
+                        <div style="font-size: var(--text-lg);">Students on Scholarship</div>
+                    </div>
+                    <div>
+                        <div style="font-size: var(--text-5xl); font-weight: 800; margin-bottom: var(--space-2);">200+</div>
+                        <div style="font-size: var(--text-lg);">Volunteers</div>
+                    </div>
+                </div>
+                <a href="contact.html" class="btn btn-large" style="background: white; color: var(--primary-blue);">Join Our Mission</a>
+            </div>
+
+            <!-- Get Involved -->
+            <div class="card" style="background: var(--background-alt); border-left: 5px solid var(--secondary-green);">
+                <h3 style="color: var(--primary-blue); margin-bottom: var(--space-4); font-size: var(--text-2xl);">🌟 Get Involved</h3>
+                <p style="margin-bottom: var(--space-4); font-size: var(--text-lg);">
+                    Every parishioner has a role to play in building our community. Whether through volunteering, donations, or participation, your contribution matters.
+                </p>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="padding: var(--space-3) 0; border-bottom: 1px solid var(--border);">
+                        <strong>💝 Volunteer:</strong> Join our outreach teams and make a direct impact in people's lives
+                    </li>
+                    <li style="padding: var(--space-3) 0; border-bottom: 1px solid var(--border);">
+                        <strong>🎁 Donate:</strong> Support our programs through financial contributions or donations in kind
+                    </li>
+                    <li style="padding: var(--space-3) 0; border-bottom: 1px solid var(--border);">
+                        <strong>📢 Spread the Word:</strong> Share information about our programs with those who need help
+                    </li>
+                    <li style="padding: var(--space-3) 0;">
+                        <strong>🙏 Pray:</strong> Keep our community and those we serve in your prayers
+                    </li>
+                </ul>
+                <div style="margin-top: var(--space-6); text-align: center;">
+                    <a href="contact.html" class="btn btn-primary">Contact Us to Volunteer</a>
+                    <a href="give.html" class="btn btn-secondary" style="margin-left: var(--space-4);">Make a Donation</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background: var(--neutral-900); color: white; padding: var(--space-16) 0 var(--space-6);">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3 style="color: var(--accent-gold); margin-bottom: var(--space-4);">St. Patrick's Igbogila</h3>
+                    <p>A vibrant Catholic community serving God's people since 1932.</p>
+                    <p style="margin-top: var(--space-4);">📍 Igbogila, Ipaja, Lagos<br>📞 +234 802 344 4069<br>✉️ Info@stpatrickigbogilaipaja.com</p>
+                </div>
+                <div class="footer-column">
+                    <h3 style="color: var(--accent-gold); margin-bottom: var(--space-4);">Quick Links</h3>
+                    <a href="index.html" class="footer-link">Home</a>
+                    <a href="about.html" class="footer-link">About Us</a>
+                    <a href="mass-times.html" class="footer-link">Mass Times</a>
+                    <a href="events.html" class="footer-link">Events</a>
+                    <a href="contact.html" class="footer-link">Contact</a>
+                </div>
+                <div class="footer-column">
+                    <h3 style="color: var(--accent-gold); margin-bottom: var(--space-4);">Programmes</h3>
+                    <a href="ministries.html" class="footer-link">Ministries</a>
+                    <a href="liturgical-programs.html" class="footer-link">Liturgical Programs</a>
+                    <a href="societal-activities.html" class="footer-link">Societal Activities</a>
+                    <a href="school.html" class="footer-link">Parish School</a>
+                </div>
+                <div class="footer-column">
+                    <h3 style="color: var(--accent-gold); margin-bottom: var(--space-4);">Stay Connected</h3>
+                    <p>Join our community and stay updated with parish news and events.</p>
+                    <div style="display: flex; gap: var(--space-2); margin-top: var(--space-4);">
+                        <a href="#" class="btn btn-secondary" style="padding: var(--space-2) var(--space-4);">Facebook</a>
+                        <a href="#" class="btn btn-secondary" style="padding: var(--space-2) var(--space-4);">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 St. Patrick's Catholic Church, Igbogila. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

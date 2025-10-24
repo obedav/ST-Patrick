@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liturgical Programs - St. Patrick's Catholic Church</title>
+    <meta name="description" content="Participate in our liturgical programs and devotions at St. Patrick's Catholic Church, Igbogila, Ipaja">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/modern-variables.css">
+    <link rel="stylesheet" href="css/modern-components.css">
+
+    <style>
+        body {
+            padding-top: 80px;
+        }
+
+        .liturgical-hero {
+            background: linear-gradient(135deg, var(--liturgical-purple) 0%, var(--primary-blue) 50%, var(--crimson-red) 100%);
+            color: white;
+            padding: var(--space-24) 0 var(--space-16);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .liturgical-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .program-card {
+            background: white;
+            border-radius: var(--radius-2xl);
+            padding: var(--space-8);
+            box-shadow: var(--shadow-lg);
+            transition: all var(--transition-base);
+            border-top: 5px solid var(--liturgical-purple);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .program-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-2xl);
+        }
+
+        .program-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--liturgical-purple), var(--primary-blue));
+            border-radius: var(--radius-xl);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: var(--text-3xl);
+            margin-bottom: var(--space-4);
+        }
+
+        .program-name {
+            font-size: var(--text-2xl);
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-bottom: var(--space-3);
+        }
+
+        .program-description {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: var(--space-4);
+            flex-grow: 1;
+        }
+
+        .schedule-info {
+            background: var(--background-alt);
+            padding: var(--space-4);
+            border-radius: var(--radius-lg);
+            margin-top: auto;
+        }
+
+        .schedule-day {
+            font-weight: 600;
+            color: var(--primary-blue);
+            margin-bottom: var(--space-2);
+            display: flex;
+            align-items: center;
+            gap: var(--space-2);
+        }
+
+        .schedule-time {
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: var(--space-2);
+        }
+
+        .programs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: var(--space-8);
+        }
+
+        .category-section {
+            margin-bottom: var(--space-16);
+        }
+
+        .category-header {
+            background: linear-gradient(135deg, var(--liturgical-purple), var(--primary-blue));
+            color: white;
+            padding: var(--space-6) var(--space-8);
+            border-radius: var(--radius-xl);
+            margin-bottom: var(--space-8);
+        }
+
+        .category-title {
+            font-size: var(--text-3xl);
+            font-weight: 800;
+            margin-bottom: var(--space-2);
+        }
+
+        .category-subtitle {
+            opacity: 0.95;
+            font-size: var(--text-lg);
+        }
+
+        .special-highlight {
+            background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-light) 100%);
+            padding: var(--space-10);
+            border-radius: var(--radius-2xl);
+            text-align: center;
+            margin: var(--space-12) 0;
+        }
+
+        @media (max-width: 768px) {
+            .programs-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .liturgical-hero {
+                padding: var(--space-16) 0 var(--space-12);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header/Navigation -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <div class="logo-icon">✝</div>
+                <span>St. Patrick's Igbogila</span>
+            </div>
+
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="school.html" class="nav-link">School</a>
+
+                <!-- Programmes Dropdown -->
+                <div class="nav-dropdown">
+                    <button class="nav-link dropdown-toggle active">
+                        Programmes
+                        <svg class="dropdown-icon" width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
+                            <path d="M6 9L1 4h10L6 9z"/>
+                        </svg>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="ministries.html" class="dropdown-item">Ministries</a>
+                        <a href="mass-times.html" class="dropdown-item">Mass Times</a>
+                        <a href="liturgical-programs.html" class="dropdown-item active">Liturgical Programs</a>
+                        <a href="societal-activities.html" class="dropdown-item">Societal Activities</a>
+                    </div>
+                </div>
+
+                <!-- Parish News Dropdown -->
+                <div class="nav-dropdown">
+                    <button class="nav-link dropdown-toggle">
+                        Parish News
+                        <svg class="dropdown-icon" width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
+                            <path d="M6 9L1 4h10L6 9z"/>
+                        </svg>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="harvest-news.html" class="dropdown-item">Harvest News</a>
+                        <a href="upcoming-events.html" class="dropdown-item">Upcoming Events</a>
+                        <a href="weekly-bulletin.html" class="dropdown-item">Weekly Bulletin</a>
+                        <a href="mass-booking.html" class="dropdown-item">Mass Booking</a>
+                    </div>
+                </div>
+
+                <!-- Media & Resources Dropdown -->
+                <div class="nav-dropdown">
+                    <button class="nav-link dropdown-toggle">
+                        Media & Resources
+                        <svg class="dropdown-icon" width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
+                            <path d="M6 9L1 4h10L6 9z"/>
+                        </svg>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="parish-register.html" class="dropdown-item">Parish Register</a>
+                        <a href="photo-gallery.html" class="dropdown-item">Photo Gallery</a>
+                        <a href="podcast.html" class="dropdown-item">Podcast</a>
+                    </div>
+                </div>
+
+                <!-- Facilities Dropdown -->
+                <div class="nav-dropdown">
+                    <button class="nav-link dropdown-toggle">
+                        Facilities
+                        <svg class="dropdown-icon" width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
+                            <path d="M6 9L1 4h10L6 9z"/>
+                        </svg>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="parish-clinic.html" class="dropdown-item">Parish Clinic</a>
+                        <a href="parish-project.html" class="dropdown-item">Parish Project</a>
+                    </div>
+                </div>
+
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="donate.html" class="nav-link">Donate</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="liturgical-hero">
+        <div class="container">
+            <div style="position: relative; z-index: 1;">
+                <div style="display: flex; gap: var(--space-2); justify-content: center; margin-bottom: var(--space-4); font-size: var(--text-sm); opacity: 0.9;">
+                    <a href="index.html" style="color: white;">Home</a>
+                    <span>/</span>
+                    <a href="#" style="color: white;">Programmes</a>
+                    <span>/</span>
+                    <span>Liturgical Programs</span>
+                </div>
+                <h1 style="font-size: var(--text-6xl); margin-bottom: var(--space-4);">Liturgical Programs</h1>
+                <p style="font-size: var(--text-2xl); opacity: 0.95; max-width: 800px; margin: 0 auto;">
+                    Deepen your faith through prayer, worship, and devotion
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="section" style="margin-top: -60px; position: relative; z-index: 10;">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <div class="stat-number">10+</div>
+                    <div class="stat-label">Devotional Programs</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">Daily</div>
+                    <div class="stat-label">Prayer Opportunities</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">7</div>
+                    <div class="stat-label">Days of Worship</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="section">
+        <div class="container">
+            <!-- Daily Programs -->
+            <div class="category-section">
+                <div class="category-header">
+                    <h2 class="category-title">Daily Devotions</h2>
+                    <p class="category-subtitle">Regular prayer and worship opportunities</p>
+                </div>
+
+                <div class="programs-grid">
+                    <div class="program-card">
+                        <div class="program-icon">📿</div>
+                        <h3 class="program-name">Daily Rosary</h3>
+                        <p class="program-description">
+                            Join us for the daily recitation of the Holy Rosary. Pray together with fellow parishioners and meditate on the mysteries of our faith.
+                        </p>
+                        <div class="schedule-info">
+                            <div class="schedule-day">📅 Monday - Saturday</div>
+                            <div class="schedule-time">⏰ 6:30 AM (Before Mass)</div>
+                        </div>
+                    </div>
+
+                    <div class="program-card">
+                        <div class="program-icon">🕊️</div>
+                        <h3 class="program-name">Eucharistic Adoration</h3>
+                        <p class="program-description">
+                            Spend time in silent prayer before the Blessed Sacrament. Experience the peace and presence of Christ in the Eucharist.
+                        </p>
+                        <div class="schedule-info">
+                            <div class="schedule-day">📅 First Friday</div>
+                            <div class="schedule-time">⏰ After Morning Mass - 6:00 PM</div>
+                        </div>
+                    </div>
+
+                    <div class="program-card">
+                        <div class="program-icon">🙏</div>
+                        <h3 class="program-name">Divine Mercy Chaplet</h3>
+                        <p class="program-description">
+                            Pray the Chaplet of Divine Mercy and experience God's boundless mercy and love for His people.
+                        </p>
+                        <div class="schedule-info">
+                            <div class="schedule-day">📅 Daily</div>
+                            <div class="schedule-time">⏰ 3:00 PM (Hour of Mercy)</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Weekly Programs -->
+            <div class="category-section">
+                <div class="category-header">
+                    <h2 class="category-title">Weekly Devotions</h2>
+                    <p class="category-subtitle">Special prayers and services throughout the week</p>
+                </div>
+
+                <div class="programs-grid">
+                    <div class="program-card">
+                        <div class="program-icon">✝️</div>
+                        <h3 class="program-name">Stations of the Cross</h3>
+                        <p class="program-description">
+                            Follow the path of Christ's passion and reflect on His sacrifice for our salvation.
+                        </p>
+                        <div class="schedule-info">
+                            <div class="schedule-day">📅 Every Friday (Lent)</div>
+                            <div class="schedule-time">⏰ 5:00 PM</div>
+                        </div>
+                    </div>
+
+                    <div class="program-card">
+                        <div class="program-icon">🌹</div>
+                        <h3 class="program-name">Novenas</h3>
+                        <p class="program-description">
+                            Participate in special novenas throughout the liturgical year, including St. Patrick's Novena and other devotions.
+                        </p>
+                        <div class="schedule-info">
+                            <div class="schedule-day">📅 Seasonal/As Announced</div>
+                            <div class="schedule-time">⏰ Check Parish Bulletin</div>
+                        </div>
+                    </div>
+
+                    <div class="program-card">
+                        <div class="program-icon">📖</div>
+                        <h3 class="program-name">Liturgy of the Hours</h3>
+                        <p class="program-description">
+                            Join in the official prayer of the Church. Pray morning and evening prayer with the universal Church.
+                        </p>
+                        <div class="schedule-info">
+                            <div class="schedule-day">📅 Sunday</div>
+                            <div class="schedule-time">⏰ 7:00 AM & 6:00 PM</div>
+                        </div>
+                    </div>
+
+                    <div class="program-card">
+                        <div class="program-icon">🕯️</div>
+                        <h3 class="program-name">Evening Prayer Service</h3>
+                        <p class="program-description">
+                            End your day with communal evening prayer, hymns, and reflection on Sacred Scripture.
+                        </p>
+                        <div class="schedule-info">
+                            <div class="schedule-day">📅 Wednesday</div>
+                            <div class="schedule-time">⏰ 6:30 PM</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Monthly & Special Programs -->
+            <div class="category-section">
+                <div class="category-header">
+                    <h2 class="category-title">Monthly & Special Devotions</h2>
+                    <p class="category-subtitle">Monthly celebrations and special liturgical events</p>
+                </div>
+
+                <div class="programs-grid">
+                    <div class="program-card">
+                        <div class="program-icon">❤️</div>
+                        <h3 class="program-name">First Friday Devotion</h3>
+                        <p class="program-description">
+                            Honor the Sacred Heart of Jesus with special devotions, Mass, and Eucharistic Adoration.
+                        </p>
+                        <div class="schedule-info">
+                            <div class="schedule-day">📅 First Friday of Month</div>
+                            <div class="schedule-time">⏰ 7:00 AM Mass + All-Day Adoration</div>
+                        </div>
+                    </div>
+
+                    <div class="program-card">
+                        <div class="program-icon">💙</div>
+                        <h3 class="program-name">First Saturday Devotion</h3>
+                        <p class="program-description">
+                            Devotion to the Immaculate Heart of Mary with Mass, Rosary, and meditation.
+                        </p>
+                        <div class="schedule-info">
+                            <div class="schedule-day">📅 First Saturday of Month</div>
+                            <div class="schedule-time">⏰ 7:00 AM</div>
+                        </div>
+                    </div>
+
+                    <div class="program-card">
+                        <div class="program-icon">⛪</div>
+                        <h3 class="program-name">Benediction</h3>
+                        <p class="program-description">
+                            Worship and adoration of the Blessed Sacrament with traditional hymns and prayers of blessing.
+                        </p>
+                        <div class="schedule-info">
+                            <div class="schedule-day">📅 Last Sunday of Month</div>
+                            <div class="schedule-time">⏰ After 5:00 PM Mass</div>
+                        </div>
+                    </div>
+
+                    <div class="program-card">
+                        <div class="program-icon">🌟</div>
+                        <h3 class="program-name">Marian Devotions</h3>
+                        <p class="program-description">
+                            Special devotions to Our Lady throughout the liturgical year, including May Crowning and October Rosary.
+                        </p>
+                        <div class="schedule-info">
+                            <div class="schedule-day">📅 May & October</div>
+                            <div class="schedule-time">⏰ Various Times</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Special Highlight -->
+            <div class="special-highlight">
+                <h2 style="font-size: var(--text-4xl); font-weight: 800; margin-bottom: var(--space-4); color: var(--primary-blue);">
+                    "Pray without ceasing"
+                </h2>
+                <p style="font-size: var(--text-xl); margin-bottom: var(--space-6); color: var(--text-secondary);">
+                    1 Thessalonians 5:17
+                </p>
+                <p style="font-size: var(--text-lg); max-width: 700px; margin: 0 auto var(--space-6); color: var(--text-primary);">
+                    All parishioners are encouraged to participate in our liturgical programs. Whether you're seeking deeper prayer life, community worship, or spiritual growth, there's a place for you.
+                </p>
+                <a href="contact.html" class="btn btn-primary btn-large">Get Involved</a>
+            </div>
+
+            <!-- Additional Information -->
+            <div class="card" style="background: var(--background-alt); border-left: 5px solid var(--liturgical-purple);">
+                <h3 style="color: var(--primary-blue); margin-bottom: var(--space-4); font-size: var(--text-2xl);">📋 Important Information</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="padding: var(--space-3) 0; border-bottom: 1px solid var(--border);">
+                        <strong>🔔 Announcements:</strong> Check the parish bulletin for special liturgical events and changes to regular schedules
+                    </li>
+                    <li style="padding: var(--space-3) 0; border-bottom: 1px solid var(--border);">
+                        <strong>📅 Liturgical Calendar:</strong> Follow the Church's liturgical seasons with special devotions for Advent, Lent, and feast days
+                    </li>
+                    <li style="padding: var(--space-3) 0; border-bottom: 1px solid var(--border);">
+                        <strong>🙋 Get Involved:</strong> Contact the parish office to lead prayers, coordinate programs, or volunteer
+                    </li>
+                    <li style="padding: var(--space-3) 0;">
+                        <strong>📱 Stay Updated:</strong> Join our WhatsApp group or follow us on social media for daily prayer reminders
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background: var(--neutral-900); color: white; padding: var(--space-16) 0 var(--space-6);">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3 style="color: var(--accent-gold); margin-bottom: var(--space-4);">St. Patrick's Igbogila</h3>
+                    <p>A vibrant Catholic community serving God's people since 1932.</p>
+                    <p style="margin-top: var(--space-4);">📍 Igbogila, Ipaja, Lagos<br>📞 +234 802 344 4069<br>✉️ Info@stpatrickigbogilaipaja.com</p>
+                </div>
+                <div class="footer-column">
+                    <h3 style="color: var(--accent-gold); margin-bottom: var(--space-4);">Quick Links</h3>
+                    <a href="index.html" class="footer-link">Home</a>
+                    <a href="about.html" class="footer-link">About Us</a>
+                    <a href="mass-times.html" class="footer-link">Mass Times</a>
+                    <a href="events.html" class="footer-link">Events</a>
+                    <a href="contact.html" class="footer-link">Contact</a>
+                </div>
+                <div class="footer-column">
+                    <h3 style="color: var(--accent-gold); margin-bottom: var(--space-4);">Programmes</h3>
+                    <a href="ministries.html" class="footer-link">Ministries</a>
+                    <a href="liturgical-programs.html" class="footer-link">Liturgical Programs</a>
+                    <a href="societal-activities.html" class="footer-link">Societal Activities</a>
+                    <a href="school.html" class="footer-link">Parish School</a>
+                </div>
+                <div class="footer-column">
+                    <h3 style="color: var(--accent-gold); margin-bottom: var(--space-4);">Stay Connected</h3>
+                    <p>Join our community and stay updated with parish news and events.</p>
+                    <div style="display: flex; gap: var(--space-2); margin-top: var(--space-4);">
+                        <a href="#" class="btn btn-secondary" style="padding: var(--space-2) var(--space-4);">Facebook</a>
+                        <a href="#" class="btn btn-secondary" style="padding: var(--space-2) var(--space-4);">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 St. Patrick's Catholic Church, Igbogila. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

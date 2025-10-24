@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mass Times & Parish Activities - St. Patrick's Catholic Church</title>
+    <meta name="description" content="Mass schedules, confession times, and parish activities at St. Patrick's Catholic Church, Igbogila, Ipaja">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/modern-variables.css">
+    <link rel="stylesheet" href="css/modern-components.css">
+
+    <style>
+        body {
+            padding-top: 80px;
+        }
+
+        .mass-hero {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--liturgical-purple) 100%);
+            color: white;
+            padding: var(--space-24) 0 var(--space-16);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mass-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        /* Schedule Cards */
+        .schedule-card {
+            background: white;
+            border-radius: var(--radius-2xl);
+            padding: var(--space-10);
+            box-shadow: var(--shadow-xl);
+            margin-bottom: var(--space-8);
+        }
+
+        .schedule-header {
+            display: flex;
+            align-items: center;
+            gap: var(--space-4);
+            margin-bottom: var(--space-8);
+            padding-bottom: var(--space-6);
+            border-bottom: 3px solid var(--primary-blue);
+        }
+
+        .schedule-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-light));
+            border-radius: var(--radius-xl);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: var(--text-4xl);
+            flex-shrink: 0;
+        }
+
+        .schedule-title {
+            font-size: var(--text-3xl);
+            font-weight: 800;
+            color: var(--primary-blue);
+            margin: 0;
+        }
+
+        .mass-time-item {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: var(--space-6);
+            padding: var(--space-6);
+            border-radius: var(--radius-lg);
+            margin-bottom: var(--space-4);
+            transition: all var(--transition-base);
+        }
+
+        .mass-time-item:hover {
+            background: var(--background-alt);
+            transform: translateX(8px);
+        }
+
+        .mass-day {
+            font-weight: 700;
+            font-size: var(--text-lg);
+            color: var(--primary-blue);
+        }
+
+        .mass-hour {
+            font-size: var(--text-xl);
+            color: var(--text-secondary);
+            font-weight: 600;
+        }
+
+        .mass-location {
+            color: var(--accent-gold);
+            font-weight: 600;
+            font-size: var(--text-sm);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Special Events */
+        .special-event {
+            background: linear-gradient(135deg, rgba(124, 58, 237, 0.05), rgba(30, 58, 138, 0.05));
+            border-left: 4px solid var(--liturgical-purple);
+            padding: var(--space-6);
+            border-radius: var(--radius-lg);
+            margin-bottom: var(--space-4);
+        }
+
+        .special-event-title {
+            font-weight: 700;
+            color: var(--liturgical-purple);
+            font-size: var(--text-lg);
+            margin-bottom: var(--space-2);
+        }
+
+        /* Sacraments Section */
+        .sacrament-card {
+            background: white;
+            border-radius: var(--radius-xl);
+            padding: var(--space-8);
+            box-shadow: var(--shadow-md);
+            transition: all var(--transition-base);
+            border-top: 4px solid var(--secondary-green);
+        }
+
+        .sacrament-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .sacrament-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--secondary-green), var(--primary-light));
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: var(--text-3xl);
+            margin-bottom: var(--space-4);
+        }
+
+        /* Contact Info Box */
+        .contact-box {
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-green));
+            color: white;
+            padding: var(--space-10);
+            border-radius: var(--radius-2xl);
+            text-align: center;
+            margin-top: var(--space-16);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--space-3);
+            margin: var(--space-3) 0;
+            font-size: var(--text-lg);
+        }
+
+        @media (max-width: 768px) {
+            .mass-time-item {
+                grid-template-columns: 1fr;
+                gap: var(--space-2);
+            }
+
+            .mass-hero {
+                padding: var(--space-16) 0 var(--space-12);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header/Navigation -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <div class="logo-icon">✝</div>
+                <span>St. Patrick's Igbogila</span>
+            </div>
+
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="school.html" class="nav-link">School</a>
+
+                <!-- Programmes Dropdown -->
+                <div class="nav-dropdown">
+                    <button class="nav-link dropdown-toggle active">
+                        Programmes
+                        <svg class="dropdown-icon" width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
+                            <path d="M6 9L1 4h10L6 9z"/>
+                        </svg>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="ministries.html" class="dropdown-item">Ministries</a>
+                        <a href="mass-times.html" class="dropdown-item active">Mass Times</a>
+                        <a href="liturgical-programs.html" class="dropdown-item">Liturgical Programs</a>
+                        <a href="societal-activities.html" class="dropdown-item">Societal Activities</a>
+                    </div>
+                </div>
+
+                <!-- Parish News Dropdown -->
+                <div class="nav-dropdown">
+                    <button class="nav-link dropdown-toggle">
+                        Parish News
+                        <svg class="dropdown-icon" width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
+                            <path d="M6 9L1 4h10L6 9z"/>
+                        </svg>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="harvest-news.html" class="dropdown-item">Harvest News</a>
+                        <a href="upcoming-events.html" class="dropdown-item">Upcoming Events</a>
+                        <a href="weekly-bulletin.html" class="dropdown-item">Weekly Bulletin</a>
+                        <a href="mass-booking.html" class="dropdown-item">Mass Booking</a>
+                    </div>
+                </div>
+
+                <!-- Media & Resources Dropdown -->
+                <div class="nav-dropdown">
+                    <button class="nav-link dropdown-toggle">
+                        Media & Resources
+                        <svg class="dropdown-icon" width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
+                            <path d="M6 9L1 4h10L6 9z"/>
+                        </svg>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="parish-register.html" class="dropdown-item">Parish Register</a>
+                        <a href="photo-gallery.html" class="dropdown-item">Photo Gallery</a>
+                        <a href="podcast.html" class="dropdown-item">Podcast</a>
+                    </div>
+                </div>
+
+                <!-- Facilities Dropdown -->
+                <div class="nav-dropdown">
+                    <button class="nav-link dropdown-toggle">
+                        Facilities
+                        <svg class="dropdown-icon" width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
+                            <path d="M6 9L1 4h10L6 9z"/>
+                        </svg>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="parish-clinic.html" class="dropdown-item">Parish Clinic</a>
+                        <a href="parish-project.html" class="dropdown-item">Parish Project</a>
+                    </div>
+                </div>
+
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="donate.html" class="nav-link">Donate</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="mass-hero">
+        <div class="container">
+            <div style="position: relative; z-index: 1;">
+                <div style="display: flex; gap: var(--space-2); justify-content: center; margin-bottom: var(--space-4); font-size: var(--text-sm); opacity: 0.9;">
+                    <a href="index.html" style="color: white;">Home</a>
+                    <span>/</span>
+                    <span>Mass Times</span>
+                </div>
+                <h1 style="font-size: var(--text-6xl); margin-bottom: var(--space-4);">Mass Times & Activities</h1>
+                <p style="font-size: var(--text-2xl); opacity: 0.95; max-width: 800px; margin: 0 auto;">
+                    Join us in worship and celebration of the Holy Eucharist
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Info -->
+    <section class="section" style="margin-top: -60px; position: relative; z-index: 10;">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <div class="stat-number">2</div>
+                    <div class="stat-label">Sunday Masses</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">6</div>
+                    <div class="stat-label">Daily Masses/Week</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">2</div>
+                    <div class="stat-label">Parish Locations</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">7</div>
+                    <div class="stat-label">Days a Week</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sunday Masses -->
+    <section class="section">
+        <div class="container">
+            <div class="schedule-card">
+                <div class="schedule-header">
+                    <div class="schedule-icon">☀️</div>
+                    <h2 class="schedule-title">Sunday Masses</h2>
+                </div>
+
+                <h3 style="color: var(--primary-blue); margin-bottom: var(--space-6); font-size: var(--text-2xl);">St. Patrick's Catholic Church</h3>
+
+                <div class="mass-time-item">
+                    <div>
+                        <div class="mass-day">Sunday Morning</div>
+                        <div class="mass-location">St. Patrick's, Igbogila</div>
+                    </div>
+                    <div class="mass-hour">6:30 AM</div>
+                </div>
+
+                <div class="mass-time-item">
+                    <div>
+                        <div class="mass-day">Sunday Morning</div>
+                        <div class="mass-location">St. Patrick's, Igbogila</div>
+                    </div>
+                    <div class="mass-hour">9:30 AM</div>
+                </div>
+
+                <div class="special-event">
+                    <div class="special-event-title">👶 Children's Mass</div>
+                    <p style="color: var(--text-secondary); margin: 0;">Every Sunday at <strong>9:30 AM</strong> - Special Mass for children with age-appropriate homily and activities</p>
+                </div>
+
+                <h3 style="color: var(--accent-gold); margin: var(--space-8) 0 var(--space-6); font-size: var(--text-2xl);">St. Jude Mass Centre, Ashipa (Outstation)</h3>
+
+                <div class="mass-time-item">
+                    <div>
+                        <div class="mass-day">Sunday Morning</div>
+                        <div class="mass-location">St. Jude, Ashipa</div>
+                    </div>
+                    <div class="mass-hour">6:30 AM</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Weekday Masses -->
+    <section class="section" style="background: var(--background-alt);">
+        <div class="container">
+            <div class="schedule-card">
+                <div class="schedule-header">
+                    <div class="schedule-icon">📅</div>
+                    <h2 class="schedule-title">Weekday Masses</h2>
+                </div>
+
+                <h3 style="color: var(--primary-blue); margin-bottom: var(--space-6); font-size: var(--text-2xl);">St. Patrick's Catholic Church</h3>
+
+                <div class="mass-time-item">
+                    <div>
+                        <div class="mass-day">Monday - Saturday</div>
+                        <div class="mass-location">St. Patrick's, Igbogila</div>
+                    </div>
+                    <div class="mass-hour">6:30 AM</div>
+                </div>
+
+                <p style="color: var(--text-secondary); margin: var(--space-6) 0; padding: var(--space-4); background: var(--background-alt); border-radius: var(--radius-lg);">
+                    <strong>Note:</strong> Daily Mass available Monday, Wednesday, Thursday, and Friday
+                </p>
+
+                <h3 style="color: var(--accent-gold); margin: var(--space-8) 0 var(--space-6); font-size: var(--text-2xl);">St. Jude Mass Centre, Ashipa</h3>
+
+                <div class="mass-time-item">
+                    <div>
+                        <div class="mass-day">Monday</div>
+                        <div class="mass-location">St. Jude, Ashipa</div>
+                    </div>
+                    <div class="mass-hour">6:30 AM</div>
+                </div>
+
+                <div class="mass-time-item">
+                    <div>
+                        <div class="mass-day">Wednesday</div>
+                        <div class="mass-location">St. Jude, Ashipa</div>
+                    </div>
+                    <div class="mass-hour">7:00 PM</div>
+                </div>
+
+                <div class="mass-time-item">
+                    <div>
+                        <div class="mass-day">Saturday</div>
+                        <div class="mass-location">St. Jude, Ashipa</div>
+                    </div>
+                    <div class="mass-hour">7:00 AM</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Special Devotions & Activities -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Special Devotions & Activities</h2>
+                <p class="section-subtitle">Regular parish spiritual programs</p>
+            </div>
+
+            <div class="grid grid-2" style="margin-bottom: var(--space-12);">
+                <div class="schedule-card">
+                    <div class="schedule-header" style="border-bottom-color: var(--liturgical-purple);">
+                        <div class="schedule-icon" style="background: linear-gradient(135deg, var(--liturgical-purple), var(--primary-blue));">📖</div>
+                        <h3 class="schedule-title" style="font-size: var(--text-2xl);">Know Your Faith / Benediction</h3>
+                    </div>
+
+                    <div class="mass-time-item">
+                        <div>
+                            <div class="mass-day">Every Sunday</div>
+                            <div class="mass-location">St. Patrick's</div>
+                        </div>
+                        <div class="mass-hour">5:30 PM - 6:30 PM</div>
+                    </div>
+
+                    <p style="color: var(--text-secondary); margin-top: var(--space-4); line-height: 1.7;">
+                        Catechesis and Benediction of the Blessed Sacrament. Learn and grow in your Catholic faith.
+                    </p>
+                </div>
+
+                <div class="schedule-card">
+                    <div class="schedule-header" style="border-bottom-color: var(--crimson-red);">
+                        <div class="schedule-icon" style="background: linear-gradient(135deg, var(--crimson-red), #d32f2f);">✝️</div>
+                        <h3 class="schedule-title" style="font-size: var(--text-2xl);">Monthly Adoration</h3>
+                    </div>
+
+                    <div class="special-event" style="border-left-color: var(--crimson-red);">
+                        <div class="special-event-title" style="color: var(--crimson-red);">🕯️ Eucharistic Adoration</div>
+                        <p style="color: var(--text-secondary); margin: 0;">
+                            <strong>Every Last Friday of the Month</strong><br>
+                            Come spend time with Jesus in the Blessed Sacrament
+                        </p>
+                    </div>
+                </div>
+
+                <div class="schedule-card">
+                    <div class="schedule-header" style="border-bottom-color: var(--secondary-green);">
+                        <div class="schedule-icon" style="background: linear-gradient(135deg, var(--secondary-green), var(--primary-light));">👥</div>
+                        <h3 class="schedule-title" style="font-size: var(--text-2xl);">Basic Christian Communities</h3>
+                    </div>
+
+                    <div class="mass-time-item">
+                        <div>
+                            <div class="mass-day">Every Tuesday</div>
+                            <div class="mass-location">Various Locations</div>
+                        </div>
+                        <div class="mass-hour">6:30 PM</div>
+                    </div>
+
+                    <p style="color: var(--text-secondary); margin-top: var(--space-4); line-height: 1.7;">
+                        Small faith communities meeting for prayer, Scripture study, and fellowship.
+                    </p>
+                </div>
+
+                <div class="schedule-card">
+                    <div class="schedule-header" style="border-bottom-color: var(--accent-gold);">
+                        <div class="schedule-icon" style="background: linear-gradient(135deg, var(--accent-gold), #f59e0b);">🙏</div>
+                        <h3 class="schedule-title" style="font-size: var(--text-2xl);">Communion to the Sick</h3>
+                    </div>
+
+                    <div class="special-event" style="border-left-color: var(--accent-gold);">
+                        <div class="special-event-title" style="color: var(--accent-gold);">💝 Pastoral Care</div>
+                        <p style="color: var(--text-secondary); margin: 0;">
+                            <strong>First Friday of Every Month</strong><br>
+                            Bringing the Eucharist to homebound parishioners
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sacraments -->
+    <section class="section" style="background: var(--background-alt);">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Sacraments & Services</h2>
+                <p class="section-subtitle">Celebrating God's grace in our lives</p>
+            </div>
+
+            <div class="grid grid-3">
+                <div class="sacrament-card">
+                    <div class="sacrament-icon">🕊️</div>
+                    <h3 style="color: var(--secondary-green); margin-bottom: var(--space-3); font-size: var(--text-xl);">Confession</h3>
+                    <div style="margin-bottom: var(--space-4);">
+                        <p style="color: var(--text-secondary); margin-bottom: var(--space-2);"><strong>St. Patrick's</strong></p>
+                        <p style="color: var(--text-primary); font-weight: 600;">Saturday: 5:30 PM - 7:00 PM</p>
+                    </div>
+                    <div>
+                        <p style="color: var(--text-secondary); margin-bottom: var(--space-2);"><strong>St. Jude, Ashipa</strong></p>
+                        <p style="color: var(--text-primary); font-weight: 600;">After Morning Mass</p>
+                    </div>
+                </div>
+
+                <div class="sacrament-card" style="border-top-color: var(--primary-blue);">
+                    <div class="sacrament-icon" style="background: linear-gradient(135deg, var(--primary-blue), var(--primary-light));">👶</div>
+                    <h3 style="color: var(--primary-blue); margin-bottom: var(--space-3); font-size: var(--text-xl);">Infant Baptism</h3>
+                    <p style="color: var(--text-primary); font-weight: 600; margin-bottom: var(--space-3);">Every 2nd Saturday of the Month</p>
+                    <p style="color: var(--text-secondary); font-size: var(--text-sm); line-height: 1.6;">
+                        Please see Parish Office for forms and details. Baptism preparation required.
+                    </p>
+                </div>
+
+                <div class="sacrament-card" style="border-top-color: var(--liturgical-purple);">
+                    <div class="sacrament-icon" style="background: linear-gradient(135deg, var(--liturgical-purple), var(--primary-blue));">💒</div>
+                    <h3 style="color: var(--liturgical-purple); margin-bottom: var(--space-3); font-size: var(--text-xl);">Marriage</h3>
+                    <p style="color: var(--text-primary); font-weight: 600; margin-bottom: var(--space-3);">By Arrangement</p>
+                    <p style="color: var(--text-secondary); font-size: var(--text-sm); line-height: 1.6;">
+                        Please see Parish Priest at least 6 months before proposed date. Marriage preparation course required.
+                    </p>
+                </div>
+
+                <div class="sacrament-card" style="border-top-color: var(--crimson-red);">
+                    <div class="sacrament-icon" style="background: linear-gradient(135deg, var(--crimson-red), #d32f2f);">🕯️</div>
+                    <h3 style="color: var(--crimson-red); margin-bottom: var(--space-3); font-size: var(--text-xl);">Wake Keep / Burial</h3>
+                    <p style="color: var(--text-primary); font-weight: 600; margin-bottom: var(--space-3);">By Arrangement</p>
+                    <p style="color: var(--text-secondary); font-size: var(--text-sm); line-height: 1.6;">
+                        Contact Parish Priest to arrange funeral Mass and burial services.
+                    </p>
+                </div>
+
+                <div class="sacrament-card" style="border-top-color: var(--accent-gold);">
+                    <div class="sacrament-icon" style="background: linear-gradient(135deg, var(--accent-gold), #f59e0b);">✝️</div>
+                    <h3 style="color: var(--accent-gold); margin-bottom: var(--space-3); font-size: var(--text-xl);">Confirmation</h3>
+                    <p style="color: var(--text-primary); font-weight: 600; margin-bottom: var(--space-3);">Annual Program</p>
+                    <p style="color: var(--text-secondary); font-size: var(--text-sm); line-height: 1.6;">
+                        Contact Religious Education Office for enrollment in Confirmation preparation classes.
+                    </p>
+                </div>
+
+                <div class="sacrament-card" style="border-top-color: var(--secondary-green);">
+                    <div class="sacrament-icon">🍞</div>
+                    <h3 style="color: var(--secondary-green); margin-bottom: var(--space-3); font-size: var(--text-xl);">First Holy Communion</h3>
+                    <p style="color: var(--text-primary); font-weight: 600; margin-bottom: var(--space-3);">Annual Program</p>
+                    <p style="color: var(--text-secondary); font-size: var(--text-sm); line-height: 1.6;">
+                        Children must complete catechism classes. Contact Parish Office for enrollment.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Parish Office Hours -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Parish Office</h2>
+                <p class="section-subtitle">How to reach us</p>
+            </div>
+
+            <div style="max-width: 900px; margin: 0 auto;">
+                <div class="grid grid-2" style="margin-bottom: var(--space-12);">
+                    <div class="schedule-card">
+                        <h3 style="color: var(--primary-blue); margin-bottom: var(--space-6); font-size: var(--text-2xl);">Parish Office Hours</h3>
+
+                        <div class="mass-time-item">
+                            <div>
+                                <div class="mass-day">Monday - Friday</div>
+                            </div>
+                            <div class="mass-hour">9:00 AM - 4:00 PM</div>
+                        </div>
+
+                        <div class="mass-time-item">
+                            <div>
+                                <div class="mass-day">Wednesday</div>
+                            </div>
+                            <div class="mass-hour">8:00 AM - 12:00 PM</div>
+                        </div>
+                    </div>
+
+                    <div class="schedule-card">
+                        <h3 style="color: var(--secondary-green); margin-bottom: var(--space-6); font-size: var(--text-2xl);">Catechist / Clerk's Office</h3>
+
+                        <div class="mass-time-item">
+                            <div>
+                                <div class="mass-day">Office Days</div>
+                            </div>
+                            <div class="mass-hour">Monday, Tuesday & Friday</div>
+                        </div>
+
+                        <p style="color: var(--text-secondary); margin-top: var(--space-4); line-height: 1.7;">
+                            For registration, certificates, and catechism enrollment
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="contact-box">
+                    <h3 style="font-size: var(--text-3xl); margin-bottom: var(--space-8);">Contact Information</h3>
+
+                    <div class="contact-item">
+                        <span style="font-size: var(--text-2xl);">📍</span>
+                        <span>St. Patrick's Catholic Church, Igbogila-Ipaja<br>P.O. Box 2189, Ipaja, Lagos</span>
+                    </div>
+
+                    <div class="contact-item">
+                        <span style="font-size: var(--text-2xl);">✉️</span>
+                        <span>Info@stpatrickigbogilaipaja.com</span>
+                    </div>
+
+                    <div class="contact-item">
+                        <span style="font-size: var(--text-2xl);">🌐</span>
+                        <span>www.stpatrickigbogilaipaja.com</span>
+                    </div>
+
+                    <div style="margin-top: var(--space-10);">
+                        <a href="contact.html" class="btn btn-large" style="background: white; color: var(--primary-blue);">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background: var(--neutral-900); color: white; padding: var(--space-16) 0 var(--space-6);">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3 style="color: var(--accent-gold); margin-bottom: var(--space-4);">St. Patrick's Catholic Church</h3>
+                    <p style="color: var(--neutral-300); line-height: 1.7;">
+                        Igbogila, Ipaja, Lagos, Nigeria<br>
+                        P.O. Box 2189, Ipaja<br>
+                        Serving God's people since 1932
+                    </p>
+                </div>
+
+                <div class="footer-column">
+                    <h3 style="color: var(--accent-gold); margin-bottom: var(--space-4);">Quick Links</h3>
+                    <a href="about.html" style="display: block; color: var(--neutral-300); padding: var(--space-2) 0;">About Us</a>
+                    <a href="school.html" style="display: block; color: var(--neutral-300); padding: var(--space-2) 0;">School</a>
+                    <a href="ministries.html" style="display: block; color: var(--neutral-300); padding: var(--space-2) 0;">Ministries</a>
+                    <a href="give.html" style="display: block; color: var(--neutral-300); padding: var(--space-2) 0;">Give</a>
+                </div>
+            </div>
+
+            <div style="border-top: 1px solid var(--neutral-800); padding-top: var(--space-6); text-align: center; color: var(--neutral-400); margin-top: var(--space-12);">
+                <p>&copy; 2025 St. Patrick's Catholic Church, Igbogila, Ipaja. All rights reserved.</p>
+                <p style="margin-top: var(--space-2); font-style: italic;">"Do this in remembrance of me." - Luke 22:19</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

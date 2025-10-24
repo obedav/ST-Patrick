@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>St. Patrick's Catholic School - Igbogila, Ipaja</title>
+    <meta name="description" content="St. Patrick's Catholic Nursery and Primary School - Academic and Moral Excellence since 1949">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/modern-variables.css">
+    <link rel="stylesheet" href="css/modern-components.css">
+
+    <style>
+        body {
+            padding-top: 80px;
+        }
+
+        .school-hero {
+            background: linear-gradient(135deg, var(--secondary-green) 0%, var(--primary-light) 100%);
+            color: white;
+            padding: var(--space-24) 0 var(--space-16);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .school-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        /* Image Placeholder Styles */
+        .img-placeholder {
+            background: linear-gradient(135deg, var(--neutral-200), var(--neutral-300));
+            border-radius: var(--radius-xl);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--neutral-500);
+            font-size: var(--text-lg);
+            font-weight: 600;
+            text-align: center;
+            padding: var(--space-4);
+        }
+
+        .img-placeholder-large {
+            height: 400px;
+        }
+
+        .img-placeholder-medium {
+            height: 300px;
+        }
+
+        .img-placeholder-small {
+            height: 200px;
+        }
+
+        /* Stats Section */
+        .school-stats {
+            background: white;
+            margin-top: -60px;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Vision Mission Cards */
+        .vision-mission-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-8);
+        }
+
+        .vm-card {
+            background: linear-gradient(135deg, rgba(5, 150, 105, 0.05), rgba(59, 130, 246, 0.05));
+            padding: var(--space-8);
+            border-radius: var(--radius-2xl);
+            border: 2px solid var(--secondary-green);
+        }
+
+        .vm-card h3 {
+            color: var(--secondary-green);
+            font-size: var(--text-2xl);
+            margin-bottom: var(--space-4);
+        }
+
+        /* Facilities Grid */
+        .facilities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--space-6);
+        }
+
+        .facility-item {
+            background: white;
+            padding: var(--space-6);
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-md);
+            display: flex;
+            align-items: start;
+            gap: var(--space-4);
+            transition: all var(--transition-base);
+        }
+
+        .facility-item:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .facility-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--secondary-green), var(--primary-light));
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: var(--text-2xl);
+            flex-shrink: 0;
+        }
+
+        /* Uniform Section */
+        .uniform-section {
+            background: var(--background-alt);
+        }
+
+        .uniform-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-8);
+        }
+
+        .uniform-card {
+            background: white;
+            padding: var(--space-8);
+            border-radius: var(--radius-2xl);
+            box-shadow: var(--shadow-lg);
+            text-align: center;
+        }
+
+        .uniform-image {
+            margin-bottom: var(--space-6);
+        }
+
+        /* Spiritual Activities Table */
+        .activities-table {
+            width: 100%;
+            background: white;
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .activities-table th {
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-light));
+            color: white;
+            padding: var(--space-4);
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .activities-table td {
+            padding: var(--space-4);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .activities-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .activities-table tr:hover {
+            background: var(--background-alt);
+        }
+
+        /* Gallery Section */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-6);
+        }
+
+        .gallery-item {
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            transition: all var(--transition-base);
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: var(--shadow-2xl);
+        }
+
+        /* Contact Info Box */
+        .contact-info-box {
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-green));
+            color: white;
+            padding: var(--space-10);
+            border-radius: var(--radius-2xl);
+            text-align: center;
+        }
+
+        .contact-detail {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--space-3);
+            margin: var(--space-3) 0;
+            font-size: var(--text-lg);
+        }
+
+        @media (max-width: 768px) {
+            .school-hero {
+                padding: var(--space-16) 0 var(--space-12);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header/Navigation -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <div class="logo-icon">✝</div>
+                <span>St. Patrick's Igbogila</span>
+            </div>
+
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="school.html" class="nav-link active">School</a>
+
+                <!-- Programmes Dropdown -->
+                <div class="nav-dropdown">
+                    <button class="nav-link dropdown-toggle">
+                        Programmes
+                        <svg class="dropdown-icon" width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
+                            <path d="M6 9L1 4h10L6 9z"/>
+                        </svg>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="ministries.html" class="dropdown-item">Ministries</a>
+                        <a href="mass-times.html" class="dropdown-item">Mass Times</a>
+                        <a href="liturgical-programs.html" class="dropdown-item">Liturgical Programs</a>
+                        <a href="societal-activities.html" class="dropdown-item">Societal Activities</a>
+                    </div>
+                </div>
+
+                <!-- Parish News Dropdown -->
+                <div class="nav-dropdown">
+                    <button class="nav-link dropdown-toggle">
+                        Parish News
+                        <svg class="dropdown-icon" width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
+                            <path d="M6 9L1 4h10L6 9z"/>
+                        </svg>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="harvest-news.html" class="dropdown-item">Harvest News</a>
+                        <a href="upcoming-events.html" class="dropdown-item">Upcoming Events</a>
+                        <a href="weekly-bulletin.html" class="dropdown-item">Weekly Bulletin</a>
+                        <a href="mass-booking.html" class="dropdown-item">Mass Booking</a>
+                    </div>
+                </div>
+
+                <!-- Media & Resources Dropdown -->
+                <div class="nav-dropdown">
+                    <button class="nav-link dropdown-toggle">
+                        Media & Resources
+                        <svg class="dropdown-icon" width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
+                            <path d="M6 9L1 4h10L6 9z"/>
+                        </svg>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="parish-register.html" class="dropdown-item">Parish Register</a>
+                        <a href="photo-gallery.html" class="dropdown-item">Photo Gallery</a>
+                        <a href="podcast.html" class="dropdown-item">Podcast</a>
+                    </div>
+                </div>
+
+                <!-- Facilities Dropdown -->
+                <div class="nav-dropdown">
+                    <button class="nav-link dropdown-toggle">
+                        Facilities
+                        <svg class="dropdown-icon" width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
+                            <path d="M6 9L1 4h10L6 9z"/>
+                        </svg>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="parish-clinic.html" class="dropdown-item">Parish Clinic</a>
+                        <a href="parish-project.html" class="dropdown-item">Parish Project</a>
+                    </div>
+                </div>
+
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="donate.html" class="nav-link">Donate</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="school-hero">
+        <div class="container">
+            <div style="position: relative; z-index: 1;">
+                <div style="display: flex; gap: var(--space-2); justify-content: center; margin-bottom: var(--space-4); font-size: var(--text-sm); opacity: 0.9;">
+                    <a href="index.html" style="color: white;">Home</a>
+                    <span>/</span>
+                    <span>School</span>
+                </div>
+                <span class="badge" style="background: rgba(255,255,255,0.2); color: white; margin-bottom: var(--space-4);">📚 Education Since 1949</span>
+                <h1 style="font-size: var(--text-6xl); margin-bottom: var(--space-4);">St. Patrick's Catholic School</h1>
+                <p style="font-size: var(--text-2xl); opacity: 0.95; max-width: 700px; margin: 0 auto;">Nursery & Primary Education</p>
+                <p style="font-size: var(--text-xl); opacity: 0.9; margin-top: var(--space-4);">Igbogila, Ipaja, Lagos State</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Stats -->
+    <section class="school-stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <div class="stat-number">1949</div>
+                    <div class="stat-label">Established</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">111</div>
+                    <div class="stat-label">Pupils (2025)</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">27</div>
+                    <div class="stat-label">Staff Members</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">2017</div>
+                    <div class="stat-label">Govt Approval</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision & Mission -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Vision & Mission</h2>
+            </div>
+
+            <div class="vision-mission-grid">
+                <div class="vm-card">
+                    <h3>🎯 Vision</h3>
+                    <p style="font-size: var(--text-xl); line-height: 1.7; color: var(--text-secondary);">To achieve academic and moral excellence.</p>
+                </div>
+
+                <div class="vm-card">
+                    <h3>🌟 Mission</h3>
+                    <p style="font-size: var(--text-xl); line-height: 1.7; color: var(--text-secondary);">To foster the gospel value in the spirit of humanity and compassion.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- School Gallery -->
+    <section class="section" style="background: var(--background-alt);">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">School Gallery</h2>
+                <p class="section-subtitle">Explore our modern facilities and vibrant learning environment</p>
+            </div>
+
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <div class="img-placeholder img-placeholder-medium">
+                        📸 School Building Exterior
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="img-placeholder img-placeholder-medium">
+                        📸 Classroom Interior
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="img-placeholder img-placeholder-medium">
+                        📸 Computer Room
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="img-placeholder img-placeholder-medium">
+                        📸 Library
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="img-placeholder img-placeholder-medium">
+                        📸 Students at Assembly
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="img-placeholder img-placeholder-medium">
+                        📸 School Hall
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brief History -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Story</h2>
+                <p class="section-subtitle">A Journey of Excellence Since 1949</p>
+            </div>
+
+            <div style="max-width: 900px; margin: 0 auto;">
+                <div style="background: white; padding: var(--space-10); border-radius: var(--radius-2xl); box-shadow: var(--shadow-xl); margin-bottom: var(--space-12);">
+                    <div class="img-placeholder img-placeholder-large" style="margin-bottom: var(--space-8);">
+                        📸 Historical Photo - School in 1949
+                    </div>
+
+                    <p style="font-size: var(--text-lg); line-height: 1.8; color: var(--text-secondary); margin-bottom: var(--space-6);">
+                        St. Patrick's Catholic Nursery and Primary School Igbogila Ipaja, Lagos started in the year <strong>1949</strong> by <strong>Rev. Fr. Oflin</strong>. Fr. Oflin, seeing children moving about with nothing to do other than playing around, began bringing them together to teach them.
+                    </p>
+
+                    <p style="font-size: var(--text-lg); line-height: 1.8; color: var(--text-secondary); margin-bottom: var(--space-6);">
+                        These children were the indigenes of Igbogila and Ayobo. He made use of a mud and thatched roof building. At that time, the population grew to fifty pupils with five teachers headed by <strong>Mr. Bankole E.B.</strong>
+                    </p>
+
+                    <div class="highlight-box">
+                        <h3 style="color: var(--secondary-green); margin-bottom: var(--space-3);">The Great Transformation (2005)</h3>
+                        <p style="margin-bottom: 0;">The greatest transformation of the school came with the elevation of St. Patrick's Catholic Parish on November 27, 2005, which brought in the first pioneer Priest, <strong>Rev. Fr. Paschal Obioma CSSp</strong>. He started constructing a two-story building which he completed in less than one year.</p>
+                    </div>
+                </div>
+
+                <!-- Timeline -->
+                <div style="background: var(--background-alt); padding: var(--space-10); border-radius: var(--radius-2xl); margin-bottom: var(--space-12);">
+                    <h3 style="text-align: center; color: var(--secondary-green); margin-bottom: var(--space-8); font-size: var(--text-3xl);">Key Milestones</h3>
+
+                    <div style="display: grid; gap: var(--space-6);">
+                        <div style="display: grid; grid-template-columns: 120px 1fr; gap: var(--space-4); align-items: start;">
+                            <div class="badge badge-primary" style="font-size: var(--text-lg); padding: var(--space-3); justify-content: center;">1949</div>
+                            <div>
+                                <h4 style="margin-bottom: var(--space-2);">School Founded</h4>
+                                <p style="color: var(--text-secondary);">Rev. Fr. Oflin established the school with 50 pupils and 5 teachers</p>
+                            </div>
+                        </div>
+
+                        <div style="display: grid; grid-template-columns: 120px 1fr; gap: var(--space-4); align-items: start;">
+                            <div class="badge badge-primary" style="font-size: var(--text-lg); padding: var(--space-3); justify-content: center;">1995</div>
+                            <div>
+                                <h4 style="margin-bottom: var(--space-2);">School Restructured</h4>
+                                <p style="color: var(--text-secondary);">St. Ferdinand took advantage of the location and restructured the school</p>
+                            </div>
+                        </div>
+
+                        <div style="display: grid; grid-template-columns: 120px 1fr; gap: var(--space-4); align-items: start;">
+                            <div class="badge badge-accent" style="font-size: var(--text-lg); padding: var(--space-3); justify-content: center;">2005</div>
+                            <div>
+                                <h4 style="margin-bottom: var(--space-2);">Parish Elevation & Transformation</h4>
+                                <p style="color: var(--text-secondary);">Rev. Fr. Paschal Obioma CSSp began construction of two-story building</p>
+                            </div>
+                        </div>
+
+                        <div style="display: grid; grid-template-columns: 120px 1fr; gap: var(--space-4); align-items: start;">
+                            <div class="badge badge-primary" style="font-size: var(--text-lg); padding: var(--space-3); justify-content: center;">2013</div>
+                            <div>
+                                <h4 style="margin-bottom: var(--space-2);">Sisters Management Begins</h4>
+                                <p style="color: var(--text-secondary);">Rev. Sr. Mary Gladys Ogbuehi (Immaculate Heart of Mary Sisters) appointed as Head Teacher</p>
+                            </div>
+                        </div>
+
+                        <div style="display: grid; grid-template-columns: 120px 1fr; gap: var(--space-4); align-items: start;">
+                            <div class="badge badge-accent" style="font-size: var(--text-lg); padding: var(--space-3); justify-content: center;">2017</div>
+                            <div>
+                                <h4 style="margin-bottom: var(--space-2);">Government Approval</h4>
+                                <p style="color: var(--text-secondary);">School received official Lagos State Government approval</p>
+                            </div>
+                        </div>
+
+                        <div style="display: grid; grid-template-columns: 120px 1fr; gap: var(--space-4); align-items: start;">
+                            <div class="badge badge-primary" style="font-size: var(--text-lg); padding: var(--space-3); justify-content: center;">2024</div>
+                            <div>
+                                <h4 style="margin-bottom: var(--space-2);">New Chapter</h4>
+                                <p style="color: var(--text-secondary);">School transitioned from Immaculate Heart Sisters management</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- School Facilities -->
+    <section class="section" style="background: var(--background-alt);">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Facilities</h2>
+                <p class="section-subtitle">Modern Two-Story Building with Lagos State Standard Infrastructure</p>
+            </div>
+
+            <div style="margin-bottom: var(--space-12);">
+                <div class="img-placeholder img-placeholder-large">
+                    📸 Two-Story School Building
+                </div>
+            </div>
+
+            <div class="facilities-grid">
+                <div class="facility-item">
+                    <div class="facility-icon">🏫</div>
+                    <div>
+                        <h4>12 Classrooms</h4>
+                        <p style="color: var(--text-secondary); margin: 0;">Spacious, well-lit learning environments</p>
+                    </div>
+                </div>
+
+                <div class="facility-item">
+                    <div class="facility-icon">🎭</div>
+                    <div>
+                        <h4>Multi-Purpose Hall</h4>
+                        <p style="color: var(--text-secondary); margin: 0;">For assemblies and events</p>
+                    </div>
+                </div>
+
+                <div class="facility-item">
+                    <div class="facility-icon">💻</div>
+                    <div>
+                        <h4>Computer Room</h4>
+                        <p style="color: var(--text-secondary); margin: 0;">Modern ICT facilities</p>
+                    </div>
+                </div>
+
+                <div class="facility-item">
+                    <div class="facility-icon">📚</div>
+                    <div>
+                        <h4>Library Room</h4>
+                        <p style="color: var(--text-secondary); margin: 0;">Well-stocked with educational materials</p>
+                    </div>
+                </div>
+
+                <div class="facility-item">
+                    <div class="facility-icon">👨‍💼</div>
+                    <div>
+                        <h4>Administrative Offices</h4>
+                        <p style="color: var(--text-secondary); margin: 0;">Head Teacher & Secretary offices</p>
+                    </div>
+                </div>
+
+                <div class="facility-item">
+                    <div class="facility-icon">📖</div>
+                    <div>
+                        <h4>Bookshop</h4>
+                        <p style="color: var(--text-secondary); margin: 0;">On-site educational materials</p>
+                    </div>
+                </div>
+
+                <div class="facility-item">
+                    <div class="facility-icon">🚻</div>
+                    <div>
+                        <h4>10 Toilets</h4>
+                        <p style="color: var(--text-secondary); margin: 0;">Clean facilities for students & staff</p>
+                    </div>
+                </div>
+
+                <div class="facility-item">
+                    <div class="facility-icon">🛋️</div>
+                    <div>
+                        <h4>Head Teacher Rest Room</h4>
+                        <p style="color: var(--text-secondary); margin: 0;">Private space for administration</p>
+                    </div>
+                </div>
+
+                <div class="facility-item">
+                    <div class="facility-icon">👶</div>
+                    <div>
+                        <h4>Daycare (Crèche)</h4>
+                        <p style="color: var(--text-secondary); margin: 0;">With 2 dedicated caregivers</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Student Life - Uniform -->
+    <section class="section uniform-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Student Life</h2>
+                <p class="section-subtitle">Our distinctive school uniform and daily activities</p>
+            </div>
+
+            <h3 style="text-align: center; color: var(--secondary-green); margin-bottom: var(--space-8); font-size: var(--text-2xl);">School Uniform</h3>
+
+            <div class="uniform-grid">
+                <div class="uniform-card">
+                    <div class="img-placeholder img-placeholder-medium uniform-image">
+                        📸 Boys Uniform<br><small>Yellow Shirt & Green Bow Tie</small>
+                    </div>
+                    <h4 style="margin-bottom: var(--space-3);">Boys Uniform</h4>
+                    <p style="color: var(--text-secondary); text-align: left;">
+                        <strong>Regular Days (Mon, Tue, Thu):</strong><br>
+                        • Yellow shirt<br>
+                        • Green bow tie<br>
+                        • Green check shorts<br>
+                        • Black polished shoes
+                    </p>
+                </div>
+
+                <div class="uniform-card">
+                    <div class="img-placeholder img-placeholder-medium uniform-image">
+                        📸 Girls Uniform<br><small>Green Pinafore & Yellow Blouse</small>
+                    </div>
+                    <h4 style="margin-bottom: var(--space-3);">Girls Uniform</h4>
+                    <p style="color: var(--text-secondary); text-align: left;">
+                        <strong>Regular Days (Mon, Tue, Thu):</strong><br>
+                        • Green pinafore<br>
+                        • Yellow blouse (round collar)<br>
+                        • Green check pattern<br>
+                        • Black polished shoes
+                    </p>
+                </div>
+
+                <div class="uniform-card">
+                    <div class="img-placeholder img-placeholder-medium uniform-image">
+                        📸 Sports Uniform<br><small>P.E. & Physical Activities</small>
+                    </div>
+                    <h4 style="margin-bottom: var(--space-3);">Sports Days</h4>
+                    <p style="color: var(--text-secondary); text-align: left;">
+                        <strong>Wednesday (P.E. Uniform):</strong><br>
+                        • White P.E. uniform<br>
+                        • White trainers<br>
+                        • White socks<br><br>
+                        <strong>Friday (Sportswear):</strong><br>
+                        • Normal sportswear<br>
+                        • White trainers<br>
+                        • White socks
+                    </p>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: var(--space-12);">
+                <div class="img-placeholder img-placeholder-large" style="max-width: 900px; margin: 0 auto;">
+                    📸 Students in Assembly - Full School Uniform Display
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Spiritual Activities -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Spiritual Formation</h2>
+                <p class="section-subtitle">Daily prayers and spiritual activities nurturing Catholic values</p>
+            </div>
+
+            <div style="overflow-x: auto; margin-bottom: var(--space-12);">
+                <table class="activities-table">
+                    <thead>
+                        <tr>
+                            <th>Day</th>
+                            <th>Morning Prayer</th>
+                            <th>Midday Prayer</th>
+                            <th>Afternoon Prayer</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Monday</strong></td>
+                            <td>Rosary<br>Holy Spirit Hymn</td>
+                            <td>Angelus (12:00 PM)</td>
+                            <td>Divine Mercy (3:00 PM)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Tuesday</strong></td>
+                            <td>Prayer from Manual<br>Guardian Angel Hymns</td>
+                            <td>Angelus (12:00 PM)</td>
+                            <td>Divine Mercy (3:00 PM)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Wednesday</strong></td>
+                            <td>Thank You Jesus<br>St. Joseph Hymn</td>
+                            <td>Angelus (12:00 PM)</td>
+                            <td>Divine Mercy (3:00 PM)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Thursday</strong></td>
+                            <td>Rosary<br>Blessed Sacrament Hymn<br>Moral Lesson/Catechism</td>
+                            <td>Angelus</td>
+                            <td>Divine Mercy</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Friday</strong></td>
+                            <td>Prayer from Manual<br>or Stations of Cross (Lent)<br>Sacred Heart Hymn</td>
+                            <td>Block Rosary</td>
+                            <td>Angelus Only</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="grid grid-2" style="margin-top: var(--space-12);">
+                <div class="card">
+                    <h3 style="color: var(--secondary-green); margin-bottom: var(--space-4);">🙏 Special Devotions</h3>
+                    <ul style="line-height: 2; color: var(--text-secondary);">
+                        <li><strong>May & October:</strong> Daily Rosary</li>
+                        <li><strong>Beginning of Term:</strong> Holy Mass</li>
+                        <li><strong>End of Term:</strong> Holy Mass</li>
+                        <li><strong>First Holy Communion:</strong> For qualified students</li>
+                    </ul>
+                </div>
+
+                <div class="img-placeholder img-placeholder-medium">
+                    📸 Students at Morning Prayer Assembly
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Staff Information -->
+    <section class="section" style="background: var(--background-alt);">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Dedicated Team</h2>
+                <p class="section-subtitle">Qualified and committed educators</p>
+            </div>
+
+            <div class="stats-grid" style="margin-bottom: var(--space-12);">
+                <div class="stat-box">
+                    <div class="stat-number">10</div>
+                    <div class="stat-label">Teachers (May 2025)</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">27</div>
+                    <div class="stat-label">Total Staff</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">7</div>
+                    <div class="stat-label">Subject Teachers</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">2</div>
+                    <div class="stat-label">Caregivers (Crèche)</div>
+                </div>
+            </div>
+
+            <div class="grid grid-3">
+                <div class="card">
+                    <h4 style="color: var(--secondary-green); margin-bottom: var(--space-3);">👨‍🏫 Teaching Staff</h4>
+                    <ul style="line-height: 1.8; color: var(--text-secondary);">
+                        <li>1 Head Teacher</li>
+                        <li>2 Assistant Teachers</li>
+                        <li>11 Classroom Teachers</li>
+                        <li>7 Subject Teachers</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h4 style="color: var(--secondary-green); margin-bottom: var(--space-3);">👥 Support Staff</h4>
+                    <ul style="line-height: 1.8; color: var(--text-secondary);">
+                        <li>1 School Secretary</li>
+                        <li>1 Office Lady</li>
+                        <li>2 Environmental Staff</li>
+                        <li>2 Caregivers (Daycare)</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h4 style="color: var(--secondary-green); margin-bottom: var(--space-3);">📋 Employment Policy</h4>
+                    <p style="color: var(--text-secondary); line-height: 1.7; margin: 0;">
+                        Following the Archdiocese of Lagos guidelines, all staff undergo written and oral interviews conducted by the Head Teacher.
+                    </p>
+                </div>
+            </div>
+
+            <div class="highlight-box" style="margin-top: var(--space-12);">
+                <h4 style="color: var(--secondary-green); margin-bottom: var(--space-3);">📜 School Policy</h4>
+                <p style="margin: 0; font-size: var(--text-lg);">
+                    No teacher is allowed to transact any business that will attract payment from the learners. No levying of money of any kind to the learners by the teachers is permitted.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Admission & Contact -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Admission & Contact</h2>
+                <p class="section-subtitle">Join our community of academic and moral excellence</p>
+            </div>
+
+            <div style="max-width: 800px; margin: 0 auto;">
+                <div class="contact-info-box">
+                    <h3 style="font-size: var(--text-3xl); margin-bottom: var(--space-6);">Get In Touch</h3>
+
+                    <div class="contact-detail">
+                        <span style="font-size: var(--text-2xl);">📍</span>
+                        <span>St. Patrick's Catholic Nursery/Primary School<br>Igbogila – Ipaja, P.O. Box 2189, Ipaja Lagos</span>
+                    </div>
+
+                    <div class="contact-detail">
+                        <span style="font-size: var(--text-2xl);">📞</span>
+                        <span>09125916332</span>
+                    </div>
+
+                    <div class="contact-detail">
+                        <span style="font-size: var(--text-2xl);">✉️</span>
+                        <span>[Email to be provided]</span>
+                    </div>
+
+                    <div class="contact-detail">
+                        <span style="font-size: var(--text-2xl);">🌐</span>
+                        <span>[Website to be provided]</span>
+                    </div>
+
+                    <div style="margin-top: var(--space-8); display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap;">
+                        <a href="contact.html" class="btn btn-large" style="background: white; color: var(--secondary-green);">Request Information</a>
+                        <a href="#" class="btn btn-large btn-secondary">Download Prospectus</a>
+                    </div>
+                </div>
+
+                <div style="margin-top: var(--space-12);">
+                    <div class="img-placeholder img-placeholder-large">
+                        📸 School Entrance & Signage
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background: var(--neutral-900); color: white; padding: var(--space-16) 0 var(--space-6);">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3 style="color: var(--accent-gold); margin-bottom: var(--space-4);">St. Patrick's Catholic Church</h3>
+                    <p style="color: var(--neutral-300); line-height: 1.7;">
+                        Igbogila, Ipaja, Lagos, Nigeria<br>
+                        Serving God's people since 1932
+                    </p>
+                </div>
+
+                <div class="footer-column">
+                    <h3 style="color: var(--accent-gold); margin-bottom: var(--space-4);">St. Patrick's School</h3>
+                    <p style="color: var(--neutral-300); line-height: 1.7;">
+                        Academic and Moral Excellence<br>
+                        Since 1949<br>
+                        Phone: 09125916332
+                    </p>
+                </div>
+            </div>
+
+            <div style="border-top: 1px solid var(--neutral-800); padding-top: var(--space-6); text-align: center; color: var(--neutral-400); margin-top: var(--space-12);">
+                <p>&copy; 2025 St. Patrick's Catholic Church, Igbogila, Ipaja. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

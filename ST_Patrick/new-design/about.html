@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our History - St. Patrick's Catholic Church, Igbogila</title>
+    <meta name="description" content="Discover the rich history of St. Patrick's Catholic Church, Igbogila, Ipaja - serving God's people since 1932.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/modern-variables.css">
+    <link rel="stylesheet" href="css/modern-components.css">
+
+    <style>
+        body {
+            padding-top: 80px;
+        }
+
+        .page-hero {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-light) 50%, var(--secondary-green) 100%);
+            color: white;
+            padding: var(--space-24) 0 var(--space-16);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .page-hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .breadcrumb {
+            display: flex;
+            gap: var(--space-2);
+            justify-content: center;
+            margin-bottom: var(--space-4);
+            font-size: var(--text-sm);
+            opacity: 0.9;
+        }
+
+        .intro-section {
+            background: white;
+            padding: var(--space-16) 0;
+        }
+
+        .intro-content {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: var(--text-lg);
+            line-height: 1.8;
+            color: var(--text-secondary);
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.05), rgba(59, 130, 246, 0.05));
+            border-left: 4px solid var(--primary-blue);
+            padding: var(--space-6);
+            border-radius: var(--radius-lg);
+            margin: var(--space-8) 0;
+        }
+
+        /* Enhanced Timeline */
+        .timeline-section {
+            background: var(--background-alt);
+            padding: var(--space-20) 0;
+        }
+
+        .timeline-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .timeline-year-group {
+            margin-bottom: var(--space-16);
+        }
+
+        .timeline-decade {
+            font-size: var(--text-3xl);
+            font-weight: 800;
+            color: var(--primary-blue);
+            margin-bottom: var(--space-8);
+            text-align: center;
+        }
+
+        .timeline-event {
+            display: grid;
+            grid-template-columns: 150px 1fr;
+            gap: var(--space-8);
+            margin-bottom: var(--space-8);
+            position: relative;
+        }
+
+        .timeline-event::before {
+            content: '';
+            position: absolute;
+            left: 150px;
+            transform: translateX(-50%);
+            width: 3px;
+            height: calc(100% + var(--space-8));
+            background: linear-gradient(to bottom, var(--primary-light), transparent);
+        }
+
+        .timeline-event:last-child::before {
+            display: none;
+        }
+
+        .timeline-year {
+            text-align: right;
+            padding-right: var(--space-6);
+        }
+
+        .year-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 100px;
+            padding: var(--space-3) var(--space-4);
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-light));
+            color: white;
+            border-radius: var(--radius-lg);
+            font-weight: 700;
+            font-size: var(--text-lg);
+            box-shadow: var(--shadow-md);
+            position: relative;
+        }
+
+        .year-badge::after {
+            content: '';
+            position: absolute;
+            right: -8px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 16px;
+            height: 16px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-light));
+            border-radius: 50%;
+            box-shadow: 0 0 0 4px var(--background-alt);
+        }
+
+        .timeline-content {
+            background: white;
+            padding: var(--space-6);
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-md);
+            transition: all var(--transition-base);
+        }
+
+        .timeline-content:hover {
+            box-shadow: var(--shadow-xl);
+            transform: translateX(8px);
+        }
+
+        .timeline-title {
+            font-size: var(--text-xl);
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-bottom: var(--space-3);
+        }
+
+        .timeline-description {
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* Key Figures Section */
+        .figures-section {
+            padding: var(--space-20) 0;
+        }
+
+        .figures-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-8);
+            margin-top: var(--space-12);
+        }
+
+        .figure-card {
+            background: white;
+            border-radius: var(--radius-2xl);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            transition: all var(--transition-base);
+        }
+
+        .figure-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-2xl);
+        }
+
+        .figure-image {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, var(--neutral-200), var(--neutral-300));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: var(--text-6xl);
+        }
+
+        .figure-content {
+            padding: var(--space-6);
+        }
+
+        .figure-name {
+            font-size: var(--text-xl);
+            font-weight: 700;
+            margin-bottom: var(--space-2);
+        }
+
+        .figure-role {
+            color: var(--primary-blue);
+            font-weight: 600;
+            margin-bottom: var(--space-4);
+        }
+
+        @media (max-width: 768px) {
+            .timeline-event {
+                grid-template-columns: 100px 1fr;
+                gap: var(--space-4);
+            }
+
+            .timeline-event::before {
+                left: 100px;
+            }
+
+            .year-badge {
+                min-width: 80px;
+                font-size: var(--text-base);
+            }
+
+            .page-hero {
+                padding: var(--space-16) 0 var(--space-12);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header/Navigation (same as homepage) -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <div class="logo-icon">✝</div>
+                <span>St. Patrick's Igbogila</span>
+            </div>
+
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link active">About</a>
+                <a href="school.html" class="nav-link">School</a>
+
+                <!-- Programmes Dropdown -->
+                <div class="nav-dropdown">
+                    <button class="nav-link dropdown-toggle">
+                        Programmes
+                        <svg class="dropdown-icon" width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
+                            <path d="M6 9L1 4h10L6 9z"/>
+                        </svg>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="ministries.html" class="dropdown-item">Ministries</a>
+                        <a href="mass-times.html" class="dropdown-item">Mass Times</a>
+                        <a href="liturgical-programs.html" class="dropdown-item">Liturgical Programs</a>
+                        <a href="societal-activities.html" class="dropdown-item">Societal Activities</a>
+                    </div>
+                </div>
+
+                <!-- Parish News Dropdown -->
+                <div class="nav-dropdown">
+                    <button class="nav-link dropdown-toggle">
+                        Parish News
+                        <svg class="dropdown-icon" width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
+                            <path d="M6 9L1 4h10L6 9z"/>
+                        </svg>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="harvest-news.html" class="dropdown-item">Harvest News</a>
+                        <a href="upcoming-events.html" class="dropdown-item">Upcoming Events</a>
+                        <a href="weekly-bulletin.html" class="dropdown-item">Weekly Bulletin</a>
+                        <a href="mass-booking.html" class="dropdown-item">Mass Booking</a>
+                    </div>
+                </div>
+
+                <!-- Media & Resources Dropdown -->
+                <div class="nav-dropdown">
+                    <button class="nav-link dropdown-toggle">
+                        Media & Resources
+                        <svg class="dropdown-icon" width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
+                            <path d="M6 9L1 4h10L6 9z"/>
+                        </svg>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="parish-register.html" class="dropdown-item">Parish Register</a>
+                        <a href="photo-gallery.html" class="dropdown-item">Photo Gallery</a>
+                        <a href="podcast.html" class="dropdown-item">Podcast</a>
+                    </div>
+                </div>
+
+                <!-- Facilities Dropdown -->
+                <div class="nav-dropdown">
+                    <button class="nav-link dropdown-toggle">
+                        Facilities
+                        <svg class="dropdown-icon" width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
+                            <path d="M6 9L1 4h10L6 9z"/>
+                        </svg>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="parish-clinic.html" class="dropdown-item">Parish Clinic</a>
+                        <a href="parish-project.html" class="dropdown-item">Parish Project</a>
+                    </div>
+                </div>
+
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="donate.html" class="nav-link">Donate</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <div class="page-hero-content">
+                <div class="breadcrumb">
+                    <a href="index.html" style="color: white;">Home</a>
+                    <span>/</span>
+                    <span>About Us</span>
+                </div>
+                <h1 style="font-size: var(--text-6xl); margin-bottom: var(--space-4);">Our History</h1>
+                <p style="font-size: var(--text-2xl); opacity: 0.95; max-width: 700px; margin: 0 auto;">A Journey of Faith Since 1932</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Introduction -->
+    <section class="intro-section">
+        <div class="container">
+            <div class="intro-content">
+                <h2 style="text-align: center; margin-bottom: var(--space-8); color: var(--primary-blue);">The Foundation of Faith</h2>
+
+                <p>The history of St. Patrick's Catholic Church, Igbogila – Ipaja dates back to the late 1920s, rooted in a profound story of faith, healing, and generosity.</p>
+
+                <div class="highlight-box">
+                    <h3 style="color: var(--primary-blue); margin-bottom: var(--space-3);">The Beginning</h3>
+                    <p style="margin-bottom: 0;">Pa Akanbi Akiniyi, the patriarch of the Akiniyi Royal family, donated a parcel of land from his farmland in Igbogila – Ipaja to the Catholic mission. Originally a member of the United Native African Church, Pa Akiniyi was converted to the Catholic faith following the healing of his son, Sir James Fadipe Akiniyi, by the prayers of St. Anthony prayer Group in the late 1920s.</p>
+                </div>
+
+                <p>In gratitude for this miracle, Pa Akanbi Akiniyi promised to donate land from his extensive farmland to the Catholic mission. Though he did not demarcate the land before his death, his son, James Fadipe Akiniyi, faithfully actualized his father's promise.</p>
+
+                <p>The first mass of the church was celebrated by Rev. Fr. Koechan of the Catholic Church, Iteri Abeokuta, in Pa Akanbi Akiniyi's house at Ipaja. This sacred beginning established a foundation that would grow into the vibrant parish we know today.</p>
+
+                <div style="text-align: center; margin-top: var(--space-12);">
+                    <div class="stats-grid">
+                        <div class="stat-box">
+                            <div class="stat-number">1932</div>
+                            <div class="stat-label">First Church Building</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-number">2005</div>
+                            <div class="stat-label">Elevated to Parish Status</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-number">2018</div>
+                            <div class="stat-label">Modern Church Dedicated</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline -->
+    <section class="timeline-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Journey Through Time</h2>
+                <p class="section-subtitle">Key milestones in the history of St. Patrick's Catholic Church</p>
+            </div>
+
+            <div class="timeline-container">
+                <!-- 1920s-1930s -->
+                <div class="timeline-year-group">
+                    <div class="timeline-decade">1920s - 1930s: The Foundation</div>
+
+                    <div class="timeline-event">
+                        <div class="timeline-year">
+                            <div class="year-badge">Late 1920s</div>
+                        </div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-title">Miraculous Healing & Conversion</h3>
+                            <p class="timeline-description">Pa Akanbi Akiniyi's son, Sir James Fadipe Akiniyi, was healed through the prayers of St. Anthony prayer Group, leading to Pa Akiniyi's conversion from United Native African Church to Catholicism.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-event">
+                        <div class="timeline-year">
+                            <div class="year-badge">1932</div>
+                        </div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-title">First Physical Structure</h3>
+                            <p class="timeline-description">The first church building, made of bamboo, was erected at the spot of the present Rev. Father's house. The church was handed over to Rev. Fr. Dealey of St. Paul's Catholic Church, Ebute-Metta.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 1940s -->
+                <div class="timeline-year-group">
+                    <div class="timeline-decade">1940s: Growth & Development</div>
+
+                    <div class="timeline-event">
+                        <div class="timeline-year">
+                            <div class="year-badge">1940</div>
+                        </div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-title">Church Renovation</h3>
+                            <p class="timeline-description">St. Patrick's Church building was renovated with mould blocks by Very Rev. Monsgr. Julius Oni of the Catholic Church, Ota, Ogun State.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 1970s -->
+                <div class="timeline-year-group">
+                    <div class="timeline-decade">1970s: Modern Foundations</div>
+
+                    <div class="timeline-event">
+                        <div class="timeline-year">
+                            <div class="year-badge">1978</div>
+                        </div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-title">Modern Church Building Foundation</h3>
+                            <p class="timeline-description">Foundation for the modern church building was laid by Rev. Fr. John Hannon using cement blocks and iron, marking a new era of development.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2000s -->
+                <div class="timeline-year-group">
+                    <div class="timeline-decade">2000s: Parish Elevation</div>
+
+                    <div class="timeline-event">
+                        <div class="timeline-year">
+                            <div class="year-badge">Nov 27, 2005</div>
+                        </div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-title">Elevated to Parish Status</h3>
+                            <p class="timeline-description">St. Patrick's Catholic Church was elevated to parish status by His Eminence, Cardinal Anthony Okogie, transitioning from a station of St. Ferdinand Catholic Church.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2010s -->
+                <div class="timeline-year-group">
+                    <div class="timeline-decade">2010s: Expansion & Modernization</div>
+
+                    <div class="timeline-event">
+                        <div class="timeline-year">
+                            <div class="year-badge">May 29, 2012</div>
+                        </div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-title">Parish Office Complex</h3>
+                            <p class="timeline-description">The Parish office complex was blessed and opened, providing administrative facilities for the growing parish.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-event">
+                        <div class="timeline-year">
+                            <div class="year-badge">May 19, 2013</div>
+                        </div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-title">Pentecost Celebration</h3>
+                            <p class="timeline-description">Colorful Pentecost Feast Day Celebration in conjunction with the Holy Ghost Congregation, South West Province, Nigeria (Lagos Zone).</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-event">
+                        <div class="timeline-year">
+                            <div class="year-badge">April 6, 2015</div>
+                        </div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-title">Foundation of Ultra-Modern Church</h3>
+                            <p class="timeline-description">Foundation laying stone of the new ultra-modern church building was laid by His Grace, Most Rev. Alfred Adewale Martins, Archbishop of Lagos.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-event">
+                        <div class="timeline-year">
+                            <div class="year-badge">March 28, 2016</div>
+                        </div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-title">10th Anniversary</h3>
+                            <p class="timeline-description">St. Patrick's celebrated its Feast Day and 10 years Anniversary of the creation of the Parish with great joy and thanksgiving.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-event">
+                        <div class="timeline-year">
+                            <div class="year-badge">Nov 24, 2018</div>
+                        </div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-title">Church Dedication</h3>
+                            <p class="timeline-description">The Solemn Dedication of the new ultra-modern church building was held, marking a historic milestone in the parish's journey. To the greater glory of God, the building stands as a testament to faith and community.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2020s -->
+                <div class="timeline-year-group">
+                    <div class="timeline-decade">2020s: Continued Growth</div>
+
+                    <div class="timeline-event">
+                        <div class="timeline-year">
+                            <div class="year-badge">2024</div>
+                        </div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-title">Third Quasi-Parish</h3>
+                            <p class="timeline-description">Catholic Church of the Archangels, Bada, was pronounced a quasi-parish, marking the third outstation nurtured by St. Patrick's to reach parish status (joining St. Pius Ayobo and Church of the Annunciation Ishefu).</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Figures -->
+    <section class="figures-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Shepherds of Our Faith</h2>
+                <p class="section-subtitle">Parish Priests who have served St. Patrick's through the years</p>
+            </div>
+
+            <div class="figures-grid">
+                <div class="figure-card">
+                    <div class="figure-image">✝️</div>
+                    <div class="figure-content">
+                        <h3 class="figure-name">Rev. Fr. Paschal Obioma C.S.Sp</h3>
+                        <p class="figure-role">First Spiritan Parish Priest</p>
+                        <p style="color: var(--text-secondary);">When St. Patrick's was ceded to the Spiritians (Holy Ghost Fathers' Congregation), Fr. Obioma served as the first parish priest under the new administration.</p>
+                    </div>
+                </div>
+
+                <div class="figure-card">
+                    <div class="figure-image">✝️</div>
+                    <div class="figure-content">
+                        <h3 class="figure-name">Rev. Fr. Dan Ajayi C.S.Sp</h3>
+                        <p class="figure-role">Parish Priest</p>
+                        <p style="color: var(--text-secondary);">Succeeded Fr. Obioma and continued the spiritual growth of the parish community.</p>
+                    </div>
+                </div>
+
+                <div class="figure-card">
+                    <div class="figure-image">✝️</div>
+                    <div class="figure-content">
+                        <h3 class="figure-name">Rev. Fr. Andrew Edogbo C.S.Sp</h3>
+                        <p class="figure-role">Parish Priest</p>
+                        <p style="color: var(--text-secondary);">Provided pastoral care and guidance during his tenure at St. Patrick's.</p>
+                    </div>
+                </div>
+
+                <div class="figure-card">
+                    <div class="figure-image">✝️</div>
+                    <div class="figure-content">
+                        <h3 class="figure-name">Rev. Fr. Lawrence Nwaneri C.S.Sp</h3>
+                        <p class="figure-role">Parish Priest</p>
+                        <p style="color: var(--text-secondary);">Served the parish faithfully, contributing to its development and spiritual life.</p>
+                    </div>
+                </div>
+
+                <div class="figure-card">
+                    <div class="figure-image">✝️</div>
+                    <div class="figure-content">
+                        <h3 class="figure-name">Rev. Fr. Cyriacus Agbapajuru C.S.Sp</h3>
+                        <p class="figure-role">Current Parish Priest</p>
+                        <p style="color: var(--text-secondary);">Currently shepherding St. Patrick's community, assisted by Rev. Fr. Joachim Erhabor SDV, guiding the parish into a new era of faith and service.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="highlight-box" style="margin-top: var(--space-12); text-align: center;">
+                <h3 style="color: var(--primary-blue); margin-bottom: var(--space-4);">Legacy of Service</h3>
+                <p style="margin-bottom: var(--space-4); font-size: var(--text-lg);">Many other priests have contributed to St. Patrick's growth including Rev. Fr. Anthony Fadairo, Rev. Fr. Joseph Yemi Akinbotan, Very Rev. Monsegr. Christopher Boyo, Rev. Fr. Alphonsus Obi, and the late Rev. Fr. Peter Oke, along with countless associate priests who made up the pastoral teams.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section cta-section">
+        <div class="container">
+            <h2 style="font-size: var(--text-5xl); margin-bottom: var(--space-4);">Be Part of Our Story</h2>
+            <p style="font-size: var(--text-xl); opacity: 0.95; margin-bottom: var(--space-8); max-width: 700px; margin-left: auto; margin-right: auto;">
+                As we continue our journey of faith, we invite you to become part of St. Patrick's living history.
+            </p>
+            <div class="cta-buttons">
+                <a href="contact.html" class="btn btn-large" style="background: white; color: var(--primary-blue);">Visit Us</a>
+                <a href="index.html" class="btn btn-large btn-secondary">Back to Home</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (same as homepage) -->
+    <footer style="background: var(--neutral-900); color: white; padding: var(--space-16) 0 var(--space-6);">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3 style="color: var(--accent-gold); margin-bottom: var(--space-4);">St. Patrick's Catholic Church</h3>
+                    <p style="color: var(--neutral-300); line-height: 1.7;">
+                        Igbogila, Ipaja, Lagos, Nigeria<br>
+                        Serving God's people since 1932
+                    </p>
+                </div>
+            </div>
+
+            <div style="border-top: 1px solid var(--neutral-800); padding-top: var(--space-6); text-align: center; color: var(--neutral-400); margin-top: var(--space-12);">
+                <p>&copy; 2025 St. Patrick's Catholic Church, Igbogila, Ipaja. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

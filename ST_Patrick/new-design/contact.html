@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - St. Patrick's Catholic Church, Igbogila</title>
+    <meta name="description" content="Get in touch with St. Patrick's Catholic Church, Igbogila, Ipaja. Contact information, office hours, and location details.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/modern-variables.css">
+    <link rel="stylesheet" href="css/modern-components.css">
+
+    <style>
+        body {
+            padding-top: 80px;
+        }
+
+        .page-hero {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-green) 100%);
+            color: white;
+            padding: var(--space-24) 0 var(--space-16);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .page-hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .breadcrumb {
+            display: flex;
+            gap: var(--space-2);
+            justify-content: center;
+            margin-bottom: var(--space-4);
+            font-size: var(--text-sm);
+            opacity: 0.9;
+        }
+
+        .content-section {
+            background: var(--background-alt);
+            padding: var(--space-16) 0;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-8);
+            margin-bottom: var(--space-12);
+        }
+
+        .contact-form {
+            background: white;
+            padding: var(--space-10);
+            border-radius: var(--radius-2xl);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .form-group {
+            margin-bottom: var(--space-6);
+        }
+
+        .form-label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: var(--space-2);
+            color: var(--text-primary);
+        }
+
+        .form-input,
+        .form-textarea,
+        .form-select {
+            width: 100%;
+            padding: var(--space-3);
+            border: 2px solid var(--border);
+            border-radius: var(--radius-lg);
+            font-family: inherit;
+            font-size: var(--text-base);
+            transition: all var(--transition-fast);
+        }
+
+        .form-input:focus,
+        .form-textarea:focus,
+        .form-select:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1);
+        }
+
+        .form-textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-6);
+        }
+
+        .info-card {
+            background: white;
+            padding: var(--space-8);
+            border-radius: var(--radius-2xl);
+            box-shadow: var(--shadow-lg);
+            border-top: 4px solid var(--primary-blue);
+        }
+
+        .info-card h3 {
+            color: var(--primary-blue);
+            margin-bottom: var(--space-4);
+            display: flex;
+            align-items: center;
+            gap: var(--space-3);
+        }
+
+        .info-item {
+            display: flex;
+            align-items: start;
+            gap: var(--space-3);
+            margin-bottom: var(--space-4);
+        }
+
+        .info-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .info-icon {
+            font-size: var(--text-2xl);
+            flex-shrink: 0;
+        }
+
+        .map-container {
+            background: white;
+            padding: var(--space-6);
+            border-radius: var(--radius-2xl);
+            box-shadow: var(--shadow-lg);
+            margin-top: var(--space-8);
+        }
+
+        .map-placeholder {
+            background: linear-gradient(135deg, var(--neutral-200), var(--neutral-300));
+            border-radius: var(--radius-xl);
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--neutral-500);
+            font-size: var(--text-xl);
+            font-weight: 600;
+        }
+
+        @media (max-width: 968px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Info Bar -->
+    <div class="info-bar" style="background: var(--neutral-900); color: white; padding: var(--space-2) 0; font-size: var(--text-sm);">
+        <div class="container">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: var(--space-4);">
+                <div style="display: flex; align-items: center; gap: var(--space-2);">
+                    <span>📍</span>
+                    <span>Igbogila, Ipaja, Lagos</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: var(--space-2);">
+                    <span>📞</span>
+                    <span>+234 802 344 4069</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: var(--space-2);">
+                    <span>✉️</span>
+                    <span>Info@stpatrickigbogilaipaja.com</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header/Navigation -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <div class="logo-icon">✝</div>
+                <span>St. Patrick's Igbogila</span>
+            </div>
+
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="school.html" class="nav-link">School</a>
+
+                <!-- Programmes Dropdown -->
+                <div class="nav-dropdown">
+                    <button class="nav-link dropdown-toggle">
+                        Programmes
+                        <svg class="dropdown-icon" width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
+                            <path d="M6 9L1 4h10L6 9z"/>
+                        </svg>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="ministries.html" class="dropdown-item">Ministries</a>
+                        <a href="mass-times.html" class="dropdown-item">Mass Times</a>
+                        <a href="liturgical-programs.html" class="dropdown-item">Liturgical Programs</a>
+                        <a href="societal-activities.html" class="dropdown-item">Societal Activities</a>
+                    </div>
+                </div>
+
+                <!-- Parish News Dropdown -->
+                <div class="nav-dropdown">
+                    <button class="nav-link dropdown-toggle">
+                        Parish News
+                        <svg class="dropdown-icon" width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
+                            <path d="M6 9L1 4h10L6 9z"/>
+                        </svg>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="harvest-news.html" class="dropdown-item">Harvest News</a>
+                        <a href="upcoming-events.html" class="dropdown-item">Upcoming Events</a>
+                        <a href="weekly-bulletin.html" class="dropdown-item">Weekly Bulletin</a>
+                        <a href="mass-booking.html" class="dropdown-item">Mass Booking</a>
+                    </div>
+                </div>
+
+                <!-- Media & Resources Dropdown -->
+                <div class="nav-dropdown">
+                    <button class="nav-link dropdown-toggle">
+                        Media & Resources
+                        <svg class="dropdown-icon" width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
+                            <path d="M6 9L1 4h10L6 9z"/>
+                        </svg>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="parish-register.html" class="dropdown-item">Parish Register</a>
+                        <a href="photo-gallery.html" class="dropdown-item">Photo Gallery</a>
+                        <a href="podcast.html" class="dropdown-item">Podcast</a>
+                    </div>
+                </div>
+
+                <!-- Facilities Dropdown -->
+                <div class="nav-dropdown">
+                    <button class="nav-link dropdown-toggle">
+                        Facilities
+                        <svg class="dropdown-icon" width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
+                            <path d="M6 9L1 4h10L6 9z"/>
+                        </svg>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="parish-clinic.html" class="dropdown-item">Parish Clinic</a>
+                        <a href="parish-project.html" class="dropdown-item">Parish Project</a>
+                    </div>
+                </div>
+
+                <a href="contact.html" class="nav-link active">Contact</a>
+                <a href="donate.html" class="nav-link">Donate</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="page-hero">
+        <div class="container">
+            <div class="page-hero-content">
+                <div class="breadcrumb">
+                    <a href="index.html" style="color: white;">Home</a>
+                    <span>/</span>
+                    <span>Contact</span>
+                </div>
+                <h1 style="font-size: var(--text-6xl); margin-bottom: var(--space-4);">📧 Get In Touch</h1>
+                <p style="font-size: var(--text-2xl); opacity: 0.95; max-width: 800px; margin: 0 auto;">
+                    We'd love to hear from you. Reach out to us with any questions or requests
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="content-section">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Contact Form -->
+                <div class="contact-form">
+                    <h2 style="color: var(--primary-blue); margin-bottom: var(--space-2);">Send Us a Message</h2>
+                    <p style="color: var(--text-secondary); margin-bottom: var(--space-8);">Fill out the form below and we'll get back to you as soon as possible.</p>
+
+                    <form action="#" method="POST">
+                        <div class="form-group">
+                            <label for="name" class="form-label">Full Name *</label>
+                            <input type="text" id="name" name="name" class="form-input" required placeholder="Enter your full name">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email Address *</label>
+                            <input type="email" id="email" name="email" class="form-input" required placeholder="your.email@example.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone" class="form-label">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" class="form-input" placeholder="+234 XXX XXX XXXX">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject" class="form-label">Subject *</label>
+                            <select id="subject" name="subject" class="form-select" required>
+                                <option value="">Select a subject</option>
+                                <option value="general">General Inquiry</option>
+                                <option value="sacraments">Sacraments</option>
+                                <option value="ministries">Ministries</option>
+                                <option value="events">Events</option>
+                                <option value="school">School</option>
+                                <option value="mass-booking">Mass Booking</option>
+                                <option value="donation">Donations</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message" class="form-label">Message *</label>
+                            <textarea id="message" name="message" class="form-textarea" required placeholder="Write your message here..."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-large btn-primary" style="width: 100%;">Send Message</button>
+                    </form>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="contact-info">
+                    <!-- Office Info -->
+                    <div class="info-card">
+                        <h3>
+                            <span>🏢</span>
+                            Parish Office
+                        </h3>
+                        <div class="info-item">
+                            <span class="info-icon">📍</span>
+                            <div>
+                                <strong>Address</strong><br>
+                                St. Patrick's Catholic Church<br>
+                                Igbogila, Ipaja<br>
+                                Lagos, Nigeria<br>
+                                P.O. Box 2189, Ipaja, Lagos
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">📞</span>
+                            <div>
+                                <strong>Phone</strong><br>
+                                +234 802 344 4069
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">✉️</span>
+                            <div>
+                                <strong>Email</strong><br>
+                                Info@stpatrickigbogilaipaja.com
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Office Hours -->
+                    <div class="info-card">
+                        <h3>
+                            <span>🕐</span>
+                            Office Hours
+                        </h3>
+                        <div class="info-item">
+                            <span class="info-icon">📅</span>
+                            <div>
+                                <strong>Monday - Friday</strong><br>
+                                9:00 AM - 4:00 PM
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">📅</span>
+                            <div>
+                                <strong>Wednesday</strong><br>
+                                8:00 AM - 12:00 PM
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">⛪</span>
+                            <div>
+                                <strong>Weekend</strong><br>
+                                Closed (except for Masses and special events)
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Parish Priest Contact -->
+                    <div class="info-card">
+                        <h3>
+                            <span>✝️</span>
+                            Parish Priest
+                        </h3>
+                        <div class="info-item">
+                            <span class="info-icon">👤</span>
+                            <div>
+                                <strong>Rev Fr. Agbapajuru Cyriacus CSSp</strong><br>
+                                Parish Priest
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">📞</span>
+                            <div>
+                                <strong>Phone:</strong> 08125887565<br>
+                                <strong>WhatsApp:</strong> 0703814438
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Social Media -->
+                    <div class="info-card">
+                        <h3>
+                            <span>🌐</span>
+                            Connect With Us
+                        </h3>
+                        <p style="color: var(--text-secondary); margin-bottom: var(--space-4);">
+                            Follow us on social media for updates, events, and inspirational content
+                        </p>
+                        <div style="display: flex; gap: var(--space-3);">
+                            <a href="#" class="btn btn-secondary" style="display: flex; align-items: center; gap: var(--space-2);">
+                                <span>f</span> Facebook
+                            </a>
+                            <a href="#" class="btn btn-secondary" style="display: flex; align-items: center; gap: var(--space-2);">
+                                <span>📷</span> Instagram
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Map Section -->
+            <div class="map-container">
+                <h3 style="color: var(--primary-blue); margin-bottom: var(--space-4);">📍 Find Us</h3>
+                <div class="map-placeholder">
+                    🗺️ Map Integration Coming Soon
+                </div>
+                <p style="color: var(--text-secondary); margin-top: var(--space-4); text-align: center;">
+                    Located in the heart of Igbogila, Ipaja, Lagos - easily accessible by public transport
+                </p>
+            </div>
+
+            <!-- Quick Links -->
+            <div style="margin-top: var(--space-12); display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-6);">
+                <div class="card">
+                    <h3 style="color: var(--primary-blue); margin-bottom: var(--space-3);">📖 Mass Times</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: var(--space-4);">View our schedule for daily and Sunday Masses</p>
+                    <a href="mass-times.html" class="btn btn-secondary">View Schedule</a>
+                </div>
+                <div class="card">
+                    <h3 style="color: var(--primary-blue); margin-bottom: var(--space-3);">🙏 Sacraments</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: var(--space-4);">Information about Baptism, Marriage, and other sacraments</p>
+                    <a href="about.html" class="btn btn-secondary">Learn More</a>
+                </div>
+                <div class="card">
+                    <h3 style="color: var(--primary-blue); margin-bottom: var(--space-3);">👥 Join a Ministry</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: var(--space-4);">Get involved in our parish ministries</p>
+                    <a href="ministries.html" class="btn btn-secondary">Explore Ministries</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background: var(--neutral-900); color: white; padding: var(--space-16) 0 var(--space-6);">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--space-12); margin-bottom: var(--space-12);">
+                <div>
+                    <h3 style="color: var(--accent-gold); margin-bottom: var(--space-4);">St. Patrick's Catholic Church</h3>
+                    <p style="color: var(--neutral-300); line-height: 1.7;">
+                        Igbogila, Ipaja, Lagos, Nigeria<br>
+                        Serving God's people since 1932
+                    </p>
+                    <div style="margin-top: var(--space-6);">
+                        <p style="color: var(--neutral-300);"><strong>Phone:</strong> +234 802 344 4069</p>
+                        <p style="color: var(--neutral-300);"><strong>Email:</strong> Info@stpatrickigbogilaipaja.com</p>
+                    </div>
+                </div>
+                <div>
+                    <h3 style="color: var(--accent-gold); margin-bottom: var(--space-4);">Quick Links</h3>
+                    <a href="about.html" style="display: block; color: var(--neutral-300); padding: var(--space-2) 0;">About Us</a>
+                    <a href="mass-times.html" style="display: block; color: var(--neutral-300); padding: var(--space-2) 0;">Mass Times</a>
+                    <a href="ministries.html" style="display: block; color: var(--neutral-300); padding: var(--space-2) 0;">Ministries</a>
+                    <a href="donate.html" style="display: block; color: var(--neutral-300); padding: var(--space-2) 0;">Donate</a>
+                </div>
+                <div>
+                    <h3 style="color: var(--accent-gold); margin-bottom: var(--space-4);">Parish News</h3>
+                    <a href="harvest-news.html" style="display: block; color: var(--neutral-300); padding: var(--space-2) 0;">Harvest News</a>
+                    <a href="upcoming-events.html" style="display: block; color: var(--neutral-300); padding: var(--space-2) 0;">Upcoming Events</a>
+                    <a href="weekly-bulletin.html" style="display: block; color: var(--neutral-300); padding: var(--space-2) 0;">Weekly Bulletin</a>
+                    <a href="mass-booking.html" style="display: block; color: var(--neutral-300); padding: var(--space-2) 0;">Mass Booking</a>
+                </div>
+            </div>
+            <div style="border-top: 1px solid var(--neutral-800); padding-top: var(--space-6); text-align: center; color: var(--neutral-400);">
+                <p>&copy; 2025 St. Patrick's Catholic Church, Igbogila, Ipaja. All rights reserved.</p>
+                <p style="margin-top: var(--space-2); font-style: italic;">"For where two or three gather in my name, there am I with them." - Matthew 18:20</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

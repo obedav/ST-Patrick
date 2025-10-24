@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Gallery - St. Patrick's Catholic Church, Igbogila</title>
+    <meta name="description" content="View photos and memories from parish events at St. Patrick's Catholic Church, Igbogila, Ipaja.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/modern-variables.css">
+    <link rel="stylesheet" href="css/modern-components.css">
+
+    <style>
+        body {
+            padding-top: 80px;
+        }
+
+        .page-hero {
+            background: linear-gradient(135deg, var(--secondary-green) 0%, var(--primary-light) 100%);
+            color: white;
+            padding: var(--space-24) 0 var(--space-16);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .page-hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .breadcrumb {
+            display: flex;
+            gap: var(--space-2);
+            justify-content: center;
+            margin-bottom: var(--space-4);
+            font-size: var(--text-sm);
+            opacity: 0.9;
+        }
+
+        .content-section {
+            background: white;
+            padding: var(--space-16) 0;
+        }
+
+        .info-box {
+            background: var(--background-alt);
+            padding: var(--space-8);
+            border-radius: var(--radius-xl);
+            border-left: 4px solid var(--secondary-green);
+            margin: var(--space-8) 0;
+        }
+
+        .gallery-placeholder {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-6);
+            margin-top: var(--space-12);
+        }
+
+        .placeholder-item {
+            background: linear-gradient(135deg, var(--neutral-200), var(--neutral-300));
+            border-radius: var(--radius-xl);
+            height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: var(--text-5xl);
+            opacity: 0.5;
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Info Bar -->
+    <div class="info-bar" style="background: var(--neutral-900); color: white; padding: var(--space-2) 0; font-size: var(--text-sm);">
+        <div class="container">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: var(--space-4);">
+                <div style="display: flex; align-items: center; gap: var(--space-2);">
+                    <span>📍</span>
+                    <span>Igbogila, Ipaja, Lagos</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: var(--space-2);">
+                    <span>📞</span>
+                    <span>+234 802 344 4069</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: var(--space-2);">
+                    <span>✉️</span>
+                    <span>Info@stpatrickigbogilaipaja.com</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header/Navigation -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <div class="logo-icon">✝</div>
+                <span>St. Patrick's Igbogila</span>
+            </div>
+
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="school.html" class="nav-link">School</a>
+
+                <!-- Programmes Dropdown -->
+                <div class="nav-dropdown">
+                    <button class="nav-link dropdown-toggle">
+                        Programmes
+                        <svg class="dropdown-icon" width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
+                            <path d="M6 9L1 4h10L6 9z"/>
+                        </svg>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="ministries.html" class="dropdown-item">Ministries</a>
+                        <a href="mass-times.html" class="dropdown-item">Mass Times</a>
+                        <a href="liturgical-programs.html" class="dropdown-item">Liturgical Programs</a>
+                        <a href="societal-activities.html" class="dropdown-item">Societal Activities</a>
+                    </div>
+                </div>
+
+                <!-- Parish News Dropdown -->
+                <div class="nav-dropdown">
+                    <button class="nav-link dropdown-toggle">
+                        Parish News
+                        <svg class="dropdown-icon" width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
+                            <path d="M6 9L1 4h10L6 9z"/>
+                        </svg>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="harvest-news.html" class="dropdown-item">Harvest News</a>
+                        <a href="upcoming-events.html" class="dropdown-item">Upcoming Events</a>
+                        <a href="weekly-bulletin.html" class="dropdown-item">Weekly Bulletin</a>
+                        <a href="mass-booking.html" class="dropdown-item">Mass Booking</a>
+                    </div>
+                </div>
+
+                <!-- Media & Resources Dropdown -->
+                <div class="nav-dropdown">
+                    <button class="nav-link dropdown-toggle active">
+                        Media & Resources
+                        <svg class="dropdown-icon" width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
+                            <path d="M6 9L1 4h10L6 9z"/>
+                        </svg>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="parish-register.html" class="dropdown-item">Parish Register</a>
+                        <a href="photo-gallery.html" class="dropdown-item active">Photo Gallery</a>
+                        <a href="podcast.html" class="dropdown-item">Podcast</a>
+                    </div>
+                </div>
+
+                <!-- Facilities Dropdown -->
+                <div class="nav-dropdown">
+                    <button class="nav-link dropdown-toggle">
+                        Facilities
+                        <svg class="dropdown-icon" width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
+                            <path d="M6 9L1 4h10L6 9z"/>
+                        </svg>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="parish-clinic.html" class="dropdown-item">Parish Clinic</a>
+                        <a href="parish-project.html" class="dropdown-item">Parish Project</a>
+                    </div>
+                </div>
+
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="donate.html" class="nav-link">Donate</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="page-hero">
+        <div class="container">
+            <div class="page-hero-content">
+                <div class="breadcrumb">
+                    <a href="index.html" style="color: white;">Home</a>
+                    <span>/</span>
+                    <a href="#" style="color: white;">Media & Resources</a>
+                    <span>/</span>
+                    <span>Photo Gallery</span>
+                </div>
+                <h1 style="font-size: var(--text-6xl); margin-bottom: var(--space-4);">📸 Photo Gallery</h1>
+                <p style="font-size: var(--text-2xl); opacity: 0.95; max-width: 800px; margin: 0 auto;">
+                    Capturing memories and moments from our parish community
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="content-section">
+        <div class="container">
+            <div style="max-width: 1200px; margin: 0 auto;">
+                <div class="info-box">
+                    <h2 style="color: var(--secondary-green); margin-bottom: var(--space-4);">📢 Gallery Coming Soon</h2>
+                    <p style="font-size: var(--text-lg); line-height: 1.8; color: var(--text-secondary);">
+                        Our photo gallery is currently being prepared. Soon you'll be able to view photos from parish events, celebrations, and community gatherings.
+                    </p>
+                    <p style="font-size: var(--text-lg); line-height: 1.8; color: var(--text-secondary); margin-top: var(--space-4);">
+                        Check back regularly for updates, or follow us on social media to see the latest photos from our parish community.
+                    </p>
+                </div>
+
+                <div class="gallery-placeholder">
+                    <div class="placeholder-item">📷</div>
+                    <div class="placeholder-item">🖼️</div>
+                    <div class="placeholder-item">📸</div>
+                    <div class="placeholder-item">🎨</div>
+                    <div class="placeholder-item">🌟</div>
+                    <div class="placeholder-item">✝️</div>
+                </div>
+
+                <div class="card" style="margin-top: var(--space-12);">
+                    <h3 style="color: var(--primary-blue); margin-bottom: var(--space-4);">Stay Connected</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: var(--space-6);">
+                        Follow us on social media to see the latest photos and updates from our parish community.
+                    </p>
+                    <div style="display: flex; gap: var(--space-3);">
+                        <a href="#" style="width: 48px; height: 48px; background: var(--primary-blue); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; color: white; font-size: var(--text-xl);">f</a>
+                        <a href="#" style="width: 48px; height: 48px; background: var(--secondary-green); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; color: white; font-size: var(--text-xl);">📷</a>
+                        <a href="#" style="width: 48px; height: 48px; background: var(--accent-gold); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; color: white; font-size: var(--text-xl);">▶</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background: var(--neutral-900); color: white; padding: var(--space-16) 0 var(--space-6);">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--space-12); margin-bottom: var(--space-12);">
+                <div>
+                    <h3 style="color: var(--accent-gold); margin-bottom: var(--space-4);">St. Patrick's Catholic Church</h3>
+                    <p style="color: var(--neutral-300); line-height: 1.7;">
+                        Igbogila, Ipaja, Lagos, Nigeria<br>
+                        Serving God's people since 1932
+                    </p>
+                </div>
+                <div>
+                    <h3 style="color: var(--accent-gold); margin-bottom: var(--space-4);">Quick Links</h3>
+                    <a href="about.html" style="display: block; color: var(--neutral-300); padding: var(--space-2) 0;">About Us</a>
+                    <a href="mass-times.html" style="display: block; color: var(--neutral-300); padding: var(--space-2) 0;">Mass Times</a>
+                    <a href="ministries.html" style="display: block; color: var(--neutral-300); padding: var(--space-2) 0;">Ministries</a>
+                </div>
+            </div>
+            <div style="border-top: 1px solid var(--neutral-800); padding-top: var(--space-6); text-align: center; color: var(--neutral-400);">
+                <p>&copy; 2025 St. Patrick's Catholic Church, Igbogila, Ipaja. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

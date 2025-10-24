@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mass Booking - St. Patrick's Catholic Church</title>
+    <meta name="description" content="Book a Mass intention at St. Patrick's Catholic Church, Igbogila">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/modern-variables.css">
+    <link rel="stylesheet" href="css/modern-components.css">
+
+    <style>
+        body {
+            padding-top: 80px;
+        }
+
+        .booking-hero {
+            background: linear-gradient(135deg, var(--liturgical-purple) 0%, var(--primary-blue) 50%, var(--secondary-green) 100%);
+            color: white;
+            padding: var(--space-24) 0 var(--space-16);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .booking-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .booking-form {
+            background: white;
+            border-radius: var(--radius-2xl);
+            padding: var(--space-10);
+            box-shadow: var(--shadow-2xl);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: var(--space-6);
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            color: var(--primary-blue);
+            margin-bottom: var(--space-2);
+            font-size: var(--text-base);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: var(--space-4);
+            border: 2px solid var(--neutral-200);
+            border-radius: var(--radius-lg);
+            font-size: var(--text-base);
+            font-family: inherit;
+            transition: all var(--transition-base);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-6);
+        }
+
+        .info-box {
+            background: var(--background-alt);
+            padding: var(--space-6);
+            border-radius: var(--radius-lg);
+            border-left: 4px solid var(--liturgical-purple);
+            margin-bottom: var(--space-8);
+        }
+
+        .required {
+            color: var(--crimson-red);
+        }
+
+        @media (max-width: 768px) {
+            .booking-hero {
+                padding: var(--space-16) 0 var(--space-12);
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .booking-form {
+                padding: var(--space-6);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header/Navigation -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <div class="logo-icon">✝</div>
+                <span>St. Patrick's Igbogila</span>
+            </div>
+
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="school.html" class="nav-link">School</a>
+
+                <!-- Programmes Dropdown -->
+                <div class="nav-dropdown">
+                    <button class="nav-link dropdown-toggle">
+                        Programmes
+                        <svg class="dropdown-icon" width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
+                            <path d="M6 9L1 4h10L6 9z"/>
+                        </svg>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="ministries.html" class="dropdown-item">Ministries</a>
+                        <a href="mass-times.html" class="dropdown-item">Mass Times</a>
+                        <a href="liturgical-programs.html" class="dropdown-item">Liturgical Programs</a>
+                        <a href="societal-activities.html" class="dropdown-item">Societal Activities</a>
+                    </div>
+                </div>
+
+                <!-- Parish News Dropdown -->
+                <div class="nav-dropdown">
+                    <button class="nav-link dropdown-toggle active">
+                        Parish News
+                        <svg class="dropdown-icon" width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
+                            <path d="M6 9L1 4h10L6 9z"/>
+                        </svg>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="harvest-news.html" class="dropdown-item">Harvest News</a>
+                        <a href="upcoming-events.html" class="dropdown-item">Upcoming Events</a>
+                        <a href="weekly-bulletin.html" class="dropdown-item">Weekly Bulletin</a>
+                        <a href="mass-booking.html" class="dropdown-item active">Mass Booking</a>
+                    </div>
+                </div>
+
+                <!-- Media & Resources Dropdown -->
+                <div class="nav-dropdown">
+                    <button class="nav-link dropdown-toggle">
+                        Media & Resources
+                        <svg class="dropdown-icon" width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
+                            <path d="M6 9L1 4h10L6 9z"/>
+                        </svg>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="parish-register.html" class="dropdown-item">Parish Register</a>
+                        <a href="photo-gallery.html" class="dropdown-item">Photo Gallery</a>
+                        <a href="podcast.html" class="dropdown-item">Podcast</a>
+                    </div>
+                </div>
+
+                <!-- Facilities Dropdown -->
+                <div class="nav-dropdown">
+                    <button class="nav-link dropdown-toggle">
+                        Facilities
+                        <svg class="dropdown-icon" width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
+                            <path d="M6 9L1 4h10L6 9z"/>
+                        </svg>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="parish-clinic.html" class="dropdown-item">Parish Clinic</a>
+                        <a href="parish-project.html" class="dropdown-item">Parish Project</a>
+                    </div>
+                </div>
+
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="donate.html" class="nav-link">Donate</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="booking-hero">
+        <div class="container">
+            <div style="position: relative; z-index: 1;">
+                <div style="display: flex; gap: var(--space-2); justify-content: center; margin-bottom: var(--space-4); font-size: var(--text-sm); opacity: 0.9;">
+                    <a href="index.html" style="color: white;">Home</a>
+                    <span>/</span>
+                    <a href="#" style="color: white;">Parish News</a>
+                    <span>/</span>
+                    <span>Mass Booking</span>
+                </div>
+                <h1 style="font-size: var(--text-6xl); margin-bottom: var(--space-4);">📖 Mass Booking</h1>
+                <p style="font-size: var(--text-2xl); opacity: 0.95; max-width: 800px; margin: 0 auto;">
+                    Book a Holy Mass intention for your loved ones
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="section">
+        <div class="container">
+            <!-- Information Box -->
+            <div class="info-box">
+                <h3 style="color: var(--primary-blue); margin-bottom: var(--space-3); font-size: var(--text-2xl);">
+                    🙏 About Mass Intentions
+                </h3>
+                <p style="color: var(--text-secondary); line-height: 1.8;">
+                    A Mass intention is a special prayer offered during the celebration of the Holy Mass for a particular person, living or deceased, or for a special intention. By requesting a Mass to be offered, you are making a spiritual offering on behalf of yourself or another person.
+                </p>
+                <p style="color: var(--text-secondary); line-height: 1.8; margin-top: var(--space-3);">
+                    <strong>Mass Stipend:</strong> The customary offering for a Mass intention will be communicated by the parish office. You may also contact the parish office directly to book a Mass intention.
+                </p>
+            </div>
+
+            <!-- Booking Form -->
+            <div class="booking-form">
+                <h2 style="color: var(--primary-blue); margin-bottom: var(--space-6); font-size: var(--text-3xl); text-align: center;">
+                    Request a Mass Intention
+                </h2>
+
+                <form id="massBookingForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="requesterName">Your Name <span class="required">*</span></label>
+                            <input type="text" id="requesterName" name="requesterName" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address <span class="required">*</span></label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number <span class="required">*</span></label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="intentionFor">Mass Intention For <span class="required">*</span></label>
+                        <input type="text" id="intentionFor" name="intentionFor" placeholder="e.g., John Smith" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="intentionType">Type of Intention <span class="required">*</span></label>
+                        <select id="intentionType" name="intentionType" required>
+                            <option value="">Select intention type</option>
+                            <option value="thanksgiving">Thanksgiving</option>
+                            <option value="deceased">For the Deceased</option>
+                            <option value="healing">Healing</option>
+                            <option value="birthday">Birthday</option>
+                            <option value="anniversary">Anniversary</option>
+                            <option value="special">Special Intention</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="preferredDate">Preferred Date <span class="required">*</span></label>
+                            <input type="date" id="preferredDate" name="preferredDate" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="massTime">Preferred Mass Time</label>
+                            <select id="massTime" name="massTime">
+                                <option value="">Select time</option>
+                                <option value="weekday-6am">Weekday - 6:00 AM</option>
+                                <option value="weekday-6-30am">Weekday - 6:30 AM</option>
+                                <option value="saturday-7am">Saturday - 7:00 AM</option>
+                                <option value="saturday-6pm">Saturday Vigil - 6:00 PM</option>
+                                <option value="sunday-7am">Sunday - 7:00 AM</option>
+                                <option value="sunday-9am">Sunday - 9:00 AM</option>
+                                <option value="sunday-11am">Sunday - 11:00 AM</option>
+                                <option value="sunday-5pm">Sunday - 5:00 PM</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="additionalInfo">Additional Information</label>
+                        <textarea id="additionalInfo" name="additionalInfo" placeholder="Any special requests or additional details..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-large" style="width: 100%;">
+                        Submit Mass Intention Request
+                    </button>
+
+                    <p style="text-align: center; color: var(--text-secondary); margin-top: var(--space-4); font-size: var(--text-sm);">
+                        <span class="required">*</span> Required fields
+                    </p>
+                </form>
+            </div>
+
+            <!-- Alternative Contact Methods -->
+            <div class="card" style="background: var(--background-alt); padding: var(--space-8); margin-top: var(--space-12); text-align: center;">
+                <h3 style="color: var(--primary-blue); margin-bottom: var(--space-4); font-size: var(--text-2xl);">
+                    📞 Alternative Booking Methods
+                </h3>
+                <p style="color: var(--text-secondary); line-height: 1.8; margin-bottom: var(--space-4);">
+                    You may also book a Mass intention by:
+                </p>
+                <div class="grid grid-2" style="max-width: 600px; margin: 0 auto;">
+                    <div>
+                        <p style="font-weight: 600; color: var(--primary-blue);">📞 Phone</p>
+                        <p style="color: var(--text-secondary);">+234 802 344 4069</p>
+                    </div>
+                    <div>
+                        <p style="font-weight: 600; color: var(--primary-blue);">🏛️ In Person</p>
+                        <p style="color: var(--text-secondary);">Visit the Parish Office</p>
+                    </div>
+                </div>
+                <p style="color: var(--text-secondary); margin-top: var(--space-4); font-size: var(--text-sm);">
+                    Office Hours: Monday - Friday, 9:00 AM - 4:00 PM
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background: var(--neutral-900); color: white; padding: var(--space-16) 0 var(--space-6);">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3 style="color: var(--accent-gold); margin-bottom: var(--space-4);">St. Patrick's Igbogila</h3>
+                    <p>A vibrant Catholic community serving God's people since 1932.</p>
+                    <p style="margin-top: var(--space-4);">📍 Igbogila, Ipaja, Lagos<br>📞 +234 802 344 4069<br>✉️ Info@stpatrickigbogilaipaja.com</p>
+                </div>
+                <div class="footer-column">
+                    <h3 style="color: var(--accent-gold); margin-bottom: var(--space-4);">Quick Links</h3>
+                    <a href="index.html" class="footer-link">Home</a>
+                    <a href="about.html" class="footer-link">About Us</a>
+                    <a href="mass-times.html" class="footer-link">Mass Times</a>
+                    <a href="contact.html" class="footer-link">Contact</a>
+                </div>
+                <div class="footer-column">
+                    <h3 style="color: var(--accent-gold); margin-bottom: var(--space-4);">Parish News</h3>
+                    <a href="harvest-news.html" class="footer-link">Harvest News</a>
+                    <a href="upcoming-events.html" class="footer-link">Upcoming Events</a>
+                    <a href="weekly-bulletin.html" class="footer-link">Weekly Bulletin</a>
+                    <a href="mass-booking.html" class="footer-link">Mass Booking</a>
+                </div>
+                <div class="footer-column">
+                    <h3 style="color: var(--accent-gold); margin-bottom: var(--space-4);">Stay Connected</h3>
+                    <p>Join our community and stay updated with parish news and events.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 St. Patrick's Catholic Church, Igbogila. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Form submission handler
+        document.getElementById('massBookingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Basic validation
+            const requiredFields = this.querySelectorAll('[required]');
+            let isValid = true;
+
+            requiredFields.forEach(field => {
+                if (!field.value.trim()) {
+                    isValid = false;
+                    field.style.borderColor = 'var(--crimson-red)';
+                } else {
+                    field.style.borderColor = 'var(--neutral-200)';
+                }
+            });
+
+            if (isValid) {
+                // Here you would normally send the data to a server
+                alert('Thank you for your Mass intention request. The parish office will contact you shortly to confirm your booking and provide payment details.');
+                this.reset();
+            } else {
+                alert('Please fill in all required fields marked with *');
+            }
+        });
+
+        // Set minimum date to today
+        const dateInput = document.getElementById('preferredDate');
+        const today = new Date().toISOString().split('T')[0];
+        dateInput.setAttribute('min', today);
+    </script>
+</body>
+</html>

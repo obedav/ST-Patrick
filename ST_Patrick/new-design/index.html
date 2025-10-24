@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>St. Patrick's Catholic Church - Igbogila, Ipaja, Lagos</title>
+    <meta name="description" content="Welcome to St. Patrick's Catholic Church, Igbogila, Ipaja. A vibrant Catholic community serving God's people since 1932.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/modern-variables.css">
+    <link rel="stylesheet" href="css/modern-components.css">
+
+    <style>
+        /* Page-specific styles */
+        body {
+            padding-top: 80px;
+        }
+
+        /* Quick Info Bar */
+        .info-bar {
+            background: var(--neutral-900);
+            color: white;
+            padding: var(--space-2) 0;
+            font-size: var(--text-sm);
+        }
+
+        .info-bar-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: var(--space-4);
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: var(--space-2);
+        }
+
+        /* Feature Cards */
+        .feature-card {
+            background: white;
+            padding: var(--space-8);
+            border-radius: var(--radius-2xl);
+            box-shadow: var(--shadow-lg);
+            transition: all var(--transition-base);
+            border-top: 4px solid var(--primary-blue);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-2xl);
+        }
+
+        .feature-icon {
+            width: 72px;
+            height: 72px;
+            background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary-blue) 100%);
+            border-radius: var(--radius-xl);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: var(--text-4xl);
+            margin-bottom: var(--space-4);
+            box-shadow: var(--shadow-md);
+        }
+
+        /* Mass Times Section */
+        .mass-times-card {
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-light));
+            color: white;
+            padding: var(--space-10);
+            border-radius: var(--radius-2xl);
+            text-align: center;
+        }
+
+        .mass-schedule {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--space-6);
+            margin-top: var(--space-8);
+        }
+
+        .mass-time-item {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: var(--space-6);
+            border-radius: var(--radius-xl);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .mass-day {
+            font-size: var(--text-lg);
+            font-weight: 700;
+            margin-bottom: var(--space-2);
+        }
+
+        .mass-hour {
+            font-size: var(--text-2xl);
+            font-weight: 800;
+            color: var(--accent-gold);
+        }
+
+        /* Welcome Section */
+        .welcome-section {
+            background: var(--background-alt);
+        }
+
+        .priest-card {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: var(--space-8);
+            background: white;
+            padding: var(--space-10);
+            border-radius: var(--radius-2xl);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .priest-image {
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .priest-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-green));
+            color: white;
+            text-align: center;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: var(--space-4);
+            justify-content: center;
+            margin-top: var(--space-8);
+            flex-wrap: wrap;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--neutral-900);
+            color: white;
+            padding: var(--space-16) 0 var(--space-6);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-12);
+            margin-bottom: var(--space-12);
+        }
+
+        .footer-column h3 {
+            color: var(--accent-gold);
+            margin-bottom: var(--space-4);
+        }
+
+        .footer-link {
+            display: block;
+            color: var(--neutral-300);
+            padding: var(--space-2) 0;
+            transition: color var(--transition-fast);
+        }
+
+        .footer-link:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--neutral-800);
+            padding-top: var(--space-6);
+            text-align: center;
+            color: var(--neutral-400);
+        }
+
+        @media (max-width: 768px) {
+            .priest-card {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Info Bar -->
+    <div class="info-bar">
+        <div class="container">
+            <div class="info-bar-content">
+                <div class="info-item">
+                    <span>📍</span>
+                    <span>Igbogila, Ipaja, Lagos</span>
+                </div>
+                <div class="info-item">
+                    <span>📞</span>
+                    <span>+234 802 344 4069</span>
+                </div>
+                <div class="info-item">
+                    <span>✉️</span>
+                    <span>Info@stpatrickigbogilaipaja.com</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header/Navigation -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <div class="logo-icon">✝</div>
+                <span>St. Patrick's Igbogila</span>
+            </div>
+
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="nav">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="school.html" class="nav-link">School</a>
+
+                <!-- Programmes Dropdown -->
+                <div class="nav-dropdown">
+                    <button class="nav-link dropdown-toggle">
+                        Programmes
+                        <svg class="dropdown-icon" width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
+                            <path d="M6 9L1 4h10L6 9z"/>
+                        </svg>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="ministries.html" class="dropdown-item">Ministries</a>
+                        <a href="mass-times.html" class="dropdown-item">Mass Times</a>
+                        <a href="liturgical-programs.html" class="dropdown-item">Liturgical Programs</a>
+                        <a href="societal-activities.html" class="dropdown-item">Societal Activities</a>
+                    </div>
+                </div>
+
+                <!-- Parish News Dropdown -->
+                <div class="nav-dropdown">
+                    <button class="nav-link dropdown-toggle">
+                        Parish News
+                        <svg class="dropdown-icon" width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
+                            <path d="M6 9L1 4h10L6 9z"/>
+                        </svg>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="harvest-news.html" class="dropdown-item">Harvest News</a>
+                        <a href="upcoming-events.html" class="dropdown-item">Upcoming Events</a>
+                        <a href="weekly-bulletin.html" class="dropdown-item">Weekly Bulletin</a>
+                        <a href="mass-booking.html" class="dropdown-item">Mass Booking</a>
+                    </div>
+                </div>
+
+                <!-- Media & Resources Dropdown -->
+                <div class="nav-dropdown">
+                    <button class="nav-link dropdown-toggle">
+                        Media & Resources
+                        <svg class="dropdown-icon" width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
+                            <path d="M6 9L1 4h10L6 9z"/>
+                        </svg>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="parish-register.html" class="dropdown-item">Parish Register</a>
+                        <a href="photo-gallery.html" class="dropdown-item">Photo Gallery</a>
+                        <a href="podcast.html" class="dropdown-item">Podcast</a>
+                    </div>
+                </div>
+
+                <!-- Facilities Dropdown -->
+                <div class="nav-dropdown">
+                    <button class="nav-link dropdown-toggle">
+                        Facilities
+                        <svg class="dropdown-icon" width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
+                            <path d="M6 9L1 4h10L6 9z"/>
+                        </svg>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="parish-clinic.html" class="dropdown-item">Parish Clinic</a>
+                        <a href="parish-project.html" class="dropdown-item">Parish Project</a>
+                    </div>
+                </div>
+
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="donate.html" class="nav-link">Donate</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Welcome to St. Patrick's Catholic Church</h1>
+                <p class="hero-subtitle">Igbogila, Ipaja - A Faith Community Since 1932</p>
+                <div class="cta-buttons">
+                    <a href="mass-times.html" class="btn btn-large btn-primary">Mass Times</a>
+                    <a href="about.html" class="btn btn-large btn-secondary">Our History</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Stats -->
+    <section class="section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <div class="stat-number">92+</div>
+                    <div class="stat-label">Years of Faith</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">3</div>
+                    <div class="stat-label">Parish Outreach Stations</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">19</div>
+                    <div class="stat-label">Years as Parish</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">2018</div>
+                    <div class="stat-label">Modern Church Dedicated</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mass Times -->
+    <section class="section">
+        <div class="container">
+            <div class="mass-times-card">
+                <h2 style="font-size: var(--text-4xl); margin-bottom: var(--space-2);">Mass Schedule</h2>
+                <p style="opacity: 0.9; margin-bottom: var(--space-8);">Join us for Holy Mass</p>
+
+                <div class="mass-schedule">
+                    <div class="mass-time-item">
+                        <div class="mass-day">Sunday</div>
+                        <div class="mass-hour">6:30 AM</div>
+                    </div>
+                    <div class="mass-time-item">
+                        <div class="mass-day">Sunday</div>
+                        <div class="mass-hour">9:30 AM</div>
+                    </div>
+                    <div class="mass-time-item">
+                        <div class="mass-day">Children's Mass</div>
+                        <div class="mass-hour">9:30 AM</div>
+                    </div>
+                    <div class="mass-time-item">
+                        <div class="mass-day">Weekdays</div>
+                        <div class="mass-hour">6:30 AM</div>
+                    </div>
+                </div>
+
+                <p style="margin-top: var(--space-6); font-size: var(--text-base); opacity: 0.9;">St. Jude Mass Centre, Ashipa: Sunday 6:30 AM</p>
+
+                <a href="mass-times.html" class="btn btn-large btn-secondary" style="margin-top: var(--space-8);">View Full Schedule</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Welcome Message & Clergy -->
+    <section class="section welcome-section">
+        <div class="container">
+            <div class="section-header" style="margin-bottom: var(--space-12);">
+                <h2 class="section-title">Our Pastoral Team</h2>
+                <p class="section-subtitle">Serving God's people with dedication and love</p>
+            </div>
+
+            <!-- Parish Priest -->
+            <div class="priest-card">
+                <div class="priest-image">
+                    <img src="images/Rev Fr. Agbapajuru.jpeg" alt="Rev Fr. Agbapajuru Cyriacus CSSp">
+                </div>
+                <div>
+                    <span class="badge badge-primary">Parish Priest</span>
+                    <h2 style="margin-top: var(--space-4); margin-bottom: var(--space-2);">Rev Fr. Agbapajuru Cyriacus CSSp</h2>
+
+                    <div style="margin-bottom: var(--space-6); padding: var(--space-4); background: var(--background-alt); border-radius: var(--radius-lg);">
+                        <p style="margin-bottom: var(--space-2);"><strong>📞 Phone:</strong> 08125887565</p>
+                        <p style="margin-bottom: 0;"><strong>💬 WhatsApp:</strong> 0703814438</p>
+                    </div>
+
+                    <p style="font-size: var(--text-lg); line-height: 1.8; color: var(--text-secondary);">
+                        "Dear brothers and sisters in Christ, welcome to St. Patrick's Catholic Church, Igbogila. Whether you are a long-time parishioner or visiting for the first time, know that you are cherished and welcomed here. Our parish has been a beacon of faith in Ipaja since 1932, and we continue to serve God's people with dedication and love."
+                    </p>
+
+                    <div style="margin-top: var(--space-8); padding-top: var(--space-6); border-top: 1px solid var(--border);">
+                        <h4 style="margin-bottom: var(--space-3);">Parish Office Hours</h4>
+                        <p><strong>Monday - Friday:</strong> 9:00 AM - 4:00 PM</p>
+                        <p><strong>Wednesday:</strong> 8:00 AM - 12:00 PM</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Associate Priests -->
+            <div class="grid grid-2" style="margin-top: var(--space-12);">
+                <div class="card">
+                    <div style="width: 100%; height: 400px; background: linear-gradient(135deg, var(--neutral-200), var(--neutral-300)); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; font-size: var(--text-6xl); margin-bottom: var(--space-6); overflow: hidden;">
+                        <img src="images/Rev. fr. Ebuka Afoma.jpeg" alt="Rev. Fr. Ebuka Afoma" style="width: 100%; height: 100%; object-fit: cover; object-position: center 30%;">
+                    </div>
+                    <span class="badge badge-secondary">Associate Priest</span>
+                    <h3 style="margin-top: var(--space-3); margin-bottom: var(--space-2);">Rev. Fr. Ebuka Afoma</h3>
+                    <p style="color: var(--text-secondary);">Serving the parish community with pastoral care and spiritual guidance.</p>
+                </div>
+
+                <div class="card">
+                    <div style="width: 100%; height: 400px; background: linear-gradient(135deg, var(--neutral-200), var(--neutral-300)); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; font-size: var(--text-6xl); margin-bottom: var(--space-6); overflow: hidden;">
+                        <img src="images/Rev. Fr. Matthan Nwalozie.jpeg" alt="Rev. Fr. Matthan Nwalozie CSSp" style="width: 100%; height: 100%; object-fit: cover; object-position: center 15%;">
+                    </div>
+                    <span class="badge badge-secondary">Associate Priest</span>
+                    <h3 style="margin-top: var(--space-3); margin-bottom: var(--space-2);">Rev. Fr. Matthan Nwalozie CSSp</h3>
+                    <p style="color: var(--text-secondary);">Dedicated to serving the faithful and supporting parish ministries.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Access Features -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">How Can We Serve You?</h2>
+                <p class="section-subtitle">Explore our parish services and get involved in our community</p>
+            </div>
+
+            <div class="grid grid-3">
+                <div class="feature-card">
+                    <div class="feature-icon">🙏</div>
+                    <h3>Sacraments</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: var(--space-4);">Baptism, Confirmation, Marriage, and more. We're here to guide you through your spiritual journey.</p>
+                    <a href="sacraments.html" class="btn btn-secondary">Learn More</a>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">👥</div>
+                    <h3>Join a Ministry</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: var(--space-4);">Discover your calling through our various parish ministries and organizations.</p>
+                    <a href="ministries.html" class="btn btn-secondary">View Ministries</a>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">📅</div>
+                    <h3>Events & Programs</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: var(--space-4);">Stay connected with parish activities, celebrations, and community events.</p>
+                    <a href="events.html" class="btn btn-secondary">See Calendar</a>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">💝</div>
+                    <h3>Support Our Mission</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: var(--space-4);">Your generosity helps us continue serving God's people.</p>
+                    <a href="give.html" class="btn btn-primary">Give Now</a>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">📖</div>
+                    <h3>Faith Formation</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: var(--space-4);">Catechism classes, Bible study, and spiritual growth programs.</p>
+                    <a href="resources.html" class="btn btn-secondary">Explore</a>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">✉️</div>
+                    <h3>Get in Touch</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: var(--space-4);">Have questions? We're here to help. Reach out to us anytime.</p>
+                    <a href="contact.html" class="btn btn-secondary">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section cta-section">
+        <div class="container">
+            <h2 style="font-size: var(--text-5xl); margin-bottom: var(--space-4);">Join Our Parish Family</h2>
+            <p style="font-size: var(--text-xl); opacity: 0.95; margin-bottom: var(--space-8); max-width: 700px; margin-left: auto; margin-right: auto;">
+                New to the area? Interested in becoming a member? We'd love to welcome you to St. Patrick's Catholic Church.
+            </p>
+            <div class="cta-buttons">
+                <a href="register.html" class="btn btn-large" style="background: white; color: var(--primary-blue);">Register as Parishioner</a>
+                <a href="visit.html" class="btn btn-large btn-secondary">Plan Your Visit</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>St. Patrick's Catholic Church</h3>
+                    <p style="color: var(--neutral-300); line-height: 1.7;">
+                        Igbogila, Ipaja, Lagos, Nigeria<br>
+                        Serving God's people since 1932
+                    </p>
+                    <div style="margin-top: var(--space-6);">
+                        <p><strong>Phone:</strong> +234 802 344 4069</p>
+                        <p><strong>Email:</strong> Info@stpatrickigbogilaipaja.com</p>
+                        <p><strong>P.O. Box:</strong> 2189, Ipaja, Lagos</p>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <a href="about.html" class="footer-link">About Us</a>
+                    <a href="mass-times.html" class="footer-link">Mass Times</a>
+                    <a href="ministries.html" class="footer-link">Ministries</a>
+                    <a href="events.html" class="footer-link">Events</a>
+                    <a href="give.html" class="footer-link">Online Giving</a>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Sacraments</h3>
+                    <a href="baptism.html" class="footer-link">Baptism</a>
+                    <a href="confirmation.html" class="footer-link">Confirmation</a>
+                    <a href="marriage.html" class="footer-link">Marriage</a>
+                    <a href="confession.html" class="footer-link">Confession</a>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Connect With Us</h3>
+                    <p style="color: var(--neutral-300); margin-bottom: var(--space-4);">Stay updated with parish news and events</p>
+                    <div style="display: flex; gap: var(--space-3); margin-top: var(--space-4);">
+                        <a href="#" style="width: 40px; height: 40px; background: var(--neutral-800); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: white;">f</a>
+                        <a href="#" style="width: 40px; height: 40px; background: var(--neutral-800); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: white;">📷</a>
+                        <a href="#" style="width: 40px; height: 40px; background: var(--neutral-800); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: white;">▶</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 St. Patrick's Catholic Church, Igbogila, Ipaja. All rights reserved.</p>
+                <p style="margin-top: var(--space-2); font-style: italic;">"For where two or three gather in my name, there am I with them." - Matthew 18:20</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
