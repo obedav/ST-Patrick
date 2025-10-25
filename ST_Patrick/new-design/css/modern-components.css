@@ -112,15 +112,22 @@
 }
 
 .logo-icon {
-    width: 48px;
-    height: 48px;
-    background: linear-gradient(135deg, var(--primary-light), var(--primary-blue));
+    width: 64px;
+    height: 64px;
+    background: white;
     border-radius: var(--radius-lg);
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
-    font-size: var(--text-2xl);
+    overflow: hidden;
+    padding: 2px;
+}
+
+.logo-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: var(--radius-md);
 }
 
 .nav {
