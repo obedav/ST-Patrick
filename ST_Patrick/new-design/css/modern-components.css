@@ -1,5 +1,98 @@
 /* Modern Component Library for St. Patrick's */
 
+/* Skip Link for Accessibility */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--primary-blue);
+    color: white;
+    padding: var(--space-3) var(--space-6);
+    text-decoration: none;
+    border-radius: 0 0 var(--radius-md) 0;
+    font-weight: 600;
+    z-index: 9999;
+    transition: top var(--transition-fast);
+}
+
+.skip-link:focus {
+    top: 0;
+    outline: 3px solid var(--accent-gold);
+    outline-offset: 2px;
+}
+
+/* Keyboard Focus Styles for Accessibility */
+*:focus-visible {
+    outline: 3px solid var(--primary-blue);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
+}
+
+.btn:focus-visible {
+    outline: 3px solid var(--accent-gold);
+    outline-offset: 3px;
+}
+
+.nav-link:focus-visible,
+.dropdown-item:focus-visible {
+    outline: 2px solid var(--primary-blue);
+    outline-offset: 2px;
+}
+
+/* Form Focus Styles */
+.form-input:focus-visible,
+.form-textarea:focus-visible,
+.form-select:focus-visible {
+    outline: none;
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1);
+}
+
+/* Form Validation Styles */
+.form-group {
+    position: relative;
+}
+
+.form-input.error,
+.form-textarea.error,
+.form-select.error {
+    border-color: var(--crimson-red);
+}
+
+.form-input.error:focus,
+.form-textarea.error:focus,
+.form-select.error:focus {
+    box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+}
+
+.form-input.success,
+.form-textarea.success,
+.form-select.success {
+    border-color: var(--secondary-green);
+}
+
+.error-message {
+    display: none;
+    color: var(--crimson-red);
+    font-size: var(--text-sm);
+    margin-top: var(--space-2);
+}
+
+.error-message.show {
+    display: block;
+}
+
+.success-message {
+    display: none;
+    color: var(--secondary-green);
+    font-size: var(--text-sm);
+    margin-top: var(--space-2);
+}
+
+.success-message.show {
+    display: block;
+}
+
 /* Modern Button Styles */
 .btn {
     display: inline-flex;
@@ -42,6 +135,39 @@
 .btn-large {
     padding: var(--space-4) var(--space-8);
     font-size: var(--text-lg);
+}
+
+/* Button States */
+.btn:disabled,
+.btn.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.btn.loading {
+    position: relative;
+    color: transparent;
+    pointer-events: none;
+}
+
+.btn.loading::after {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 50%;
+    left: 50%;
+    margin-left: -8px;
+    margin-top: -8px;
+    border: 2px solid currentColor;
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
 }
 
 /* Modern Card Component */

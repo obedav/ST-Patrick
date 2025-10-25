@@ -6,14 +6,73 @@
     <title>St. Patrick's Catholic Church - Igbogila, Ipaja, Lagos</title>
     <meta name="description" content="Welcome to St. Patrick's Catholic Church, Igbogila, Ipaja. A vibrant Catholic community serving God's people since 1932.">
 
-    <!-- Google Fonts -->
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="St. Patrick's Catholic Church - Igbogila, Ipaja">
+    <meta property="og:description" content="A vibrant Catholic community serving God's people since 1932. Join us for Mass, ministries, and fellowship.">
+    <meta property="og:image" content="images/church-og-image.jpg">
+    <meta property="og:url" content="https://stpatrickigbogilaipaja.com">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="St. Patrick's Catholic Church - Igbogila, Ipaja">
+    <meta name="twitter:description" content="A vibrant Catholic community serving God's people since 1932.">
+    <meta name="twitter:image" content="images/church-og-image.jpg">
+
+    <!-- Google Fonts - Optimized Loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap"></noscript>
 
     <!-- CSS -->
     <link rel="stylesheet" href="css/modern-variables.css">
     <link rel="stylesheet" href="css/modern-components.css">
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Church",
+      "name": "St. Patrick's Catholic Church",
+      "description": "A vibrant Catholic community serving God's people since 1932",
+      "url": "https://stpatrickigbogilaipaja.com",
+      "telephone": "+234-802-344-4069",
+      "email": "Info@stpatrickigbogilaipaja.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Igbogila",
+        "addressLocality": "Ipaja",
+        "addressRegion": "Lagos",
+        "postalCode": "2189",
+        "addressCountry": "NG"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "6.5569",
+        "longitude": "3.2553"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Thursday", "Friday"],
+          "opens": "09:00",
+          "closes": "16:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Wednesday",
+          "opens": "08:00",
+          "closes": "12:00"
+        }
+      ],
+      "foundingDate": "1932"
+    }
+    </script>
 
     <style>
         /* Page-specific styles */
@@ -176,6 +235,9 @@
     </style>
 </head>
 <body>
+    <!-- Skip to main content link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
     <!-- Top Info Bar -->
     <div class="info-bar">
         <div class="container">
@@ -210,69 +272,69 @@
                 <span></span>
             </button>
 
-            <nav class="nav">
-                <a href="index.html" class="nav-link active">Home</a>
+            <nav class="nav" aria-label="Main navigation">
+                <a href="index.html" class="nav-link active" aria-current="page">Home</a>
                 <a href="about.html" class="nav-link">About</a>
                 <a href="school.html" class="nav-link">School</a>
 
                 <!-- Programmes Dropdown -->
                 <div class="nav-dropdown">
-                    <button class="nav-link dropdown-toggle">
+                    <button class="nav-link dropdown-toggle" aria-expanded="false" aria-haspopup="true" aria-label="Programmes menu">
                         Programmes
-                        <svg class="dropdown-icon" width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
+                        <svg class="dropdown-icon" width="12" height="12" viewBox="0 0 12 12" fill="currentColor" aria-hidden="true">
                             <path d="M6 9L1 4h10L6 9z"/>
                         </svg>
                     </button>
-                    <div class="dropdown-menu">
-                        <a href="ministries.html" class="dropdown-item">Ministries</a>
-                        <a href="mass-times.html" class="dropdown-item">Mass Times</a>
-                        <a href="liturgical-programs.html" class="dropdown-item">Liturgical Programs</a>
-                        <a href="societal-activities.html" class="dropdown-item">Societal Activities</a>
+                    <div class="dropdown-menu" role="menu">
+                        <a href="ministries.html" class="dropdown-item" role="menuitem">Ministries</a>
+                        <a href="mass-times.html" class="dropdown-item" role="menuitem">Mass Times</a>
+                        <a href="liturgical-programs.html" class="dropdown-item" role="menuitem">Liturgical Programs</a>
+                        <a href="societal-activities.html" class="dropdown-item" role="menuitem">Societal Activities</a>
                     </div>
                 </div>
 
                 <!-- Parish News Dropdown -->
                 <div class="nav-dropdown">
-                    <button class="nav-link dropdown-toggle">
+                    <button class="nav-link dropdown-toggle" aria-expanded="false" aria-haspopup="true" aria-label="Parish News menu">
                         Parish News
-                        <svg class="dropdown-icon" width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
+                        <svg class="dropdown-icon" width="12" height="12" viewBox="0 0 12 12" fill="currentColor" aria-hidden="true">
                             <path d="M6 9L1 4h10L6 9z"/>
                         </svg>
                     </button>
-                    <div class="dropdown-menu">
-                        <a href="harvest-news.html" class="dropdown-item">Harvest News</a>
-                        <a href="upcoming-events.html" class="dropdown-item">Upcoming Events</a>
-                        <a href="weekly-bulletin.html" class="dropdown-item">Weekly Bulletin</a>
-                        <a href="mass-booking.html" class="dropdown-item">Mass Booking</a>
+                    <div class="dropdown-menu" role="menu">
+                        <a href="harvest-news.html" class="dropdown-item" role="menuitem">Harvest News</a>
+                        <a href="upcoming-events.html" class="dropdown-item" role="menuitem">Upcoming Events</a>
+                        <a href="weekly-bulletin.html" class="dropdown-item" role="menuitem">Weekly Bulletin</a>
+                        <a href="mass-booking.html" class="dropdown-item" role="menuitem">Mass Booking</a>
                     </div>
                 </div>
 
                 <!-- Media & Resources Dropdown -->
                 <div class="nav-dropdown">
-                    <button class="nav-link dropdown-toggle">
+                    <button class="nav-link dropdown-toggle" aria-expanded="false" aria-haspopup="true" aria-label="Media and Resources menu">
                         Media & Resources
-                        <svg class="dropdown-icon" width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
+                        <svg class="dropdown-icon" width="12" height="12" viewBox="0 0 12 12" fill="currentColor" aria-hidden="true">
                             <path d="M6 9L1 4h10L6 9z"/>
                         </svg>
                     </button>
-                    <div class="dropdown-menu">
-                        <a href="parish-register.html" class="dropdown-item">Parish Register</a>
-                        <a href="photo-gallery.html" class="dropdown-item">Photo Gallery</a>
-                        <a href="podcast.html" class="dropdown-item">Podcast</a>
+                    <div class="dropdown-menu" role="menu">
+                        <a href="parish-register.html" class="dropdown-item" role="menuitem">Parish Register</a>
+                        <a href="photo-gallery.html" class="dropdown-item" role="menuitem">Photo Gallery</a>
+                        <a href="podcast.html" class="dropdown-item" role="menuitem">Podcast</a>
                     </div>
                 </div>
 
                 <!-- Facilities Dropdown -->
                 <div class="nav-dropdown">
-                    <button class="nav-link dropdown-toggle">
+                    <button class="nav-link dropdown-toggle" aria-expanded="false" aria-haspopup="true" aria-label="Facilities menu">
                         Facilities
-                        <svg class="dropdown-icon" width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
+                        <svg class="dropdown-icon" width="12" height="12" viewBox="0 0 12 12" fill="currentColor" aria-hidden="true">
                             <path d="M6 9L1 4h10L6 9z"/>
                         </svg>
                     </button>
-                    <div class="dropdown-menu">
-                        <a href="parish-clinic.html" class="dropdown-item">Parish Clinic</a>
-                        <a href="parish-project.html" class="dropdown-item">Parish Project</a>
+                    <div class="dropdown-menu" role="menu">
+                        <a href="parish-clinic.html" class="dropdown-item" role="menuitem">Parish Clinic</a>
+                        <a href="parish-project.html" class="dropdown-item" role="menuitem">Parish Project</a>
                     </div>
                 </div>
 
@@ -282,8 +344,10 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="hero">
         <div class="container">
             <div class="hero-content">
                 <h1 class="hero-title">Welcome to St. Patrick's Catholic Church</h1>
@@ -364,7 +428,7 @@
             <!-- Parish Priest -->
             <div class="priest-card">
                 <div class="priest-image">
-                    <img src="images/Rev Fr. Agbapajuru.jpeg" alt="Rev Fr. Agbapajuru Cyriacus CSSp">
+                    <img src="images/Rev Fr. Agbapajuru.jpeg" alt="Rev Fr. Agbapajuru Cyriacus CSSp" loading="lazy" width="300" height="400">
                 </div>
                 <div>
                     <span class="badge badge-primary">Parish Priest</span>
@@ -391,7 +455,7 @@
             <div class="grid grid-2" style="margin-top: var(--space-12);">
                 <div class="card">
                     <div style="width: 100%; height: 400px; background: linear-gradient(135deg, var(--neutral-200), var(--neutral-300)); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; font-size: var(--text-6xl); margin-bottom: var(--space-6); overflow: hidden;">
-                        <img src="images/Rev. fr. Ebuka Afoma.jpeg" alt="Rev. Fr. Ebuka Afoma" style="width: 100%; height: 100%; object-fit: cover; object-position: center 30%;">
+                        <img src="images/Rev. fr. Ebuka Afoma.jpeg" alt="Rev. Fr. Ebuka Afoma" loading="lazy" width="400" height="400" style="width: 100%; height: 100%; object-fit: cover; object-position: center 30%;">
                     </div>
                     <span class="badge badge-secondary">Associate Priest</span>
                     <h3 style="margin-top: var(--space-3); margin-bottom: var(--space-2);">Rev. Fr. Ebuka Afoma</h3>
@@ -400,7 +464,7 @@
 
                 <div class="card">
                     <div style="width: 100%; height: 400px; background: linear-gradient(135deg, var(--neutral-200), var(--neutral-300)); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; font-size: var(--text-6xl); margin-bottom: var(--space-6); overflow: hidden;">
-                        <img src="images/Rev. Fr. Matthan Nwalozie.jpeg" alt="Rev. Fr. Matthan Nwalozie CSSp" style="width: 100%; height: 100%; object-fit: cover; object-position: center 15%;">
+                        <img src="images/Rev. Fr. Matthan Nwalozie.jpeg" alt="Rev. Fr. Matthan Nwalozie CSSp" loading="lazy" width="400" height="400" style="width: 100%; height: 100%; object-fit: cover; object-position: center 15%;">
                     </div>
                     <span class="badge badge-secondary">Associate Priest</span>
                     <h3 style="margin-top: var(--space-3); margin-bottom: var(--space-2);">Rev. Fr. Matthan Nwalozie CSSp</h3>
@@ -477,6 +541,7 @@
             </div>
         </div>
     </section>
+    </main>
 
     <!-- Footer -->
     <footer>
@@ -516,9 +581,15 @@
                     <h3>Connect With Us</h3>
                     <p style="color: var(--neutral-300); margin-bottom: var(--space-4);">Stay updated with parish news and events</p>
                     <div style="display: flex; gap: var(--space-3); margin-top: var(--space-4);">
-                        <a href="#" style="width: 40px; height: 40px; background: var(--neutral-800); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: white;">f</a>
-                        <a href="#" style="width: 40px; height: 40px; background: var(--neutral-800); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: white;">📷</a>
-                        <a href="#" style="width: 40px; height: 40px; background: var(--neutral-800); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: white;">▶</a>
+                        <a href="#" aria-label="Follow us on Facebook" style="width: 40px; height: 40px; background: var(--neutral-800); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: white;">
+                            <svg width="20" height="20" fill="currentColor" aria-hidden="true"><text x="5" y="15" font-size="16">f</text></svg>
+                        </a>
+                        <a href="#" aria-label="Follow us on Instagram" style="width: 40px; height: 40px; background: var(--neutral-800); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: white;">
+                            <span aria-hidden="true">📷</span>
+                        </a>
+                        <a href="#" aria-label="Subscribe on YouTube" style="width: 40px; height: 40px; background: var(--neutral-800); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: white;">
+                            <span aria-hidden="true">▶</span>
+                        </a>
                     </div>
                 </div>
             </div>

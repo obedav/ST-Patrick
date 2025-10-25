@@ -6,10 +6,22 @@
     <title>Contact Us - St. Patrick's Catholic Church, Igbogila</title>
     <meta name="description" content="Get in touch with St. Patrick's Catholic Church, Igbogila, Ipaja. Contact information, office hours, and location details.">
 
-    <!-- Google Fonts -->
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Contact Us - St. Patrick's Catholic Church">
+    <meta property="og:description" content="Get in touch with St. Patrick's Catholic Church, Igbogila, Ipaja. Contact information, office hours, and location.">
+    <meta property="og:image" content="images/church-og-image.jpg">
+    <meta property="og:url" content="https://stpatrickigbogilaipaja.com/contact.html">
+    <meta property="og:type" content="website">
+
+    <!-- Google Fonts - Optimized Loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap"></noscript>
 
     <!-- CSS -->
     <link rel="stylesheet" href="css/modern-variables.css">
@@ -204,6 +216,9 @@
     </style>
 </head>
 <body>
+    <!-- Skip to main content link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
     <!-- Top Info Bar -->
     <div class="info-bar" style="background: var(--neutral-900); color: white; padding: var(--space-2) 0; font-size: var(--text-sm);">
         <div class="container">
@@ -310,8 +325,10 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="page-hero">
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="page-hero">
         <div class="container">
             <div class="page-hero-content">
                 <div class="breadcrumb">
@@ -487,10 +504,11 @@
                 <h3 style="color: var(--primary-blue); margin-bottom: var(--space-4);">📍 Find Us</h3>
                 <iframe
                     class="map-embed"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.2!2d3.2!3d6.6!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMzYnMDAuMCJOIDPCsDEyJzAwLjAiRQ!5e0!3m2!1sen!2sng!4v1234567890!5m2!1sen!2sng&q=Igbogila,+Ipaja,+Lagos,+Nigeria"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.2!2d3.2553!3d6.5569!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMzMnMjQuOCJOIDPCsDE1JzE5LjEiRQ!5e0!3m2!1sen!2sng!4v1234567890!5m2!1sen!2sng&q=St+Patrick+Catholic+Church+Igbogila+Ipaja+Lagos"
                     allowfullscreen=""
                     loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade">
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="Map showing location of St. Patrick's Catholic Church, Igbogila, Ipaja">
                 </iframe>
                 <p style="color: var(--text-secondary); margin-top: var(--space-4); text-align: center;">
                     <strong>St. Patrick's Catholic Church, Igbogila</strong><br>
@@ -526,8 +544,8 @@
             </div>
         </div>
     </section>
+    </main>
 
-    <!-- Footer -->
     <!-- Footer -->
     <footer>
         <div class="container">
@@ -566,9 +584,15 @@
                     <h3>Connect With Us</h3>
                     <p style="color: var(--neutral-300); margin-bottom: var(--space-4);">Stay updated with parish news and events</p>
                     <div style="display: flex; gap: var(--space-3); margin-top: var(--space-4);">
-                        <a href="#" style="width: 40px; height: 40px; background: var(--neutral-800); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: white;">f</a>
-                        <a href="#" style="width: 40px; height: 40px; background: var(--neutral-800); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: white;">📷</a>
-                        <a href="#" style="width: 40px; height: 40px; background: var(--neutral-800); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: white;">▶</a>
+                        <a href="#" aria-label="Follow us on Facebook" style="width: 40px; height: 40px; background: var(--neutral-800); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: white;">
+                            <svg width="20" height="20" fill="currentColor" aria-hidden="true"><text x="5" y="15" font-size="16">f</text></svg>
+                        </a>
+                        <a href="#" aria-label="Follow us on Instagram" style="width: 40px; height: 40px; background: var(--neutral-800); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: white;">
+                            <span aria-hidden="true">📷</span>
+                        </a>
+                        <a href="#" aria-label="Subscribe on YouTube" style="width: 40px; height: 40px; background: var(--neutral-800); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: white;">
+                            <span aria-hidden="true">▶</span>
+                        </a>
                     </div>
                 </div>
             </div>
