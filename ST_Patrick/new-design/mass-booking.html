@@ -113,6 +113,43 @@
                 padding: var(--space-6);
             }
         }
+
+        /* Footer */
+        footer {
+            background: var(--neutral-900);
+            color: white;
+            padding: var(--space-16) 0 var(--space-6);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-12);
+            margin-bottom: var(--space-12);
+        }
+
+        .footer-column h3 {
+            color: var(--accent-gold);
+            margin-bottom: var(--space-4);
+        }
+
+        .footer-link {
+            display: block;
+            color: var(--neutral-300);
+            padding: var(--space-2) 0;
+            transition: color var(--transition-fast);
+        }
+
+        .footer-link:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--neutral-800);
+            padding-top: var(--space-6);
+            text-align: center;
+            color: var(--neutral-400);
+        }
     </style>
 </head>
 <body>
@@ -343,35 +380,53 @@
     </section>
 
     <!-- Footer -->
-    <footer style="background: var(--neutral-900); color: white; padding: var(--space-16) 0 var(--space-6);">
+    <footer>
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-column">
-                    <h3 style="color: var(--accent-gold); margin-bottom: var(--space-4);">St. Patrick's Igbogila</h3>
-                    <p>A vibrant Catholic community serving God's people since 1932.</p>
-                    <p style="margin-top: var(--space-4);">📍 Igbogila, Ipaja, Lagos<br>📞 +234 802 344 4069<br>✉️ Info@stpatrickigbogilaipaja.com</p>
+                    <h3>St. Patrick's Catholic Church</h3>
+                    <p style="color: var(--neutral-300); line-height: 1.7;">
+                        Igbogila, Ipaja, Lagos, Nigeria<br>
+                        Serving God's people since 1932
+                    </p>
+                    <div style="margin-top: var(--space-6);">
+                        <p><strong>Phone:</strong> +234 802 344 4069</p>
+                        <p><strong>Email:</strong> Info@stpatrickigbogilaipaja.com</p>
+                        <p><strong>P.O. Box:</strong> 2189, Ipaja, Lagos</p>
+                    </div>
                 </div>
+
                 <div class="footer-column">
-                    <h3 style="color: var(--accent-gold); margin-bottom: var(--space-4);">Quick Links</h3>
-                    <a href="index.html" class="footer-link">Home</a>
+                    <h3>Quick Links</h3>
                     <a href="about.html" class="footer-link">About Us</a>
                     <a href="mass-times.html" class="footer-link">Mass Times</a>
-                    <a href="contact.html" class="footer-link">Contact</a>
+                    <a href="ministries.html" class="footer-link">Ministries</a>
+                    <a href="events.html" class="footer-link">Events</a>
+                    <a href="give.html" class="footer-link">Online Giving</a>
                 </div>
+
                 <div class="footer-column">
-                    <h3 style="color: var(--accent-gold); margin-bottom: var(--space-4);">Parish News</h3>
-                    <a href="harvest-news.html" class="footer-link">Harvest News</a>
-                    <a href="upcoming-events.html" class="footer-link">Upcoming Events</a>
-                    <a href="weekly-bulletin.html" class="footer-link">Weekly Bulletin</a>
-                    <a href="mass-booking.html" class="footer-link">Mass Booking</a>
+                    <h3>Sacraments</h3>
+                    <a href="baptism.html" class="footer-link">Baptism</a>
+                    <a href="confirmation.html" class="footer-link">Confirmation</a>
+                    <a href="marriage.html" class="footer-link">Marriage</a>
+                    <a href="confession.html" class="footer-link">Confession</a>
                 </div>
+
                 <div class="footer-column">
-                    <h3 style="color: var(--accent-gold); margin-bottom: var(--space-4);">Stay Connected</h3>
-                    <p>Join our community and stay updated with parish news and events.</p>
+                    <h3>Connect With Us</h3>
+                    <p style="color: var(--neutral-300); margin-bottom: var(--space-4);">Stay updated with parish news and events</p>
+                    <div style="display: flex; gap: var(--space-3); margin-top: var(--space-4);">
+                        <a href="#" style="width: 40px; height: 40px; background: var(--neutral-800); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: white;">f</a>
+                        <a href="#" style="width: 40px; height: 40px; background: var(--neutral-800); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: white;">📷</a>
+                        <a href="#" style="width: 40px; height: 40px; background: var(--neutral-800); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: white;">▶</a>
+                    </div>
                 </div>
             </div>
+
             <div class="footer-bottom">
-                <p>&copy; 2025 St. Patrick's Catholic Church, Igbogila. All rights reserved.</p>
+                <p>&copy; 2025 St. Patrick's Catholic Church, Igbogila, Ipaja. All rights reserved.</p>
+                <p style="margin-top: var(--space-2); font-style: italic;">"For where two or three gather in my name, there am I with them." - Matthew 18:20</p>
             </div>
         </div>
     </footer>

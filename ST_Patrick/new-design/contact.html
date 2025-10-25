@@ -151,16 +151,49 @@
             margin-top: var(--space-8);
         }
 
-        .map-placeholder {
-            background: linear-gradient(135deg, var(--neutral-200), var(--neutral-300));
+        .map-embed {
             border-radius: var(--radius-xl);
-            height: 400px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--neutral-500);
-            font-size: var(--text-xl);
-            font-weight: 600;
+            height: 450px;
+            width: 100%;
+            border: 0;
+            overflow: hidden;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--neutral-900);
+            color: white;
+            padding: var(--space-16) 0 var(--space-6);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-12);
+            margin-bottom: var(--space-12);
+        }
+
+        .footer-column h3 {
+            color: var(--accent-gold);
+            margin-bottom: var(--space-4);
+        }
+
+        .footer-link {
+            display: block;
+            color: var(--neutral-300);
+            padding: var(--space-2) 0;
+            transition: color var(--transition-fast);
+        }
+
+        .footer-link:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--neutral-800);
+            padding-top: var(--space-6);
+            text-align: center;
+            color: var(--neutral-400);
         }
 
         @media (max-width: 968px) {
@@ -452,12 +485,25 @@
             <!-- Map Section -->
             <div class="map-container">
                 <h3 style="color: var(--primary-blue); margin-bottom: var(--space-4);">📍 Find Us</h3>
-                <div class="map-placeholder">
-                    🗺️ Map Integration Coming Soon
-                </div>
+                <iframe
+                    class="map-embed"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.2!2d3.2!3d6.6!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMzYnMDAuMCJOIDPCsDEyJzAwLjAiRQ!5e0!3m2!1sen!2sng!4v1234567890!5m2!1sen!2sng&q=Igbogila,+Ipaja,+Lagos,+Nigeria"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
                 <p style="color: var(--text-secondary); margin-top: var(--space-4); text-align: center;">
+                    <strong>St. Patrick's Catholic Church, Igbogila</strong><br>
                     Located in the heart of Igbogila, Ipaja, Lagos - easily accessible by public transport
                 </p>
+                <div style="text-align: center; margin-top: var(--space-4);">
+                    <a href="https://www.google.com/maps/search/?api=1&query=St+Patrick's+Catholic+Church+Igbogila+Ipaja+Lagos+Nigeria"
+                       target="_blank"
+                       class="btn btn-secondary"
+                       style="display: inline-flex; align-items: center; gap: var(--space-2);">
+                        <span>🗺️</span> Open in Google Maps
+                    </a>
+                </div>
             </div>
 
             <!-- Quick Links -->
@@ -482,36 +528,52 @@
     </section>
 
     <!-- Footer -->
-    <footer style="background: var(--neutral-900); color: white; padding: var(--space-16) 0 var(--space-6);">
+    <!-- Footer -->
+    <footer>
         <div class="container">
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--space-12); margin-bottom: var(--space-12);">
-                <div>
-                    <h3 style="color: var(--accent-gold); margin-bottom: var(--space-4);">St. Patrick's Catholic Church</h3>
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>St. Patrick's Catholic Church</h3>
                     <p style="color: var(--neutral-300); line-height: 1.7;">
                         Igbogila, Ipaja, Lagos, Nigeria<br>
                         Serving God's people since 1932
                     </p>
                     <div style="margin-top: var(--space-6);">
-                        <p style="color: var(--neutral-300);"><strong>Phone:</strong> +234 802 344 4069</p>
-                        <p style="color: var(--neutral-300);"><strong>Email:</strong> Info@stpatrickigbogilaipaja.com</p>
+                        <p><strong>Phone:</strong> +234 802 344 4069</p>
+                        <p><strong>Email:</strong> Info@stpatrickigbogilaipaja.com</p>
+                        <p><strong>P.O. Box:</strong> 2189, Ipaja, Lagos</p>
                     </div>
                 </div>
-                <div>
-                    <h3 style="color: var(--accent-gold); margin-bottom: var(--space-4);">Quick Links</h3>
-                    <a href="about.html" style="display: block; color: var(--neutral-300); padding: var(--space-2) 0;">About Us</a>
-                    <a href="mass-times.html" style="display: block; color: var(--neutral-300); padding: var(--space-2) 0;">Mass Times</a>
-                    <a href="ministries.html" style="display: block; color: var(--neutral-300); padding: var(--space-2) 0;">Ministries</a>
-                    <a href="donate.html" style="display: block; color: var(--neutral-300); padding: var(--space-2) 0;">Donate</a>
+
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <a href="about.html" class="footer-link">About Us</a>
+                    <a href="mass-times.html" class="footer-link">Mass Times</a>
+                    <a href="ministries.html" class="footer-link">Ministries</a>
+                    <a href="events.html" class="footer-link">Events</a>
+                    <a href="give.html" class="footer-link">Online Giving</a>
                 </div>
-                <div>
-                    <h3 style="color: var(--accent-gold); margin-bottom: var(--space-4);">Parish News</h3>
-                    <a href="harvest-news.html" style="display: block; color: var(--neutral-300); padding: var(--space-2) 0;">Harvest News</a>
-                    <a href="upcoming-events.html" style="display: block; color: var(--neutral-300); padding: var(--space-2) 0;">Upcoming Events</a>
-                    <a href="weekly-bulletin.html" style="display: block; color: var(--neutral-300); padding: var(--space-2) 0;">Weekly Bulletin</a>
-                    <a href="mass-booking.html" style="display: block; color: var(--neutral-300); padding: var(--space-2) 0;">Mass Booking</a>
+
+                <div class="footer-column">
+                    <h3>Sacraments</h3>
+                    <a href="baptism.html" class="footer-link">Baptism</a>
+                    <a href="confirmation.html" class="footer-link">Confirmation</a>
+                    <a href="marriage.html" class="footer-link">Marriage</a>
+                    <a href="confession.html" class="footer-link">Confession</a>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Connect With Us</h3>
+                    <p style="color: var(--neutral-300); margin-bottom: var(--space-4);">Stay updated with parish news and events</p>
+                    <div style="display: flex; gap: var(--space-3); margin-top: var(--space-4);">
+                        <a href="#" style="width: 40px; height: 40px; background: var(--neutral-800); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: white;">f</a>
+                        <a href="#" style="width: 40px; height: 40px; background: var(--neutral-800); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: white;">📷</a>
+                        <a href="#" style="width: 40px; height: 40px; background: var(--neutral-800); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: white;">▶</a>
+                    </div>
                 </div>
             </div>
-            <div style="border-top: 1px solid var(--neutral-800); padding-top: var(--space-6); text-align: center; color: var(--neutral-400);">
+
+            <div class="footer-bottom">
                 <p>&copy; 2025 St. Patrick's Catholic Church, Igbogila, Ipaja. All rights reserved.</p>
                 <p style="margin-top: var(--space-2); font-style: italic;">"For where two or three gather in my name, there am I with them." - Matthew 18:20</p>
             </div>

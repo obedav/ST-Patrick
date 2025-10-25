@@ -8,6 +8,8 @@
     --secondary-green: #059669;     /* Fresh emerald green */
     --accent-gold: #f59e0b;         /* Warm amber/gold */
     --accent-purple: #7c3aed;       /* Modern purple for liturgical */
+    --liturgical-purple: #7c3aed;   /* Purple for liturgical seasons */
+    --crimson-red: #dc2626;         /* Rich crimson red */
 
     /* Neutral Colors - Modern grayscale */
     --neutral-50: #fafafa;
