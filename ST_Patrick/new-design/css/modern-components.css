@@ -215,8 +215,8 @@
     z-index: 1000;
     background: var(--neutral-900);
     color: white;
-    padding: var(--space-2) 0;
-    font-size: var(--text-sm);
+    padding: var(--space-1) 0;
+    font-size: var(--text-xs);
 }
 
 .info-bar-content {
@@ -236,7 +236,7 @@
 /* Modern Header/Navigation */
 .header {
     position: fixed;
-    top: 42px;
+    top: 30px;
     left: 0;
     right: 0;
     background: rgba(255, 255, 255, 0.95);
@@ -250,7 +250,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: var(--space-4) var(--container-padding);
+    padding: var(--space-2) var(--container-padding);
     max-width: var(--max-width-2xl);
     margin: 0 auto;
 }
@@ -258,17 +258,17 @@
 .logo {
     display: flex;
     align-items: center;
-    gap: var(--space-3);
+    gap: var(--space-2);
     font-weight: 700;
-    font-size: var(--text-xl);
+    font-size: var(--text-lg);
     color: var(--primary-blue);
 }
 
 .logo-icon {
-    width: 64px;
-    height: 64px;
+    width: 48px;
+    height: 48px;
     background: white;
-    border-radius: var(--radius-lg);
+    border-radius: var(--radius-md);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -286,13 +286,14 @@
 .nav {
     display: flex;
     align-items: center;
-    gap: var(--space-2);
+    gap: var(--space-1);
 }
 
 .nav-link {
-    padding: var(--space-2) var(--space-4);
+    padding: var(--space-2) var(--space-3);
     color: var(--text-secondary);
     font-weight: 500;
+    font-size: var(--text-sm);
     border-radius: var(--radius-md);
     transition: all var(--transition-fast);
 }
@@ -331,12 +332,12 @@
     position: absolute;
     top: 100%;
     left: 0;
-    margin-top: var(--space-2);
+    margin-top: var(--space-1);
     background: white;
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-xl);
-    min-width: 220px;
-    padding: var(--space-2);
+    min-width: 200px;
+    padding: var(--space-1);
     opacity: 0;
     visibility: hidden;
     transform: translateY(-10px);
@@ -354,9 +355,10 @@
 
 .dropdown-item {
     display: block;
-    padding: var(--space-3) var(--space-4);
+    padding: var(--space-2) var(--space-3);
     color: var(--text-secondary);
     font-weight: 500;
+    font-size: var(--text-sm);
     border-radius: var(--radius-md);
     transition: all var(--transition-fast);
     white-space: nowrap;
