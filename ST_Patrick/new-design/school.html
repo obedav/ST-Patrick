@@ -142,10 +142,72 @@
             border-radius: var(--radius-2xl);
             box-shadow: var(--shadow-lg);
             text-align: center;
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+
+        .uniform-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-2xl);
         }
 
         .uniform-image {
             margin-bottom: var(--space-6);
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            position: relative;
+            background: var(--neutral-100);
+        }
+
+        .uniform-image img {
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+
+        .uniform-card:hover .uniform-image img {
+            transform: scale(1.08);
+        }
+
+        .assembly-image {
+            width: 100%;
+            max-width: 900px;
+            height: 450px;
+            object-fit: cover;
+            border-radius: var(--radius-2xl);
+            box-shadow: var(--shadow-2xl);
+            margin: 0 auto;
+            display: block;
+        }
+
+        /* Spiritual Prayer Image */
+        .prayer-image-container {
+            position: relative;
+            border-radius: var(--radius-2xl);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+
+        .prayer-image-container:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-2xl);
+        }
+
+        .prayer-image {
+            width: 100%;
+            height: 100%;
+            min-height: 350px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+
+        .prayer-image-container:hover .prayer-image {
+            transform: scale(1.05);
         }
 
         /* Spiritual Activities Table */
@@ -197,6 +259,30 @@
             box-shadow: var(--shadow-2xl);
         }
 
+        .gallery-item img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .school-building-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: var(--radius-2xl);
+            box-shadow: var(--shadow-2xl);
+        }
+
+        .historical-photo {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: var(--radius-xl);
+            border: 3px solid var(--accent-gold);
+            box-shadow: var(--shadow-lg);
+        }
+
         /* Contact Info Box */
         .contact-info-box {
             background: linear-gradient(135deg, var(--primary-blue), var(--secondary-green));
@@ -218,6 +304,26 @@
         @media (max-width: 768px) {
             .school-hero {
                 padding: var(--space-16) 0 var(--space-12);
+            }
+
+            .uniform-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .uniform-image img {
+                height: 280px;
+            }
+
+            .assembly-image {
+                height: 350px;
+            }
+
+            .uniform-card {
+                padding: var(--space-6);
+            }
+
+            .prayer-image {
+                min-height: 300px;
             }
         }
 
@@ -308,7 +414,7 @@
                         </svg>
                     </button>
                     <div class="dropdown-menu">
-                        <a href="ministries.html" class="dropdown-item">Ministries</a>
+                        <a href="ministries.html" class="dropdown-item">Organisation</a>
                         <a href="mass-times.html" class="dropdown-item">Mass Times</a>
                         <a href="liturgical-programs.html" class="dropdown-item">Liturgical Programs</a>
                         <a href="societal-activities.html" class="dropdown-item">Societal Activities</a>
@@ -438,34 +544,22 @@
 
             <div class="gallery-grid">
                 <div class="gallery-item">
-                    <div class="img-placeholder img-placeholder-medium">
-                        📸 School Building Exterior
-                    </div>
+                    <img src="images/school/School Building Exterior.jpeg" alt="St. Patrick's School Building Exterior" loading="lazy">
                 </div>
                 <div class="gallery-item">
-                    <div class="img-placeholder img-placeholder-medium">
-                        📸 Classroom Interior
-                    </div>
+                    <img src="images/school/Classroom Interior.jpeg" alt="Modern Classroom Interior" loading="lazy">
                 </div>
                 <div class="gallery-item">
-                    <div class="img-placeholder img-placeholder-medium">
-                        📸 Computer Room
-                    </div>
+                    <img src="images/school/Computer Room.jpeg" alt="Computer Room with Technology" loading="lazy">
                 </div>
                 <div class="gallery-item">
-                    <div class="img-placeholder img-placeholder-medium">
-                        📸 Library
-                    </div>
+                    <img src="images/school/school1.jpeg" alt="Classroom" loading="lazy">
                 </div>
                 <div class="gallery-item">
-                    <div class="img-placeholder img-placeholder-medium">
-                        📸 Students at Assembly
-                    </div>
+                    <img src="images/school/student at assembly.jpeg" alt="Students at Morning Assembly" loading="lazy">
                 </div>
                 <div class="gallery-item">
-                    <div class="img-placeholder img-placeholder-medium">
-                        📸 School Hall
-                    </div>
+                    <img src="images/school/school2.jpeg" alt="School Campus Exterior" loading="lazy">
                 </div>
             </div>
         </div>
@@ -481,9 +575,7 @@
 
             <div style="max-width: 900px; margin: 0 auto;">
                 <div style="background: white; padding: var(--space-10); border-radius: var(--radius-2xl); box-shadow: var(--shadow-xl); margin-bottom: var(--space-12);">
-                    <div class="img-placeholder img-placeholder-large" style="margin-bottom: var(--space-8);">
-                        📸 Historical Photo - School in 1949
-                    </div>
+                    <img src="images/school/school-building.jpeg" alt="St. Patrick's Catholic School in 1949 - Historical Photo" class="historical-photo" loading="lazy" style="margin-bottom: var(--space-8);">
 
                     <p style="font-size: var(--text-lg); line-height: 1.8; color: var(--text-secondary); margin-bottom: var(--space-6);">
                         St. Patrick's Catholic Nursery and Primary School Igbogila Ipaja, Lagos started in the year <strong>1949</strong> by <strong>Rev. Fr. Oflin</strong>. Fr. Oflin, seeing children moving about with nothing to do other than playing around, began bringing them together to teach them.
@@ -566,9 +658,7 @@
             </div>
 
             <div style="margin-bottom: var(--space-12);">
-                <div class="img-placeholder img-placeholder-large">
-                    📸 Two-Story School Building
-                </div>
+                <img src="images/school/School Building Exterior.jpeg" alt="St. Patrick's Two-Story School Building" class="school-building-image" loading="lazy">
             </div>
 
             <div class="facilities-grid">
@@ -659,8 +749,8 @@
 
             <div class="uniform-grid">
                 <div class="uniform-card">
-                    <div class="img-placeholder img-placeholder-medium uniform-image">
-                        📸 Boys Uniform<br><small>Yellow Shirt & Green Bow Tie</small>
+                    <div class="uniform-image">
+                        <img src="images/school/school-boys.jpeg" alt="St. Patrick's School Boys Uniform - Yellow shirt, Green bow tie" loading="lazy">
                     </div>
                     <h4 style="margin-bottom: var(--space-3);">Boys Uniform</h4>
                     <p style="color: var(--text-secondary); text-align: left;">
@@ -673,8 +763,8 @@
                 </div>
 
                 <div class="uniform-card">
-                    <div class="img-placeholder img-placeholder-medium uniform-image">
-                        📸 Girls Uniform<br><small>Green Pinafore & Yellow Blouse</small>
+                    <div class="uniform-image">
+                        <img src="images/school/school-pupil.jpeg" alt="St. Patrick's School Girls Uniform - Green pinafore, Yellow blouse" loading="lazy">
                     </div>
                     <h4 style="margin-bottom: var(--space-3);">Girls Uniform</h4>
                     <p style="color: var(--text-secondary); text-align: left;">
@@ -687,8 +777,8 @@
                 </div>
 
                 <div class="uniform-card">
-                    <div class="img-placeholder img-placeholder-medium uniform-image">
-                        📸 Sports Uniform<br><small>P.E. & Physical Activities</small>
+                    <div class="uniform-image">
+                        <img src="images/school/sport.jpeg" alt="St. Patrick's School Sports Uniform - P.E. and Sportswear" loading="lazy">
                     </div>
                     <h4 style="margin-bottom: var(--space-3);">Sports Days</h4>
                     <p style="color: var(--text-secondary); text-align: left;">
@@ -705,9 +795,7 @@
             </div>
 
             <div style="text-align: center; margin-top: var(--space-12);">
-                <div class="img-placeholder img-placeholder-large" style="max-width: 900px; margin: 0 auto;">
-                    📸 Students in Assembly - Full School Uniform Display
-                </div>
+                <img src="images/school/student at assembly.jpeg" alt="St. Patrick's Students at Morning Assembly - Full School Uniform Display" class="assembly-image" loading="lazy">
             </div>
         </div>
     </section>
@@ -776,8 +864,8 @@
                     </ul>
                 </div>
 
-                <div class="img-placeholder img-placeholder-medium">
-                    📸 Students at Morning Prayer Assembly
+                <div class="prayer-image-container">
+                    <img src="images/school/prayer.jpeg" alt="St. Patrick's Students in Prayer - Daily Spiritual Formation" class="prayer-image" loading="lazy">
                 </div>
             </div>
         </div>
@@ -916,7 +1004,7 @@
                     <h3>Quick Links</h3>
                     <a href="about.html" class="footer-link">About Us</a>
                     <a href="mass-times.html" class="footer-link">Mass Times</a>
-                    <a href="ministries.html" class="footer-link">Ministries</a>
+                    <a href="ministries.html" class="footer-link">Organisation</a>
                     <a href="events.html" class="footer-link">Events</a>
                     <a href="give.html" class="footer-link">Online Giving</a>
                 </div>

@@ -333,4 +333,150 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+
+    // Hero Slider
+    const heroSlider = document.querySelector('.hero-slider');
+
+    // Only run slider if it exists on the page
+    if (!heroSlider) return;
+
+    const slides = document.querySelectorAll('.hero-slide');
+    const dots = document.querySelectorAll('.slider-dot');
+    let currentSlide = 0;
+    let slideInterval;
+    let isTransitioning = false;
+
+    // Function to go to a specific slide
+    function goToSlide(index) {
+        if (isTransitioning) return;
+        isTransitioning = true;
+
+        // Remove active class from current slide and dot
+        slides[currentSlide].classList.remove('active');
+        dots[currentSlide].classList.remove('active');
+
+        // Update current slide
+        currentSlide = index;
+
+        // Add active class to new slide and dot
+        slides[currentSlide].classList.add('active');
+        dots[currentSlide].classList.add('active');
+
+        // Allow transitions after animation completes
+        setTimeout(() => {
+            isTransitioning = false;
+        }, 1500);
+    }
+
+    // Function to go to next slide
+    function nextSlide() {
+        const next = (currentSlide + 1) % slides.length;
+        goToSlide(next);
+    }
+
+    // Function to go to previous slide
+    function prevSlide() {
+        const prev = (currentSlide - 1 + slides.length) % slides.length;
+        goToSlide(prev);
+    }
+
+    // Start auto-play
+    function startSlideShow() {
+        slideInterval = setInterval(nextSlide, 5000); // Change slide every 5 seconds
+    }
+
+    // Stop auto-play
+    function stopSlideShow() {
+        clearInterval(slideInterval);
+    }
+
+    // Initialize auto-play
+    startSlideShow();
+
+    // Pause on hover for better UX
+    const heroSection = document.querySelector('.hero');
+    if (heroSection) {
+        heroSection.addEventListener('mouseenter', stopSlideShow);
+        heroSection.addEventListener('mouseleave', startSlideShow);
+    }
+
+    // Add click handlers to dots
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            stopSlideShow();
+            goToSlide(index);
+            startSlideShow();
+        });
+
+        // Keyboard accessibility
+        dot.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                stopSlideShow();
+                goToSlide(index);
+                startSlideShow();
+            }
+        });
+    });
+
+    // Touch/Swipe support for mobile
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    heroSection.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    heroSection.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+    }, { passive: true });
+
+    function handleSwipe() {
+        const swipeThreshold = 50; // Minimum distance for swipe
+        const diff = touchStartX - touchEndX;
+
+        if (Math.abs(diff) > swipeThreshold) {
+            stopSlideShow();
+            if (diff > 0) {
+                // Swipe left - next slide
+                nextSlide();
+            } else {
+                // Swipe right - previous slide
+                prevSlide();
+            }
+            startSlideShow();
+        }
+    }
+
+    // Keyboard navigation for slides
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') {
+            stopSlideShow();
+            prevSlide();
+            startSlideShow();
+        } else if (e.key === 'ArrowRight') {
+            stopSlideShow();
+            nextSlide();
+            startSlideShow();
+        }
+    });
+
+    // Pause slider when page is not visible (performance optimization)
+    document.addEventListener('visibilitychange', () => {
+        if (document.hidden) {
+            stopSlideShow();
+        } else {
+            startSlideShow();
+        }
+    });
+
+    // Preload images for smooth transitions
+    slides.forEach(slide => {
+        const img = slide.querySelector('img');
+        if (img && !img.complete) {
+            const preloadImg = new Image();
+            preloadImg.src = img.src;
+        }
+    });
 });
