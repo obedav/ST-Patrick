@@ -1,0 +1,1168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Parish - St. Patrick's Catholic Church, Igbogila</title>
+    <meta name="description" content="Learn about Our Parish at St. Patrick's Catholic Church, Igbogila, Ipaja. Discover our mission, vision, and community life.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Our Parish - St. Patrick's Catholic Church">
+    <meta property="og:description" content="Learn about Our Parish at St. Patrick's Catholic Church, Igbogila, Ipaja.">
+    <meta property="og:image" content="images/church-og-image.jpg">
+    <meta property="og:url" content="https://stpatrickigbogilaipaja.com/our-parish.html">
+    <meta property="og:type" content="website">
+
+    <!-- Google Fonts - Force Load for Vercel -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/modern-variables.css">
+    <link rel="stylesheet" href="css/modern-components.css">
+
+    <style>
+        body {
+            padding-top: 5.625rem;
+        }
+
+        .page-hero {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-light) 50%, var(--secondary-green) 100%);
+            color: white;
+            padding: var(--space-24) 0 var(--space-16);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .page-hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .breadcrumb {
+            display: flex;
+            gap: var(--space-2);
+            justify-content: center;
+            margin-bottom: var(--space-4);
+            font-size: var(--text-sm);
+            opacity: 0.9;
+        }
+
+        .content-section {
+            background: white;
+            padding: var(--space-16) 0;
+        }
+
+        .content-box {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.05), rgba(59, 130, 246, 0.05));
+            border-left: 4px solid var(--primary-blue);
+            padding: var(--space-6);
+            border-radius: var(--radius-lg);
+            margin: var(--space-8) 0;
+        }
+
+        .info-card {
+            background: var(--background-alt);
+            padding: var(--space-8);
+            border-radius: var(--radius-xl);
+            margin: var(--space-12) 0;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--space-6);
+            margin: var(--space-12) 0;
+        }
+
+        .value-card {
+            background: white;
+            padding: var(--space-8);
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-md);
+            transition: transform var(--transition-base);
+        }
+
+        .value-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .value-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-light));
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: var(--text-3xl);
+            margin-bottom: var(--space-4);
+        }
+
+        .stations-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .stations-list li {
+            padding: var(--space-4);
+            margin-bottom: var(--space-4);
+            background: white;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-sm);
+            display: flex;
+            align-items: start;
+            gap: var(--space-4);
+        }
+
+        .station-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-light));
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: var(--text-xl);
+            flex-shrink: 0;
+        }
+
+        footer {
+            background: var(--neutral-900);
+            color: white;
+            padding: var(--space-16) 0 var(--space-6);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-12);
+            margin-bottom: var(--space-12);
+        }
+
+        .footer-column h3 {
+            color: var(--accent-gold);
+            margin-bottom: var(--space-4);
+        }
+
+        .footer-link {
+            display: block;
+            color: var(--neutral-300);
+            padding: var(--space-2) 0;
+            transition: color var(--transition-fast);
+        }
+
+        .footer-link:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--neutral-800);
+            padding-top: var(--space-6);
+            text-align: center;
+            color: var(--neutral-400);
+        }
+
+        @media (max-width: 768px) {
+            .page-hero {
+                padding: var(--space-16) 0 var(--space-12);
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Top Info Bar -->
+    <div class="info-bar">
+        <div class="container">
+            <div class="info-bar-content">
+                <div class="info-item">
+                    <span>📍</span>
+                    <span>Igbogila, Ipaja, Lagos</span>
+                </div>
+                <div class="info-item">
+                    <span>📞</span>
+                    <span>+234 802 344 4069</span>
+                </div>
+                <div class="info-item">
+                    <span>✉️</span>
+                    <span>Info@stpatrickigbogilaipaja.com</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header/Navigation -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <div class="logo-icon"><img src="images/st-patricks-logo.jpeg" alt="St. Patrick's Church Logo"></div>
+                <span>St. Patrick's Igbogila</span>
+            </div>
+
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="school.html" class="nav-link">School</a>
+
+                <!-- Programmes Dropdown -->
+                <div class="nav-dropdown">
+                    <button class="nav-link dropdown-toggle">
+                        Programmes
+                        <svg class="dropdown-icon" width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
+                            <path d="M6 9L1 4h10L6 9z"/>
+                        </svg>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="our-parish.html" class="dropdown-item">OUR Parish</a>
+                        <a href="ministries.html" class="dropdown-item">Organisation</a>
+                        <a href="mass-times.html" class="dropdown-item">Mass Times</a>
+                        <a href="liturgical-programs.html" class="dropdown-item">Liturgical Programs</a>
+                        <a href="societal-activities.html" class="dropdown-item">Societal Activities</a>
+                    </div>
+                </div>
+
+                <!-- Parish News Dropdown -->
+                <div class="nav-dropdown">
+                    <button class="nav-link dropdown-toggle">
+                        Parish News
+                        <svg class="dropdown-icon" width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
+                            <path d="M6 9L1 4h10L6 9z"/>
+                        </svg>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="announcement.html" class="dropdown-item">Announcements</a>
+                        <a href="harvest-news.html" class="dropdown-item">Harvest News</a>
+                        <a href="upcoming-events.html" class="dropdown-item">Upcoming Events</a>
+                        <a href="weekly-bulletin.html" class="dropdown-item">Weekly Bulletin</a>
+                        <a href="mass-booking.html" class="dropdown-item">Mass Booking</a>
+                    </div>
+                </div>
+
+                <!-- Media & Resources Dropdown -->
+                <div class="nav-dropdown">
+                    <button class="nav-link dropdown-toggle">
+                        Media & Resources
+                        <svg class="dropdown-icon" width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
+                            <path d="M6 9L1 4h10L6 9z"/>
+                        </svg>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="parish-register.html" class="dropdown-item">Parish Register</a>
+                        <a href="photo-gallery.html" class="dropdown-item">Photo Gallery</a>
+                        <a href="podcast.html" class="dropdown-item">Podcast</a>
+                    </div>
+                </div>
+
+                <!-- Facilities Dropdown -->
+                <div class="nav-dropdown">
+                    <button class="nav-link dropdown-toggle">
+                        Facilities
+                        <svg class="dropdown-icon" width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
+                            <path d="M6 9L1 4h10L6 9z"/>
+                        </svg>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="parish-clinic.html" class="dropdown-item">Parish Clinic</a>
+                        <a href="parish-project.html" class="dropdown-item">Parish Project</a>
+                    </div>
+                </div>
+
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="donate.html" class="nav-link">Donate</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Page Hero -->
+        <section class="page-hero">
+            <div class="container">
+                <div class="page-hero-content">
+                    <div class="breadcrumb">
+                        <a href="index.html" style="color: white;">Home</a>
+                        <span>/</span>
+                        <span>Programmes</span>
+                        <span>/</span>
+                        <span>OUR Parish</span>
+                    </div>
+                    <h1 style="font-size: var(--text-6xl); margin-bottom: var(--space-4);">OUR Parish</h1>
+                    <p style="font-size: var(--text-2xl); opacity: 0.95;">A Vibrant Community of Faith</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Content -->
+        <section class="content-section">
+            <div class="container">
+                <div class="content-box">
+                    <h2 style="color: var(--primary-blue); margin-bottom: var(--space-6);">Welcome to St. Patrick's Parish</h2>
+
+                    <p style="font-size: var(--text-lg); line-height: 1.8; color: var(--text-secondary); margin-bottom: var(--space-6);">
+                        St. Patrick's Catholic Church, Igbogila, Ipaja is a vibrant parish community that has been serving God's people since 1932. We are a diverse family of believers united in our faith, committed to worship, service, and the proclamation of the Gospel of Jesus Christ.
+                    </p>
+
+                    <div class="highlight-box">
+                        <h3 style="color: var(--primary-blue); margin-bottom: var(--space-3);">Our Mission</h3>
+                        <p style="font-size: var(--text-lg); font-style: italic; margin-bottom: 0;">
+                            To be a welcoming community that proclaims the Gospel, celebrates the sacraments, and serves others in the spirit of Jesus Christ, fostering spiritual growth and unity among all God's people.
+                        </p>
+                    </div>
+
+                    <h3 style="color: var(--primary-blue); margin-top: var(--space-12); margin-bottom: var(--space-6);">Our Core Values</h3>
+
+                    <div class="values-grid">
+                        <div class="value-card">
+                            <div class="value-icon">⛪</div>
+                            <h4 style="color: var(--primary-blue); margin-bottom: var(--space-3);">Worship</h4>
+                            <p style="color: var(--text-secondary);">We gather to praise God, celebrate the sacraments, and nourish our spiritual lives through the Holy Eucharist.</p>
+                        </div>
+
+                        <div class="value-card">
+                            <div class="value-icon">📖</div>
+                            <h4 style="color: var(--primary-blue); margin-bottom: var(--space-3);">Faith Formation</h4>
+                            <p style="color: var(--text-secondary);">We are committed to growing in knowledge and understanding of our Catholic faith through continuous learning.</p>
+                        </div>
+
+                        <div class="value-card">
+                            <div class="value-icon">🤝</div>
+                            <h4 style="color: var(--primary-blue); margin-bottom: var(--space-3);">Community</h4>
+                            <p style="color: var(--text-secondary);">We foster a welcoming environment where all are valued and can build meaningful relationships.</p>
+                        </div>
+
+                        <div class="value-card">
+                            <div class="value-icon">❤️</div>
+                            <h4 style="color: var(--primary-blue); margin-bottom: var(--space-3);">Service</h4>
+                            <p style="color: var(--text-secondary);">We respond to the needs of others through acts of charity, compassion, and social justice.</p>
+                        </div>
+
+                        <div class="value-card">
+                            <div class="value-icon">🌍</div>
+                            <h4 style="color: var(--primary-blue); margin-bottom: var(--space-3);">Evangelization</h4>
+                            <p style="color: var(--text-secondary);">We share the Good News of Jesus Christ and invite others to experience God's love.</p>
+                        </div>
+
+                        <div class="value-card">
+                            <div class="value-icon">👨‍👩‍👧‍👦</div>
+                            <h4 style="color: var(--primary-blue); margin-bottom: var(--space-3);">Family</h4>
+                            <p style="color: var(--text-secondary);">We support and strengthen families as the foundation of our parish and society.</p>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <h3 style="color: var(--primary-blue); margin-bottom: var(--space-6);">Parish Structure</h3>
+
+                        <div style="margin-bottom: var(--space-8);">
+                            <h4 style="margin-bottom: var(--space-3);">Pastoral Leadership</h4>
+                            <p style="color: var(--text-secondary); margin-bottom: var(--space-4);">
+                                Our parish is shepherded by the Congregation of the Holy Spirit (Spiritans), led by our Parish Priest, Rev. Fr. Agbapajuru Cyriacus CSSp, together with associate priests and deacons who serve our community with dedication.
+                            </p>
+                        </div>
+
+                        <div style="margin-bottom: var(--space-8);">
+                            <h4 style="margin-bottom: var(--space-3);">Parish Pastoral Council</h4>
+                            <p style="color: var(--text-secondary); margin-bottom: var(--space-4);">
+                                The Parish Pastoral Council works collaboratively with the parish priest to plan, coordinate, and oversee pastoral activities, ensuring the spiritual and temporal welfare of the parish.
+                            </p>
+                        </div>
+
+                        <div>
+                            <h4 style="margin-bottom: var(--space-3);">Parish Finance Council</h4>
+                            <p style="color: var(--text-secondary);">
+                                The Finance Council assists in the stewardship of parish resources, ensuring transparency and accountability in financial matters.
+                            </p>
+                        </div>
+                    </div>
+
+                    <h3 style="color: var(--primary-blue); margin-top: var(--space-12); margin-bottom: var(--space-6);">Outreach Stations</h3>
+
+                    <p style="font-size: var(--text-lg); line-height: 1.8; color: var(--text-secondary); margin-bottom: var(--space-6);">
+                        St. Patrick's Parish extends its pastoral care to several outreach stations, bringing the sacraments and ministry to surrounding communities:
+                    </p>
+
+                    <ul class="stations-list">
+                        <li>
+                            <div class="station-icon">⛪</div>
+                            <div>
+                                <h4 style="margin-bottom: var(--space-2);">St. Jude Mass Centre, Ashipa</h4>
+                                <p style="color: var(--text-secondary);">Sunday Mass: 6:30 AM</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="station-icon">⛪</div>
+                            <div>
+                                <h4 style="margin-bottom: var(--space-2);">Our Lady of Fatima, Kola</h4>
+                                <p style="color: var(--text-secondary);">Active outreach station serving the Kola community</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="station-icon">⛪</div>
+                            <div>
+                                <h4 style="margin-bottom: var(--space-2);">St. Michael Mass Centre, Mosalasi</h4>
+                                <p style="color: var(--text-secondary);">Serving the faithful in Mosalasi area</p>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <div class="highlight-box" style="margin-top: var(--space-12);">
+                        <h3 style="color: var(--primary-blue); margin-bottom: var(--space-4);">Parish Milestones</h3>
+                        <ul style="color: var(--text-secondary); line-height: 1.8;">
+                            <li><strong>1932:</strong> First church building erected</li>
+                            <li><strong>November 27, 2005:</strong> Elevated to parish status by Cardinal Anthony Okogie</li>
+                            <li><strong>April 6, 2015:</strong> Foundation stone laid for ultra-modern church by Archbishop Alfred Martins</li>
+                            <li><strong>November 24, 2018:</strong> Solemn dedication of the new church building</li>
+                            <li><strong>2024:</strong> Catholic Church of the Archangels, Bada, pronounced a quasi-parish - our third outstation to achieve this status</li>
+                        </ul>
+                    </div>
+
+                    <div style="background: linear-gradient(135deg, rgba(30, 58, 138, 0.05), rgba(59, 130, 246, 0.05)); padding: var(--space-8); border-radius: var(--radius-xl); margin-top: var(--space-12);">
+                        <h3 style="color: var(--primary-blue); margin-bottom: var(--space-4);">Get Involved</h3>
+                        <p style="font-size: var(--text-lg); line-height: 1.8; color: var(--text-secondary); margin-bottom: var(--space-6);">
+                            There are many ways to get involved in parish life:
+                        </p>
+                        <div class="grid grid-2" style="gap: var(--space-4);">
+                            <div>
+                                <h4 style="margin-bottom: var(--space-3);">Join an Organisation</h4>
+                                <p style="color: var(--text-secondary);">Become part of one of our many parish societies and groups.</p>
+                                <a href="ministries.html" class="btn btn-secondary" style="margin-top: var(--space-3);">View Organisations</a>
+                            </div>
+                            <div>
+                                <h4 style="margin-bottom: var(--space-3);">Volunteer</h4>
+                                <p style="color: var(--text-secondary);">Share your time and talents in service to the parish community.</p>
+                                <a href="contact.html" class="btn btn-secondary" style="margin-top: var(--space-3);">Contact Us</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Parish Committees and Leadership -->
+        <section class="section" style="background: white;">
+            <div class="container">
+                <div class="content-box">
+                    <div class="section-header" style="text-align: center; margin-bottom: var(--space-12);">
+                        <h2 class="section-title">Parish Committees & Leadership</h2>
+                        <p class="section-subtitle">Our dedicated leaders serving the parish community</p>
+                    </div>
+
+                    <!-- Parish Pastoral Council (PPC) Section -->
+                    <div style="margin-bottom: var(--space-16);">
+                        <div style="background: linear-gradient(135deg, var(--primary-blue), var(--primary-light)); color: white; padding: var(--space-8); border-radius: var(--radius-lg); margin-bottom: var(--space-8); text-align: center;">
+                            <h3 style="margin: 0; font-size: var(--text-3xl); font-weight: 700;">Parish Pastoral Council (PPC)</h3>
+                        </div>
+
+                        <!-- Sub-Committee 1: Liturgical Committee -->
+                        <div style="margin-bottom: var(--space-12); margin-left: var(--space-6);">
+                            <div style="background: linear-gradient(135deg, #7c3aed, #a78bfa); color: white; padding: var(--space-6); border-radius: var(--radius-lg) var(--radius-lg) 0 0;">
+                                <h4 style="margin: 0; font-size: var(--text-xl);">Liturgical Committee</h4>
+                                <p style="margin: var(--space-2) 0 0 0; opacity: 0.95;">The Liturgy Committee assists the Priest with planning and implementing the various aspects of liturgical activities in the parish.</p>
+                            </div>
+                            <div style="overflow-x: auto;">
+                                <table style="width: 100%; border-collapse: collapse; background: white; box-shadow: var(--shadow-md); border-radius: 0 0 var(--radius-lg) var(--radius-lg);">
+                                    <thead>
+                                        <tr style="background: var(--background-alt);">
+                                            <th style="padding: var(--space-4); text-align: left; border-bottom: 2px solid var(--border); font-weight: 600;">S/N</th>
+                                            <th style="padding: var(--space-4); text-align: left; border-bottom: 2px solid var(--border); font-weight: 600;">Name</th>
+                                            <th style="padding: var(--space-4); text-align: left; border-bottom: 2px solid var(--border); font-weight: 600;">Position</th>
+                                            <th style="padding: var(--space-4); text-align: left; border-bottom: 2px solid var(--border); font-weight: 600;">Phone</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr style="border-bottom: 1px solid var(--border);">
+                                            <td style="padding: var(--space-4);">1</td>
+                                            <td style="padding: var(--space-4);">[Name]</td>
+                                            <td style="padding: var(--space-4); font-weight: 600; color: #7c3aed;">Chairman</td>
+                                            <td style="padding: var(--space-4);">[Phone]</td>
+                                        </tr>
+                                        <tr style="border-bottom: 1px solid var(--border);">
+                                            <td style="padding: var(--space-4);">2</td>
+                                            <td style="padding: var(--space-4);">[Name]</td>
+                                            <td style="padding: var(--space-4); font-weight: 600; color: #7c3aed;">Vice Chairman</td>
+                                            <td style="padding: var(--space-4);">[Phone]</td>
+                                        </tr>
+                                        <tr style="border-bottom: 1px solid var(--border);">
+                                            <td style="padding: var(--space-4);">3</td>
+                                            <td style="padding: var(--space-4);">[Name]</td>
+                                            <td style="padding: var(--space-4);">Secretary</td>
+                                            <td style="padding: var(--space-4);">[Phone]</td>
+                                        </tr>
+                                        <tr style="border-bottom: 1px solid var(--border);">
+                                            <td style="padding: var(--space-4);">4</td>
+                                            <td style="padding: var(--space-4);">[Name]</td>
+                                            <td style="padding: var(--space-4);">Member</td>
+                                            <td style="padding: var(--space-4);">[Phone]</td>
+                                        </tr>
+                                        <tr style="border-bottom: 1px solid var(--border);">
+                                            <td style="padding: var(--space-4);">5</td>
+                                            <td style="padding: var(--space-4);">[Name]</td>
+                                            <td style="padding: var(--space-4);">Member</td>
+                                            <td style="padding: var(--space-4);">[Phone]</td>
+                                        </tr>
+                                        <tr style="border-bottom: 1px solid var(--border);">
+                                            <td style="padding: var(--space-4);">6</td>
+                                            <td style="padding: var(--space-4);">[Name]</td>
+                                            <td style="padding: var(--space-4);">Member</td>
+                                            <td style="padding: var(--space-4);">[Phone]</td>
+                                        </tr>
+                                        <tr style="border-bottom: 1px solid var(--border);">
+                                            <td style="padding: var(--space-4);">7</td>
+                                            <td style="padding: var(--space-4);">[Name]</td>
+                                            <td style="padding: var(--space-4);">Member</td>
+                                            <td style="padding: var(--space-4);">[Phone]</td>
+                                        </tr>
+                                        <tr style="border-bottom: 1px solid var(--border);">
+                                            <td style="padding: var(--space-4);">8</td>
+                                            <td style="padding: var(--space-4);">[Name]</td>
+                                            <td style="padding: var(--space-4);">Member</td>
+                                            <td style="padding: var(--space-4);">[Phone]</td>
+                                        </tr>
+                                        <tr style="border-bottom: 1px solid var(--border);">
+                                            <td style="padding: var(--space-4);">9</td>
+                                            <td style="padding: var(--space-4);">[Name]</td>
+                                            <td style="padding: var(--space-4);">Member</td>
+                                            <td style="padding: var(--space-4);">[Phone]</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding: var(--space-4);">10</td>
+                                            <td style="padding: var(--space-4);">[Name]</td>
+                                            <td style="padding: var(--space-4);">Member</td>
+                                            <td style="padding: var(--space-4);">[Phone]</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Sub-Committee 2: Community Building Committee -->
+                        <div style="margin-bottom: var(--space-12); margin-left: var(--space-6);">
+                            <div style="background: linear-gradient(135deg, #d97706, #f59e0b); color: white; padding: var(--space-6); border-radius: var(--radius-lg) var(--radius-lg) 0 0;">
+                                <h4 style="margin: 0; font-size: var(--text-xl);">Community Building Committee</h4>
+                                <p style="margin: var(--space-2) 0 0 0; opacity: 0.95;">Our community building committee provides support and creates the avenue for interaction among members.</p>
+                            </div>
+                            <div style="overflow-x: auto;">
+                                <table style="width: 100%; border-collapse: collapse; background: white; box-shadow: var(--shadow-md); border-radius: 0 0 var(--radius-lg) var(--radius-lg);">
+                                    <thead>
+                                        <tr style="background: var(--background-alt);">
+                                            <th style="padding: var(--space-4); text-align: left; border-bottom: 2px solid var(--border); font-weight: 600;">S/N</th>
+                                            <th style="padding: var(--space-4); text-align: left; border-bottom: 2px solid var(--border); font-weight: 600;">Name</th>
+                                            <th style="padding: var(--space-4); text-align: left; border-bottom: 2px solid var(--border); font-weight: 600;">Position</th>
+                                            <th style="padding: var(--space-4); text-align: left; border-bottom: 2px solid var(--border); font-weight: 600;">Phone</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr style="border-bottom: 1px solid var(--border);">
+                                            <td style="padding: var(--space-4);">1</td>
+                                            <td style="padding: var(--space-4);">[Name]</td>
+                                            <td style="padding: var(--space-4); font-weight: 600; color: #d97706;">Chairman</td>
+                                            <td style="padding: var(--space-4);">[Phone]</td>
+                                        </tr>
+                                        <tr style="border-bottom: 1px solid var(--border);">
+                                            <td style="padding: var(--space-4);">2</td>
+                                            <td style="padding: var(--space-4);">[Name]</td>
+                                            <td style="padding: var(--space-4); font-weight: 600; color: #d97706;">Vice Chairman</td>
+                                            <td style="padding: var(--space-4);">[Phone]</td>
+                                        </tr>
+                                        <tr style="border-bottom: 1px solid var(--border);">
+                                            <td style="padding: var(--space-4);">3</td>
+                                            <td style="padding: var(--space-4);">[Name]</td>
+                                            <td style="padding: var(--space-4);">Secretary</td>
+                                            <td style="padding: var(--space-4);">[Phone]</td>
+                                        </tr>
+                                        <tr style="border-bottom: 1px solid var(--border);">
+                                            <td style="padding: var(--space-4);">4</td>
+                                            <td style="padding: var(--space-4);">[Name]</td>
+                                            <td style="padding: var(--space-4);">Member</td>
+                                            <td style="padding: var(--space-4);">[Phone]</td>
+                                        </tr>
+                                        <tr style="border-bottom: 1px solid var(--border);">
+                                            <td style="padding: var(--space-4);">5</td>
+                                            <td style="padding: var(--space-4);">[Name]</td>
+                                            <td style="padding: var(--space-4);">Member</td>
+                                            <td style="padding: var(--space-4);">[Phone]</td>
+                                        </tr>
+                                        <tr style="border-bottom: 1px solid var(--border);">
+                                            <td style="padding: var(--space-4);">6</td>
+                                            <td style="padding: var(--space-4);">[Name]</td>
+                                            <td style="padding: var(--space-4);">Member</td>
+                                            <td style="padding: var(--space-4);">[Phone]</td>
+                                        </tr>
+                                        <tr style="border-bottom: 1px solid var(--border);">
+                                            <td style="padding: var(--space-4);">7</td>
+                                            <td style="padding: var(--space-4);">[Name]</td>
+                                            <td style="padding: var(--space-4);">Member</td>
+                                            <td style="padding: var(--space-4);">[Phone]</td>
+                                        </tr>
+                                        <tr style="border-bottom: 1px solid var(--border);">
+                                            <td style="padding: var(--space-4);">8</td>
+                                            <td style="padding: var(--space-4);">[Name]</td>
+                                            <td style="padding: var(--space-4);">Member</td>
+                                            <td style="padding: var(--space-4);">[Phone]</td>
+                                        </tr>
+                                        <tr style="border-bottom: 1px solid var(--border);">
+                                            <td style="padding: var(--space-4);">9</td>
+                                            <td style="padding: var(--space-4);">[Name]</td>
+                                            <td style="padding: var(--space-4);">Member</td>
+                                            <td style="padding: var(--space-4);">[Phone]</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding: var(--space-4);">10</td>
+                                            <td style="padding: var(--space-4);">[Name]</td>
+                                            <td style="padding: var(--space-4);">Member</td>
+                                            <td style="padding: var(--space-4);">[Phone]</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Sub-Committee 3: Devotion Committee -->
+                        <div style="margin-bottom: var(--space-12); margin-left: var(--space-6);">
+                            <div style="background: linear-gradient(135deg, #dc2626, #ef4444); color: white; padding: var(--space-6); border-radius: var(--radius-lg) var(--radius-lg) 0 0;">
+                                <h4 style="margin: 0; font-size: var(--text-xl);">Devotion Committee</h4>
+                                <p style="margin: var(--space-2) 0 0 0; opacity: 0.95;">Our Devotional Committee is the PPC committee charged with ensuring that prayers, and all spiritual activities of the church continues to grow.</p>
+                            </div>
+                            <div style="overflow-x: auto;">
+                                <table style="width: 100%; border-collapse: collapse; background: white; box-shadow: var(--shadow-md); border-radius: 0 0 var(--radius-lg) var(--radius-lg);">
+                                    <thead>
+                                        <tr style="background: var(--background-alt);">
+                                            <th style="padding: var(--space-4); text-align: left; border-bottom: 2px solid var(--border); font-weight: 600;">S/N</th>
+                                            <th style="padding: var(--space-4); text-align: left; border-bottom: 2px solid var(--border); font-weight: 600;">Name</th>
+                                            <th style="padding: var(--space-4); text-align: left; border-bottom: 2px solid var(--border); font-weight: 600;">Position</th>
+                                            <th style="padding: var(--space-4); text-align: left; border-bottom: 2px solid var(--border); font-weight: 600;">Phone</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr style="border-bottom: 1px solid var(--border);">
+                                            <td style="padding: var(--space-4);">1</td>
+                                            <td style="padding: var(--space-4);">[Name]</td>
+                                            <td style="padding: var(--space-4); font-weight: 600; color: #dc2626;">Chairman</td>
+                                            <td style="padding: var(--space-4);">[Phone]</td>
+                                        </tr>
+                                        <tr style="border-bottom: 1px solid var(--border);">
+                                            <td style="padding: var(--space-4);">2</td>
+                                            <td style="padding: var(--space-4);">[Name]</td>
+                                            <td style="padding: var(--space-4); font-weight: 600; color: #dc2626;">Vice Chairman</td>
+                                            <td style="padding: var(--space-4);">[Phone]</td>
+                                        </tr>
+                                        <tr style="border-bottom: 1px solid var(--border);">
+                                            <td style="padding: var(--space-4);">3</td>
+                                            <td style="padding: var(--space-4);">[Name]</td>
+                                            <td style="padding: var(--space-4);">Secretary</td>
+                                            <td style="padding: var(--space-4);">[Phone]</td>
+                                        </tr>
+                                        <tr style="border-bottom: 1px solid var(--border);">
+                                            <td style="padding: var(--space-4);">4</td>
+                                            <td style="padding: var(--space-4);">[Name]</td>
+                                            <td style="padding: var(--space-4);">Member</td>
+                                            <td style="padding: var(--space-4);">[Phone]</td>
+                                        </tr>
+                                        <tr style="border-bottom: 1px solid var(--border);">
+                                            <td style="padding: var(--space-4);">5</td>
+                                            <td style="padding: var(--space-4);">[Name]</td>
+                                            <td style="padding: var(--space-4);">Member</td>
+                                            <td style="padding: var(--space-4);">[Phone]</td>
+                                        </tr>
+                                        <tr style="border-bottom: 1px solid var(--border);">
+                                            <td style="padding: var(--space-4);">6</td>
+                                            <td style="padding: var(--space-4);">[Name]</td>
+                                            <td style="padding: var(--space-4);">Member</td>
+                                            <td style="padding: var(--space-4);">[Phone]</td>
+                                        </tr>
+                                        <tr style="border-bottom: 1px solid var(--border);">
+                                            <td style="padding: var(--space-4);">7</td>
+                                            <td style="padding: var(--space-4);">[Name]</td>
+                                            <td style="padding: var(--space-4);">Member</td>
+                                            <td style="padding: var(--space-4);">[Phone]</td>
+                                        </tr>
+                                        <tr style="border-bottom: 1px solid var(--border);">
+                                            <td style="padding: var(--space-4);">8</td>
+                                            <td style="padding: var(--space-4);">[Name]</td>
+                                            <td style="padding: var(--space-4);">Member</td>
+                                            <td style="padding: var(--space-4);">[Phone]</td>
+                                        </tr>
+                                        <tr style="border-bottom: 1px solid var(--border);">
+                                            <td style="padding: var(--space-4);">9</td>
+                                            <td style="padding: var(--space-4);">[Name]</td>
+                                            <td style="padding: var(--space-4);">Member</td>
+                                            <td style="padding: var(--space-4);">[Phone]</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding: var(--space-4);">10</td>
+                                            <td style="padding: var(--space-4);">[Name]</td>
+                                            <td style="padding: var(--space-4);">Member</td>
+                                            <td style="padding: var(--space-4);">[Phone]</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Sub-Committee 4: Welfare & Social Action Committee -->
+                        <div style="margin-bottom: var(--space-12); margin-left: var(--space-6);">
+                            <div style="background: linear-gradient(135deg, #0891b2, #06b6d4); color: white; padding: var(--space-6); border-radius: var(--radius-lg) var(--radius-lg) 0 0;">
+                                <h4 style="margin: 0; font-size: var(--text-xl);">Welfare & Social Action Committee</h4>
+                                <p style="margin: var(--space-2) 0 0 0; opacity: 0.95;">The welfare committee is responsible for the comfort and well being of parishioner and also takes care of all social activities within the parish.</p>
+                            </div>
+                            <div style="overflow-x: auto;">
+                                <table style="width: 100%; border-collapse: collapse; background: white; box-shadow: var(--shadow-md); border-radius: 0 0 var(--radius-lg) var(--radius-lg);">
+                                    <thead>
+                                        <tr style="background: var(--background-alt);">
+                                            <th style="padding: var(--space-4); text-align: left; border-bottom: 2px solid var(--border); font-weight: 600;">S/N</th>
+                                            <th style="padding: var(--space-4); text-align: left; border-bottom: 2px solid var(--border); font-weight: 600;">Name</th>
+                                            <th style="padding: var(--space-4); text-align: left; border-bottom: 2px solid var(--border); font-weight: 600;">Position</th>
+                                            <th style="padding: var(--space-4); text-align: left; border-bottom: 2px solid var(--border); font-weight: 600;">Phone</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr style="border-bottom: 1px solid var(--border);">
+                                            <td style="padding: var(--space-4);">1</td>
+                                            <td style="padding: var(--space-4);">[Name]</td>
+                                            <td style="padding: var(--space-4); font-weight: 600; color: #0891b2;">Chairman</td>
+                                            <td style="padding: var(--space-4);">[Phone]</td>
+                                        </tr>
+                                        <tr style="border-bottom: 1px solid var(--border);">
+                                            <td style="padding: var(--space-4);">2</td>
+                                            <td style="padding: var(--space-4);">[Name]</td>
+                                            <td style="padding: var(--space-4); font-weight: 600; color: #0891b2;">Vice Chairman</td>
+                                            <td style="padding: var(--space-4);">[Phone]</td>
+                                        </tr>
+                                        <tr style="border-bottom: 1px solid var(--border);">
+                                            <td style="padding: var(--space-4);">3</td>
+                                            <td style="padding: var(--space-4);">[Name]</td>
+                                            <td style="padding: var(--space-4);">Secretary</td>
+                                            <td style="padding: var(--space-4);">[Phone]</td>
+                                        </tr>
+                                        <tr style="border-bottom: 1px solid var(--border);">
+                                            <td style="padding: var(--space-4);">4</td>
+                                            <td style="padding: var(--space-4);">[Name]</td>
+                                            <td style="padding: var(--space-4);">Member</td>
+                                            <td style="padding: var(--space-4);">[Phone]</td>
+                                        </tr>
+                                        <tr style="border-bottom: 1px solid var(--border);">
+                                            <td style="padding: var(--space-4);">5</td>
+                                            <td style="padding: var(--space-4);">[Name]</td>
+                                            <td style="padding: var(--space-4);">Member</td>
+                                            <td style="padding: var(--space-4);">[Phone]</td>
+                                        </tr>
+                                        <tr style="border-bottom: 1px solid var(--border);">
+                                            <td style="padding: var(--space-4);">6</td>
+                                            <td style="padding: var(--space-4);">[Name]</td>
+                                            <td style="padding: var(--space-4);">Member</td>
+                                            <td style="padding: var(--space-4);">[Phone]</td>
+                                        </tr>
+                                        <tr style="border-bottom: 1px solid var(--border);">
+                                            <td style="padding: var(--space-4);">7</td>
+                                            <td style="padding: var(--space-4);">[Name]</td>
+                                            <td style="padding: var(--space-4);">Member</td>
+                                            <td style="padding: var(--space-4);">[Phone]</td>
+                                        </tr>
+                                        <tr style="border-bottom: 1px solid var(--border);">
+                                            <td style="padding: var(--space-4);">8</td>
+                                            <td style="padding: var(--space-4);">[Name]</td>
+                                            <td style="padding: var(--space-4);">Member</td>
+                                            <td style="padding: var(--space-4);">[Phone]</td>
+                                        </tr>
+                                        <tr style="border-bottom: 1px solid var(--border);">
+                                            <td style="padding: var(--space-4);">9</td>
+                                            <td style="padding: var(--space-4);">[Name]</td>
+                                            <td style="padding: var(--space-4);">Member</td>
+                                            <td style="padding: var(--space-4);">[Phone]</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding: var(--space-4);">10</td>
+                                            <td style="padding: var(--space-4);">[Name]</td>
+                                            <td style="padding: var(--space-4);">Member</td>
+                                            <td style="padding: var(--space-4);">[Phone]</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Sub-Committee 5: Faith & Education Committee -->
+                        <div style="margin-bottom: var(--space-12); margin-left: var(--space-6);">
+                            <div style="background: linear-gradient(135deg, #16a34a, #22c55e); color: white; padding: var(--space-6); border-radius: var(--radius-lg) var(--radius-lg) 0 0;">
+                                <h4 style="margin: 0; font-size: var(--text-xl);">Faith & Education Committee</h4>
+                                <p style="margin: var(--space-2) 0 0 0; opacity: 0.95;">The primary objective of the Parish is to aid salvation, this is achieved by continuous education and development of programs, materials and process that aid the Catholic faith.</p>
+                            </div>
+                            <div style="overflow-x: auto;">
+                                <table style="width: 100%; border-collapse: collapse; background: white; box-shadow: var(--shadow-md); border-radius: 0 0 var(--radius-lg) var(--radius-lg);">
+                                    <thead>
+                                        <tr style="background: var(--background-alt);">
+                                            <th style="padding: var(--space-4); text-align: left; border-bottom: 2px solid var(--border); font-weight: 600;">S/N</th>
+                                            <th style="padding: var(--space-4); text-align: left; border-bottom: 2px solid var(--border); font-weight: 600;">Name</th>
+                                            <th style="padding: var(--space-4); text-align: left; border-bottom: 2px solid var(--border); font-weight: 600;">Position</th>
+                                            <th style="padding: var(--space-4); text-align: left; border-bottom: 2px solid var(--border); font-weight: 600;">Phone</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr style="border-bottom: 1px solid var(--border);">
+                                            <td style="padding: var(--space-4);">1</td>
+                                            <td style="padding: var(--space-4);">[Name]</td>
+                                            <td style="padding: var(--space-4); font-weight: 600; color: #16a34a;">Chairman</td>
+                                            <td style="padding: var(--space-4);">[Phone]</td>
+                                        </tr>
+                                        <tr style="border-bottom: 1px solid var(--border);">
+                                            <td style="padding: var(--space-4);">2</td>
+                                            <td style="padding: var(--space-4);">[Name]</td>
+                                            <td style="padding: var(--space-4); font-weight: 600; color: #16a34a;">Vice Chairman</td>
+                                            <td style="padding: var(--space-4);">[Phone]</td>
+                                        </tr>
+                                        <tr style="border-bottom: 1px solid var(--border);">
+                                            <td style="padding: var(--space-4);">3</td>
+                                            <td style="padding: var(--space-4);">[Name]</td>
+                                            <td style="padding: var(--space-4);">Secretary</td>
+                                            <td style="padding: var(--space-4);">[Phone]</td>
+                                        </tr>
+                                        <tr style="border-bottom: 1px solid var(--border);">
+                                            <td style="padding: var(--space-4);">4</td>
+                                            <td style="padding: var(--space-4);">[Name]</td>
+                                            <td style="padding: var(--space-4);">Member</td>
+                                            <td style="padding: var(--space-4);">[Phone]</td>
+                                        </tr>
+                                        <tr style="border-bottom: 1px solid var(--border);">
+                                            <td style="padding: var(--space-4);">5</td>
+                                            <td style="padding: var(--space-4);">[Name]</td>
+                                            <td style="padding: var(--space-4);">Member</td>
+                                            <td style="padding: var(--space-4);">[Phone]</td>
+                                        </tr>
+                                        <tr style="border-bottom: 1px solid var(--border);">
+                                            <td style="padding: var(--space-4);">6</td>
+                                            <td style="padding: var(--space-4);">[Name]</td>
+                                            <td style="padding: var(--space-4);">Member</td>
+                                            <td style="padding: var(--space-4);">[Phone]</td>
+                                        </tr>
+                                        <tr style="border-bottom: 1px solid var(--border);">
+                                            <td style="padding: var(--space-4);">7</td>
+                                            <td style="padding: var(--space-4);">[Name]</td>
+                                            <td style="padding: var(--space-4);">Member</td>
+                                            <td style="padding: var(--space-4);">[Phone]</td>
+                                        </tr>
+                                        <tr style="border-bottom: 1px solid var(--border);">
+                                            <td style="padding: var(--space-4);">8</td>
+                                            <td style="padding: var(--space-4);">[Name]</td>
+                                            <td style="padding: var(--space-4);">Member</td>
+                                            <td style="padding: var(--space-4);">[Phone]</td>
+                                        </tr>
+                                        <tr style="border-bottom: 1px solid var(--border);">
+                                            <td style="padding: var(--space-4);">9</td>
+                                            <td style="padding: var(--space-4);">[Name]</td>
+                                            <td style="padding: var(--space-4);">Member</td>
+                                            <td style="padding: var(--space-4);">[Phone]</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding: var(--space-4);">10</td>
+                                            <td style="padding: var(--space-4);">[Name]</td>
+                                            <td style="padding: var(--space-4);">Member</td>
+                                            <td style="padding: var(--space-4);">[Phone]</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Parish Finance Council (PFC) -->
+                    <div style="margin-bottom: var(--space-16);">
+                        <div style="background: linear-gradient(135deg, var(--secondary-green), #2e7d32); color: white; padding: var(--space-6); border-radius: var(--radius-lg) var(--radius-lg) 0 0;">
+                            <h3 style="margin: 0; font-size: var(--text-2xl);">Parish Finance Council (PFC)</h3>
+                            <p style="margin: var(--space-2) 0 0 0; opacity: 0.95;">Our Finance Council, composed of members with the appropriate expertise and possessing a love for the Church and its mission, provide our Priest valuable advice and assistance in the execution of parish financial administration duties. They also help our parish maximize its financial resources and avert potential financial problems.</p>
+                        </div>
+                        <div style="overflow-x: auto;">
+                            <table style="width: 100%; border-collapse: collapse; background: white; box-shadow: var(--shadow-md); border-radius: 0 0 var(--radius-lg) var(--radius-lg);">
+                                <thead>
+                                    <tr style="background: var(--background-alt);">
+                                        <th style="padding: var(--space-4); text-align: left; border-bottom: 2px solid var(--border); font-weight: 600;">S/N</th>
+                                        <th style="padding: var(--space-4); text-align: left; border-bottom: 2px solid var(--border); font-weight: 600;">Name</th>
+                                        <th style="padding: var(--space-4); text-align: left; border-bottom: 2px solid var(--border); font-weight: 600;">Position</th>
+                                        <th style="padding: var(--space-4); text-align: left; border-bottom: 2px solid var(--border); font-weight: 600;">Phone</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr style="border-bottom: 1px solid var(--border);">
+                                        <td style="padding: var(--space-4);">1</td>
+                                        <td style="padding: var(--space-4);">[Name]</td>
+                                        <td style="padding: var(--space-4); font-weight: 600; color: var(--secondary-green);">Chairman</td>
+                                        <td style="padding: var(--space-4);">[Phone]</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid var(--border);">
+                                        <td style="padding: var(--space-4);">2</td>
+                                        <td style="padding: var(--space-4);">[Name]</td>
+                                        <td style="padding: var(--space-4); font-weight: 600; color: var(--secondary-green);">Vice Chairman</td>
+                                        <td style="padding: var(--space-4);">[Phone]</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid var(--border);">
+                                        <td style="padding: var(--space-4);">3</td>
+                                        <td style="padding: var(--space-4);">[Name]</td>
+                                        <td style="padding: var(--space-4);">Secretary</td>
+                                        <td style="padding: var(--space-4);">[Phone]</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid var(--border);">
+                                        <td style="padding: var(--space-4);">4</td>
+                                        <td style="padding: var(--space-4);">[Name]</td>
+                                        <td style="padding: var(--space-4);">Treasurer</td>
+                                        <td style="padding: var(--space-4);">[Phone]</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid var(--border);">
+                                        <td style="padding: var(--space-4);">5</td>
+                                        <td style="padding: var(--space-4);">[Name]</td>
+                                        <td style="padding: var(--space-4);">Member</td>
+                                        <td style="padding: var(--space-4);">[Phone]</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid var(--border);">
+                                        <td style="padding: var(--space-4);">6</td>
+                                        <td style="padding: var(--space-4);">[Name]</td>
+                                        <td style="padding: var(--space-4);">Member</td>
+                                        <td style="padding: var(--space-4);">[Phone]</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid var(--border);">
+                                        <td style="padding: var(--space-4);">7</td>
+                                        <td style="padding: var(--space-4);">[Name]</td>
+                                        <td style="padding: var(--space-4);">Member</td>
+                                        <td style="padding: var(--space-4);">[Phone]</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid var(--border);">
+                                        <td style="padding: var(--space-4);">8</td>
+                                        <td style="padding: var(--space-4);">[Name]</td>
+                                        <td style="padding: var(--space-4);">Member</td>
+                                        <td style="padding: var(--space-4);">[Phone]</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid var(--border);">
+                                        <td style="padding: var(--space-4);">9</td>
+                                        <td style="padding: var(--space-4);">[Name]</td>
+                                        <td style="padding: var(--space-4);">Member</td>
+                                        <td style="padding: var(--space-4);">[Phone]</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: var(--space-4);">10</td>
+                                        <td style="padding: var(--space-4);">[Name]</td>
+                                        <td style="padding: var(--space-4);">Member</td>
+                                        <td style="padding: var(--space-4);">[Phone]</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Parish Laity Council (PLC) -->
+                    <div style="margin-bottom: var(--space-16);">
+                        <div style="background: linear-gradient(135deg, #d97706, #f59e0b); color: white; padding: var(--space-6); border-radius: var(--radius-lg) var(--radius-lg) 0 0;">
+                            <h3 style="margin: 0; font-size: var(--text-2xl);">Parish Laity Council (PLC)</h3>
+                            <p style="margin: var(--space-2) 0 0 0; opacity: 0.95;">The Parish Laity Council is charged by the Decree on the Apostolate of the Laity (Apostolicam Actuositatem) with the goal of intensifying the apostolic activity of the laity by promoting the apostolate and coordinating parish lay initiatives. While individual groups are responsible for organizing and directing their own activities, the parish laity council is charged with the coordination and promotion of lay apostolic zeal amongst parishioners.</p>
+                        </div>
+                        <div style="overflow-x: auto;">
+                            <table style="width: 100%; border-collapse: collapse; background: white; box-shadow: var(--shadow-md); border-radius: 0 0 var(--radius-lg) var(--radius-lg);">
+                                <thead>
+                                    <tr style="background: var(--background-alt);">
+                                        <th style="padding: var(--space-4); text-align: left; border-bottom: 2px solid var(--border); font-weight: 600;">S/N</th>
+                                        <th style="padding: var(--space-4); text-align: left; border-bottom: 2px solid var(--border); font-weight: 600;">Name</th>
+                                        <th style="padding: var(--space-4); text-align: left; border-bottom: 2px solid var(--border); font-weight: 600;">Position</th>
+                                        <th style="padding: var(--space-4); text-align: left; border-bottom: 2px solid var(--border); font-weight: 600;">Phone</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr style="border-bottom: 1px solid var(--border);">
+                                        <td style="padding: var(--space-4);">1</td>
+                                        <td style="padding: var(--space-4);">[Name]</td>
+                                        <td style="padding: var(--space-4); font-weight: 600; color: #d97706;">Chairman</td>
+                                        <td style="padding: var(--space-4);">[Phone]</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid var(--border);">
+                                        <td style="padding: var(--space-4);">2</td>
+                                        <td style="padding: var(--space-4);">[Name]</td>
+                                        <td style="padding: var(--space-4); font-weight: 600; color: #d97706;">Vice Chairman</td>
+                                        <td style="padding: var(--space-4);">[Phone]</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid var(--border);">
+                                        <td style="padding: var(--space-4);">3</td>
+                                        <td style="padding: var(--space-4);">[Name]</td>
+                                        <td style="padding: var(--space-4);">Secretary</td>
+                                        <td style="padding: var(--space-4);">[Phone]</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid var(--border);">
+                                        <td style="padding: var(--space-4);">4</td>
+                                        <td style="padding: var(--space-4);">[Name]</td>
+                                        <td style="padding: var(--space-4);">Member</td>
+                                        <td style="padding: var(--space-4);">[Phone]</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid var(--border);">
+                                        <td style="padding: var(--space-4);">5</td>
+                                        <td style="padding: var(--space-4);">[Name]</td>
+                                        <td style="padding: var(--space-4);">Member</td>
+                                        <td style="padding: var(--space-4);">[Phone]</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid var(--border);">
+                                        <td style="padding: var(--space-4);">6</td>
+                                        <td style="padding: var(--space-4);">[Name]</td>
+                                        <td style="padding: var(--space-4);">Member</td>
+                                        <td style="padding: var(--space-4);">[Phone]</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid var(--border);">
+                                        <td style="padding: var(--space-4);">7</td>
+                                        <td style="padding: var(--space-4);">[Name]</td>
+                                        <td style="padding: var(--space-4);">Member</td>
+                                        <td style="padding: var(--space-4);">[Phone]</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid var(--border);">
+                                        <td style="padding: var(--space-4);">8</td>
+                                        <td style="padding: var(--space-4);">[Name]</td>
+                                        <td style="padding: var(--space-4);">Member</td>
+                                        <td style="padding: var(--space-4);">[Phone]</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid var(--border);">
+                                        <td style="padding: var(--space-4);">9</td>
+                                        <td style="padding: var(--space-4);">[Name]</td>
+                                        <td style="padding: var(--space-4);">Member</td>
+                                        <td style="padding: var(--space-4);">[Phone]</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: var(--space-4);">10</td>
+                                        <td style="padding: var(--space-4);">[Name]</td>
+                                        <td style="padding: var(--space-4);">Member</td>
+                                        <td style="padding: var(--space-4);">[Phone]</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="highlight-box" style="text-align: center;">
+                        <p style="margin: 0; font-size: var(--text-lg);">
+                            <strong>Note:</strong> To update committee member information, please contact the parish office at
+                            <a href="tel:+2348023444069" style="color: var(--primary-blue);">+234 802 344 4069</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Stats -->
+        <section class="section" style="background: var(--background-alt);">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-box">
+                        <div class="stat-number">92+</div>
+                        <div class="stat-label">Years of Faith</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number">3</div>
+                        <div class="stat-label">Parish Outreach Stations</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number">19</div>
+                        <div class="stat-label">Years as Parish</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number">2018</div>
+                        <div class="stat-label">Modern Church Dedicated</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="section cta-section">
+            <div class="container">
+                <h2 style="font-size: var(--text-5xl); margin-bottom: var(--space-4);">Join Our Parish Family</h2>
+                <p style="font-size: var(--text-xl); opacity: 0.95; margin-bottom: var(--space-8); max-width: 700px; margin-left: auto; margin-right: auto;">
+                    Whether you're new to the area or looking for a spiritual home, we welcome you to St. Patrick's.
+                </p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn btn-large" style="background: white; color: var(--primary-blue);">Contact Us</a>
+                    <a href="mass-times.html" class="btn btn-large btn-secondary">View Mass Times</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>St. Patrick's Catholic Church</h3>
+                    <p style="color: var(--neutral-300); line-height: 1.7;">
+                        Igbogila, Ipaja, Lagos, Nigeria<br>
+                        Serving God's people since 1932
+                    </p>
+                    <div style="margin-top: var(--space-6);">
+                        <p><strong>Phone:</strong> +234 802 344 4069</p>
+                        <p><strong>Email:</strong> Info@stpatrickigbogilaipaja.com</p>
+                        <p><strong>P.O. Box:</strong> 2189, Ipaja, Lagos</p>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <a href="about.html" class="footer-link">About Us</a>
+                    <a href="mass-times.html" class="footer-link">Mass Times</a>
+                    <a href="ministries.html" class="footer-link">Organisation</a>
+                    <a href="events.html" class="footer-link">Events</a>
+                    <a href="give.html" class="footer-link">Online Giving</a>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Sacraments</h3>
+                    <a href="baptism.html" class="footer-link">Baptism</a>
+                    <a href="confirmation.html" class="footer-link">Confirmation</a>
+                    <a href="marriage.html" class="footer-link">Marriage</a>
+                    <a href="confession.html" class="footer-link">Confession</a>
+                    <a href="holy-Communion.html" class="footer-link">Holy Communion</a>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Connect With Us</h3>
+                    <p style="color: var(--neutral-300); margin-bottom: var(--space-4);">Stay updated with parish news and events</p>
+                    <div style="display: flex; gap: var(--space-3); margin-top: var(--space-4);">
+                        <a href="#" aria-label="Follow us on Facebook" style="width: 40px; height: 40px; background: var(--neutral-800); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: white;">
+                            <svg width="20" height="20" fill="currentColor" aria-hidden="true"><text x="5" y="15" font-size="16">f</text></svg>
+                        </a>
+                        <a href="#" aria-label="Follow us on Instagram" style="width: 40px; height: 40px; background: var(--neutral-800); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: white;">
+                            <span aria-hidden="true">📷</span>
+                        </a>
+                        <a href="#" aria-label="Subscribe on YouTube" style="width: 40px; height: 40px; background: var(--neutral-800); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: white;">
+                            <span aria-hidden="true">▶</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 St. Patrick's Catholic Church, Igbogila, Ipaja. All rights reserved.</p>
+                <p style="margin-top: var(--space-2); font-style: italic;">"For where two or three gather in my name, there am I with them." - Matthew 18:20</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
