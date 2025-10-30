@@ -231,6 +231,31 @@
     display: flex;
     align-items: center;
     gap: var(--space-2);
+    font-size: var(--text-xs);
+}
+
+@media (max-width: 640px) {
+    .info-bar {
+        font-size: 0.7rem;
+        padding: var(--space-1) 0;
+    }
+
+    .info-bar-content {
+        justify-content: center;
+        gap: var(--space-2);
+    }
+
+    .info-item {
+        font-size: 0.7rem;
+    }
+
+    .info-item span:last-child {
+        display: none;
+    }
+
+    .info-item span:first-child {
+        font-size: 1rem;
+    }
 }
 
 /* Modern Header/Navigation */

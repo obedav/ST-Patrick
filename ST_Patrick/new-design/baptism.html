@@ -3,13 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Podcast - St. Patrick's Catholic Church, Igbogila</title>
-    <meta name="description" content="Listen to homilies, talks, and spiritual reflections from St. Patrick's Catholic Church, Igbogila, Ipaja.">
+    <title>Baptism - St. Patrick's Catholic Church, Igbogila</title>
+    <meta name="description" content="Learn about the Sacrament of Baptism at St. Patrick's Catholic Church, Igbogila, Ipaja. Join our faith community through this sacred sacrament.">
 
-    <!-- Google Fonts -->
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Baptism - St. Patrick's Catholic Church">
+    <meta property="og:description" content="Learn about the Sacrament of Baptism at St. Patrick's Catholic Church, Igbogila, Ipaja.">
+    <meta property="og:image" content="images/church-og-image.jpg">
+    <meta property="og:url" content="https://stpatrickigbogilaipaja.com/baptism.html">
+    <meta property="og:type" content="website">
+
+    <!-- Google Fonts - Force Load for Vercel -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
 
     <!-- CSS -->
     <link rel="stylesheet" href="css/modern-variables.css">
@@ -17,11 +28,11 @@
 
     <style>
         body {
-            padding-top: 130px;
+            padding-top: 5.625rem;
         }
 
         .page-hero {
-            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-green) 100%);
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-light) 50%, var(--secondary-green) 100%);
             color: white;
             padding: var(--space-24) 0 var(--space-16);
             text-align: center;
@@ -55,43 +66,46 @@
             padding: var(--space-16) 0;
         }
 
-        .info-box {
-            background: var(--background-alt);
-            padding: var(--space-8);
-            border-radius: var(--radius-xl);
+        .content-box {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.05), rgba(59, 130, 246, 0.05));
             border-left: 4px solid var(--primary-blue);
+            padding: var(--space-6);
+            border-radius: var(--radius-lg);
             margin: var(--space-8) 0;
         }
 
-        .podcast-placeholder {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: var(--space-6);
-            margin-top: var(--space-12);
-        }
-
-        .placeholder-episode {
-            background: white;
-            border: 2px dashed var(--neutral-300);
-            border-radius: var(--radius-xl);
+        .info-card {
+            background: var(--background-alt);
             padding: var(--space-8);
-            text-align: center;
-            color: var(--neutral-500);
+            border-radius: var(--radius-xl);
+            margin: var(--space-12) 0;
         }
 
-        .placeholder-episode-icon {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, var(--neutral-200), var(--neutral-300));
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: var(--text-4xl);
-            margin: 0 auto var(--space-4);
+        .requirements-list {
+            list-style: none;
+            padding: 0;
         }
 
-        /* Footer */
+        .requirements-list li {
+            padding: var(--space-3) 0;
+            padding-left: var(--space-8);
+            position: relative;
+        }
+
+        .requirements-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--secondary-green);
+            font-weight: bold;
+            font-size: var(--text-xl);
+        }
+
         footer {
             background: var(--neutral-900);
             color: white;
@@ -127,22 +141,30 @@
             text-align: center;
             color: var(--neutral-400);
         }
+
+        @media (max-width: 768px) {
+            .page-hero {
+                padding: var(--space-16) 0 var(--space-12);
+            }
+        }
     </style>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
     <!-- Top Info Bar -->
-    <div class="info-bar" style="background: var(--neutral-900); color: white; padding: var(--space-2) 0; font-size: var(--text-sm);">
+    <div class="info-bar">
         <div class="container">
-            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: var(--space-4);">
-                <div style="display: flex; align-items: center; gap: var(--space-2);">
+            <div class="info-bar-content">
+                <div class="info-item">
                     <span>📍</span>
                     <span>Igbogila, Ipaja, Lagos</span>
                 </div>
-                <div style="display: flex; align-items: center; gap: var(--space-2);">
+                <div class="info-item">
                     <span>📞</span>
                     <span>+234 802 344 4069</span>
                 </div>
-                <div style="display: flex; align-items: center; gap: var(--space-2);">
+                <div class="info-item">
                     <span>✉️</span>
                     <span>Info@stpatrickigbogilaipaja.com</span>
                 </div>
@@ -203,7 +225,7 @@
 
                 <!-- Media & Resources Dropdown -->
                 <div class="nav-dropdown">
-                    <button class="nav-link dropdown-toggle active">
+                    <button class="nav-link dropdown-toggle">
                         Media & Resources
                         <svg class="dropdown-icon" width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
                             <path d="M6 9L1 4h10L6 9z"/>
@@ -212,7 +234,7 @@
                     <div class="dropdown-menu">
                         <a href="parish-register.html" class="dropdown-item">Parish Register</a>
                         <a href="photo-gallery.html" class="dropdown-item">Photo Gallery</a>
-                        <a href="podcast.html" class="dropdown-item active">Podcast</a>
+                        <a href="podcast.html" class="dropdown-item">Podcast</a>
                     </div>
                 </div>
 
@@ -236,94 +258,99 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="page-hero">
-        <div class="container">
-            <div class="page-hero-content">
-                <div class="breadcrumb">
-                    <a href="index.html" style="color: white;">Home</a>
-                    <span>/</span>
-                    <a href="#" style="color: white;">Media & Resources</a>
-                    <span>/</span>
-                    <span>Podcast</span>
-                </div>
-                <h1 style="font-size: var(--text-6xl); margin-bottom: var(--space-4);">🎙️ Parish Podcast</h1>
-                <p style="font-size: var(--text-2xl); opacity: 0.95; max-width: 800px; margin: 0 auto;">
-                    Homilies, spiritual talks, and reflections for your faith journey
-                </p>
-            </div>
-        </div>
-    </section>
-
     <!-- Main Content -->
-    <section class="content-section">
-        <div class="container">
-            <div style="max-width: 1200px; margin: 0 auto;">
-                <div class="info-box">
-                    <h2 style="color: var(--primary-blue); margin-bottom: var(--space-4);">🎧 Podcast Coming Soon</h2>
-                    <p style="font-size: var(--text-lg); line-height: 1.8; color: var(--text-secondary);">
-                        We're excited to announce that our parish podcast will be launching soon! You'll be able to listen to:
+    <main id="main-content">
+        <!-- Page Hero -->
+        <section class="page-hero">
+            <div class="container">
+                <div class="page-hero-content">
+                    <div class="breadcrumb">
+                        <a href="index.html" style="color: white;">Home</a>
+                        <span>/</span>
+                        <span>Sacraments</span>
+                        <span>/</span>
+                        <span>Baptism</span>
+                    </div>
+                    <h1 style="font-size: var(--text-6xl); margin-bottom: var(--space-4);">Baptism</h1>
+                    <p style="font-size: var(--text-2xl); opacity: 0.95;">The Gateway to Life in the Spirit</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Content -->
+        <section class="content-section">
+            <div class="container">
+                <div class="content-box">
+                    <h2 style="color: var(--primary-blue); margin-bottom: var(--space-6);">What is Baptism?</h2>
+
+                    <p style="font-size: var(--text-lg); line-height: 1.8; color: var(--text-secondary); margin-bottom: var(--space-6);">
+                        Baptism is the first of the seven sacraments and the door which gives access to the other sacraments. Through Baptism we are freed from sin and reborn as children of God; we become members of Christ, are incorporated into the Church and made sharers in her mission.
                     </p>
-                    <ul style="font-size: var(--text-lg); line-height: 1.8; color: var(--text-secondary); margin-top: var(--space-4); padding-left: var(--space-8);">
-                        <li>Sunday homilies and spiritual reflections</li>
-                        <li>Special talks and teachings from our clergy</li>
-                        <li>Faith formation and catechesis content</li>
-                        <li>Parish announcements and updates</li>
+
+                    <div class="highlight-box">
+                        <p style="font-size: var(--text-lg); font-style: italic; margin-bottom: 0;">
+                            "Go therefore and make disciples of all nations, baptizing them in the name of the Father and of the Son and of the Holy Spirit." - Matthew 28:19
+                        </p>
+                    </div>
+
+                    <h3 style="color: var(--primary-blue); margin-top: var(--space-12); margin-bottom: var(--space-6);">The Effects of Baptism</h3>
+
+                    <ul class="requirements-list">
+                        <li>Forgiveness of original sin and all personal sins</li>
+                        <li>Birth into the new life by which we become children of God</li>
+                        <li>Incorporation into the Church, the Body of Christ</li>
+                        <li>Reception of the Holy Spirit</li>
+                        <li>Participation in the priesthood of Christ</li>
+                        <li>An indelible spiritual mark (character) that consecrates the person for Christian worship</li>
                     </ul>
-                </div>
 
-                <div class="podcast-placeholder">
-                    <div class="placeholder-episode">
-                        <div class="placeholder-episode-icon">🎙️</div>
-                        <h3 style="margin-bottom: var(--space-2);">Episode 1</h3>
-                        <p>Coming Soon</p>
-                    </div>
-                    <div class="placeholder-episode">
-                        <div class="placeholder-episode-icon">📻</div>
-                        <h3 style="margin-bottom: var(--space-2);">Episode 2</h3>
-                        <p>Coming Soon</p>
-                    </div>
-                    <div class="placeholder-episode">
-                        <div class="placeholder-episode-icon">🎧</div>
-                        <h3 style="margin-bottom: var(--space-2);">Episode 3</h3>
-                        <p>Coming Soon</p>
-                    </div>
-                </div>
+                    <div class="info-card">
+                        <h3 style="color: var(--primary-blue); margin-bottom: var(--space-6);">Requirements for Baptism</h3>
 
-                <div class="card" style="margin-top: var(--space-12);">
-                    <h3 style="color: var(--primary-blue); margin-bottom: var(--space-4);">Subscribe for Updates</h3>
-                    <p style="color: var(--text-secondary); margin-bottom: var(--space-6);">
-                        Want to be notified when our podcast launches? Stay connected through our social media channels and parish bulletin for the latest updates.
+                        <h4 style="margin-top: var(--space-6); margin-bottom: var(--space-4);">For Infant Baptism:</h4>
+                        <ul class="requirements-list">
+                            <li>Parents must be registered members of the parish</li>
+                            <li>Both parents must attend baptismal preparation classes</li>
+                            <li>Child's birth certificate</li>
+                            <li>Godparents must be confirmed Catholics in good standing</li>
+                            <li>Letter of good standing for godparents from their parish</li>
+                        </ul>
+
+                        <h4 style="margin-top: var(--space-8); margin-bottom: var(--space-4);">For Adult Baptism:</h4>
+                        <ul class="requirements-list">
+                            <li>Completion of the RCIA (Rite of Christian Initiation of Adults) program</li>
+                            <li>Regular attendance at Mass and parish activities</li>
+                            <li>Understanding of Catholic faith and commitment to live according to its teachings</li>
+                        </ul>
+                    </div>
+
+                    <h3 style="color: var(--primary-blue); margin-top: var(--space-12); margin-bottom: var(--space-6);">Baptism Schedule</h3>
+                    <p style="font-size: var(--text-lg); line-height: 1.8; color: var(--text-secondary); margin-bottom: var(--space-6);">
+                        Baptisms are typically celebrated on the first and third Sundays of each month after the 9:30 AM Mass. Please contact the parish office at least one month in advance to schedule a baptism and register for preparation classes.
                     </p>
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--space-6);">
-                        <div style="display: flex; align-items: center; gap: var(--space-3);">
-                            <span style="font-size: var(--text-3xl);">📧</span>
-                            <div>
-                                <strong>Email Updates</strong><br>
-                                <span style="color: var(--text-secondary); font-size: var(--text-sm);">Subscribe to our newsletter</span>
-                            </div>
-                        </div>
-                        <div style="display: flex; align-items: center; gap: var(--space-3);">
-                            <span style="font-size: var(--text-3xl);">📱</span>
-                            <div>
-                                <strong>Social Media</strong><br>
-                                <span style="color: var(--text-secondary); font-size: var(--text-sm);">Follow us for announcements</span>
-                            </div>
-                        </div>
-                        <div style="display: flex; align-items: center; gap: var(--space-3);">
-                            <span style="font-size: var(--text-3xl);">📰</span>
-                            <div>
-                                <strong>Weekly Bulletin</strong><br>
-                                <span style="color: var(--text-secondary); font-size: var(--text-sm);">Check for podcast updates</span>
-                            </div>
-                        </div>
+
+                    <div style="text-align: center; margin-top: var(--space-12);">
+                        <a href="contact.html" class="btn btn-large btn-primary">Schedule a Baptism</a>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Footer -->
+        <!-- CTA -->
+        <section class="section cta-section">
+            <div class="container">
+                <h2 style="font-size: var(--text-5xl); margin-bottom: var(--space-4);">Questions About Baptism?</h2>
+                <p style="font-size: var(--text-xl); opacity: 0.95; margin-bottom: var(--space-8); max-width: 700px; margin-left: auto; margin-right: auto;">
+                    Our pastoral team is here to guide you through this sacred sacrament.
+                </p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn btn-large" style="background: white; color: var(--primary-blue);">Contact Us</a>
+                    <a href="index.html" class="btn btn-large btn-secondary">Back to Home</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
     <!-- Footer -->
     <footer>
         <div class="container">
@@ -356,16 +383,22 @@
                     <a href="confirmation.html" class="footer-link">Confirmation</a>
                     <a href="marriage.html" class="footer-link">Marriage</a>
                     <a href="confession.html" class="footer-link">Confession</a>
-                    <a href="holy-Communion" class="footer-link">Holy Communion</a>
+                    <a href="holy-Communion.html" class="footer-link">Holy Communion</a>
                 </div>
 
                 <div class="footer-column">
                     <h3>Connect With Us</h3>
                     <p style="color: var(--neutral-300); margin-bottom: var(--space-4);">Stay updated with parish news and events</p>
                     <div style="display: flex; gap: var(--space-3); margin-top: var(--space-4);">
-                        <a href="#" style="width: 40px; height: 40px; background: var(--neutral-800); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: white;">f</a>
-                        <a href="#" style="width: 40px; height: 40px; background: var(--neutral-800); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: white;">📷</a>
-                        <a href="#" style="width: 40px; height: 40px; background: var(--neutral-800); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: white;">▶</a>
+                        <a href="#" aria-label="Follow us on Facebook" style="width: 40px; height: 40px; background: var(--neutral-800); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: white;">
+                            <svg width="20" height="20" fill="currentColor" aria-hidden="true"><text x="5" y="15" font-size="16">f</text></svg>
+                        </a>
+                        <a href="#" aria-label="Follow us on Instagram" style="width: 40px; height: 40px; background: var(--neutral-800); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: white;">
+                            <span aria-hidden="true">📷</span>
+                        </a>
+                        <a href="#" aria-label="Subscribe on YouTube" style="width: 40px; height: 40px; background: var(--neutral-800); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: white;">
+                            <span aria-hidden="true">▶</span>
+                        </a>
                     </div>
                 </div>
             </div>

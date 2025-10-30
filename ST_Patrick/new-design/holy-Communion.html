@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Holy Communion - St. Patrick's Catholic Church, Igbogila</title>
+    <meta name="description" content="Learn about the Sacrament of Holy Communion (Eucharist) at St. Patrick's Catholic Church, Igbogila, Ipaja. Receive the Body and Blood of Christ.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Holy Communion - St. Patrick's Catholic Church">
+    <meta property="og:description" content="Learn about the Sacrament of Holy Communion (Eucharist) at St. Patrick's Catholic Church, Igbogila, Ipaja.">
+    <meta property="og:image" content="images/church-og-image.jpg">
+    <meta property="og:url" content="https://stpatrickigbogilaipaja.com/holy-Communion.html">
+    <meta property="og:type" content="website">
+
+    <!-- Google Fonts - Force Load for Vercel -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/modern-variables.css">
+    <link rel="stylesheet" href="css/modern-components.css">
+
+    <style>
+        body {
+            padding-top: 5.625rem;
+        }
+
+        .page-hero {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-light) 50%, var(--secondary-green) 100%);
+            color: white;
+            padding: var(--space-24) 0 var(--space-16);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .page-hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .breadcrumb {
+            display: flex;
+            gap: var(--space-2);
+            justify-content: center;
+            margin-bottom: var(--space-4);
+            font-size: var(--text-sm);
+            opacity: 0.9;
+        }
+
+        .content-section {
+            background: white;
+            padding: var(--space-16) 0;
+        }
+
+        .content-box {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.05), rgba(59, 130, 246, 0.05));
+            border-left: 4px solid var(--primary-blue);
+            padding: var(--space-6);
+            border-radius: var(--radius-lg);
+            margin: var(--space-8) 0;
+        }
+
+        .info-card {
+            background: var(--background-alt);
+            padding: var(--space-8);
+            border-radius: var(--radius-xl);
+            margin: var(--space-12) 0;
+        }
+
+        .requirements-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .requirements-list li {
+            padding: var(--space-3) 0;
+            padding-left: var(--space-8);
+            position: relative;
+        }
+
+        .requirements-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--secondary-green);
+            font-weight: bold;
+            font-size: var(--text-xl);
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-6);
+            margin: var(--space-8) 0;
+        }
+
+        .feature-card {
+            background: white;
+            padding: var(--space-6);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            text-align: center;
+            transition: transform var(--transition-base);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+        }
+
+        footer {
+            background: var(--neutral-900);
+            color: white;
+            padding: var(--space-16) 0 var(--space-6);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-12);
+            margin-bottom: var(--space-12);
+        }
+
+        .footer-column h3 {
+            color: var(--accent-gold);
+            margin-bottom: var(--space-4);
+        }
+
+        .footer-link {
+            display: block;
+            color: var(--neutral-300);
+            padding: var(--space-2) 0;
+            transition: color var(--transition-fast);
+        }
+
+        .footer-link:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--neutral-800);
+            padding-top: var(--space-6);
+            text-align: center;
+            color: var(--neutral-400);
+        }
+
+        @media (max-width: 768px) {
+            .page-hero {
+                padding: var(--space-16) 0 var(--space-12);
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Top Info Bar -->
+    <div class="info-bar">
+        <div class="container">
+            <div class="info-bar-content">
+                <div class="info-item">
+                    <span>📍</span>
+                    <span>Igbogila, Ipaja, Lagos</span>
+                </div>
+                <div class="info-item">
+                    <span>📞</span>
+                    <span>+234 802 344 4069</span>
+                </div>
+                <div class="info-item">
+                    <span>✉️</span>
+                    <span>Info@stpatrickigbogilaipaja.com</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header/Navigation -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <div class="logo-icon"><img src="images/st-patricks-logo.jpeg" alt="St. Patrick's Church Logo"></div>
+                <span>St. Patrick's Igbogila</span>
+            </div>
+
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="school.html" class="nav-link">School</a>
+
+                <!-- Programmes Dropdown -->
+                <div class="nav-dropdown">
+                    <button class="nav-link dropdown-toggle">
+                        Programmes
+                        <svg class="dropdown-icon" width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
+                            <path d="M6 9L1 4h10L6 9z"/>
+                        </svg>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="ministries.html" class="dropdown-item">Organisation</a>
+                        <a href="mass-times.html" class="dropdown-item">Mass Times</a>
+                        <a href="liturgical-programs.html" class="dropdown-item">Liturgical Programs</a>
+                        <a href="societal-activities.html" class="dropdown-item">Societal Activities</a>
+                    </div>
+                </div>
+
+                <!-- Parish News Dropdown -->
+                <div class="nav-dropdown">
+                    <button class="nav-link dropdown-toggle">
+                        Parish News
+                        <svg class="dropdown-icon" width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
+                            <path d="M6 9L1 4h10L6 9z"/>
+                        </svg>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="harvest-news.html" class="dropdown-item">Harvest News</a>
+                        <a href="upcoming-events.html" class="dropdown-item">Upcoming Events</a>
+                        <a href="weekly-bulletin.html" class="dropdown-item">Weekly Bulletin</a>
+                        <a href="mass-booking.html" class="dropdown-item">Mass Booking</a>
+                    </div>
+                </div>
+
+                <!-- Media & Resources Dropdown -->
+                <div class="nav-dropdown">
+                    <button class="nav-link dropdown-toggle">
+                        Media & Resources
+                        <svg class="dropdown-icon" width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
+                            <path d="M6 9L1 4h10L6 9z"/>
+                        </svg>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="parish-register.html" class="dropdown-item">Parish Register</a>
+                        <a href="photo-gallery.html" class="dropdown-item">Photo Gallery</a>
+                        <a href="podcast.html" class="dropdown-item">Podcast</a>
+                    </div>
+                </div>
+
+                <!-- Facilities Dropdown -->
+                <div class="nav-dropdown">
+                    <button class="nav-link dropdown-toggle">
+                        Facilities
+                        <svg class="dropdown-icon" width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
+                            <path d="M6 9L1 4h10L6 9z"/>
+                        </svg>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="parish-clinic.html" class="dropdown-item">Parish Clinic</a>
+                        <a href="parish-project.html" class="dropdown-item">Parish Project</a>
+                    </div>
+                </div>
+
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="donate.html" class="nav-link">Donate</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Page Hero -->
+        <section class="page-hero">
+            <div class="container">
+                <div class="page-hero-content">
+                    <div class="breadcrumb">
+                        <a href="index.html" style="color: white;">Home</a>
+                        <span>/</span>
+                        <span>Sacraments</span>
+                        <span>/</span>
+                        <span>Holy Communion</span>
+                    </div>
+                    <h1 style="font-size: var(--text-6xl); margin-bottom: var(--space-4);">Holy Communion</h1>
+                    <p style="font-size: var(--text-2xl); opacity: 0.95;">The Source and Summit of Christian Life</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Content -->
+        <section class="content-section">
+            <div class="container">
+                <div class="content-box">
+                    <h2 style="color: var(--primary-blue); margin-bottom: var(--space-6);">What is the Holy Eucharist?</h2>
+
+                    <p style="font-size: var(--text-lg); line-height: 1.8; color: var(--text-secondary); margin-bottom: var(--space-6);">
+                        The Holy Eucharist, also known as Holy Communion or the Blessed Sacrament, is the true Body and Blood, Soul and Divinity of our Lord Jesus Christ under the appearances of bread and wine. It is the source and summit of the Christian life, the greatest of all the sacraments.
+                    </p>
+
+                    <div class="highlight-box">
+                        <p style="font-size: var(--text-lg); font-style: italic; margin-bottom: 0;">
+                            "I am the living bread that came down from heaven. Whoever eats this bread will live forever. This bread is my flesh, which I will give for the life of the world." - John 6:51
+                        </p>
+                    </div>
+
+                    <h3 style="color: var(--primary-blue); margin-top: var(--space-12); margin-bottom: var(--space-6);">The Last Supper</h3>
+
+                    <p style="font-size: var(--text-lg); line-height: 1.8; color: var(--text-secondary); margin-bottom: var(--space-6);">
+                        At the Last Supper, Jesus took bread, blessed it, broke it, and gave it to His disciples saying, "Take and eat; this is my body." Then He took the cup of wine and said, "Drink from it, all of you. This is my blood of the covenant, which is poured out for many for the forgiveness of sins." He commanded them to "Do this in memory of me."
+                    </p>
+
+                    <h3 style="color: var(--primary-blue); margin-top: var(--space-12); margin-bottom: var(--space-6);">Effects of Holy Communion</h3>
+
+                    <div class="feature-grid">
+                        <div class="feature-card">
+                            <div style="font-size: var(--text-3xl); margin-bottom: var(--space-3);">✝️</div>
+                            <h4 style="color: var(--primary-blue); margin-bottom: var(--space-3);">Union with Christ</h4>
+                            <p style="color: var(--text-secondary);">Deepens our intimate union with Jesus Christ</p>
+                        </div>
+                        <div class="feature-card">
+                            <div style="font-size: var(--text-3xl); margin-bottom: var(--space-3);">🕊️</div>
+                            <h4 style="color: var(--primary-blue); margin-bottom: var(--space-3);">Spiritual Nourishment</h4>
+                            <p style="color: var(--text-secondary);">Sustains our spiritual life and strengthens our faith</p>
+                        </div>
+                        <div class="feature-card">
+                            <div style="font-size: var(--text-3xl); margin-bottom: var(--space-3);">❤️</div>
+                            <h4 style="color: var(--primary-blue); margin-bottom: var(--space-3);">Forgiveness</h4>
+                            <p style="color: var(--text-secondary);">Wipes away venial sins and preserves from mortal sins</p>
+                        </div>
+                        <div class="feature-card">
+                            <div style="font-size: var(--text-3xl); margin-bottom: var(--space-3);">👥</div>
+                            <h4 style="color: var(--primary-blue); margin-bottom: var(--space-3);">Church Unity</h4>
+                            <p style="color: var(--text-secondary);">Unites us more closely to the Body of Christ, the Church</p>
+                        </div>
+                        <div class="feature-card">
+                            <div style="font-size: var(--text-3xl); margin-bottom: var(--space-3);">🙏</div>
+                            <h4 style="color: var(--primary-blue); margin-bottom: var(--space-3);">Commitment to the Poor</h4>
+                            <p style="color: var(--text-secondary);">Strengthens our commitment to serve those in need</p>
+                        </div>
+                        <div class="feature-card">
+                            <div style="font-size: var(--text-3xl); margin-bottom: var(--space-3);">🌟</div>
+                            <h4 style="color: var(--primary-blue); margin-bottom: var(--space-3);">Eternal Life</h4>
+                            <p style="color: var(--text-secondary);">A pledge of future glory and eternal life with God</p>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <h3 style="color: var(--primary-blue); margin-bottom: var(--space-6);">First Holy Communion Preparation</h3>
+
+                        <p style="font-size: var(--text-lg); line-height: 1.8; color: var(--text-secondary); margin-bottom: var(--space-6);">
+                            First Holy Communion is a significant milestone in a Catholic child's faith journey. Our parish offers comprehensive preparation to help children understand and appreciate this sacred sacrament.
+                        </p>
+
+                        <h4 style="margin-top: var(--space-6); margin-bottom: var(--space-4);">Requirements:</h4>
+                        <ul class="requirements-list">
+                            <li>Child must be baptized in the Catholic Church</li>
+                            <li>Typically around age 7 or in second grade (age of reason)</li>
+                            <li>Must complete required catechism classes</li>
+                            <li>Regular attendance at Sunday Mass with family</li>
+                            <li>Parents/guardians must attend preparation meetings</li>
+                            <li>Child should have received the Sacrament of Reconciliation (First Confession)</li>
+                        </ul>
+
+                        <h4 style="margin-top: var(--space-8); margin-bottom: var(--space-4);">Preparation Program Includes:</h4>
+                        <ul class="requirements-list">
+                            <li>Weekly religious education classes</li>
+                            <li>Understanding of the Real Presence of Christ in the Eucharist</li>
+                            <li>Learning proper reverence and respect for the Blessed Sacrament</li>
+                            <li>Practice of prayers and responses for Mass</li>
+                            <li>Retreat day before First Communion</li>
+                            <li>Rehearsal for the ceremony</li>
+                        </ul>
+                    </div>
+
+                    <div style="background: linear-gradient(135deg, rgba(30, 58, 138, 0.05), rgba(59, 130, 246, 0.05)); padding: var(--space-8); border-radius: var(--radius-xl); margin-top: var(--space-12);">
+                        <h3 style="color: var(--primary-blue); margin-bottom: var(--space-4);">Receiving Holy Communion</h3>
+
+                        <h4 style="margin-top: var(--space-6); margin-bottom: var(--space-4);">Who Can Receive?</h4>
+                        <p style="color: var(--text-secondary); margin-bottom: var(--space-4);">
+                            Baptized Catholics who have received First Holy Communion and are in a state of grace (free from mortal sin) may receive the Eucharist.
+                        </p>
+
+                        <h4 style="margin-top: var(--space-6); margin-bottom: var(--space-4);">Preparation Before Receiving:</h4>
+                        <ul style="color: var(--text-secondary); line-height: 1.8;">
+                            <li>Fast for at least one hour before receiving (water and medicine are permitted)</li>
+                            <li>If conscious of mortal sin, receive the Sacrament of Reconciliation before Communion</li>
+                            <li>Approach with reverence, faith, and devotion</li>
+                        </ul>
+
+                        <h4 style="margin-top: var(--space-6); margin-bottom: var(--space-4);">How to Receive:</h4>
+                        <p style="color: var(--text-secondary);">
+                            You may receive Holy Communion on the tongue or in the hand. If receiving in the hand, extend both hands, one on top of the other, with palms up. The minister will place the Host in your hand, and you should step aside and reverently consume it immediately.
+                        </p>
+                    </div>
+
+                    <div style="text-align: center; margin-top: var(--space-12);">
+                        <a href="contact.html" class="btn btn-large btn-primary">Register for First Communion</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="section cta-section">
+            <div class="container">
+                <h2 style="font-size: var(--text-5xl); margin-bottom: var(--space-4);">Come to the Table of the Lord</h2>
+                <p style="font-size: var(--text-xl); opacity: 0.95; margin-bottom: var(--space-8); max-width: 700px; margin-left: auto; margin-right: auto;">
+                    Join us for Mass and receive the Body and Blood of Christ.
+                </p>
+                <div class="cta-buttons">
+                    <a href="mass-times.html" class="btn btn-large" style="background: white; color: var(--primary-blue);">View Mass Times</a>
+                    <a href="index.html" class="btn btn-large btn-secondary">Back to Home</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>St. Patrick's Catholic Church</h3>
+                    <p style="color: var(--neutral-300); line-height: 1.7;">
+                        Igbogila, Ipaja, Lagos, Nigeria<br>
+                        Serving God's people since 1932
+                    </p>
+                    <div style="margin-top: var(--space-6);">
+                        <p><strong>Phone:</strong> +234 802 344 4069</p>
+                        <p><strong>Email:</strong> Info@stpatrickigbogilaipaja.com</p>
+                        <p><strong>P.O. Box:</strong> 2189, Ipaja, Lagos</p>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <a href="about.html" class="footer-link">About Us</a>
+                    <a href="mass-times.html" class="footer-link">Mass Times</a>
+                    <a href="ministries.html" class="footer-link">Organisation</a>
+                    <a href="events.html" class="footer-link">Events</a>
+                    <a href="give.html" class="footer-link">Online Giving</a>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Sacraments</h3>
+                    <a href="baptism.html" class="footer-link">Baptism</a>
+                    <a href="confirmation.html" class="footer-link">Confirmation</a>
+                    <a href="marriage.html" class="footer-link">Marriage</a>
+                    <a href="confession.html" class="footer-link">Confession</a>
+                    <a href="holy-Communion.html" class="footer-link">Holy Communion</a>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Connect With Us</h3>
+                    <p style="color: var(--neutral-300); margin-bottom: var(--space-4);">Stay updated with parish news and events</p>
+                    <div style="display: flex; gap: var(--space-3); margin-top: var(--space-4);">
+                        <a href="#" aria-label="Follow us on Facebook" style="width: 40px; height: 40px; background: var(--neutral-800); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: white;">
+                            <svg width="20" height="20" fill="currentColor" aria-hidden="true"><text x="5" y="15" font-size="16">f</text></svg>
+                        </a>
+                        <a href="#" aria-label="Follow us on Instagram" style="width: 40px; height: 40px; background: var(--neutral-800); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: white;">
+                            <span aria-hidden="true">📷</span>
+                        </a>
+                        <a href="#" aria-label="Subscribe on YouTube" style="width: 40px; height: 40px; background: var(--neutral-800); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: white;">
+                            <span aria-hidden="true">▶</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 St. Patrick's Catholic Church, Igbogila, Ipaja. All rights reserved.</p>
+                <p style="margin-top: var(--space-2); font-style: italic;">"For where two or three gather in my name, there am I with them." - Matthew 18:20</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
