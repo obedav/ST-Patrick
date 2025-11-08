@@ -212,19 +212,121 @@
     <!-- Main Content -->
     <section class="content-section">
         <div class="container">
-            <div style="max-width: 900px; margin: 0 auto;">
+            <div style="max-width: 800px; margin: 0 auto;">
                 <div class="info-box">
-                    <h2 style="color: var(--primary-blue); margin-bottom: var(--space-4);">📢 Content Coming Soon</h2>
+                    <h2 style="color: var(--primary-blue); margin-bottom: var(--space-4);">Welcome to St. Patrick's Parish Family</h2>
                     <p style="font-size: var(--text-lg); line-height: 1.8; color: var(--text-secondary);">
-                        This page is currently under development. Parish register information and records will be available here soon.
-                    </p>
-                    <p style="font-size: var(--text-lg); line-height: 1.8; color: var(--text-secondary); margin-top: var(--space-4);">
-                        For immediate assistance with parish records, please contact the parish office.
+                        We are delighted that you want to register as a parishioner of St. Patrick's Catholic Church, Igbogila. Please fill out the form below to become an official member of our parish community.
                     </p>
                 </div>
 
+                <!-- Registration Form -->
                 <div class="card" style="margin-top: var(--space-12);">
-                    <h3 style="color: var(--primary-blue); margin-bottom: var(--space-4);">Contact Parish Office</h3>
+                    <h3 style="color: var(--primary-blue); margin-bottom: var(--space-6);">Parish Registration Form</h3>
+
+                    <form id="parishRegisterForm" style="display: grid; gap: var(--space-6);">
+                        <!-- Full Name -->
+                        <div class="form-group">
+                            <label for="fullName" class="form-label">Full Name <span style="color: var(--crimson-red);">*</span></label>
+                            <input
+                                type="text"
+                                id="fullName"
+                                name="fullName"
+                                class="form-input"
+                                placeholder="Enter your full name"
+                                required
+                            >
+                        </div>
+
+                        <!-- Gender -->
+                        <div class="form-group">
+                            <label for="gender" class="form-label">Gender <span style="color: var(--crimson-red);">*</span></label>
+                            <select id="gender" name="gender" class="form-select" required>
+                                <option value="">Select Gender</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                            </select>
+                        </div>
+
+                        <!-- Address -->
+                        <div class="form-group">
+                            <label for="address" class="form-label">Address <span style="color: var(--crimson-red);">*</span></label>
+                            <textarea
+                                id="address"
+                                name="address"
+                                class="form-textarea"
+                                rows="3"
+                                placeholder="Enter your residential address"
+                                required
+                            ></textarea>
+                        </div>
+
+                        <!-- Phone Number -->
+                        <div class="form-group">
+                            <label for="phone" class="form-label">Phone Number <span style="color: var(--crimson-red);">*</span></label>
+                            <input
+                                type="tel"
+                                id="phone"
+                                name="phone"
+                                class="form-input"
+                                placeholder="+234 XXX XXX XXXX"
+                                required
+                            >
+                        </div>
+
+                        <!-- Email -->
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email Address <span style="color: var(--crimson-red);">*</span></label>
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                class="form-input"
+                                placeholder="your.email@example.com"
+                                required
+                            >
+                        </div>
+
+                        <!-- Society/Organisation -->
+                        <div class="form-group">
+                            <label for="society" class="form-label">Society/Organisation to Join <span style="color: var(--crimson-red);">*</span></label>
+                            <select id="society" name="society" class="form-select" required>
+                                <option value="">Select a Society</option>
+                                <option value="Catholic Men Organisation (CMO)">Catholic Men Organisation (CMO)</option>
+                                <option value="Catholic Women Organisation (CWO)">Catholic Women Organisation (CWO)</option>
+                                <option value="Catholic Youth Organisation of Nigeria (CYON)">Catholic Youth Organisation of Nigeria (CYON)</option>
+                                <option value="Catholic Charismatic Renewal of Nigeria (CCRN)">Catholic Charismatic Renewal of Nigeria (CCRN)</option>
+                                <option value="St. Vincent De Paul Society (SVDP)">St. Vincent De Paul Society (SVDP)</option>
+                                <option value="Legion of Mary">Legion of Mary</option>
+                                <option value="Knights of St. Mulumba">Knights of St. Mulumba</option>
+                                <option value="Ladies of St. Mulumba">Ladies of St. Mulumba</option>
+                                <option value="Block Rosary Crusade (BRC)">Block Rosary Crusade (BRC)</option>
+                                <option value="Children of Mary">Children of Mary</option>
+                                <option value="Sacred Heart of Jesus">Sacred Heart of Jesus</option>
+                                <option value="Holy Childhood">Holy Childhood</option>
+                                <option value="None">None at the moment</option>
+                            </select>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <div style="margin-top: var(--space-4);">
+                            <button type="submit" class="btn btn-primary btn-large" style="width: 100%;">
+                                Register as Parishioner
+                            </button>
+                        </div>
+
+                        <p style="font-size: var(--text-sm); color: var(--text-secondary); text-align: center; margin-top: var(--space-2);">
+                            <span style="color: var(--crimson-red);">*</span> Required fields
+                        </p>
+                    </form>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="card" style="margin-top: var(--space-12);">
+                    <h3 style="color: var(--primary-blue); margin-bottom: var(--space-4);">Need Help?</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: var(--space-6);">
+                        If you have any questions about registration, please contact the parish office.
+                    </p>
                     <div style="display: grid; gap: var(--space-4);">
                         <div style="display: flex; align-items: center; gap: var(--space-3);">
                             <span style="font-size: var(--text-2xl);">📞</span>
@@ -242,7 +344,7 @@
                             <span style="font-size: var(--text-2xl);">🕐</span>
                             <div>
                                 <strong>Office Hours:</strong><br>
-                                Monday - Friday: 9:00 AM - 4:00 PM<br>
+                                Monday, Tuesday, Friday: 9:00 AM - 4:00 PM<br>
                                 Wednesday: 8:00 AM - 12:00 PM
                             </div>
                         </div>
@@ -285,7 +387,7 @@
                     <a href="confirmation.html" class="footer-link">Confirmation</a>
                     <a href="marriage.html" class="footer-link">Marriage</a>
                     <a href="confession.html" class="footer-link">Confession</a>
-                    <a href="holy-Communion" class="footer-link">Holy Communion</a>
+                    <a href="holy-Communion.html" class="footer-link">Holy Communion</a>
                 </div>
 
                 <div class="footer-column">

@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sacraments - St. Patrick's Catholic Church, Igbogila</title>
+    <meta name="description" content="Learn about the seven sacraments at St. Patrick's Catholic Church. We guide you through Baptism, Confirmation, Holy Eucharist, Reconciliation, Marriage, Holy Orders, and Anointing of the Sick.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/modern-variables.css">
+    <link rel="stylesheet" href="css/modern-components.css">
+
+    <style>
+        body {
+            padding-top: 100px;
+        }
+
+        .page-hero {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-light) 100%);
+            color: white;
+            padding: var(--space-24) 0 var(--space-16);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .page-hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .breadcrumb {
+            display: flex;
+            gap: var(--space-2);
+            justify-content: center;
+            margin-bottom: var(--space-4);
+            font-size: var(--text-sm);
+            opacity: 0.9;
+        }
+
+        .content-section {
+            background: white;
+            padding: var(--space-16) 0;
+        }
+
+        .intro-box {
+            background: var(--background-alt);
+            padding: var(--space-8);
+            border-radius: var(--radius-xl);
+            border-left: 4px solid var(--primary-blue);
+            margin-bottom: var(--space-12);
+        }
+
+        .sacraments-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: var(--space-8);
+            margin-top: var(--space-12);
+        }
+
+        .sacrament-card {
+            background: white;
+            border-radius: var(--radius-xl);
+            padding: var(--space-8);
+            box-shadow: var(--shadow-md);
+            transition: all var(--transition-base);
+            border-top: 4px solid var(--primary-blue);
+        }
+
+        .sacrament-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .sacrament-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary-blue) 100%);
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: var(--text-5xl);
+            margin-bottom: var(--space-4);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .sacrament-title {
+            font-size: var(--text-2xl);
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-bottom: var(--space-3);
+        }
+
+        .sacrament-description {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: var(--space-6);
+        }
+
+        .sacrament-details {
+            background: var(--background-alt);
+            padding: var(--space-4);
+            border-radius: var(--radius-lg);
+            margin-bottom: var(--space-6);
+            font-size: var(--text-sm);
+        }
+
+        .contact-section {
+            background: linear-gradient(135deg, var(--secondary-green), var(--primary-light));
+            color: white;
+            padding: var(--space-16) 0;
+            text-align: center;
+            margin-top: var(--space-16);
+        }
+
+        @media (max-width: 768px) {
+            .sacraments-grid {
+                grid-template-columns: 1fr;
+                gap: var(--space-6);
+            }
+        }
+
+        /* Footer */
+        footer {
+            background: var(--neutral-900);
+            color: white;
+            padding: var(--space-16) 0 var(--space-6);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-12);
+            margin-bottom: var(--space-12);
+        }
+
+        .footer-column h3 {
+            color: var(--accent-gold);
+            margin-bottom: var(--space-4);
+        }
+
+        .footer-link {
+            display: block;
+            color: var(--neutral-300);
+            padding: var(--space-2) 0;
+            transition: color var(--transition-fast);
+        }
+
+        .footer-link:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--neutral-800);
+            padding-top: var(--space-6);
+            text-align: center;
+            color: var(--neutral-400);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header/Navigation -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <div class="logo-icon"><img src="images/st-patricks-logo.jpeg" alt="St. Patrick's Church Logo"></div>
+                <span>St. Patrick's Igbogila</span>
+            </div>
+
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="school.html" class="nav-link">School</a>
+
+                <!-- Programmes Dropdown -->
+                <div class="nav-dropdown">
+                    <button class="nav-link dropdown-toggle">
+                        Programmes
+                        <svg class="dropdown-icon" width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
+                            <path d="M6 9L1 4h10L6 9z"/>
+                        </svg>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="our-parish.html" class="dropdown-item">OUR Parish</a>
+                        <a href="ministries.html" class="dropdown-item">Organisation</a>
+                        <a href="mass-times.html" class="dropdown-item">Mass Times</a>
+                        <a href="liturgical-programs.html" class="dropdown-item">Liturgical Programs</a>
+                        <a href="societal-activities.html" class="dropdown-item">Societal Activities</a>
+                    </div>
+                </div>
+
+                <!-- Parish News Dropdown -->
+                <div class="nav-dropdown">
+                    <button class="nav-link dropdown-toggle">
+                        Parish News
+                        <svg class="dropdown-icon" width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
+                            <path d="M6 9L1 4h10L6 9z"/>
+                        </svg>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="announcement.html" class="dropdown-item">Announcements</a>
+                        <a href="harvest-news.html" class="dropdown-item">Harvest News</a>
+                        <a href="upcoming-events.html" class="dropdown-item">Upcoming Events</a>
+                        <a href="weekly-bulletin.html" class="dropdown-item">Weekly Bulletin</a>
+                        <a href="mass-booking.html" class="dropdown-item">Mass Booking</a>
+                    </div>
+                </div>
+
+                <!-- Media & Resources Dropdown -->
+                <div class="nav-dropdown">
+                    <button class="nav-link dropdown-toggle">
+                        Media & Resources
+                        <svg class="dropdown-icon" width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
+                            <path d="M6 9L1 4h10L6 9z"/>
+                        </svg>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="parish-register.html" class="dropdown-item">Parish Register</a>
+                        <a href="photo-gallery.html" class="dropdown-item">Photo Gallery</a>
+                        <a href="podcast.html" class="dropdown-item">Podcast</a>
+                    </div>
+                </div>
+
+                <!-- Facilities Dropdown -->
+                <div class="nav-dropdown">
+                    <button class="nav-link dropdown-toggle">
+                        Facilities
+                        <svg class="dropdown-icon" width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
+                            <path d="M6 9L1 4h10L6 9z"/>
+                        </svg>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="parish-clinic.html" class="dropdown-item">Parish Clinic</a>
+                        <a href="parish-project.html" class="dropdown-item">Parish Project</a>
+                    </div>
+                </div>
+
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="donate.html" class="nav-link">Donate</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="page-hero">
+        <div class="container">
+            <div class="page-hero-content">
+                <div class="breadcrumb">
+                    <a href="index.html" style="color: white;">Home</a>
+                    <span>/</span>
+                    <span>Sacraments</span>
+                </div>
+                <h1 style="font-size: var(--text-6xl); margin-bottom: var(--space-4);">The Seven Sacraments</h1>
+                <p style="font-size: var(--text-2xl); opacity: 0.95; max-width: 800px; margin: 0 auto;">
+                    Encounter Christ through the sacred signs of God's grace
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="content-section">
+        <div class="container">
+            <div style="max-width: 1200px; margin: 0 auto;">
+                <!-- Introduction -->
+                <div class="intro-box">
+                    <h2 style="color: var(--primary-blue); margin-bottom: var(--space-4);">What Are Sacraments?</h2>
+                    <p style="font-size: var(--text-lg); line-height: 1.8; color: var(--text-secondary);">
+                        The sacraments are efficacious signs of grace, instituted by Christ and entrusted to the Church, by which divine life is dispensed to us. They are visible rites recognized by the Church as being instituted by Jesus Christ to confer the grace they signify. Through the sacraments, we encounter Christ in a real and tangible way, receiving His grace for our spiritual journey.
+                    </p>
+                </div>
+
+                <!-- Sacraments of Initiation -->
+                <div style="margin-bottom: var(--space-16);">
+                    <h2 class="section-title" style="text-align: center; margin-bottom: var(--space-8);">Sacraments of Initiation</h2>
+                    <p style="text-align: center; color: var(--text-secondary); margin-bottom: var(--space-12); font-size: var(--text-lg);">
+                        The foundation of Christian life
+                    </p>
+
+                    <div class="sacraments-grid">
+                        <!-- Baptism -->
+                        <div class="sacrament-card">
+                            <div class="sacrament-icon">💧</div>
+                            <h3 class="sacrament-title">Baptism</h3>
+                            <p class="sacrament-description">
+                                Baptism is the first sacrament and the door to the Christian life. Through baptism, we are freed from sin, reborn as children of God, and become members of the Body of Christ and heirs of the Kingdom.
+                            </p>
+                            <div class="sacrament-details">
+                                <strong>When:</strong> Infants, children, and adults<br>
+                                <strong>Requirements:</strong> Preparation classes required
+                            </div>
+                            <a href="baptism.html" class="btn btn-primary">Learn More</a>
+                        </div>
+
+                        <!-- Confirmation -->
+                        <div class="sacrament-card">
+                            <div class="sacrament-icon">🕊️</div>
+                            <h3 class="sacrament-title">Confirmation</h3>
+                            <p class="sacrament-description">
+                                Confirmation completes baptismal grace. Through the anointing with Sacred Chrism, it gives us a special strength of the Holy Spirit to spread and defend the faith by word and action.
+                            </p>
+                            <div class="sacrament-details">
+                                <strong>When:</strong> Typically ages 12-18<br>
+                                <strong>Requirements:</strong> Preparation program required
+                            </div>
+                            <a href="confirmation.html" class="btn btn-primary">Learn More</a>
+                        </div>
+
+                        <!-- Holy Eucharist -->
+                        <div class="sacrament-card">
+                            <div class="sacrament-icon">🍞</div>
+                            <h3 class="sacrament-title">Holy Eucharist</h3>
+                            <p class="sacrament-description">
+                                The Holy Eucharist is the source and summit of Christian life. In this sacrament, we receive the Body and Blood of Christ, truly present under the appearances of bread and wine.
+                            </p>
+                            <div class="sacrament-details">
+                                <strong>When:</strong> First Communion around age 7-8<br>
+                                <strong>Requirements:</strong> Baptism and preparation classes
+                            </div>
+                            <a href="holy-Communion.html" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sacraments of Healing -->
+                <div style="margin-bottom: var(--space-16);">
+                    <h2 class="section-title" style="text-align: center; margin-bottom: var(--space-8);">Sacraments of Healing</h2>
+                    <p style="text-align: center; color: var(--text-secondary); margin-bottom: var(--space-12); font-size: var(--text-lg);">
+                        Christ's healing touch in our lives
+                    </p>
+
+                    <div class="sacraments-grid">
+                        <!-- Reconciliation -->
+                        <div class="sacrament-card">
+                            <div class="sacrament-icon">✝️</div>
+                            <h3 class="sacrament-title">Reconciliation (Confession)</h3>
+                            <p class="sacrament-description">
+                                The Sacrament of Reconciliation, also called Confession or Penance, is where we receive God's forgiveness for our sins. Through this sacrament, we are reconciled with God and the Church.
+                            </p>
+                            <div class="sacrament-details">
+                                <strong>When:</strong> Available regularly<br>
+                                <strong>Confession Times:</strong> Check parish schedule
+                            </div>
+                            <a href="confession.html" class="btn btn-primary">Learn More</a>
+                        </div>
+
+                        <!-- Anointing of the Sick -->
+                        <div class="sacrament-card">
+                            <div class="sacrament-icon">🙏</div>
+                            <h3 class="sacrament-title">Anointing of the Sick</h3>
+                            <p class="sacrament-description">
+                                This sacrament gives strength, peace, and courage to those who are seriously ill or elderly. Through the anointing with holy oil and prayers, the sick person receives grace and healing.
+                            </p>
+                            <div class="sacrament-details">
+                                <strong>When:</strong> During serious illness or old age<br>
+                                <strong>How:</strong> Contact the parish office
+                            </div>
+                            <a href="contact.html" class="btn btn-primary">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sacraments at the Service of Communion -->
+                <div style="margin-bottom: var(--space-16);">
+                    <h2 class="section-title" style="text-align: center; margin-bottom: var(--space-8);">Sacraments at the Service of Communion</h2>
+                    <p style="text-align: center; color: var(--text-secondary); margin-bottom: var(--space-12); font-size: var(--text-lg);">
+                        Called to serve God and His people
+                    </p>
+
+                    <div class="sacraments-grid">
+                        <!-- Holy Orders -->
+                        <div class="sacrament-card">
+                            <div class="sacrament-icon">⛪</div>
+                            <h3 class="sacrament-title">Holy Orders</h3>
+                            <p class="sacrament-description">
+                                Holy Orders is the sacrament through which men are ordained as bishops, priests, or deacons to serve the Church. They receive a special grace to act in the person of Christ, serving His people.
+                            </p>
+                            <div class="sacrament-details">
+                                <strong>Who:</strong> Men called to priesthood/diaconate<br>
+                                <strong>Discernment:</strong> Contact your diocesan vocations office
+                            </div>
+                            <a href="contact.html" class="btn btn-primary">Learn About Vocations</a>
+                        </div>
+
+                        <!-- Matrimony -->
+                        <div class="sacrament-card">
+                            <div class="sacrament-icon">💍</div>
+                            <h3 class="sacrament-title">Matrimony (Marriage)</h3>
+                            <p class="sacrament-description">
+                                The Sacrament of Matrimony unites a baptized man and woman in a lifelong covenant of faithful love. Through this sacrament, spouses help each other attain holiness and welcome and educate children.
+                            </p>
+                            <div class="sacrament-details">
+                                <strong>Preparation:</strong> 6 months advance notice required<br>
+                                <strong>Requirements:</strong> Pre-marriage preparation program
+                            </div>
+                            <a href="marriage.html" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Additional Information -->
+                <div class="card">
+                    <h3 style="color: var(--primary-blue); margin-bottom: var(--space-4);">Need More Information?</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: var(--space-6); line-height: 1.8;">
+                        Our pastoral team is here to guide you through your sacramental journey. Whether you're seeking to receive a sacrament for the first time or want to learn more about Catholic teaching, we're here to help.
+                    </p>
+                    <div style="display: flex; gap: var(--space-4); flex-wrap: wrap;">
+                        <a href="contact.html" class="btn btn-primary">Contact Parish Office</a>
+                        <a href="mass-times.html" class="btn btn-secondary">View Mass Times</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <h2 style="font-size: var(--text-4xl); margin-bottom: var(--space-4);">Ready to Begin Your Sacramental Journey?</h2>
+            <p style="font-size: var(--text-xl); opacity: 0.95; margin-bottom: var(--space-8); max-width: 700px; margin-left: auto; margin-right: auto;">
+                Contact our parish office to schedule an appointment or to learn more about preparing for the sacraments.
+            </p>
+            <div style="display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap;">
+                <div style="text-align: center;">
+                    <p style="font-weight: 600; margin-bottom: var(--space-2);">Parish Office</p>
+                    <p>+234 802 344 4069</p>
+                </div>
+                <div style="text-align: center;">
+                    <p style="font-weight: 600; margin-bottom: var(--space-2);">Email</p>
+                    <p>Info@stpatrickigbogilaipaja.com</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>St. Patrick's Catholic Church</h3>
+                    <p style="color: var(--neutral-300); line-height: 1.7;">
+                        Igbogila, Ipaja, Lagos, Nigeria<br>
+                        Serving God's people since 1932
+                    </p>
+                    <div style="margin-top: var(--space-6);">
+                        <p><strong>Phone:</strong> +234 802 344 4069</p>
+                        <p><strong>Email:</strong> Info@stpatrickigbogilaipaja.com</p>
+                        <p><strong>P.O. Box:</strong> 2189, Ipaja, Lagos</p>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <a href="about.html" class="footer-link">About Us</a>
+                    <a href="mass-times.html" class="footer-link">Mass Times</a>
+                    <a href="ministries.html" class="footer-link">Organisation</a>
+                    <a href="events.html" class="footer-link">Events</a>
+                    <a href="give.html" class="footer-link">Online Giving</a>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Sacraments</h3>
+                    <a href="baptism.html" class="footer-link">Baptism</a>
+                    <a href="confirmation.html" class="footer-link">Confirmation</a>
+                    <a href="marriage.html" class="footer-link">Marriage</a>
+                    <a href="confession.html" class="footer-link">Confession</a>
+                    <a href="holy-Communion.html" class="footer-link">Holy Communion</a>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Connect With Us</h3>
+                    <p style="color: var(--neutral-300); margin-bottom: var(--space-4);">Stay updated with parish news and events</p>
+                    <div style="display: flex; gap: var(--space-3); margin-top: var(--space-4);">
+                        <a href="#" style="width: 40px; height: 40px; background: var(--neutral-800); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: white;">f</a>
+                        <a href="#" style="width: 40px; height: 40px; background: var(--neutral-800); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: white;">📷</a>
+                        <a href="#" style="width: 40px; height: 40px; background: var(--neutral-800); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: white;">▶</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 St. Patrick's Catholic Church, Igbogila, Ipaja. All rights reserved.</p>
+                <p style="margin-top: var(--space-2); font-style: italic;">"For where two or three gather in my name, there am I with them." - Matthew 18:20</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

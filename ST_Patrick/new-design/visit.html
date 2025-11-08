@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Parish Clinic - St. Patrick's Catholic Church, Igbogila</title>
-    <meta name="description" content="St. Patrick's Parish Clinic - Providing healthcare services to the community in Igbogila, Ipaja.">
+    <title>Plan Your Visit - St. Patrick's Catholic Church, Igbogila</title>
+    <meta name="description" content="Planning to visit St. Patrick's Catholic Church? Find mass times, location, parking information, and what to expect during your visit.">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,7 +17,7 @@
 
     <style>
         body {
-            padding-top: 100px; /* Adjusted after removing info bar */
+            padding-top: 100px;
         }
 
         .page-hero {
@@ -55,12 +55,68 @@
             padding: var(--space-16) 0;
         }
 
-        .info-box {
-            background: var(--background-alt);
+        .welcome-box {
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-light));
+            color: white;
             padding: var(--space-8);
             border-radius: var(--radius-xl);
-            border-left: 4px solid var(--secondary-green);
-            margin: var(--space-8) 0;
+            text-align: center;
+            margin-bottom: var(--space-12);
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-8);
+            margin-top: var(--space-12);
+        }
+
+        .info-card {
+            background: white;
+            border-radius: var(--radius-xl);
+            padding: var(--space-6);
+            box-shadow: var(--shadow-md);
+            border-top: 4px solid var(--primary-blue);
+            transition: all var(--transition-base);
+        }
+
+        .info-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .info-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-light), var(--primary-blue));
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: var(--text-4xl);
+            margin-bottom: var(--space-4);
+        }
+
+        .info-title {
+            font-size: var(--text-xl);
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-bottom: var(--space-3);
+        }
+
+        .map-container {
+            width: 100%;
+            height: 400px;
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            margin-top: var(--space-8);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
         }
 
         /* Footer */
@@ -98,6 +154,17 @@
             padding-top: var(--space-6);
             text-align: center;
             color: var(--neutral-400);
+        }
+
+        @media (max-width: 768px) {
+            .info-grid {
+                grid-template-columns: 1fr;
+                gap: var(--space-6);
+            }
+
+            .map-container {
+                height: 300px;
+            }
         }
     </style>
 </head>
@@ -172,14 +239,14 @@
 
                 <!-- Facilities Dropdown -->
                 <div class="nav-dropdown">
-                    <button class="nav-link dropdown-toggle active">
+                    <button class="nav-link dropdown-toggle">
                         Facilities
                         <svg class="dropdown-icon" width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
                             <path d="M6 9L1 4h10L6 9z"/>
                         </svg>
                     </button>
                     <div class="dropdown-menu">
-                        <a href="parish-clinic.html" class="dropdown-item active">Parish Clinic</a>
+                        <a href="parish-clinic.html" class="dropdown-item">Parish Clinic</a>
                         <a href="parish-project.html" class="dropdown-item">Parish Project</a>
                     </div>
                 </div>
@@ -197,13 +264,11 @@
                 <div class="breadcrumb">
                     <a href="index.html" style="color: white;">Home</a>
                     <span>/</span>
-                    <a href="#" style="color: white;">Facilities</a>
-                    <span>/</span>
-                    <span>Parish Clinic</span>
+                    <span>Plan Your Visit</span>
                 </div>
-                <h1 style="font-size: var(--text-6xl); margin-bottom: var(--space-4);">🏥 Parish Clinic</h1>
+                <h1 style="font-size: var(--text-6xl); margin-bottom: var(--space-4);">Plan Your Visit</h1>
                 <p style="font-size: var(--text-2xl); opacity: 0.95; max-width: 800px; margin: 0 auto;">
-                    Providing quality healthcare services to our community
+                    We look forward to welcoming you to St. Patrick's Catholic Church
                 </p>
             </div>
         </div>
@@ -212,45 +277,135 @@
     <!-- Main Content -->
     <section class="content-section">
         <div class="container">
-            <div style="max-width: 900px; margin: 0 auto;">
-                <div class="info-box">
-                    <h2 style="color: var(--secondary-green); margin-bottom: var(--space-4);">📢 Content Coming Soon</h2>
-                    <p style="font-size: var(--text-lg); line-height: 1.8; color: var(--text-secondary);">
-                        Information about St. Patrick's Parish Clinic will be available here soon, including:
+            <div style="max-width: 1200px; margin: 0 auto;">
+                <!-- Welcome Message -->
+                <div class="welcome-box">
+                    <h2 style="font-size: var(--text-4xl); margin-bottom: var(--space-4);">Welcome to Our Parish Family!</h2>
+                    <p style="font-size: var(--text-lg); opacity: 0.95; line-height: 1.8;">
+                        Whether you're visiting for the first time or considering making St. Patrick's your spiritual home, we're delighted to have you. Here's everything you need to know to plan your visit.
                     </p>
-                    <ul style="font-size: var(--text-lg); line-height: 1.8; color: var(--text-secondary); margin-top: var(--space-4); padding-left: var(--space-8);">
-                        <li>Clinic hours and services</li>
-                        <li>Healthcare programs and initiatives</li>
-                        <li>Contact information</li>
-                        <li>Location details</li>
-                    </ul>
                 </div>
 
-                <div class="card" style="margin-top: var(--space-12);">
-                    <h3 style="color: var(--primary-blue); margin-bottom: var(--space-4);">Contact Parish Office</h3>
+                <!-- Information Grid -->
+                <div class="info-grid">
+                    <!-- Mass Times -->
+                    <div class="info-card">
+                        <div class="info-icon">⏰</div>
+                        <h3 class="info-title">Mass Times</h3>
+                        <div style="color: var(--text-secondary); line-height: 1.8;">
+                            <p style="margin-bottom: var(--space-3);"><strong>Sunday Masses:</strong></p>
+                            <p>• 6:30 AM</p>
+                            <p>• 9:30 AM</p>
+                            <p>• 9:30 AM (Children's Mass)</p>
+                            <p style="margin-bottom: var(--space-3);">• 5:30 PM (Evening Mass)</p>
+                            <p><strong>Weekday Mass:</strong></p>
+                            <p>• 6:30 AM (Monday - Saturday)</p>
+                        </div>
+                        <a href="mass-times.html" class="btn btn-secondary" style="margin-top: var(--space-4); width: 100%;">Full Schedule</a>
+                    </div>
+
+                    <!-- Location -->
+                    <div class="info-card">
+                        <div class="info-icon">📍</div>
+                        <h3 class="info-title">Location & Address</h3>
+                        <div style="color: var(--text-secondary); line-height: 1.8;">
+                            <p style="margin-bottom: var(--space-3);"><strong>St. Patrick's Catholic Church</strong></p>
+                            <p>Igbogila, Ipaja</p>
+                            <p>Lagos, Nigeria</p>
+                            <p style="margin-top: var(--space-4);"><strong>P.O. Box:</strong> 2189, Ipaja</p>
+                        </div>
+                        <a href="contact.html" class="btn btn-secondary" style="margin-top: var(--space-4); width: 100%;">Get Directions</a>
+                    </div>
+
+                    <!-- What to Expect -->
+                    <div class="info-card">
+                        <div class="info-icon">ℹ️</div>
+                        <h3 class="info-title">What to Expect</h3>
+                        <div style="color: var(--text-secondary); line-height: 1.8;">
+                            <p style="margin-bottom: var(--space-2);">• Warm and welcoming community</p>
+                            <p style="margin-bottom: var(--space-2);">• Traditional Catholic Mass</p>
+                            <p style="margin-bottom: var(--space-2);">• Hymns and worship music</p>
+                            <p style="margin-bottom: var(--space-2);">• Fellowship after Mass</p>
+                            <p style="margin-bottom: var(--space-2);">• Children's programs available</p>
+                            <p>• Parking available on site</p>
+                        </div>
+                    </div>
+
+                    <!-- First Time Visitors -->
+                    <div class="info-card">
+                        <div class="info-icon">👋</div>
+                        <h3 class="info-title">First Time Visitors</h3>
+                        <div style="color: var(--text-secondary); line-height: 1.8;">
+                            <p style="margin-bottom: var(--space-3);">We're so glad you're here! Here are a few helpful tips:</p>
+                            <p style="margin-bottom: var(--space-2);">• Arrive 10-15 minutes early</p>
+                            <p style="margin-bottom: var(--space-2);">• Dress modestly and respectfully</p>
+                            <p style="margin-bottom: var(--space-2);">• Feel free to ask ushers for help</p>
+                            <p>• Join us for fellowship after Mass</p>
+                        </div>
+                    </div>
+
+                    <!-- Contact Information -->
+                    <div class="info-card">
+                        <div class="info-icon">📞</div>
+                        <h3 class="info-title">Contact Us</h3>
+                        <div style="color: var(--text-secondary); line-height: 1.8;">
+                            <p style="margin-bottom: var(--space-3);"><strong>Phone:</strong><br>+234 802 344 4069</p>
+                            <p style="margin-bottom: var(--space-3);"><strong>Email:</strong><br>Info@stpatrickigbogilaipaja.com</p>
+                            <p><strong>Office Hours:</strong><br>
+                            Mon, Tue, Fri: 9:00 AM - 4:00 PM<br>
+                            Wed: 8:00 AM - 12:00 PM</p>
+                        </div>
+                        <a href="contact.html" class="btn btn-secondary" style="margin-top: var(--space-4); width: 100%;">Contact Form</a>
+                    </div>
+
+                    <!-- Getting Involved -->
+                    <div class="info-card">
+                        <div class="info-icon">🤝</div>
+                        <h3 class="info-title">Getting Involved</h3>
+                        <div style="color: var(--text-secondary); line-height: 1.8;">
+                            <p style="margin-bottom: var(--space-3);">Join one of our many parish organisations and societies:</p>
+                            <p style="margin-bottom: var(--space-2);">• Catholic Men Organisation (CMO)</p>
+                            <p style="margin-bottom: var(--space-2);">• Catholic Women Organisation (CWO)</p>
+                            <p style="margin-bottom: var(--space-2);">• Youth Organisation (CYON)</p>
+                            <p>• And many more!</p>
+                        </div>
+                        <a href="ministries.html" class="btn btn-secondary" style="margin-top: var(--space-4); width: 100%;">View All Societies</a>
+                    </div>
+                </div>
+
+                <!-- Map Section -->
+                <div class="card" style="margin-top: var(--space-16);">
+                    <h3 style="color: var(--primary-blue); margin-bottom: var(--space-4);">Find Us on the Map</h3>
                     <p style="color: var(--text-secondary); margin-bottom: var(--space-6);">
-                        For immediate information about the parish clinic, please contact the parish office.
+                        Located in Igbogila, Ipaja area of Lagos. Use the map below to get directions from your location.
                     </p>
-                    <div style="display: grid; gap: var(--space-4);">
-                        <div style="display: flex; align-items: center; gap: var(--space-3);">
-                            <span style="font-size: var(--text-2xl);">📞</span>
-                            <div>
-                                <strong>Phone:</strong> +234 802 344 4069
-                            </div>
-                        </div>
-                        <div style="display: flex; align-items: center; gap: var(--space-3);">
-                            <span style="font-size: var(--text-2xl);">✉️</span>
-                            <div>
-                                <strong>Email:</strong> Info@stpatrickigbogilaipaja.com
-                            </div>
-                        </div>
+                    <div class="map-container">
+                        <!-- Google Maps Embed - Replace with actual coordinates -->
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.2!2d3.2553!3d6.5569!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMzMnMjQuOCJOIDPCsDE1JzE5LjEiRQ!5e0!3m2!1sen!2sng!4v1234567890"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="St. Patrick's Catholic Church Location">
+                        </iframe>
+                    </div>
+                </div>
+
+                <!-- Call to Action -->
+                <div class="card" style="margin-top: var(--space-12); text-align: center; background: var(--background-alt);">
+                    <h3 style="color: var(--primary-blue); margin-bottom: var(--space-4);">Ready to Join Us?</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: var(--space-6); font-size: var(--text-lg);">
+                        Whether you're visiting for one Sunday or looking to make St. Patrick's your parish home, we'd love to meet you.
+                    </p>
+                    <div style="display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap;">
+                        <a href="parish-register.html" class="btn btn-primary btn-large">Register as Parishioner</a>
+                        <a href="contact.html" class="btn btn-secondary btn-large">Contact Us</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <!-- Footer -->
     <footer>
         <div class="container">
