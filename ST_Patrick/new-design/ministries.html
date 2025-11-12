@@ -36,94 +36,118 @@
             background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
         }
 
-        /* Ministry Cards */
+        /* Ministry Cards - Modern Design */
         .ministry-card {
             background: white;
             border-radius: var(--radius-2xl);
             padding: 0;
-            box-shadow: var(--shadow-lg);
-            transition: all var(--transition-base);
-            border-left: 5px solid var(--primary-blue);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease;
             display: flex;
             flex-direction: column;
             height: 100%;
             overflow: hidden;
+            border: 1px solid var(--neutral-200);
         }
 
         .ministry-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-2xl);
-            border-left-color: var(--accent-gold);
+            transform: translateY(-6px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            border-color: var(--primary-blue);
+        }
+
+        .ministry-card-image-wrapper {
+            width: 100%;
+            height: 280px;
+            background: var(--background-alt);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            padding: var(--space-4);
         }
 
         .ministry-card-image {
             width: 100%;
-            height: 380px;
-            object-fit: cover;
-            object-position: center top;
+            height: 100%;
+            object-fit: contain;
             display: block;
         }
 
         .ministry-card-content {
-            padding: var(--space-8);
+            padding: var(--space-6);
             flex: 1;
             display: flex;
             flex-direction: column;
         }
 
-        /* Specific adjustments for images with head visibility issues */
-        .daily-ministry .ministry-card-image {
-            height: 480px;
-            object-position: center 15%;
+        /* Remove old specific adjustments */
+        .daily-ministry .ministry-card-image-wrapper {
+            height: 280px;
         }
 
-        /* Legion of Mary and other weekly ministries */
-        .weekly-ministry .ministry-card-image {
-            height: 460px;
-            object-position: center 10%;
+        .weekly-ministry .ministry-card-image-wrapper {
+            height: 280px;
         }
 
         .ministry-icon {
-            width: 70px;
-            height: 70px;
-            background: linear-gradient(135deg, var(--primary-light), var(--primary-blue));
-            border-radius: var(--radius-xl);
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-light));
+            border-radius: var(--radius-lg);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: var(--text-3xl);
-            margin-bottom: var(--space-4);
+            font-size: var(--text-2xl);
+            margin-bottom: var(--space-3);
+            box-shadow: 0 2px 8px rgba(59, 130, 246, 0.2);
         }
 
         .ministry-name {
-            font-size: var(--text-xl);
+            font-size: var(--text-lg);
             font-weight: 700;
-            color: var(--primary-blue);
-            margin-bottom: var(--space-3);
-            line-height: 1.3;
+            color: var(--text-primary);
+            margin-bottom: var(--space-2);
+            line-height: 1.4;
         }
 
         .ministry-acronym {
-            color: var(--accent-gold);
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent-gold), #f59e0b);
+            color: white;
             font-weight: 600;
-            font-size: var(--text-sm);
+            font-size: var(--text-xs);
+            padding: var(--space-1) var(--space-3);
+            border-radius: var(--radius-full);
+            margin-bottom: var(--space-3);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .ministry-description {
+            color: var(--text-secondary);
             margin-bottom: var(--space-4);
+            line-height: 1.7;
+            font-size: var(--text-sm);
+            flex: 1;
         }
 
         .meeting-info {
-            background: var(--background-alt);
+            background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
             padding: var(--space-4);
             border-radius: var(--radius-lg);
             margin-top: auto;
+            border-left: 3px solid var(--primary-blue);
         }
 
         .meeting-day {
             font-weight: 600;
-            color: var(--text-primary);
+            color: var(--primary-blue);
             margin-bottom: var(--space-2);
             display: flex;
             align-items: center;
             gap: var(--space-2);
+            font-size: var(--text-sm);
         }
 
         .meeting-time {
@@ -131,6 +155,7 @@
             display: flex;
             align-items: center;
             gap: var(--space-2);
+            font-size: var(--text-sm);
         }
 
         /* Category Sections */
@@ -161,21 +186,21 @@
         /* Grid Layouts */
         .ministries-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: var(--space-8);
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: var(--space-6);
         }
 
-        /* Special Ministry Highlights */
+        /* Special Ministry Highlights - Remove borders, use subtle differences */
         .daily-ministry {
-            border-left-color: var(--crimson-red);
+            /* All cards have consistent border now */
         }
 
         .weekly-ministry {
-            border-left-color: var(--secondary-green);
+            /* All cards have consistent border now */
         }
 
         .monthly-ministry {
-            border-left-color: var(--primary-blue);
+            /* All cards have consistent border now */
         }
 
         /* Call to Action */
@@ -197,16 +222,13 @@
                 padding: var(--space-16) 0 var(--space-12);
             }
 
-            .ministry-card-image {
-                height: 320px;
+            .ministry-card-image-wrapper {
+                height: 240px;
             }
 
-            .daily-ministry .ministry-card-image {
-                height: 380px;
-            }
-
-            .weekly-ministry .ministry-card-image {
-                height: 360px;
+            .daily-ministry .ministry-card-image-wrapper,
+            .weekly-ministry .ministry-card-image-wrapper {
+                height: 240px;
             }
         }
 
@@ -476,7 +498,7 @@
         <div class="container">
             <div class="stats-grid">
                 <div class="stat-box">
-                    <div class="stat-number">17</div>
+                    <div class="stat-number">18</div>
                     <div class="stat-label">Active Organisations</div>
                 </div>
                 <div class="stat-box">
@@ -518,11 +540,13 @@
 
                 <div class="ministries-grid">
                     <div class="ministry-card daily-ministry">
-                        <img src="images/organisation/DIVINE MERCY DEVOTEE.jpeg" alt="Divine Mercy Devotee" class="ministry-card-image" loading="lazy">
+                        <div class="ministry-card-image-wrapper">
+                            <img src="images/organisation/DIVINE MERCY DEVOTEE.jpeg" alt="Divine Mercy Devotee" class="ministry-card-image" loading="lazy">
+                        </div>
                         <div class="ministry-card-content">
                             <div class="ministry-icon">❤️</div>
                             <h3 class="ministry-name">Divine Mercy Devotee</h3>
-                            <p style="color: var(--text-secondary); margin-bottom: var(--space-4); line-height: 1.7;">
+                            <p class="ministry-description">
                                 Daily prayers at the hour of Divine Mercy, interceding for God's mercy upon the world and souls.
                             </p>
                             <div class="meeting-info">
@@ -554,11 +578,13 @@
                 <div class="ministries-grid">
                     <!-- Our Lady of Perpetual Help -->
                     <div class="ministry-card weekly-ministry">
-                        <img src="images/organisation/OUR LADY OF PERPETUAL HELP.jpeg" alt="Our Lady of Perpetual Help" class="ministry-card-image" loading="lazy">
+                        <div class="ministry-card-image-wrapper">
+                            <img src="images/organisation/OUR LADY OF PERPETUAL HELP.jpeg" alt="Our Lady of Perpetual Help" class="ministry-card-image" loading="lazy">
+                        </div>
                         <div class="ministry-card-content">
                             <div class="ministry-icon">🌹</div>
                             <h3 class="ministry-name">Our Lady of Perpetual Help</h3>
-                            <p style="color: var(--text-secondary); margin-bottom: var(--space-4); line-height: 1.7;">
+                            <p class="ministry-description">
                                 Devotion to the Blessed Virgin Mary under her title of Perpetual Help. Prayers, rosary, and Marian consecration.
                             </p>
                             <div class="meeting-info">
@@ -576,14 +602,13 @@
 
                     <!-- St. Vincent de Paul -->
                     <div class="ministry-card weekly-ministry">
-                        <div style="width: 100%; height: 380px; background: linear-gradient(135deg, #2e7d32 0%, #43a047 50%, #66bb6a 100%); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden;">
-                            <div style="font-size: 120px; opacity: 0.15; position: absolute;">🤲</div>
-                            <div style="font-size: 80px; z-index: 1;">🤲</div>
+                        <div class="ministry-card-image-wrapper">
+                            <img src="images/organisation/St. Vincent de Paul Society.jpeg" alt="St. Vincent de Paul Society" class="ministry-card-image" loading="lazy">
                         </div>
                         <div class="ministry-card-content">
                             <div class="ministry-icon">🤲</div>
                             <h3 class="ministry-name">St. Vincent de Paul Society</h3>
-                            <p style="color: var(--text-secondary); margin-bottom: var(--space-4); line-height: 1.7;">
+                            <p class="ministry-description">
                                 Serving the poor and needy in our community through charitable works and spiritual support.
                             </p>
                             <div class="meeting-info">
@@ -601,11 +626,13 @@
 
                     <!-- Legion of Mary -->
                     <div class="ministry-card weekly-ministry">
-                        <img src="images/organisation/LEGION OF MARY.jpeg" alt="Legion of Mary" class="ministry-card-image" loading="lazy">
+                        <div class="ministry-card-image-wrapper">
+                            <img src="images/organisation/LEGION OF MARY.jpeg" alt="Legion of Mary" class="ministry-card-image" loading="lazy">
+                        </div>
                         <div class="ministry-card-content">
                             <div class="ministry-icon">👑</div>
                             <h3 class="ministry-name">Legion of Mary</h3>
-                            <p style="color: var(--text-secondary); margin-bottom: var(--space-4); line-height: 1.7;">
+                            <p class="ministry-description">
                                 An association of Catholics who serve the Church through prayer and active cooperation in Mary's work.
                             </p>
                             <div class="meeting-info">
@@ -623,12 +650,14 @@
 
                     <!-- Catholic Charismatic Renewal -->
                     <div class="ministry-card weekly-ministry">
-                        <img src="images/organisation/CATHOLIC CHARISMATIC RENEWAL.jpeg" alt="Catholic Charismatic Renewal" class="ministry-card-image" loading="lazy">
+                        <div class="ministry-card-image-wrapper">
+                            <img src="images/organisation/CATHOLIC CHARISMATIC RENEWAL.jpeg" alt="Catholic Charismatic Renewal" class="ministry-card-image" loading="lazy">
+                        </div>
                         <div class="ministry-card-content">
                             <div class="ministry-icon">🔥</div>
                             <h3 class="ministry-name">Catholic Charismatic Renewal</h3>
                             <p class="ministry-acronym">Ipaja Ayobo - New Life Prayer Group</p>
-                            <p style="color: var(--text-secondary); margin-bottom: var(--space-4); line-height: 1.7;">
+                            <p class="ministry-description">
                                 Charismatic prayer, worship, healing, and renewal in the Holy Spirit. Vibrant praise and worship sessions.
                             </p>
                             <div class="meeting-info">
@@ -660,12 +689,14 @@
                 <div class="ministries-grid">
                     <!-- CCM -->
                     <div class="ministry-card monthly-ministry">
-                        <img src="images/organisation/CONFRATERNITY OF CHRISTIAN MOTHERS.jpeg" alt="Confraternity of Christian Mothers" class="ministry-card-image" loading="lazy">
+                        <div class="ministry-card-image-wrapper">
+                            <img src="images/organisation/CONFRATERNITY OF CHRISTIAN MOTHERS.jpeg" alt="Confraternity of Christian Mothers" class="ministry-card-image" loading="lazy">
+                        </div>
                         <div class="ministry-card-content">
                             <div class="ministry-icon">👩‍👧‍👦</div>
                             <h3 class="ministry-name">Confraternity of Christian Mothers</h3>
                             <p class="ministry-acronym">CCM</p>
-                            <p style="color: var(--text-secondary); margin-bottom: var(--space-4); line-height: 1.7;">
+                            <p class="ministry-description">
                                 Association of Catholic mothers dedicated to prayer, family values, and supporting the spiritual life of the parish.
                             </p>
                             <div class="meeting-info">
@@ -697,12 +728,14 @@
                 <div class="ministries-grid">
                     <!-- CWO -->
                     <div class="ministry-card monthly-ministry">
-                        <img src="images/organisation/CATHOLIC WOMEN ORGANISATION.jpeg" alt="Catholic Women Organisation" class="ministry-card-image" loading="lazy">
+                        <div class="ministry-card-image-wrapper">
+                            <img src="images/organisation/CATHOLIC WOMEN ORGANISATION.jpeg" alt="Catholic Women Organisation" class="ministry-card-image" loading="lazy">
+                        </div>
                         <div class="ministry-card-content">
                             <div class="ministry-icon">👩</div>
                             <h3 class="ministry-name">Catholic Women Organisation</h3>
                             <p class="ministry-acronym">CWO</p>
-                            <p style="color: var(--text-secondary); margin-bottom: var(--space-4); line-height: 1.7;">
+                            <p class="ministry-description">
                                 Empowering Catholic women to serve the Church and community through faith, fellowship, and charitable works.
                             </p>
                             <div class="meeting-info">
@@ -720,12 +753,14 @@
 
                     <!-- CMO -->
                     <div class="ministry-card monthly-ministry">
-                        <img src="images/organisation/CATHOLIC MEN ORGANISATION.jpeg" alt="Catholic Men Organisation" class="ministry-card-image" loading="lazy">
+                        <div class="ministry-card-image-wrapper">
+                            <img src="images/organisation/CATHOLIC MEN ORGANISATION.jpeg" alt="Catholic Men Organisation" class="ministry-card-image" loading="lazy">
+                        </div>
                         <div class="ministry-card-content">
                             <div class="ministry-icon">👨</div>
                             <h3 class="ministry-name">Catholic Men Organisation</h3>
                             <p class="ministry-acronym">CMO</p>
-                            <p style="color: var(--text-secondary); margin-bottom: var(--space-4); line-height: 1.7;">
+                            <p class="ministry-description">
                                 Catholic men united in faith, promoting spiritual growth, and providing leadership in the parish community.
                             </p>
                             <div class="meeting-info">
@@ -743,12 +778,14 @@
 
                     <!-- CYON -->
                     <div class="ministry-card monthly-ministry">
-                        <img src="images/organisation/CATHOLIC YOUTH ORGANISATION.jpeg" alt="Catholic Youth Organisation" class="ministry-card-image" loading="lazy">
+                        <div class="ministry-card-image-wrapper">
+                            <img src="images/organisation/CATHOLIC YOUTH ORGANISATION.jpeg" alt="Catholic Youth Organisation" class="ministry-card-image" loading="lazy">
+                        </div>
                         <div class="ministry-card-content">
                             <div class="ministry-icon">🎓</div>
                             <h3 class="ministry-name">Catholic Youth Organisation</h3>
                             <p class="ministry-acronym">CYON</p>
-                            <p style="color: var(--text-secondary); margin-bottom: var(--space-4); line-height: 1.7;">
+                            <p class="ministry-description">
                                 Young Catholics growing in faith together through fellowship, service, and spiritual formation.
                             </p>
                             <div class="meeting-info">
@@ -766,12 +803,14 @@
 
                     <!-- MCA -->
                     <div class="ministry-card monthly-ministry">
-                        <img src="images/organisation/MISSIONARY CHILDHOOD ASSOCIATION.jpeg" alt="Missionary Childhood Association" class="ministry-card-image" loading="lazy">
+                        <div class="ministry-card-image-wrapper">
+                            <img src="images/organisation/MISSIONARY CHILDHOOD ASSOCIATION.jpeg" alt="Missionary Childhood Association" class="ministry-card-image" loading="lazy">
+                        </div>
                         <div class="ministry-card-content">
                             <div class="ministry-icon">👶</div>
                             <h3 class="ministry-name">Missionary Childhood Association</h3>
                             <p class="ministry-acronym">MCA</p>
-                            <p style="color: var(--text-secondary); margin-bottom: var(--space-4); line-height: 1.7;">
+                            <p class="ministry-description">
                                 Forming young hearts for mission work and helping children understand their role in spreading the Gospel.
                             </p>
                             <div class="meeting-info">
@@ -789,12 +828,14 @@
 
                     <!-- YCW -->
                     <div class="ministry-card monthly-ministry">
-                        <img src="images/organisation/YOUNG CATHOLIC WORKERS ASSOCIATION.jpeg" alt="Young Catholic Workers Association" class="ministry-card-image" loading="lazy">
+                        <div class="ministry-card-image-wrapper">
+                            <img src="images/organisation/YOUNG CATHOLIC WORKERS ASSOCIATION.jpeg" alt="Young Catholic Workers Association" class="ministry-card-image" loading="lazy">
+                        </div>
                         <div class="ministry-card-content">
                             <div class="ministry-icon">💼</div>
                             <h3 class="ministry-name">Young Catholic Workers Association</h3>
                             <p class="ministry-acronym">YCW</p>
-                            <p style="color: var(--text-secondary); margin-bottom: var(--space-4); line-height: 1.7;">
+                            <p class="ministry-description">
                                 Young working Catholics bringing faith into the workplace and supporting each other's spiritual and professional growth.
                             </p>
                             <div class="meeting-info">
@@ -826,14 +867,16 @@
                 <div class="ministries-grid">
                     <!-- St. John Society -->
                     <div class="ministry-card monthly-ministry">
-                        <div style="width: 100%; height: 380px; background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #60a5fa 100%); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden;">
-                            <div style="font-size: 120px; opacity: 0.15; position: absolute;">📖</div>
-                            <div style="font-size: 80px; z-index: 1;">📖</div>
+                        <div class="ministry-card-image-wrapper">
+                            <div style="width: 100%; height: 380px; background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #60a5fa 100%); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden;">
+                                <div style="font-size: 120px; opacity: 0.15; position: absolute;">📖</div>
+                                <div style="font-size: 80px; z-index: 1;">📖</div>
+                            </div>
                         </div>
                         <div class="ministry-card-content">
                             <div class="ministry-icon">📖</div>
                             <h3 class="ministry-name">St. John Society</h3>
-                            <p style="color: var(--text-secondary); margin-bottom: var(--space-4); line-height: 1.7;">
+                            <p class="ministry-description">
                                 Devotion to St. John the Evangelist, promoting love, truth, and contemplation in the Christian life.
                             </p>
                             <div class="meeting-info">
@@ -851,14 +894,16 @@
 
                     <!-- Holy Family Society -->
                     <div class="ministry-card monthly-ministry">
-                        <div style="width: 100%; height: 380px; background: linear-gradient(135deg, #7c3aed 0%, #a78bfa 50%, #c4b5fd 100%); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden;">
-                            <div style="font-size: 120px; opacity: 0.15; position: absolute;">👨‍👩‍👧‍👦</div>
-                            <div style="font-size: 80px; z-index: 1;">👨‍👩‍👧‍👦</div>
+                        <div class="ministry-card-image-wrapper">
+                            <div style="width: 100%; height: 380px; background: linear-gradient(135deg, #7c3aed 0%, #a78bfa 50%, #c4b5fd 100%); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden;">
+                                <div style="font-size: 120px; opacity: 0.15; position: absolute;">👨‍👩‍👧‍👦</div>
+                                <div style="font-size: 80px; z-index: 1;">👨‍👩‍👧‍👦</div>
+                            </div>
                         </div>
                         <div class="ministry-card-content">
                             <div class="ministry-icon">👨‍👩‍👧‍👦</div>
                             <h3 class="ministry-name">Holy Family Society</h3>
-                            <p style="color: var(--text-secondary); margin-bottom: var(--space-4); line-height: 1.7;">
+                            <p class="ministry-description">
                                 Strengthening family bonds through prayer and devotion to the Holy Family of Jesus, Mary, and Joseph.
                             </p>
                             <div class="meeting-info">
@@ -876,14 +921,16 @@
 
                     <!-- St. Patrick Society -->
                     <div class="ministry-card monthly-ministry">
-                        <div style="width: 100%; height: 380px; background: linear-gradient(135deg, #059669 0%, #10b981 50%, #34d399 100%); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden;">
-                            <div style="font-size: 120px; opacity: 0.15; position: absolute;">☘️</div>
-                            <div style="font-size: 80px; z-index: 1;">☘️</div>
+                        <div class="ministry-card-image-wrapper">
+                            <div style="width: 100%; height: 380px; background: linear-gradient(135deg, #059669 0%, #10b981 50%, #34d399 100%); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden;">
+                                <div style="font-size: 120px; opacity: 0.15; position: absolute;">☘️</div>
+                                <div style="font-size: 80px; z-index: 1;">☘️</div>
+                            </div>
                         </div>
                         <div class="ministry-card-content">
                             <div class="ministry-icon">☘️</div>
                             <h3 class="ministry-name">St. Patrick Society</h3>
-                            <p style="color: var(--text-secondary); margin-bottom: var(--space-4); line-height: 1.7;">
+                            <p class="ministry-description">
                                 Honoring our parish patron through prayer, service, and upholding the faith St. Patrick brought to Ireland.
                             </p>
                             <div class="meeting-info">
@@ -901,14 +948,13 @@
 
                     <!-- All Saints Society -->
                     <div class="ministry-card monthly-ministry">
-                        <div style="width: 100%; height: 380px; background: linear-gradient(135deg, #d97706 0%, #f59e0b 50%, #fbbf24 100%); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden;">
-                            <div style="font-size: 120px; opacity: 0.15; position: absolute;">🌟</div>
-                            <div style="font-size: 80px; z-index: 1;">🌟</div>
+                        <div class="ministry-card-image-wrapper">
+                            <img src="images/organisation/All saint.jpeg" alt="All Saints Society" class="ministry-card-image" loading="lazy">
                         </div>
                         <div class="ministry-card-content">
                             <div class="ministry-icon">🌟</div>
                             <h3 class="ministry-name">All Saints Society</h3>
-                            <p style="color: var(--text-secondary); margin-bottom: var(--space-4); line-height: 1.7;">
+                            <p class="ministry-description">
                                 Celebrating the communion of saints and striving for holiness through their intercession and example.
                             </p>
                             <div class="meeting-info">
@@ -940,11 +986,13 @@
                 <div class="ministries-grid">
                     <!-- Church Warden -->
                     <div class="ministry-card monthly-ministry" style="border-left-color: var(--accent-gold);">
-                        <img src="images/organisation/Church Warden.jpeg" alt="Church Warden" class="ministry-card-image" loading="lazy">
+                        <div class="ministry-card-image-wrapper">
+                            <img src="images/organisation/Church Warden.jpeg" alt="Church Warden" class="ministry-card-image" loading="lazy">
+                        </div>
                         <div class="ministry-card-content">
                             <div class="ministry-icon" style="background: linear-gradient(135deg, var(--accent-gold), #f59e0b);">⛪</div>
                             <h3 class="ministry-name">Church Warden</h3>
-                            <p style="color: var(--text-secondary); margin-bottom: var(--space-4); line-height: 1.7;">
+                            <p class="ministry-description">
                                 Responsible for the care and maintenance of the church building, ensuring a sacred and welcoming worship space.
                             </p>
                             <div class="meeting-info">
@@ -962,11 +1010,13 @@
 
                     <!-- Sacred Heart & Immaculate Heart -->
                     <div class="ministry-card monthly-ministry" style="border-left-color: var(--accent-gold);">
-                        <img src="images/organisation/SACRED HEART OF JESUS  & IMMACULATE HEART OF MARY.jpeg" alt="Sacred Heart of Jesus & Immaculate Heart of Mary" class="ministry-card-image" loading="lazy">
+                        <div class="ministry-card-image-wrapper">
+                            <img src="images/organisation/SACRED HEART OF JESUS  & IMMACULATE HEART OF MARY.jpeg" alt="Sacred Heart of Jesus & Immaculate Heart of Mary" class="ministry-card-image" loading="lazy">
+                        </div>
                         <div class="ministry-card-content">
                             <div class="ministry-icon" style="background: linear-gradient(135deg, var(--crimson-red), #d32f2f);">❤️‍🔥</div>
                             <h3 class="ministry-name">Sacred Heart of Jesus & Immaculate Heart of Mary</h3>
-                            <p style="color: var(--text-secondary); margin-bottom: var(--space-4); line-height: 1.7;">
+                            <p class="ministry-description">
                                 Devotion to the Sacred Hearts of Jesus and Mary, reparation, and consecration to the Two Hearts.
                             </p>
                             <div class="meeting-info">
@@ -977,6 +1027,31 @@
                                 <div class="meeting-time">
                                     <span>🕒</span>
                                     <span>After 6:30 AM Mass</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Men of Order And Discipline -->
+                    <div class="ministry-card monthly-ministry" style="border-left-color: var(--accent-gold);">
+                        <div class="ministry-card-image-wrapper">
+                            <img src="images/organisation/Men of Order And Discipline.jpeg" alt="Men of Order And Discipline" class="ministry-card-image" loading="lazy">
+                        </div>
+                        <div class="ministry-card-content">
+                            <div class="ministry-icon" style="background: linear-gradient(135deg, var(--primary-blue), var(--primary-light);">🛡️</div>
+                            <h3 class="ministry-name">Men of Order And Discipline</h3>
+                            <p class="ministry-acronym">MOOD</p>
+                            <p class="ministry-description">
+                                Dedicated to maintaining order, discipline, and reverence during liturgical celebrations and parish events.
+                            </p>
+                            <div class="meeting-info">
+                                <div class="meeting-day">
+                                    <span>📅</span>
+                                    <span>Every 1st Saturday</span>
+                                </div>
+                                <div class="meeting-time">
+                                    <span>🕒</span>
+                                    <span>After 7:00 AM Mass</span>
                                 </div>
                             </div>
                         </div>
@@ -1043,11 +1118,9 @@
                 <div class="footer-column">
                     <h3>Connect With Us</h3>
                     <p style="color: var(--neutral-300); margin-bottom: var(--space-4);">Stay updated with parish news and events</p>
-                    <div style="display: flex; gap: var(--space-3); margin-top: var(--space-4);">
-                        <a href="#" style="width: 40px; height: 40px; background: var(--neutral-800); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: white;">f</a>
-                        <a href="#" style="width: 40px; height: 40px; background: var(--neutral-800); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: white;">📷</a>
-                        <a href="#" style="width: 40px; height: 40px; background: var(--neutral-800); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: white;">▶</a>
-                    </div>
+                    <p style="color: var(--neutral-400); font-size: var(--text-sm); font-style: italic;">
+                        Social media channels coming soon. For now, contact us directly at Info@stpatrickigbogilaipaja.com
+                    </p>
                 </div>
             </div>
 

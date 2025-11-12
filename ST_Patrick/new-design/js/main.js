@@ -294,38 +294,54 @@ document.addEventListener('DOMContentLoaded', function() {
             submitBtn.classList.add('loading');
             submitBtn.disabled = true;
 
+            // Remove any existing messages
+            const existingMessages = this.parentElement.querySelectorAll('.success-message, .error-message');
+            existingMessages.forEach(msg => msg.remove());
+
             try {
-                // Simulate form submission (replace with actual API call)
-                await new Promise(resolve => setTimeout(resolve, 2000));
+                // Get form data
+                const formData = new FormData(this);
 
-                // Show success message
-                const successDiv = document.createElement('div');
-                successDiv.className = 'success-message show';
-                successDiv.style.cssText = 'background: var(--secondary-green); color: white; padding: var(--space-4); border-radius: var(--radius-lg); margin-top: var(--space-4); text-align: center;';
-                successDiv.textContent = '✓ Thank you! Your message has been sent successfully. We will get back to you soon.';
-                successDiv.setAttribute('role', 'alert');
+                // Submit form via AJAX
+                const response = await fetch(this.action, {
+                    method: 'POST',
+                    body: formData
+                });
 
-                this.insertAdjacentElement('afterend', successDiv);
-                this.reset();
+                const data = await response.json();
 
-                // Remove success message after 5 seconds
-                setTimeout(() => {
-                    successDiv.remove();
-                }, 5000);
+                if (data.success) {
+                    // Show success message
+                    const successDiv = document.createElement('div');
+                    successDiv.className = 'success-message show';
+                    successDiv.style.cssText = 'background: var(--secondary-green); color: white; padding: var(--space-4); border-radius: var(--radius-lg); margin-top: var(--space-4); text-align: center;';
+                    successDiv.textContent = '✓ ' + data.message;
+                    successDiv.setAttribute('role', 'alert');
+
+                    this.insertAdjacentElement('afterend', successDiv);
+                    this.reset();
+
+                    // Remove success message after 8 seconds
+                    setTimeout(() => {
+                        successDiv.remove();
+                    }, 8000);
+                } else {
+                    throw new Error(data.message || 'Submission failed');
+                }
 
             } catch (error) {
                 // Show error message
                 const errorDiv = document.createElement('div');
                 errorDiv.className = 'error-message show';
                 errorDiv.style.cssText = 'background: var(--crimson-red); color: white; padding: var(--space-4); border-radius: var(--radius-lg); margin-top: var(--space-4); text-align: center;';
-                errorDiv.textContent = '✗ Sorry, there was an error sending your message. Please try again.';
+                errorDiv.textContent = '✗ ' + (error.message || 'Sorry, there was an error sending your message. Please try again.');
                 errorDiv.setAttribute('role', 'alert');
 
                 this.insertAdjacentElement('afterend', errorDiv);
 
                 setTimeout(() => {
                     errorDiv.remove();
-                }, 5000);
+                }, 8000);
             } finally {
                 // Remove loading state
                 submitBtn.classList.remove('loading');

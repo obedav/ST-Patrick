@@ -113,26 +113,124 @@
     <section class="section"><div class="container">
         <div style="background: var(--background-alt); padding: var(--space-6); border-radius: var(--radius-lg); margin-bottom: var(--space-8); text-align: center;">
             <h3 style="color: var(--primary-blue); margin-bottom: var(--space-3); font-size: var(--text-2xl);">📝 Bulletin Updates</h3>
-            <p style="color: var(--text-secondary); font-size: var(--text-lg);">Weekly bulletins will be posted here every Sunday. Check back regularly for the latest parish news and announcements.</p>
+            <p style="color: var(--text-secondary); font-size: var(--text-lg);">Daily Mass Readings, Saint of the Day, and weekly parish announcements</p>
         </div>
+
         <div class="bulletin-section">
-            <h2>📅 This Week's Bulletin - [Date TBD]</h2>
-            <p style="color: var(--text-secondary); margin-bottom: var(--space-6);">Current week's bulletin content will appear here</p>
+            <h2>📖 Today's Daily Mass Readings</h2>
+            <p style="color: var(--text-secondary); margin-bottom: var(--space-6);">Click the links below to read today's complete Mass readings with full Scripture text</p>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-4); margin-bottom: var(--space-6);">
+                <!-- Catholic Online Card -->
+                <a href="https://www.catholic.org/bible/daily_reading/" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
+                    <div style="background: linear-gradient(135deg, #1e40af, #3b82f6); padding: var(--space-6); border-radius: var(--radius-xl); text-align: center; transition: transform 0.2s; height: 100%;">
+                        <div style="font-size: 3rem; margin-bottom: var(--space-3);">📖</div>
+                        <h3 style="color: white; margin-bottom: var(--space-2); font-size: var(--text-xl);">Catholic Online</h3>
+                        <p style="color: rgba(255,255,255,0.9); font-size: var(--text-sm);">Complete daily readings with full Scripture text</p>
+                    </div>
+                </a>
+
+                <!-- USCCB Card -->
+                <a href="https://bible.usccb.org/daily-bible-reading" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
+                    <div style="background: linear-gradient(135deg, #7c3aed, #a78bfa); padding: var(--space-6); border-radius: var(--radius-xl); text-align: center; transition: transform 0.2s; height: 100%;">
+                        <div style="font-size: 3rem; margin-bottom: var(--space-3);">⛪</div>
+                        <h3 style="color: white; margin-bottom: var(--space-2); font-size: var(--text-xl);">USCCB</h3>
+                        <p style="color: rgba(255,255,255,0.9); font-size: var(--text-sm);">Official US Catholic Conference readings</p>
+                    </div>
+                </a>
+
+                <!-- Universalis Card -->
+                <a href="https://universalis.com/mass.htm" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
+                    <div style="background: linear-gradient(135deg, #059669, #10b981); padding: var(--space-6); border-radius: var(--radius-xl); text-align: center; transition: transform 0.2s; height: 100%;">
+                        <div style="font-size: 3rem; margin-bottom: var(--space-3);">📚</div>
+                        <h3 style="color: white; margin-bottom: var(--space-2); font-size: var(--text-xl);">Universalis</h3>
+                        <p style="color: rgba(255,255,255,0.9); font-size: var(--text-sm);">Liturgy of the Hours & Mass readings</p>
+                    </div>
+                </a>
+            </div>
+
+            <style>
+                a:has(div) div:hover {
+                    transform: translateY(-4px);
+                    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+                }
+            </style>
         </div>
+
         <div class="bulletin-section">
-            <h2>📖 Sunday Readings</h2>
-            <div class="reading-box"><h4 style="color: var(--liturgical-purple); margin-bottom: var(--space-2);">First Reading</h4><p style="color: var(--text-secondary);">Reading details will be added</p></div>
-            <div class="reading-box"><h4 style="color: var(--liturgical-purple); margin-bottom: var(--space-2);">Responsorial Psalm</h4><p style="color: var(--text-secondary);">Psalm details will be added</p></div>
-            <div class="reading-box"><h4 style="color: var(--liturgical-purple); margin-bottom: var(--space-2);">Second Reading</h4><p style="color: var(--text-secondary);">Reading details will be added</p></div>
-            <div class="reading-box"><h4 style="color: var(--liturgical-purple); margin-bottom: var(--space-2);">Gospel</h4><p style="color: var(--text-secondary);">Gospel details will be added</p></div>
+            <h2>✨ Saint of the Day</h2>
+            <p style="color: var(--text-secondary); margin-bottom: var(--space-4);">Learn about today's saint and be inspired by their faith journey</p>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-4);">
+                <!-- Saint of the Day Card -->
+                <a href="https://www.catholic.org/saints/saintofday.php" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
+                    <div style="background: linear-gradient(135deg, var(--accent-gold), #f59e0b); padding: var(--space-6); border-radius: var(--radius-xl); text-align: center; transition: transform 0.2s; height: 100%;">
+                        <div style="font-size: 3rem; margin-bottom: var(--space-3);">✨</div>
+                        <h3 style="color: white; margin-bottom: var(--space-2); font-size: var(--text-xl);">Today's Saint</h3>
+                        <p style="color: rgba(255,255,255,0.95); font-size: var(--text-sm);">Discover today's featured saint and their inspiring story</p>
+                    </div>
+                </a>
+
+                <!-- All Saints Card -->
+                <a href="https://www.catholic.org/saints/stindex.php" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
+                    <div style="background: linear-gradient(135deg, #d97706, #f59e0b); padding: var(--space-6); border-radius: var(--radius-xl); text-align: center; transition: transform 0.2s; height: 100%;">
+                        <div style="font-size: 3rem; margin-bottom: var(--space-3);">📖</div>
+                        <h3 style="color: white; margin-bottom: var(--space-2); font-size: var(--text-xl);">Browse All Saints</h3>
+                        <p style="color: rgba(255,255,255,0.95); font-size: var(--text-sm);">Explore the complete index of Catholic saints</p>
+                    </div>
+                </a>
+
+                <!-- Saints Calendar Card -->
+                <a href="https://www.catholic.org/saints/calendar.php" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
+                    <div style="background: linear-gradient(135deg, #b45309, #d97706); padding: var(--space-6); border-radius: var(--radius-xl); text-align: center; transition: transform 0.2s; height: 100%;">
+                        <div style="font-size: 3rem; margin-bottom: var(--space-3);">📅</div>
+                        <h3 style="color: white; margin-bottom: var(--space-2); font-size: var(--text-xl);">Saints Calendar</h3>
+                        <p style="color: rgba(255,255,255,0.95); font-size: var(--text-sm);">View saints by month and feast days</p>
+                    </div>
+                </a>
+            </div>
         </div>
-        <div class="bulletin-section">
-            <h2>📢 Parish Announcements</h2>
-            <ul style="line-height: 2; color: var(--text-secondary);"><li>Announcements will be posted weekly</li><li>Check for ministry updates</li><li>Important dates and events</li></ul>
+
+        <!-- Quick Links to Parish Resources -->
+        <div class="bulletin-section" style="border-top: 4px solid var(--liturgical-purple);">
+            <h2 style="margin-bottom: var(--space-4);">🔗 Quick Links</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--space-4);">
+                <a href="announcement.html" style="background: linear-gradient(135deg, #3b82f6, #2563eb); color: white; padding: var(--space-5); border-radius: var(--radius-lg); text-decoration: none; text-align: center; transition: transform 0.2s;">
+                    <div style="font-size: 2rem; margin-bottom: var(--space-2);">📢</div>
+                    <strong>Parish Announcements</strong>
+                </a>
+                <a href="upcoming-events.html" style="background: linear-gradient(135deg, #8b5cf6, #7c3aed); color: white; padding: var(--space-5); border-radius: var(--radius-lg); text-decoration: none; text-align: center; transition: transform 0.2s;">
+                    <div style="font-size: 2rem; margin-bottom: var(--space-2);">📅</div>
+                    <strong>Upcoming Events</strong>
+                </a>
+                <a href="mass-times.html" style="background: linear-gradient(135deg, #059669, #047857); color: white; padding: var(--space-5); border-radius: var(--radius-lg); text-decoration: none; text-align: center; transition: transform 0.2s;">
+                    <div style="font-size: 2rem; margin-bottom: var(--space-2);">⛪</div>
+                    <strong>Mass Schedule</strong>
+                </a>
+                <a href="donate.html" style="background: linear-gradient(135deg, #d97706, #b45309); color: white; padding: var(--space-5); border-radius: var(--radius-lg); text-decoration: none; text-align: center; transition: transform 0.2s;">
+                    <div style="font-size: 2rem; margin-bottom: var(--space-2);">💝</div>
+                    <strong>Support Our Parish</strong>
+                </a>
+            </div>
         </div>
-        <div class="bulletin-section">
-            <h2>🙏 Prayer Intentions</h2>
-            <p style="color: var(--text-secondary);">Prayer intentions and special intercessions will be listed here.</p>
+
+        <div class="bulletin-section" style="border-top: 4px solid var(--secondary-green);">
+            <h2>💬 Share Your Thoughts</h2>
+            <p style="color: var(--text-secondary); margin-bottom: var(--space-4);">Have a prayer request or feedback about the bulletin? Contact the parish office.</p>
+            <div style="display: grid; gap: var(--space-3); max-width: 600px;">
+                <div style="display: flex; align-items: center; gap: var(--space-3);">
+                    <span style="font-size: var(--text-2xl);">📞</span>
+                    <div>
+                        <strong>Phone:</strong> +234 802 344 4069
+                    </div>
+                </div>
+                <div style="display: flex; align-items: center; gap: var(--space-3);">
+                    <span style="font-size: var(--text-2xl);">✉️</span>
+                    <div>
+                        <strong>Email:</strong> Info@stpatrickigbogilaipaja.com
+                    </div>
+                </div>
+            </div>
         </div>
     </div></section>
     <!-- Footer -->
@@ -173,11 +271,9 @@
                 <div class="footer-column">
                     <h3>Connect With Us</h3>
                     <p style="color: var(--neutral-300); margin-bottom: var(--space-4);">Stay updated with parish news and events</p>
-                    <div style="display: flex; gap: var(--space-3); margin-top: var(--space-4);">
-                        <a href="#" style="width: 40px; height: 40px; background: var(--neutral-800); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: white;">f</a>
-                        <a href="#" style="width: 40px; height: 40px; background: var(--neutral-800); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: white;">📷</a>
-                        <a href="#" style="width: 40px; height: 40px; background: var(--neutral-800); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: white;">▶</a>
-                    </div>
+                    <p style="color: var(--neutral-400); font-size: var(--text-sm); font-style: italic;">
+                        Social media channels coming soon. For now, contact us directly at Info@stpatrickigbogilaipaja.com
+                    </p>
                 </div>
             </div>
 

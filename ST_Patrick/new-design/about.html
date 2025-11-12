@@ -201,23 +201,38 @@
             background: white;
             border-radius: var(--radius-2xl);
             overflow: hidden;
-            box-shadow: var(--shadow-lg);
-            transition: all var(--transition-base);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease;
+            border: 1px solid var(--neutral-200);
         }
 
         .figure-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-2xl);
+            transform: translateY(-6px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            border-color: var(--primary-blue);
         }
 
         .figure-image {
             width: 100%;
-            height: 300px;
-            background: linear-gradient(135deg, var(--neutral-200), var(--neutral-300));
+            height: 320px;
+            background: var(--background-alt);
             display: flex;
             align-items: center;
             justify-content: center;
+            padding: var(--space-4);
+            overflow: hidden;
+        }
+
+        .figure-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+
+        .figure-image-placeholder {
             font-size: var(--text-6xl);
+            opacity: 0.3;
         }
 
         .figure-content {
@@ -225,15 +240,29 @@
         }
 
         .figure-name {
-            font-size: var(--text-xl);
+            font-size: var(--text-lg);
             font-weight: 700;
             margin-bottom: var(--space-2);
+            color: var(--text-primary);
         }
 
         .figure-role {
-            color: var(--primary-blue);
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-light));
+            color: white;
             font-weight: 600;
-            margin-bottom: var(--space-4);
+            font-size: var(--text-xs);
+            padding: var(--space-1) var(--space-3);
+            border-radius: var(--radius-full);
+            margin-bottom: var(--space-3);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .figure-description {
+            color: var(--text-secondary);
+            font-size: var(--text-sm);
+            line-height: 1.7;
         }
 
         @media (max-width: 768px) {
@@ -253,6 +282,14 @@
 
             .page-hero {
                 padding: var(--space-16) 0 var(--space-12);
+            }
+
+            .figure-image {
+                height: 280px;
+            }
+
+            .figures-grid {
+                grid-template-columns: 1fr;
             }
         }
 
@@ -631,47 +668,57 @@
 
             <div class="figures-grid">
                 <div class="figure-card">
-                    <div class="figure-image">✝️</div>
+                    <div class="figure-image">
+                        <span class="figure-image-placeholder">✝️</span>
+                    </div>
                     <div class="figure-content">
                         <h3 class="figure-name">Rev. Fr. Paschal Obioma C.S.Sp</h3>
                         <p class="figure-role">First Spiritan Parish Priest</p>
-                        <p style="color: var(--text-secondary);">When St. Patrick's was ceded to the Spiritians (Holy Ghost Fathers' Congregation), Fr. Obioma served as the first parish priest under the new administration.</p>
+                        <p class="figure-description">When St. Patrick's was ceded to the Spiritians (Holy Ghost Fathers' Congregation), Fr. Obioma served as the first parish priest under the new administration.</p>
                     </div>
                 </div>
 
                 <div class="figure-card">
-                    <div class="figure-image">✝️</div>
+                    <div class="figure-image">
+                        <span class="figure-image-placeholder">✝️</span>
+                    </div>
                     <div class="figure-content">
                         <h3 class="figure-name">Rev. Fr. Dan Ajayi C.S.Sp</h3>
                         <p class="figure-role">Parish Priest</p>
-                        <p style="color: var(--text-secondary);">Succeeded Fr. Obioma and continued the spiritual growth of the parish community.</p>
+                        <p class="figure-description">Succeeded Fr. Obioma and continued the spiritual growth of the parish community.</p>
                     </div>
                 </div>
 
                 <div class="figure-card">
-                    <div class="figure-image"><img src="images/Rev. Fr. Andrew Edogbo C.S.Sp.jpeg" alt=""></div>
+                    <div class="figure-image">
+                        <img src="images/Rev. Fr. Andrew Edogbo C.S.Sp.jpeg" alt="Rev. Fr. Andrew Edogbo C.S.Sp">
+                    </div>
                     <div class="figure-content">
                         <h3 class="figure-name">Rev. Fr. Andrew Edogbo C.S.Sp</h3>
                         <p class="figure-role">Parish Priest</p>
-                        <p style="color: var(--text-secondary);">Provided pastoral care and guidance during his tenure at St. Patrick's.</p>
+                        <p class="figure-description">Provided pastoral care and guidance during his tenure at St. Patrick's.</p>
                     </div>
                 </div>
 
                 <div class="figure-card">
-                    <div class="figure-image"><img src="images/Rev. Fr. Lawrence Nwaneri C.S.Sp.jpeg" alt=""></div>
+                    <div class="figure-image">
+                        <img src="images/Rev. Fr. Lawrence Nwaneri C.S.Sp.jpeg" alt="Rev. Fr. Lawrence Nwaneri C.S.Sp">
+                    </div>
                     <div class="figure-content">
                         <h3 class="figure-name">Rev. Fr. Lawrence Nwaneri C.S.Sp</h3>
                         <p class="figure-role">Parish Priest</p>
-                        <p style="color: var(--text-secondary);">Served the parish faithfully, contributing to its development and spiritual life.</p>
+                        <p class="figure-description">Served the parish faithfully, contributing to its development and spiritual life.</p>
                     </div>
                 </div>
 
                 <div class="figure-card">
-                    <div class="figure-image"><img src="images/Rev Fr. Agbapajuru.jpeg" alt=""></div>
+                    <div class="figure-image">
+                        <img src="images/Rev Fr. Agbapajuru.jpeg" alt="Rev. Fr. Cyriacus Agbapajuru C.S.Sp">
+                    </div>
                     <div class="figure-content">
                         <h3 class="figure-name">Rev. Fr. Cyriacus Agbapajuru C.S.Sp</h3>
                         <p class="figure-role">Current Parish Priest</p>
-                        <p style="color: var(--text-secondary);">Currently shepherding St. Patrick's community, assisted by Rev. Fr. Joachim Erhabor SDV, guiding the parish into a new era of faith and service.</p>
+                        <p class="figure-description">Currently shepherding St. Patrick's community, assisted by Rev. Fr. Joachim Erhabor SDV, guiding the parish into a new era of faith and service.</p>
                     </div>
                 </div>
             </div>
@@ -736,17 +783,9 @@
                 <div class="footer-column">
                     <h3>Connect With Us</h3>
                     <p style="color: var(--neutral-300); margin-bottom: var(--space-4);">Stay updated with parish news and events</p>
-                    <div style="display: flex; gap: var(--space-3); margin-top: var(--space-4);">
-                        <a href="#" aria-label="Follow us on Facebook" style="width: 40px; height: 40px; background: var(--neutral-800); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: white;">
-                            <svg width="20" height="20" fill="currentColor" aria-hidden="true"><text x="5" y="15" font-size="16">f</text></svg>
-                        </a>
-                        <a href="#" aria-label="Follow us on Instagram" style="width: 40px; height: 40px; background: var(--neutral-800); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: white;">
-                            <span aria-hidden="true">📷</span>
-                        </a>
-                        <a href="#" aria-label="Subscribe on YouTube" style="width: 40px; height: 40px; background: var(--neutral-800); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: white;">
-                            <span aria-hidden="true">▶</span>
-                        </a>
-                    </div>
+                    <p style="color: var(--neutral-400); font-size: var(--text-sm); font-style: italic;">
+                        Social media channels coming soon. For now, contact us directly at Info@stpatrickigbogilaipaja.com
+                    </p>
                 </div>
             </div>
 

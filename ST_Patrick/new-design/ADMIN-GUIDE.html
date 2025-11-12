@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>St. Patrick's Website Admin Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.7;
+            color: #1f2937;
+            background: #f9fafb;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #1e3a8a;
+            margin-bottom: 1rem;
+            font-size: 2.5rem;
+            border-bottom: 4px solid #d4af37;
+            padding-bottom: 0.5rem;
+        }
+
+        h2 {
+            color: #1e40af;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.75rem;
+            padding-left: 0.5rem;
+            border-left: 4px solid #3b82f6;
+        }
+
+        h3 {
+            color: #2563eb;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            font-size: 1.25rem;
+        }
+
+        .intro {
+            background: linear-gradient(135deg, #eff6ff, #dbeafe);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            border-left: 4px solid #3b82f6;
+        }
+
+        .warning {
+            background: #fef3c7;
+            border-left: 4px solid #f59e0b;
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+
+        .success {
+            background: #d1fae5;
+            border-left: 4px solid #10b981;
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+
+        .info {
+            background: #e0e7ff;
+            border-left: 4px solid #6366f1;
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+
+        code {
+            background: #f3f4f6;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            color: #dc2626;
+        }
+
+        pre {
+            background: #1f2937;
+            color: #f9fafb;
+            padding: 1.5rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 1rem 0;
+            line-height: 1.5;
+        }
+
+        pre code {
+            background: transparent;
+            color: #f9fafb;
+            padding: 0;
+        }
+
+        ul, ol {
+            margin-left: 2rem;
+            margin-top: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        .step-number {
+            display: inline-block;
+            background: #3b82f6;
+            color: white;
+            width: 28px;
+            height: 28px;
+            text-align: center;
+            line-height: 28px;
+            border-radius: 50%;
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        .section {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: #f9fafb;
+            border-radius: 8px;
+        }
+
+        a {
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+
+        th, td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        th {
+            background: #f3f4f6;
+            font-weight: 600;
+            color: #1f2937;
+        }
+
+        .emoji {
+            font-size: 1.5rem;
+            margin-right: 0.5rem;
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+            .container {
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📖 St. Patrick's Website Admin Guide</h1>
+
+        <div class="intro">
+            <p><strong>Welcome!</strong> This guide will help you manage the St. Patrick's Catholic Church website without any technical knowledge. Everything has been simplified so you can easily update announcements, events, and photos.</p>
+        </div>
+
+        <div class="success">
+            <p><strong>✅ Good News:</strong> 95% of the website content is static and never needs updating. You only need to manage 3 things: Announcements, Events, and Photos.</p>
+        </div>
+
+        <h2>📋 Table of Contents</h2>
+        <ol>
+            <li><a href="#what-to-update">What Needs Regular Updates</a></li>
+            <li><a href="#announcements">How to Update Announcements</a></li>
+            <li><a href="#events">How to Manage Events (Google Calendar)</a></li>
+            <li><a href="#photos">How to Update Photo Gallery (Google Photos)</a></li>
+            <li><a href="#occasional">Occasional Updates (Bank Details, Mass Times)</a></li>
+            <li><a href="#troubleshooting">Troubleshooting & Help</a></li>
+        </ol>
+
+        <h2 id="what-to-update">📊 What Needs Regular Updates</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>How Often</th>
+                    <th>How to Update</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Announcements</strong></td>
+                    <td>Weekly/As needed</td>
+                    <td>Edit JSON file (see below)</td>
+                </tr>
+                <tr>
+                    <td><strong>Events Calendar</strong></td>
+                    <td>As events happen</td>
+                    <td>Update Google Calendar</td>
+                </tr>
+                <tr>
+                    <td><strong>Photo Gallery</strong></td>
+                    <td>After events</td>
+                    <td>Add to Google Photos album</td>
+                </tr>
+                <tr>
+                    <td><strong>Daily Readings</strong></td>
+                    <td>Never (automatic)</td>
+                    <td>Links to Catholic.org</td>
+                </tr>
+                <tr>
+                    <td><strong>Everything Else</strong></td>
+                    <td>Rarely/Never</td>
+                    <td>Contact web developer</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2 id="announcements">📢 How to Update Announcements</h2>
+
+        <p>Announcements are stored in a simple text file that you can edit. No coding knowledge required!</p>
+
+        <div class="section">
+            <h3><span class="step-number">1</span>Find the Announcements File</h3>
+            <p>Navigate to: <code>new-design/data/announcements.json</code></p>
+            <p>You can open this file with any text editor (Notepad, TextEdit, etc.)</p>
+        </div>
+
+        <div class="section">
+            <h3><span class="step-number">2</span>Understanding the File Structure</h3>
+            <p>The file looks like this:</p>
+
+            <pre><code>{
+  "announcements": [
+    {
+      "id": 1,
+      "title": "Welcome to St. Patrick's Catholic Church",
+      "date": "2025-01-15",
+      "category": "General",
+      "message": "We welcome all parishioners and visitors to our parish.",
+      "priority": "normal"
+    }
+  ]
+}</code></pre>
+
+            <p>Each announcement has:</p>
+            <ul>
+                <li><strong>id:</strong> A unique number (1, 2, 3...)</li>
+                <li><strong>title:</strong> The announcement headline</li>
+                <li><strong>date:</strong> Format: YYYY-MM-DD (e.g., 2025-01-15)</li>
+                <li><strong>category:</strong> Choose from: General, Liturgy, Information, Event, Important, Community, Education</li>
+                <li><strong>message:</strong> The full announcement text</li>
+                <li><strong>priority:</strong> Either "normal" or "high" (high shows with red badge)</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3><span class="step-number">3</span>Adding a New Announcement</h3>
+            <p>Copy an existing announcement block and paste it below the last one. Remember to:</p>
+            <ul>
+                <li>Add a comma after the previous announcement's closing <code>}</code></li>
+                <li>Give it a new unique ID number</li>
+                <li>Update the title, date, category, message, and priority</li>
+            </ul>
+
+            <p><strong>Example:</strong></p>
+            <pre><code>{
+  "announcements": [
+    {
+      "id": 1,
+      "title": "First Announcement",
+      "date": "2025-01-15",
+      "category": "General",
+      "message": "This is the first announcement.",
+      "priority": "normal"
+    },
+    {
+      "id": 2,
+      "title": "New Announcement",
+      "date": "2025-01-20",
+      "category": "Event",
+      "message": "This is a new announcement about an upcoming event.",
+      "priority": "high"
+    }
+  ]
+}</code></pre>
+        </div>
+
+        <div class="warning">
+            <p><strong>⚠️ Important:</strong> Be careful with commas and quotation marks. Every opening <code>{</code> needs a closing <code>}</code>, and every opening quote <code>"</code> needs a closing quote <code>"</code>. If you make a mistake, the announcements won't display.</p>
+        </div>
+
+        <div class="section">
+            <h3><span class="step-number">4</span>Removing Old Announcements</h3>
+            <p>Simply delete the entire announcement block (from <code>{</code> to <code>}</code>). Make sure to remove any extra commas.</p>
+        </div>
+
+        <div class="info">
+            <p><strong>💡 Tip:</strong> Keep a backup copy of the file before making changes. If something breaks, you can restore the backup.</p>
+        </div>
+
+        <h2 id="events">📅 How to Manage Events (Google Calendar)</h2>
+
+        <p>The Events page displays a Google Calendar. You'll need to set this up once, then just add events to your Google Calendar as normal.</p>
+
+        <div class="section">
+            <h3><span class="step-number">1</span>Create a Google Calendar</h3>
+            <ol>
+                <li>Go to <a href="https://calendar.google.com" target="_blank">calendar.google.com</a></li>
+                <li>Sign in with your church's Google account (or create one)</li>
+                <li>Click the <strong>+</strong> next to "Other calendars"</li>
+                <li>Select <strong>"Create new calendar"</strong></li>
+                <li>Name it "St. Patrick's Events" and click <strong>Create Calendar</strong></li>
+            </ol>
+        </div>
+
+        <div class="section">
+            <h3><span class="step-number">2</span>Make the Calendar Public</h3>
+            <ol>
+                <li>In Google Calendar, find your "St. Patrick's Events" calendar in the left sidebar</li>
+                <li>Click the three dots <strong>⋮</strong> next to it</li>
+                <li>Select <strong>"Settings and sharing"</strong></li>
+                <li>Scroll to <strong>"Access permissions"</strong></li>
+                <li>Check the box: <strong>"Make available to public"</strong></li>
+                <li>Click <strong>OK</strong> to confirm</li>
+            </ol>
+        </div>
+
+        <div class="section">
+            <h3><span class="step-number">3</span>Get the Embed Code</h3>
+            <ol>
+                <li>Still in Settings, scroll down to <strong>"Integrate calendar"</strong></li>
+                <li>You'll see an <strong>"Embed code"</strong> section with HTML code</li>
+                <li>Click <strong>"Customize"</strong> to adjust the appearance (optional)</li>
+                <li>Copy the entire <code>&lt;iframe&gt;...&lt;/iframe&gt;</code> code</li>
+            </ol>
+        </div>
+
+        <div class="section">
+            <h3><span class="step-number">4</span>Add to Your Website</h3>
+            <ol>
+                <li>Open the file: <code>new-design/upcoming-events.html</code></li>
+                <li>Find the section marked <strong>"GOOGLE CALENDAR EMBED"</strong> (around line 140)</li>
+                <li>Paste your iframe code where indicated</li>
+                <li>Save the file</li>
+            </ol>
+        </div>
+
+        <div class="success">
+            <p><strong>✅ Done!</strong> Now whenever you add an event to your Google Calendar, it will automatically appear on the website. No need to edit the website again!</p>
+        </div>
+
+        <h2 id="photos">📸 How to Update Photo Gallery (Google Photos)</h2>
+
+        <p>The easiest way to manage photos is using Google Photos albums.</p>
+
+        <div class="section">
+            <h3><span class="step-number">1</span>Create a Google Photos Album</h3>
+            <ol>
+                <li>Go to <a href="https://photos.google.com" target="_blank">photos.google.com</a></li>
+                <li>Sign in with your church's Google account</li>
+                <li>Click <strong>"Albums"</strong> in the left sidebar</li>
+                <li>Click <strong>"Create album"</strong></li>
+                <li>Name it "St. Patrick's Parish Life"</li>
+                <li>Add photos by clicking <strong>"Add photos"</strong></li>
+            </ol>
+        </div>
+
+        <div class="section">
+            <h3><span class="step-number">2</span>Share the Album Publicly</h3>
+            <ol>
+                <li>Open your album</li>
+                <li>Click the <strong>Share</strong> button (top right)</li>
+                <li>Click <strong>"Create link"</strong></li>
+                <li>Copy the shareable link</li>
+            </ol>
+        </div>
+
+        <div class="section">
+            <h3><span class="step-number">3</span>Two Options for Display</h3>
+
+            <h4>Option A: Direct Link (Easiest)</h4>
+            <ol>
+                <li>Open: <code>new-design/photo-gallery.html</code></li>
+                <li>Find the "View Full Album" button section</li>
+                <li>Replace the <code>href="YOUR_GOOGLE_PHOTOS_LINK"</code> with your actual link</li>
+                <li>Users will click the button to view photos on Google Photos</li>
+            </ol>
+
+            <h4>Option B: Embedded Gallery (Advanced)</h4>
+            <p>Some third-party tools allow embedding Google Photos. Search for "embed Google Photos album" for current options. This requires technical setup.</p>
+        </div>
+
+        <div class="info">
+            <p><strong>💡 Tip:</strong> You can add photos to the Google Photos album anytime from your phone or computer. They'll automatically appear when people click the gallery link.</p>
+        </div>
+
+        <h2 id="occasional">🔧 Occasional Updates</h2>
+
+        <p>These items rarely change, but here's how to update them when needed:</p>
+
+        <div class="section">
+            <h3>Bank Account Details</h3>
+            <p><strong>File:</strong> <code>new-design/donate.html</code></p>
+            <p><strong>Location:</strong> Lines 260-309</p>
+            <p>Search for "Harvest Account", "Building Account", or "Collection Account" and update the account numbers directly in the HTML.</p>
+        </div>
+
+        <div class="section">
+            <h3>Mass Times</h3>
+            <p><strong>File:</strong> <code>new-design/index.html</code> (homepage)</p>
+            <p>Search for "Mass Schedule" and update the times listed.</p>
+        </div>
+
+        <div class="section">
+            <h3>Contact Information</h3>
+            <p><strong>Files:</strong> Multiple pages have contact info in footer</p>
+            <p>Search for the phone number or email address and update across all files if changed.</p>
+        </div>
+
+        <div class="section">
+            <h3>Staff/Priest Information</h3>
+            <p><strong>File:</strong> <code>new-design/about.html</code></p>
+            <p>Search for priest names in the "Shepherds of Our Faith" section.</p>
+        </div>
+
+        <div class="warning">
+            <p><strong>⚠️ For Complex Changes:</strong> Contact your web developer for changes to layout, design, navigation menus, or adding new pages.</p>
+        </div>
+
+        <h2 id="troubleshooting">🆘 Troubleshooting & Help</h2>
+
+        <div class="section">
+            <h3>Problem: Announcements Not Showing</h3>
+            <p><strong>Solution:</strong></p>
+            <ul>
+                <li>Check the <code>announcements.json</code> file for missing commas or quotes</li>
+                <li>Make sure the date format is YYYY-MM-DD (e.g., 2025-01-15)</li>
+                <li>Restore from your backup copy if needed</li>
+                <li>Test the JSON syntax at <a href="https://jsonlint.com" target="_blank">jsonlint.com</a></li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>Problem: Google Calendar Not Displaying</h3>
+            <p><strong>Solution:</strong></p>
+            <ul>
+                <li>Make sure the calendar is set to "Public"</li>
+                <li>Check that you copied the entire <code>&lt;iframe&gt;</code> code</li>
+                <li>Try generating a new embed code from Google Calendar</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>Problem: Photos Not Loading</h3>
+            <p><strong>Solution:</strong></p>
+            <ul>
+                <li>Verify the Google Photos album is set to "Public" or "Anyone with the link"</li>
+                <li>Make sure you copied the correct shareable link</li>
+                <li>Check that photos are actually in the album</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>Problem: Website Not Updating</h3>
+            <p><strong>Solution:</strong></p>
+            <ul>
+                <li>Clear your browser cache (Ctrl+Shift+Delete on Windows, Cmd+Shift+Delete on Mac)</li>
+                <li>Try viewing in a private/incognito window</li>
+                <li>Make sure you saved the file after editing</li>
+                <li>Make sure the file is uploaded to your web hosting (if applicable)</li>
+            </ul>
+        </div>
+
+        <h2>📞 Emergency Contacts</h2>
+
+        <div class="info">
+            <p><strong>Technical Support:</strong></p>
+            <ul>
+                <li>Contact your web developer for urgent technical issues</li>
+                <li>Keep a backup of all files before making changes</li>
+                <li>Document any changes you make for future reference</li>
+            </ul>
+        </div>
+
+        <h2>✅ Quick Reference Checklist</h2>
+
+        <div class="section">
+            <h3>Weekly Tasks:</h3>
+            <ul>
+                <li>☐ Update announcements in <code>data/announcements.json</code></li>
+                <li>☐ Add upcoming events to Google Calendar</li>
+                <li>☐ Remove old/expired announcements</li>
+            </ul>
+
+            <h3>After Parish Events:</h3>
+            <ul>
+                <li>☐ Upload event photos to Google Photos album</li>
+                <li>☐ Create announcement about event success (optional)</li>
+            </ul>
+
+            <h3>Monthly Tasks:</h3>
+            <ul>
+                <li>☐ Review and clean up old announcements</li>
+                <li>☐ Check that all links are working</li>
+                <li>☐ Backup the <code>announcements.json</code> file</li>
+            </ul>
+        </div>
+
+        <hr style="margin: 3rem 0; border: none; border-top: 2px solid #e5e7eb;">
+
+        <div class="success" style="text-align: center;">
+            <p><strong>🎉 You're all set!</strong> Remember: You only need to manage announcements, events, and photos. Everything else stays the same.</p>
+            <p style="margin-top: 1rem;">If you have questions, keep this guide handy and don't hesitate to contact your web developer.</p>
+        </div>
+
+        <p style="text-align: center; color: #6b7280; margin-top: 2rem; font-size: 0.875rem;">
+            © 2025 St. Patrick's Catholic Church | Admin Guide v1.0
+        </p>
+    </div>
+
+    <script>
+        // Smooth scrolling for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

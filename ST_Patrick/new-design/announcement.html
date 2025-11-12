@@ -84,17 +84,70 @@
             box-shadow: var(--shadow-lg);
         }
 
-        .announcement-card.urgent {
+        .announcement-card.priority-high-card {
             border-left-color: #dc2626;
             background: linear-gradient(135deg, rgba(220, 38, 38, 0.05), rgba(239, 68, 68, 0.02));
         }
 
-        .announcement-card.event {
-            border-left-color: var(--secondary-green);
+        .announcement-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: var(--space-3);
         }
 
-        .announcement-card.info {
-            border-left-color: #0891b2;
+        .announcement-category {
+            display: flex;
+            align-items: center;
+            gap: var(--space-2);
+            font-size: var(--text-sm);
+            color: var(--text-secondary);
+            font-weight: 600;
+        }
+
+        .category-icon {
+            font-size: var(--text-xl);
+        }
+
+        .priority-badge {
+            padding: var(--space-1) var(--space-3);
+            border-radius: var(--radius-full);
+            font-size: var(--text-xs);
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .priority-high {
+            background: #dc2626;
+            color: white;
+        }
+
+        .announcement-title {
+            font-size: var(--text-xl);
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: var(--space-2);
+        }
+
+        .announcement-date {
+            font-size: var(--text-sm);
+            color: var(--text-secondary);
+            margin-bottom: var(--space-3);
+        }
+
+        .announcement-message {
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .loading, .no-announcements, .error-message {
+            text-align: center;
+            padding: var(--space-12);
+            color: var(--text-secondary);
+        }
+
+        .error-message {
+            color: #dc2626;
         }
 
         .announcement-icon {
@@ -339,209 +392,20 @@
             <div class="container">
                 <!-- Week Header -->
                 <div class="week-header">
-                    <h2 style="font-size: var(--text-3xl); margin-bottom: var(--space-2);">This Week's Announcements</h2>
-                    <p style="opacity: 0.95; margin: 0;">Week of [Date Range - e.g., January 7-13, 2025]</p>
+                    <h2 style="font-size: var(--text-3xl); margin-bottom: var(--space-2);">Parish Announcements</h2>
+                    <p style="opacity: 0.95; margin: 0;">Latest updates and notices from St. Patrick's</p>
                 </div>
 
-                <!-- URGENT ANNOUNCEMENTS -->
-                <div style="margin-bottom: var(--space-12);">
-                    <h3 style="color: #dc2626; margin-bottom: var(--space-6); font-size: var(--text-2xl);">🚨 Urgent Notices</h3>
-                    <div class="announcement-grid">
-                        <!-- Urgent Announcement 1 -->
-                        <div class="announcement-card urgent">
-                            <div class="announcement-icon">⚠️</div>
-                            <span class="announcement-badge">Urgent</span>
-                            <h4 class="announcement-title">[Announcement Title]</h4>
-                            <div class="announcement-meta">
-                                <span>📅 [Date]</span>
-                                <span>🕐 [Time]</span>
-                            </div>
-                            <p class="announcement-description">
-                                [Brief description of the urgent announcement. Keep it concise and clear.]
-                            </p>
-                        </div>
-
-                        <!-- Urgent Announcement 2 -->
-                        <div class="announcement-card urgent">
-                            <div class="announcement-icon">⚠️</div>
-                            <span class="announcement-badge">Urgent</span>
-                            <h4 class="announcement-title">[Announcement Title]</h4>
-                            <div class="announcement-meta">
-                                <span>📅 [Date]</span>
-                                <span>🕐 [Time]</span>
-                            </div>
-                            <p class="announcement-description">
-                                [Brief description of the urgent announcement. Keep it concise and clear.]
-                            </p>
-                        </div>
-                    </div>
+                <!-- Announcements Container (populated by JavaScript) -->
+                <div class="announcement-grid" id="announcements-container">
+                    <!-- Announcements will be loaded here automatically -->
+                    <div class="loading">Loading announcements...</div>
                 </div>
 
-                <!-- UPCOMING EVENTS -->
-                <div style="margin-bottom: var(--space-12);">
-                    <h3 style="color: var(--secondary-green); margin-bottom: var(--space-6); font-size: var(--text-2xl);">📅 Upcoming Events</h3>
-                    <div class="announcement-grid">
-                        <!-- Event 1 -->
-                        <div class="announcement-card event">
-                            <div class="announcement-icon">📅</div>
-                            <span class="announcement-badge">Event</span>
-                            <h4 class="announcement-title">[Event Name]</h4>
-                            <div class="announcement-meta">
-                                <span>📅 [Date]</span>
-                                <span>🕐 [Time]</span>
-                                <span>📍 [Location]</span>
-                            </div>
-                            <p class="announcement-description">
-                                [Description of the event. Include important details, requirements, or registration information.]
-                            </p>
-                        </div>
-
-                        <!-- Event 2 -->
-                        <div class="announcement-card event">
-                            <div class="announcement-icon">📅</div>
-                            <span class="announcement-badge">Event</span>
-                            <h4 class="announcement-title">[Event Name]</h4>
-                            <div class="announcement-meta">
-                                <span>📅 [Date]</span>
-                                <span>🕐 [Time]</span>
-                                <span>📍 [Location]</span>
-                            </div>
-                            <p class="announcement-description">
-                                [Description of the event. Include important details, requirements, or registration information.]
-                            </p>
-                        </div>
-
-                        <!-- Event 3 -->
-                        <div class="announcement-card event">
-                            <div class="announcement-icon">📅</div>
-                            <span class="announcement-badge">Event</span>
-                            <h4 class="announcement-title">[Event Name]</h4>
-                            <div class="announcement-meta">
-                                <span>📅 [Date]</span>
-                                <span>🕐 [Time]</span>
-                                <span>📍 [Location]</span>
-                            </div>
-                            <p class="announcement-description">
-                                [Description of the event. Include important details, requirements, or registration information.]
-                            </p>
-                        </div>
-
-                        <!-- Event 4 -->
-                        <div class="announcement-card event">
-                            <div class="announcement-icon">📅</div>
-                            <span class="announcement-badge">Event</span>
-                            <h4 class="announcement-title">[Event Name]</h4>
-                            <div class="announcement-meta">
-                                <span>📅 [Date]</span>
-                                <span>🕐 [Time]</span>
-                                <span>📍 [Location]</span>
-                            </div>
-                            <p class="announcement-description">
-                                [Description of the event. Include important details, requirements, or registration information.]
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- GENERAL INFORMATION -->
-                <div style="margin-bottom: var(--space-12);">
-                    <h3 style="color: #0891b2; margin-bottom: var(--space-6); font-size: var(--text-2xl);">ℹ️ General Information</h3>
-                    <div class="announcement-grid">
-                        <!-- Info 1 -->
-                        <div class="announcement-card info">
-                            <div class="announcement-icon">ℹ️</div>
-                            <span class="announcement-badge">Info</span>
-                            <h4 class="announcement-title">[Information Title]</h4>
-                            <div class="announcement-meta">
-                                <span>📅 [Date]</span>
-                            </div>
-                            <p class="announcement-description">
-                                [General information or parish updates that parishioners should know about.]
-                            </p>
-                        </div>
-
-                        <!-- Info 2 -->
-                        <div class="announcement-card info">
-                            <div class="announcement-icon">ℹ️</div>
-                            <span class="announcement-badge">Info</span>
-                            <h4 class="announcement-title">[Information Title]</h4>
-                            <div class="announcement-meta">
-                                <span>📅 [Date]</span>
-                            </div>
-                            <p class="announcement-description">
-                                [General information or parish updates that parishioners should know about.]
-                            </p>
-                        </div>
-
-                        <!-- Info 3 -->
-                        <div class="announcement-card info">
-                            <div class="announcement-icon">ℹ️</div>
-                            <span class="announcement-badge">Info</span>
-                            <h4 class="announcement-title">[Information Title]</h4>
-                            <div class="announcement-meta">
-                                <span>📅 [Date]</span>
-                            </div>
-                            <p class="announcement-description">
-                                [General information or parish updates that parishioners should know about.]
-                            </p>
-                        </div>
-
-                        <!-- Info 4 -->
-                        <div class="announcement-card info">
-                            <div class="announcement-icon">ℹ️</div>
-                            <span class="announcement-badge">Info</span>
-                            <h4 class="announcement-title">[Information Title]</h4>
-                            <div class="announcement-meta">
-                                <span>📅 [Date]</span>
-                            </div>
-                            <p class="announcement-description">
-                                [General information or parish updates that parishioners should know about.]
-                            </p>
-                        </div>
-
-                        <!-- Info 5 -->
-                        <div class="announcement-card info">
-                            <div class="announcement-icon">ℹ️</div>
-                            <span class="announcement-badge">Info</span>
-                            <h4 class="announcement-title">[Information Title]</h4>
-                            <div class="announcement-meta">
-                                <span>📅 [Date]</span>
-                            </div>
-                            <p class="announcement-description">
-                                [General information or parish updates that parishioners should know about.]
-                            </p>
-                        </div>
-
-                        <!-- Info 6 -->
-                        <div class="announcement-card info">
-                            <div class="announcement-icon">ℹ️</div>
-                            <span class="announcement-badge">Info</span>
-                            <h4 class="announcement-title">[Information Title]</h4>
-                            <div class="announcement-meta">
-                                <span>📅 [Date]</span>
-                            </div>
-                            <p class="announcement-description">
-                                [General information or parish updates that parishioners should know about.]
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Instructions Box -->
-                <div style="background: white; padding: var(--space-8); border-radius: var(--radius-xl); box-shadow: var(--shadow-md); border-left: 4px solid var(--accent-gold);">
-                    <h3 style="color: var(--primary-blue); margin-bottom: var(--space-4);">📝 How to Update Announcements</h3>
-                    <p style="color: var(--text-secondary); line-height: 1.8; margin-bottom: var(--space-4);">
-                        To add or remove announcements each week, simply edit the HTML file and:
-                    </p>
-                    <ol style="color: var(--text-secondary); line-height: 2; padding-left: var(--space-6);">
-                        <li><strong>Update the week header</strong> with the current date range</li>
-                        <li><strong>Add new announcements</strong> by copying an existing announcement card and updating the text</li>
-                        <li><strong>Remove old announcements</strong> by deleting the entire announcement card section</li>
-                        <li><strong>Change categories</strong> by updating the card class (urgent, event, or info)</li>
-                    </ol>
-                    <p style="color: var(--text-secondary); margin-top: var(--space-4);">
-                        For assistance, contact the parish office at <a href="tel:+2348023444069" style="color: var(--primary-blue);">+234 802 344 4069</a>
-                    </p>
+                <!-- Link to Events Page -->
+                <div style="text-align: center; margin-top: var(--space-12);">
+                    <p style="color: var(--text-secondary); margin-bottom: var(--space-4);">Looking for upcoming parish events?</p>
+                    <a href="upcoming-events.html" class="btn btn-primary">📅 View All Events</a>
                 </div>
             </div>
         </section>
@@ -585,17 +449,9 @@
                 <div class="footer-column">
                     <h3>Connect With Us</h3>
                     <p style="color: var(--neutral-300); margin-bottom: var(--space-4);">Stay updated with parish news and events</p>
-                    <div style="display: flex; gap: var(--space-3); margin-top: var(--space-4);">
-                        <a href="#" aria-label="Follow us on Facebook" style="width: 40px; height: 40px; background: var(--neutral-800); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: white;">
-                            <svg width="20" height="20" fill="currentColor" aria-hidden="true"><text x="5" y="15" font-size="16">f</text></svg>
-                        </a>
-                        <a href="#" aria-label="Follow us on Instagram" style="width: 40px; height: 40px; background: var(--neutral-800); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: white;">
-                            <span aria-hidden="true">📷</span>
-                        </a>
-                        <a href="#" aria-label="Subscribe on YouTube" style="width: 40px; height: 40px; background: var(--neutral-800); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: white;">
-                            <span aria-hidden="true">▶</span>
-                        </a>
-                    </div>
+                    <p style="color: var(--neutral-400); font-size: var(--text-sm); font-style: italic;">
+                        Social media channels coming soon. For now, contact us directly at Info@stpatrickigbogilaipaja.com
+                    </p>
                 </div>
             </div>
 
@@ -607,5 +463,6 @@
     </footer>
 
     <script src="js/main.js"></script>
+    <script src="js/announcements.js"></script>
 </body>
 </html>

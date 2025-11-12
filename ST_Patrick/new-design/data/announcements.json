@@ -1,0 +1,28 @@
+{
+  "announcements": [
+    {
+      "id": 1,
+      "title": "Welcome to St. Patrick's Catholic Church",
+      "date": "2024-11-12",
+      "category": "General",
+      "message": "We welcome all parishioners and visitors to our parish. Join us for Mass and fellowship.",
+      "priority": "normal"
+    },
+    {
+      "id": 2,
+      "title": "Weekly Mass Schedule",
+      "date": "2024-11-12",
+      "category": "Liturgy",
+      "message": "Daily Mass: Monday-Friday at 6:30 AM. Sunday Mass: 6:30 AM and 9:30 AM. Children's Mass: Sunday 9:30 AM. St. Jude Mass Centre, Ashipa: Sunday 6:30 AM. All are welcome!",
+      "priority": "high"
+    },
+    {
+      "id": 3,
+      "title": "Parish Office Hours",
+      "date": "2024-11-11",
+      "category": "Information",
+      "message": "The parish office is open Monday, Tuesday, and Friday from 9:00 AM to 4:00 PM. Wednesday from 8:00 AM to 12:00 PM. For urgent matters, please call +234 802 344 4069.",
+      "priority": "normal"
+    }
+  ]
+}
